@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.4 The Chain Rule | MATH 112: Differential Calculus</title>
+  <meta name="description" content="A companion to Calculus by James Stewart" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.4 The Chain Rule | MATH 112: Differential Calculus" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A companion to Calculus by James Stewart" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.4 The Chain Rule | MATH 112: Differential Calculus" />
+  
+  <meta name="twitter:description" content="A companion to Calculus by James Stewart" />
+  
+
+<meta name="author" content="The Elements Math" />
+
+
+<meta name="date" content="2026-02-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="derivatives-of-trigonometric-functions.html"/>
+<link rel="next" href="implicit-differentiation.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">M112: Differential Calculus</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="functions-and-models.html"><a href="functions-and-models.html"><i class="fa fa-check"></i><b>1</b> Functions and Models</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html"><i class="fa fa-check"></i><b>1.1</b> Four Ways to Represent a Function</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#four-representations-of-a-function"><i class="fa fa-check"></i><b>1.1.1</b> Four Representations of a Function</a></li>
+<li class="chapter" data-level="1.1.2" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#piecewise-defined-functions"><i class="fa fa-check"></i><b>1.1.2</b> Piecewise-Defined Functions</a></li>
+<li class="chapter" data-level="1.1.3" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#symmetry"><i class="fa fa-check"></i><b>1.1.3</b> Symmetry</a></li>
+<li class="chapter" data-level="1.1.4" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#increasing-and-decreasing-functions"><i class="fa fa-check"></i><b>1.1.4</b> Increasing and Decreasing Functions</a></li>
+<li class="chapter" data-level="1.1.5" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#putting-it-all-together"><i class="fa fa-check"></i><b>1.1.5</b> Putting it All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html"><i class="fa fa-check"></i><b>1.2</b> Mathematical Models: A Catalog of Essential Functions</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#linear-models"><i class="fa fa-check"></i><b>1.2.1</b> Linear Models</a></li>
+<li class="chapter" data-level="1.2.2" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#polynomial-functions"><i class="fa fa-check"></i><b>1.2.2</b> Polynomial Functions</a></li>
+<li class="chapter" data-level="1.2.3" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#power-functions"><i class="fa fa-check"></i><b>1.2.3</b> Power Functions</a></li>
+<li class="chapter" data-level="1.2.4" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#rational-functions"><i class="fa fa-check"></i><b>1.2.4</b> Rational Functions</a></li>
+<li class="chapter" data-level="1.2.5" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#algebraic-functions"><i class="fa fa-check"></i><b>1.2.5</b> Algebraic Functions</a></li>
+<li class="chapter" data-level="1.2.6" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#trigonometric-functions"><i class="fa fa-check"></i><b>1.2.6</b> Trigonometric Functions</a></li>
+<li class="chapter" data-level="1.2.7" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#exponential-functions"><i class="fa fa-check"></i><b>1.2.7</b> Exponential Functions</a></li>
+<li class="chapter" data-level="1.2.8" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#logarithmic-functions"><i class="fa fa-check"></i><b>1.2.8</b> Logarithmic Functions</a></li>
+<li class="chapter" data-level="1.2.9" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#putting-it-all-together-1"><i class="fa fa-check"></i><b>1.2.9</b> Putting it All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html"><i class="fa fa-check"></i><b>1.3</b> New Functions from Old Functions</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html#transformations-of-functions"><i class="fa fa-check"></i><b>1.3.1</b> Transformations of Functions</a></li>
+<li class="chapter" data-level="1.3.2" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html#combinations-of-functions"><i class="fa fa-check"></i><b>1.3.2</b> Combinations of Functions</a></li>
+<li class="chapter" data-level="1.3.3" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html#putting-it-all-together-2"><i class="fa fa-check"></i><b>1.3.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html"><i class="fa fa-check"></i><b>1.4</b> Exponential Functions</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#graphical-behavior-of-y-bx"><i class="fa fa-check"></i><b>1.4.1</b> Graphical Behavior of <span class="math inline">\(y = b^x\)</span></a></li>
+<li class="chapter" data-level="1.4.2" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#applications-of-exponential-functions"><i class="fa fa-check"></i><b>1.4.2</b> Applications of Exponential Functions</a></li>
+<li class="chapter" data-level="1.4.3" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#the-number-e-and-the-natural-exponential-function"><i class="fa fa-check"></i><b>1.4.3</b> The Number <span class="math inline">\(e\)</span> and the Natural Exponential Function</a></li>
+<li class="chapter" data-level="1.4.4" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#graph-transformations-of-exponentials"><i class="fa fa-check"></i><b>1.4.4</b> Graph Transformations of Exponentials</a></li>
+<li class="chapter" data-level="1.4.5" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#putting-it-all-together-3"><i class="fa fa-check"></i><b>1.4.5</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html"><i class="fa fa-check"></i><b>1.5</b> Inverse Functions and Logarithms</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#graphs-of-inverse-functions"><i class="fa fa-check"></i><b>1.5.1</b> Graphs of Inverse Functions</a></li>
+<li class="chapter" data-level="1.5.2" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#logarithmic-functions-as-inverses"><i class="fa fa-check"></i><b>1.5.2</b> Logarithmic Functions as Inverses</a></li>
+<li class="chapter" data-level="1.5.3" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#solving-exponential-and-log-equations"><i class="fa fa-check"></i><b>1.5.3</b> Solving Exponential and Log Equations</a></li>
+<li class="chapter" data-level="1.5.4" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#inverse-trigonometric-functions"><i class="fa fa-check"></i><b>1.5.4</b> Inverse Trigonometric Functions</a></li>
+<li class="chapter" data-level="1.5.5" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#pulling-it-all-together"><i class="fa fa-check"></i><b>1.5.5</b> Pulling It All Together</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="limits-and-derivatives.html"><a href="limits-and-derivatives.html"><i class="fa fa-check"></i><b>2</b> Limits and Derivatives</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html"><i class="fa fa-check"></i><b>2.1</b> The Tangent and Velocity Problems</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#the-tangent-problem"><i class="fa fa-check"></i><b>2.1.1</b> The Tangent Problem</a></li>
+<li class="chapter" data-level="2.1.2" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#tangents-from-experimental-data"><i class="fa fa-check"></i><b>2.1.2</b> Tangents from Experimental Data</a></li>
+<li class="chapter" data-level="2.1.3" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#the-velocity-problem"><i class="fa fa-check"></i><b>2.1.3</b> The Velocity Problem</a></li>
+<li class="chapter" data-level="2.1.4" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#connection-between-tangents-and-velocity"><i class="fa fa-check"></i><b>2.1.4</b> Connection Between Tangents and Velocity</a></li>
+<li class="chapter" data-level="2.1.5" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#putting-it-all-together-4"><i class="fa fa-check"></i><b>2.1.5</b> Putting It All Together</a></li>
+<li class="chapter" data-level="2.1.6" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#conceptual-takeaways-5"><i class="fa fa-check"></i><b>2.1.6</b> Conceptual Takeaways</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html"><i class="fa fa-check"></i><b>2.2</b> The Limit of a Function</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#intuitive-idea-of-a-limit"><i class="fa fa-check"></i><b>2.2.1</b> Intuitive Idea of a Limit</a></li>
+<li class="chapter" data-level="2.2.2" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#numerical-approach-to-limits"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Approach to Limits</a></li>
+<li class="chapter" data-level="2.2.3" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#one-sided-limits"><i class="fa fa-check"></i><b>2.2.3</b> One-Sided Limits</a></li>
+<li class="chapter" data-level="2.2.4" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#infinite-limits"><i class="fa fa-check"></i><b>2.2.4</b> Infinite Limits</a></li>
+<li class="chapter" data-level="2.2.5" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#vertical-asymptotes"><i class="fa fa-check"></i><b>2.2.5</b> Vertical Asymptotes</a></li>
+<li class="chapter" data-level="2.2.6" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#putting-it-all-together-5"><i class="fa fa-check"></i><b>2.2.6</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html"><i class="fa fa-check"></i><b>2.3</b> Calculating Limits Using the Limit Laws</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html#limit-laws"><i class="fa fa-check"></i><b>2.3.1</b> Limit Laws</a></li>
+<li class="chapter" data-level="2.3.2" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html#the-squeeze-theorem-sandwich-theorem"><i class="fa fa-check"></i><b>2.3.2</b> The Squeeze Theorem (Sandwich Theorem)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html#putting-it-all-together-6"><i class="fa fa-check"></i><b>2.3.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="the-precise-definition-of-a-limit.html"><a href="the-precise-definition-of-a-limit.html"><i class="fa fa-check"></i><b>2.4</b> The Precise Definition of a Limit</a></li>
+<li class="chapter" data-level="2.5" data-path="continuity.html"><a href="continuity.html"><i class="fa fa-check"></i><b>2.5</b> Continuity</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="continuity.html"><a href="continuity.html#types-of-discontinuities"><i class="fa fa-check"></i><b>2.5.1</b> Types of Discontinuities</a></li>
+<li class="chapter" data-level="2.5.2" data-path="continuity.html"><a href="continuity.html#one-sided-continuity"><i class="fa fa-check"></i><b>2.5.2</b> One-Sided Continuity</a></li>
+<li class="chapter" data-level="2.5.3" data-path="continuity.html"><a href="continuity.html#composite-functions"><i class="fa fa-check"></i><b>2.5.3</b> Composite Functions</a></li>
+<li class="chapter" data-level="2.5.4" data-path="continuity.html"><a href="continuity.html#intermediate-value-theorem-ivt"><i class="fa fa-check"></i><b>2.5.4</b> Intermediate Value Theorem (IVT)</a></li>
+<li class="chapter" data-level="2.5.5" data-path="continuity.html"><a href="continuity.html#putting-it-all-together-7"><i class="fa fa-check"></i><b>2.5.5</b> Putting It All Together</a></li>
+<li class="chapter" data-level="2.5.6" data-path="continuity.html"><a href="continuity.html#skills-you-should-be-able-to-do-7"><i class="fa fa-check"></i><b>2.5.6</b> Skills You Should Be Able To Do</a></li>
+<li class="chapter" data-level="2.5.7" data-path="continuity.html"><a href="continuity.html#problems-6"><i class="fa fa-check"></i><b>2.5.7</b> Problems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html"><i class="fa fa-check"></i><b>2.6</b> Limits at Infinity; Horizontal Asymptotes</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#limits-at-infinity"><i class="fa fa-check"></i><b>2.6.1</b> Limits at Infinity</a></li>
+<li class="chapter" data-level="2.6.2" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#infinite-limits-at-infinity"><i class="fa fa-check"></i><b>2.6.2</b> Infinite Limits at Infinity</a></li>
+<li class="chapter" data-level="2.6.3" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#graph-interpretation"><i class="fa fa-check"></i><b>2.6.3</b> Graph Interpretation</a></li>
+<li class="chapter" data-level="2.6.4" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#putting-it-all-together-8"><i class="fa fa-check"></i><b>2.6.4</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html"><i class="fa fa-check"></i><b>2.7</b> Derivatives and Rates of Change</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#tangent-lines-and-limits"><i class="fa fa-check"></i><b>2.7.1</b> Tangent Lines and Limits</a></li>
+<li class="chapter" data-level="2.7.2" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#derivatives"><i class="fa fa-check"></i><b>2.7.2</b> Derivatives</a></li>
+<li class="chapter" data-level="2.7.3" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#tangent-line-using-derivatives"><i class="fa fa-check"></i><b>2.7.3</b> Tangent Line Using Derivatives</a></li>
+<li class="chapter" data-level="2.7.4" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#rates-of-change"><i class="fa fa-check"></i><b>2.7.4</b> Rates of Change</a></li>
+<li class="chapter" data-level="2.7.5" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#putting-it-all-together-9"><i class="fa fa-check"></i><b>2.7.5</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html"><i class="fa fa-check"></i><b>2.8</b> The Derivative as a Function</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html#continuity-vs-differentiability"><i class="fa fa-check"></i><b>2.8.1</b> Continuity vs Differentiability</a></li>
+<li class="chapter" data-level="2.8.2" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html#higher-derivatives"><i class="fa fa-check"></i><b>2.8.2</b> Higher Derivatives</a></li>
+<li class="chapter" data-level="2.8.3" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html#putting-it-all-together-10"><i class="fa fa-check"></i><b>2.8.3</b> Putting It All Together</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="differentiation-rules.html"><a href="differentiation-rules.html"><i class="fa fa-check"></i><b>3</b> Differentiation Rules</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="derivatives-of-polynomials-and-exponential-functions.html"><a href="derivatives-of-polynomials-and-exponential-functions.html"><i class="fa fa-check"></i><b>3.1</b> Derivatives of Polynomials and Exponential Functions</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="derivatives-of-polynomials-and-exponential-functions.html"><a href="derivatives-of-polynomials-and-exponential-functions.html#new-derivatives-from-old"><i class="fa fa-check"></i><b>3.1.1</b> New Derivatives from Old</a></li>
+<li class="chapter" data-level="3.1.2" data-path="derivatives-of-polynomials-and-exponential-functions.html"><a href="derivatives-of-polynomials-and-exponential-functions.html#exponential-functions-2"><i class="fa fa-check"></i><b>3.1.2</b> Exponential Functions</a></li>
+<li class="chapter" data-level="3.1.3" data-path="derivatives-of-polynomials-and-exponential-functions.html"><a href="derivatives-of-polynomials-and-exponential-functions.html#putting-it-all-together-11"><i class="fa fa-check"></i><b>3.1.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="the-product-and-quotient-rules.html"><a href="the-product-and-quotient-rules.html"><i class="fa fa-check"></i><b>3.2</b> The Product and Quotient Rules</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="the-product-and-quotient-rules.html"><a href="the-product-and-quotient-rules.html#the-product-rule"><i class="fa fa-check"></i><b>3.2.1</b> The Product Rule</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-product-and-quotient-rules.html"><a href="the-product-and-quotient-rules.html#the-quotient-rule"><i class="fa fa-check"></i><b>3.2.2</b> The Quotient Rule</a></li>
+<li class="chapter" data-level="3.2.3" data-path="the-product-and-quotient-rules.html"><a href="the-product-and-quotient-rules.html#putting-it-all-together-12"><i class="fa fa-check"></i><b>3.2.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="derivatives-of-trigonometric-functions.html"><a href="derivatives-of-trigonometric-functions.html"><i class="fa fa-check"></i><b>3.3</b> Derivatives of Trigonometric Functions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="derivatives-of-trigonometric-functions.html"><a href="derivatives-of-trigonometric-functions.html#putting-it-all-together-13"><i class="fa fa-check"></i><b>3.3.1</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="the-chain-rule.html"><a href="the-chain-rule.html"><i class="fa fa-check"></i><b>3.4</b> The Chain Rule</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="the-chain-rule.html"><a href="the-chain-rule.html#putting-it-all-together-14"><i class="fa fa-check"></i><b>3.4.1</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="implicit-differentiation.html"><a href="implicit-differentiation.html"><i class="fa fa-check"></i><b>3.5</b> Implicit Differentiation</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="implicit-differentiation.html"><a href="implicit-differentiation.html#horizontal-tangent-condition"><i class="fa fa-check"></i><b>3.5.1</b> Horizontal Tangent Condition</a></li>
+<li class="chapter" data-level="3.5.2" data-path="implicit-differentiation.html"><a href="implicit-differentiation.html#inverse-trigonometric-functions-via-implicit-differentiation"><i class="fa fa-check"></i><b>3.5.2</b> Inverse Trigonometric Functions via Implicit Differentiation</a></li>
+<li class="chapter" data-level="3.5.3" data-path="implicit-differentiation.html"><a href="implicit-differentiation.html#putting-it-all-together-15"><i class="fa fa-check"></i><b>3.5.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="derivatives-of-logarithmic-functions.html"><a href="derivatives-of-logarithmic-functions.html"><i class="fa fa-check"></i><b>3.6</b> Derivatives of Logarithmic Functions</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="derivatives-of-logarithmic-functions.html"><a href="derivatives-of-logarithmic-functions.html#logarithmic-differentiation"><i class="fa fa-check"></i><b>3.6.1</b> Logarithmic Differentiation</a></li>
+<li class="chapter" data-level="3.6.2" data-path="derivatives-of-logarithmic-functions.html"><a href="derivatives-of-logarithmic-functions.html#putting-it-all-together-16"><i class="fa fa-check"></i><b>3.6.2</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="rates-of-change-in-the-natural-and-social-sciences.html"><a href="rates-of-change-in-the-natural-and-social-sciences.html"><i class="fa fa-check"></i><b>3.7</b> Rates of Change in the Natural and Social Sciences</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="rates-of-change-in-the-natural-and-social-sciences.html"><a href="rates-of-change-in-the-natural-and-social-sciences.html#physics-applications"><i class="fa fa-check"></i><b>3.7.1</b> Physics Applications</a></li>
+<li class="chapter" data-level="3.7.2" data-path="rates-of-change-in-the-natural-and-social-sciences.html"><a href="rates-of-change-in-the-natural-and-social-sciences.html#physics-density-and-current"><i class="fa fa-check"></i><b>3.7.2</b> Physics: Density and Current</a></li>
+<li class="chapter" data-level="3.7.3" data-path="rates-of-change-in-the-natural-and-social-sciences.html"><a href="rates-of-change-in-the-natural-and-social-sciences.html#electric-current"><i class="fa fa-check"></i><b>3.7.3</b> Electric Current</a></li>
+<li class="chapter" data-level="3.7.4" data-path="rates-of-change-in-the-natural-and-social-sciences.html"><a href="rates-of-change-in-the-natural-and-social-sciences.html#chemistry-applications"><i class="fa fa-check"></i><b>3.7.4</b> Chemistry Applications</a></li>
+<li class="chapter" data-level="3.7.5" data-path="rates-of-change-in-the-natural-and-social-sciences.html"><a href="rates-of-change-in-the-natural-and-social-sciences.html#biology-applications"><i class="fa fa-check"></i><b>3.7.5</b> Biology Applications</a></li>
+<li class="chapter" data-level="3.7.6" data-path="rates-of-change-in-the-natural-and-social-sciences.html"><a href="rates-of-change-in-the-natural-and-social-sciences.html#economics-applications"><i class="fa fa-check"></i><b>3.7.6</b> Economics Applications</a></li>
+<li class="chapter" data-level="3.7.7" data-path="rates-of-change-in-the-natural-and-social-sciences.html"><a href="rates-of-change-in-the-natural-and-social-sciences.html#putting-it-all-together-17"><i class="fa fa-check"></i><b>3.7.7</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="exponential-growth-and-decay.html"><a href="exponential-growth-and-decay.html"><i class="fa fa-check"></i><b>3.8</b> Exponential Growth and Decay</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="exponential-growth-and-decay.html"><a href="exponential-growth-and-decay.html#the-law-of-natural-growth-and-decay"><i class="fa fa-check"></i><b>3.8.1</b> The Law of Natural Growth and Decay</a></li>
+<li class="chapter" data-level="3.8.2" data-path="exponential-growth-and-decay.html"><a href="exponential-growth-and-decay.html#population-growth-model"><i class="fa fa-check"></i><b>3.8.2</b> Population Growth Model</a></li>
+<li class="chapter" data-level="3.8.3" data-path="exponential-growth-and-decay.html"><a href="exponential-growth-and-decay.html#newtons-law-of-cooling"><i class="fa fa-check"></i><b>3.8.3</b> Newton’s Law of Cooling</a></li>
+<li class="chapter" data-level="3.8.4" data-path="exponential-growth-and-decay.html"><a href="exponential-growth-and-decay.html#continuously-compounded-interest"><i class="fa fa-check"></i><b>3.8.4</b> Continuously Compounded Interest</a></li>
+<li class="chapter" data-level="3.8.5" data-path="exponential-growth-and-decay.html"><a href="exponential-growth-and-decay.html#putting-it-all-together-18"><i class="fa fa-check"></i><b>3.8.5</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="related-rates.html"><a href="related-rates.html"><i class="fa fa-check"></i><b>3.9</b> Related Rates</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="related-rates.html"><a href="related-rates.html#putting-it-all-together-19"><i class="fa fa-check"></i><b>3.9.1</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="linear-approximations-and-differentials.html"><a href="linear-approximations-and-differentials.html"><i class="fa fa-check"></i><b>3.10</b> Linear Approximations and Differentials</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="linear-approximations-and-differentials.html"><a href="linear-approximations-and-differentials.html#tangent-line-approximation"><i class="fa fa-check"></i><b>3.10.1</b> Tangent Line Approximation</a></li>
+<li class="chapter" data-level="3.10.2" data-path="linear-approximations-and-differentials.html"><a href="linear-approximations-and-differentials.html#differentials"><i class="fa fa-check"></i><b>3.10.2</b> Differentials</a></li>
+<li class="chapter" data-level="3.10.3" data-path="linear-approximations-and-differentials.html"><a href="linear-approximations-and-differentials.html#putting-it-all-together-20"><i class="fa fa-check"></i><b>3.10.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="hyperbolic-functions.html"><a href="hyperbolic-functions.html"><i class="fa fa-check"></i><b>3.11</b> Hyperbolic Functions</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 112: Differential Calculus</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-chain-rule" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> The Chain Rule<a href="the-chain-rule.html#the-chain-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many functions in calculus are <strong>composite functions</strong> — functions built from other functions.</p>
+<p>Example:
+<span class="math display">\[
+F(x) = \sqrt{x^2 + 1}
+\]</span></p>
+<p>This is not a basic function, but a <strong>composition</strong>:</p>
+<ul>
+<li>Inner function: <span class="math inline">\(u = x^2 + 1\)</span><br />
+</li>
+<li>Outer function: <span class="math inline">\(y = \sqrt{u}\)</span></li>
+</ul>
+<p>Previously learned differentiation rules are not sufficient for this structure alone. We need a new rule to differentiate <strong>functions inside functions</strong>.</p>
+<p>Conceptually, if:</p>
+<ul>
+<li><span class="math inline">\(u\)</span> changes with respect to <span class="math inline">\(x\)</span><br />
+</li>
+<li><span class="math inline">\(y\)</span> changes with respect to <span class="math inline">\(u\)</span></li>
+</ul>
+<p>Then <span class="math inline">\(y\)</span> changes with respect to <span class="math inline">\(x\)</span> through <strong>both changes</strong>. So the total rate of change is:
+<span class="math display">\[
+\text{(change of y wrt u)} \times \text{(change of u wrt x)}.
+\]</span>
+This leads to the Chain Rule.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-30" class="theorem"><strong>Theorem 3.7  </strong></span><strong>The Chain Rule</strong></p>
+<p>If:</p>
+<ul>
+<li><span class="math inline">\(u = t(x)\)</span><br />
+</li>
+<li><span class="math inline">\(y = f(u)\)</span></li>
+</ul>
+<p>Then the composite function:
+<span class="math display">\[
+y = f(t(x))
+\]</span>
+has derivative:
+<span class="math display">\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}.
+\]</span></p>
+</div>
+<p>In prime notation,
+<span class="math display">\[
+(f \circ t)&#39;(x) = f&#39;(t(x)) \cdot t&#39;(x).
+\]</span></p>
+<blockquote>
+<p>Differentiate the <strong>outer function</strong><br />
+Keep the <strong>inner function unchanged</strong><br />
+Multiply by the <strong>derivative of the inner function</strong></p>
+</blockquote>
+<p><strong>Structure:</strong></p>
+<p><span class="math display">\[
+\frac{d}{dx}[f(t(x))] =
+\underbrace{f&#39;(t(x))}_{\text{outer derivative}}
+\cdot
+\underbrace{t&#39;(x)}_{\text{inner derivative}}
+\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-31" class="example"><strong>Example 3.22  </strong></span>Square Root Composition</p>
+<p>Differentiate:
+<span class="math display">\[
+F(x) = \sqrt{x^2 + 1}
+\]</span></p>
+<p><strong>Solution:</strong></p>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(u = x^2 + 1\)</span><br />
+</li>
+<li><span class="math inline">\(y = \sqrt{u} = u^{1/2}\)</span></li>
+</ul>
+<p>Derivatives:
+<span class="math display">\[
+\frac{dy}{du} = \frac{1}{2}u^{-1/2}, \quad \frac{du}{dx} = 2x.
+\]</span>
+Apply Chain Rule:
+<span class="math display">\[
+F&#39;(x) = \frac{1}{2}(x^2+1)^{-1/2} \cdot 2x = \frac{x}{\sqrt{x^2+1}}.
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-32" class="example"><strong>Example 3.23  </strong></span>Trigonometric Composition</p>
+<p>Differentiate <span class="math inline">\(y = \sin(x^2)\)</span> and <span class="math inline">\(y = \sin^2 x\)</span></p>
+<p><strong>Solution:</strong> <span class="math inline">\(y = \sin(x^2)\)</span></p>
+<p>Outer: <span class="math inline">\(\sin(u)\)</span><br />
+Inner: <span class="math inline">\(u = x^2\)</span></p>
+<p>So,
+<span class="math display">\[
+y&#39; = \cos(x^2)\cdot 2x = 2x\cos(x^2).
+\]</span></p>
+<p><strong>Solution:</strong> <span class="math inline">\(y = \sin^2 x\)</span></p>
+<p>Rewrite:
+<span class="math display">\[
+y = (\sin x)^2.
+\]</span></p>
+<p>Outer: <span class="math inline">\(u^2\)</span><br />
+Inner: <span class="math inline">\(u = \sin x\)</span></p>
+<p><span class="math display">\[
+y&#39; = 2\sin x \cdot \cos x = \sin(2x).
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-33" class="theorem"><strong>Theorem 3.8  </strong></span>Power Rule + Chain Rule</p>
+<p>If <span class="math inline">\(y = [t(x)]^n\)</span>, then:
+<span class="math display">\[
+\frac{d}{dx}[t(x)]^n = n[t(x)]^{n-1} \cdot t&#39;(x).
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-34" class="example"><strong>Example 3.24  </strong></span>If
+<span class="math display">\[
+y = (x^3 - 1)^{100},
+\]</span>
+then
+<span class="math display">\[
+y&#39; = 100(x^3-1)^{99} \cdot 3x^2 = 300x^2(x^3-1)^{99}.
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-35" class="example"><strong>Example 3.25  </strong></span>Differentiate
+<span class="math display">\[
+f(x) = \frac{1}{\sqrt[3]{x^2+x+1}}.
+\]</span></p>
+<p><strong>Solution:</strong></p>
+<p>Rewrite:
+<span class="math display">\[
+f(x) = (x^2+x+1)^{-1/3}.
+\]</span>
+Then,
+<span class="math display">\[
+f&#39;(x) = -\frac{1}{3}(x^2+x+1)^{-4/3}(2x+1) = -\frac{2x+1}{3(x^2+x+1)^{4/3}}.
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-36" class="example"><strong>Example 3.26  </strong></span>Differentiate
+<span class="math display">\[
+y = e^{\sin x}
+\]</span></p>
+<p><strong>Solution:</strong></p>
+<p>Outer: <span class="math inline">\(e^u\)</span><br />
+Inner: <span class="math inline">\(u = \sin x\)</span></p>
+<p>Then,
+<span class="math display">\[
+y&#39; = e^{\sin x} \cdot \cos x = e^{\sin x}\cos x.
+\]</span></p>
+</div>
+<p>In general,
+<span class="math display">\[
+\frac{d}{dx}(e^{u}) = e^{u}\cdot \frac{du}{dx}.
+\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-37" class="example"><strong>Example 3.27  </strong></span>Multi-Layer Chain Rule</p>
+<p>Differentiate
+<span class="math display">\[
+f(x) = \sin(\cos(\tan x))
+\]</span></p>
+<p><strong>Solution:</strong></p>
+<p>Layers:</p>
+<ul>
+<li>Outer: <span class="math inline">\(\sin(\cdot)\)</span><br />
+</li>
+<li>Middle: <span class="math inline">\(\cos(\cdot)\)</span><br />
+</li>
+<li>Inner: <span class="math inline">\(\tan x\)</span></li>
+</ul>
+<p>Differentiate step-by-step:</p>
+<p><span class="math display">\[
+f&#39;(x) = \cos(\cos(\tan x)) \cdot (-\sin(\tan x)) \cdot \sec^2 x = -\cos(\cos(\tan x))\sin(\tan x)\sec^2 x.
+\]</span></p>
+</div>
+<p>The Chain Rule reflects information flow:
+<span class="math display">\[
+x \rightarrow u(x) \rightarrow y(u).
+\]</span>
+Change propagates through layers.</p>
+<hr />
+<div id="putting-it-all-together-14" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Putting It All Together<a href="the-chain-rule.html#putting-it-all-together-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote>
+<p>The Chain Rule is the rule of <strong>dependency</strong>.</p>
+</blockquote>
+<p>It formalizes how change flows through systems. Calculus becomes the mathematics of structure and flow.</p>
+<div id="conceptual-takeaways-15" class="section level4 hasAnchor" number="3.4.1.1">
+<h4><span class="header-section-number">3.4.1.1</span> Conceptual Takeaways<a href="the-chain-rule.html#conceptual-takeaways-15" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Most real-world functions are composite<br />
+</li>
+<li>Differentiation follows structure<br />
+</li>
+<li>Rates of change multiply through layers<br />
+</li>
+<li>Inner change amplifies outer change<br />
+</li>
+<li>The Chain Rule is universal<br />
+</li>
+<li>It connects structure and motion<br />
+</li>
+<li>It unifies algebraic, trig, and exponential differentiation<br />
+</li>
+<li>It explains nested system behavior<br />
+</li>
+<li>It models cascaded processes<br />
+</li>
+<li>It formalizes dependency chains</li>
+</ul>
+<hr />
+</div>
+<div id="skills-you-should-be-able-to-do-14" class="section level4 hasAnchor" number="3.4.1.2">
+<h4><span class="header-section-number">3.4.1.2</span> Skills You Should Be Able To Do<a href="the-chain-rule.html#skills-you-should-be-able-to-do-14" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>By the end of this section, you should be able to:</p>
+<ul>
+<li>Identify composite functions<br />
+</li>
+<li>Decompose functions into layers<br />
+</li>
+<li>Apply the Chain Rule correctly<br />
+</li>
+<li>Use Leibniz notation meaningfully<br />
+</li>
+<li>Combine Chain Rule with:
+<ul>
+<li>Power Rule<br />
+</li>
+<li>Product Rule<br />
+</li>
+<li>Quotient Rule<br />
+</li>
+</ul></li>
+<li>Differentiate nested trig functions<br />
+</li>
+<li>Differentiate nested exponential functions<br />
+</li>
+<li>Handle multi-layer compositions<br />
+</li>
+<li>Recognize inner vs outer functions<br />
+</li>
+<li>Apply structure-first differentiation<br />
+</li>
+<li>Work from outside to inside<br />
+</li>
+<li>Interpret derivatives structurally<br />
+</li>
+<li>Model multi-stage systems<br />
+</li>
+<li>Solve complex composite derivatives<br />
+</li>
+<li>Translate symbolic structure into derivatives</li>
+</ul>
+<hr />
+</div>
+<div id="problems-13" class="section level4 hasAnchor" number="3.4.1.3">
+<h4><span class="header-section-number">3.4.1.3</span> Problems<a href="the-chain-rule.html#problems-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="derivatives-of-trigonometric-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="implicit-differentiation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["M112-Book.pdf", "M112-Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

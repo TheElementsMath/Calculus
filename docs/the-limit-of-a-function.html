@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.2 The Limit of a Function | MATH 112: Differential Calculus</title>
+  <meta name="description" content="A companion to Calculus by James Stewart" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.2 The Limit of a Function | MATH 112: Differential Calculus" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A companion to Calculus by James Stewart" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.2 The Limit of a Function | MATH 112: Differential Calculus" />
+  
+  <meta name="twitter:description" content="A companion to Calculus by James Stewart" />
+  
+
+<meta name="author" content="The Elements Math" />
+
+
+<meta name="date" content="2026-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="the-tangent-and-velocity-problems.html"/>
+<link rel="next" href="calculating-limits-using-the-limit-laws.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">M112: Differential Calculus</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="functions-and-models.html"><a href="functions-and-models.html"><i class="fa fa-check"></i><b>1</b> Functions and Models</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html"><i class="fa fa-check"></i><b>1.1</b> Four Ways to Represent a Function</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#four-representations-of-a-function"><i class="fa fa-check"></i><b>1.1.1</b> Four Representations of a Function</a></li>
+<li class="chapter" data-level="1.1.2" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#piecewise-defined-functions"><i class="fa fa-check"></i><b>1.1.2</b> Piecewise-Defined Functions</a></li>
+<li class="chapter" data-level="1.1.3" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#symmetry"><i class="fa fa-check"></i><b>1.1.3</b> Symmetry</a></li>
+<li class="chapter" data-level="1.1.4" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#increasing-and-decreasing-functions"><i class="fa fa-check"></i><b>1.1.4</b> Increasing and Decreasing Functions</a></li>
+<li class="chapter" data-level="1.1.5" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#putting-it-all-together"><i class="fa fa-check"></i><b>1.1.5</b> Putting it All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html"><i class="fa fa-check"></i><b>1.2</b> Mathematical Models: A Catalog of Essential Functions</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#linear-models"><i class="fa fa-check"></i><b>1.2.1</b> Linear Models</a></li>
+<li class="chapter" data-level="1.2.2" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#polynomial-functions"><i class="fa fa-check"></i><b>1.2.2</b> Polynomial Functions</a></li>
+<li class="chapter" data-level="1.2.3" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#power-functions"><i class="fa fa-check"></i><b>1.2.3</b> Power Functions</a></li>
+<li class="chapter" data-level="1.2.4" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#rational-functions"><i class="fa fa-check"></i><b>1.2.4</b> Rational Functions</a></li>
+<li class="chapter" data-level="1.2.5" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#algebraic-functions"><i class="fa fa-check"></i><b>1.2.5</b> Algebraic Functions</a></li>
+<li class="chapter" data-level="1.2.6" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#trigonometric-functions"><i class="fa fa-check"></i><b>1.2.6</b> Trigonometric Functions</a></li>
+<li class="chapter" data-level="1.2.7" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#exponential-functions"><i class="fa fa-check"></i><b>1.2.7</b> Exponential Functions</a></li>
+<li class="chapter" data-level="1.2.8" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#logarithmic-functions"><i class="fa fa-check"></i><b>1.2.8</b> Logarithmic Functions</a></li>
+<li class="chapter" data-level="1.2.9" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#putting-it-all-together-1"><i class="fa fa-check"></i><b>1.2.9</b> Putting it All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html"><i class="fa fa-check"></i><b>1.3</b> New Functions from Old Functions</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html#transformations-of-functions"><i class="fa fa-check"></i><b>1.3.1</b> Transformations of Functions</a></li>
+<li class="chapter" data-level="1.3.2" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html#combinations-of-functions"><i class="fa fa-check"></i><b>1.3.2</b> Combinations of Functions</a></li>
+<li class="chapter" data-level="1.3.3" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html#putting-it-all-together-2"><i class="fa fa-check"></i><b>1.3.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html"><i class="fa fa-check"></i><b>1.4</b> Exponential Functions</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#graphical-behavior-of-y-bx"><i class="fa fa-check"></i><b>1.4.1</b> Graphical Behavior of <span class="math inline">\(y = b^x\)</span></a></li>
+<li class="chapter" data-level="1.4.2" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#applications-of-exponential-functions"><i class="fa fa-check"></i><b>1.4.2</b> Applications of Exponential Functions</a></li>
+<li class="chapter" data-level="1.4.3" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#the-number-e-and-the-natural-exponential-function"><i class="fa fa-check"></i><b>1.4.3</b> The Number <span class="math inline">\(e\)</span> and the Natural Exponential Function</a></li>
+<li class="chapter" data-level="1.4.4" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#graph-transformations-of-exponentials"><i class="fa fa-check"></i><b>1.4.4</b> Graph Transformations of Exponentials</a></li>
+<li class="chapter" data-level="1.4.5" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#putting-it-all-together-3"><i class="fa fa-check"></i><b>1.4.5</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html"><i class="fa fa-check"></i><b>1.5</b> Inverse Functions and Logarithms</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#graphs-of-inverse-functions"><i class="fa fa-check"></i><b>1.5.1</b> Graphs of Inverse Functions</a></li>
+<li class="chapter" data-level="1.5.2" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#logarithmic-functions-as-inverses"><i class="fa fa-check"></i><b>1.5.2</b> Logarithmic Functions as Inverses</a></li>
+<li class="chapter" data-level="1.5.3" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#solving-exponential-and-log-equations"><i class="fa fa-check"></i><b>1.5.3</b> Solving Exponential and Log Equations</a></li>
+<li class="chapter" data-level="1.5.4" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#inverse-trigonometric-functions"><i class="fa fa-check"></i><b>1.5.4</b> Inverse Trigonometric Functions</a></li>
+<li class="chapter" data-level="1.5.5" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#pulling-it-all-together"><i class="fa fa-check"></i><b>1.5.5</b> Pulling It All Together</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="limits-and-derivatives.html"><a href="limits-and-derivatives.html"><i class="fa fa-check"></i><b>2</b> Limits and Derivatives</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html"><i class="fa fa-check"></i><b>2.1</b> The Tangent and Velocity Problems</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#the-tangent-problem"><i class="fa fa-check"></i><b>2.1.1</b> The Tangent Problem</a></li>
+<li class="chapter" data-level="2.1.2" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#tangents-from-experimental-data"><i class="fa fa-check"></i><b>2.1.2</b> Tangents from Experimental Data</a></li>
+<li class="chapter" data-level="2.1.3" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#the-velocity-problem"><i class="fa fa-check"></i><b>2.1.3</b> The Velocity Problem</a></li>
+<li class="chapter" data-level="2.1.4" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#connection-between-tangents-and-velocity"><i class="fa fa-check"></i><b>2.1.4</b> Connection Between Tangents and Velocity</a></li>
+<li class="chapter" data-level="2.1.5" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#putting-it-all-together-4"><i class="fa fa-check"></i><b>2.1.5</b> Putting It All Together</a></li>
+<li class="chapter" data-level="2.1.6" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#conceptual-takeaways-5"><i class="fa fa-check"></i><b>2.1.6</b> Conceptual Takeaways</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html"><i class="fa fa-check"></i><b>2.2</b> The Limit of a Function</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#intuitive-idea-of-a-limit"><i class="fa fa-check"></i><b>2.2.1</b> Intuitive Idea of a Limit</a></li>
+<li class="chapter" data-level="2.2.2" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#numerical-approach-to-limits"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Approach to Limits</a></li>
+<li class="chapter" data-level="2.2.3" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#one-sided-limits"><i class="fa fa-check"></i><b>2.2.3</b> One-Sided Limits</a></li>
+<li class="chapter" data-level="2.2.4" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#infinite-limits"><i class="fa fa-check"></i><b>2.2.4</b> Infinite Limits</a></li>
+<li class="chapter" data-level="2.2.5" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#vertical-asymptotes"><i class="fa fa-check"></i><b>2.2.5</b> Vertical Asymptotes</a></li>
+<li class="chapter" data-level="2.2.6" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#putting-it-all-together-5"><i class="fa fa-check"></i><b>2.2.6</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html"><i class="fa fa-check"></i><b>2.3</b> Calculating Limits Using the Limit Laws</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html#limit-laws"><i class="fa fa-check"></i><b>2.3.1</b> Limit Laws</a></li>
+<li class="chapter" data-level="2.3.2" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html#the-squeeze-theorem-sandwich-theorem"><i class="fa fa-check"></i><b>2.3.2</b> The Squeeze Theorem (Sandwich Theorem)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html#putting-it-all-together-6"><i class="fa fa-check"></i><b>2.3.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="the-precise-definition-of-a-limit.html"><a href="the-precise-definition-of-a-limit.html"><i class="fa fa-check"></i><b>2.4</b> The Precise Definition of a Limit</a></li>
+<li class="chapter" data-level="2.5" data-path="continuity.html"><a href="continuity.html"><i class="fa fa-check"></i><b>2.5</b> Continuity</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="continuity.html"><a href="continuity.html#types-of-discontinuities"><i class="fa fa-check"></i><b>2.5.1</b> Types of Discontinuities</a></li>
+<li class="chapter" data-level="2.5.2" data-path="continuity.html"><a href="continuity.html#one-sided-continuity"><i class="fa fa-check"></i><b>2.5.2</b> One-Sided Continuity</a></li>
+<li class="chapter" data-level="2.5.3" data-path="continuity.html"><a href="continuity.html#composite-functions"><i class="fa fa-check"></i><b>2.5.3</b> Composite Functions</a></li>
+<li class="chapter" data-level="2.5.4" data-path="continuity.html"><a href="continuity.html#intermediate-value-theorem-ivt"><i class="fa fa-check"></i><b>2.5.4</b> Intermediate Value Theorem (IVT)</a></li>
+<li class="chapter" data-level="2.5.5" data-path="continuity.html"><a href="continuity.html#putting-it-all-together-7"><i class="fa fa-check"></i><b>2.5.5</b> Putting It All Together</a></li>
+<li class="chapter" data-level="2.5.6" data-path="continuity.html"><a href="continuity.html#skills-you-should-be-able-to-do-7"><i class="fa fa-check"></i><b>2.5.6</b> Skills You Should Be Able To Do</a></li>
+<li class="chapter" data-level="2.5.7" data-path="continuity.html"><a href="continuity.html#problems-6"><i class="fa fa-check"></i><b>2.5.7</b> Problems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html"><i class="fa fa-check"></i><b>2.6</b> Limits at Infinity; Horizontal Asymptotes</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#limits-at-infinity"><i class="fa fa-check"></i><b>2.6.1</b> Limits at Infinity</a></li>
+<li class="chapter" data-level="2.6.2" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#infinite-limits-at-infinity"><i class="fa fa-check"></i><b>2.6.2</b> Infinite Limits at Infinity</a></li>
+<li class="chapter" data-level="2.6.3" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#graph-interpretation"><i class="fa fa-check"></i><b>2.6.3</b> Graph Interpretation</a></li>
+<li class="chapter" data-level="2.6.4" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#putting-it-all-together-8"><i class="fa fa-check"></i><b>2.6.4</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html"><i class="fa fa-check"></i><b>2.7</b> Derivatives and Rates of Change</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#tangent-lines-and-limits"><i class="fa fa-check"></i><b>2.7.1</b> Tangent Lines and Limits</a></li>
+<li class="chapter" data-level="2.7.2" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#derivatives"><i class="fa fa-check"></i><b>2.7.2</b> Derivatives</a></li>
+<li class="chapter" data-level="2.7.3" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#tangent-line-using-derivatives"><i class="fa fa-check"></i><b>2.7.3</b> Tangent Line Using Derivatives</a></li>
+<li class="chapter" data-level="2.7.4" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#rates-of-change"><i class="fa fa-check"></i><b>2.7.4</b> Rates of Change</a></li>
+<li class="chapter" data-level="2.7.5" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#putting-it-all-together-9"><i class="fa fa-check"></i><b>2.7.5</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html"><i class="fa fa-check"></i><b>2.8</b> The Derivative as a Function</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html#continuity-vs-differentiability"><i class="fa fa-check"></i><b>2.8.1</b> Continuity vs Differentiability</a></li>
+<li class="chapter" data-level="2.8.2" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html#higher-derivatives"><i class="fa fa-check"></i><b>2.8.2</b> Higher Derivatives</a></li>
+<li class="chapter" data-level="2.8.3" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html#putting-it-all-together-10"><i class="fa fa-check"></i><b>2.8.3</b> Putting It All Together</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 112: Differential Calculus</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-limit-of-a-function" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> The Limit of a Function<a href="the-limit-of-a-function.html#the-limit-of-a-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the previous section, limits appeared naturally when studying:</p>
+<ul>
+<li>tangent lines<br />
+</li>
+<li>instantaneous velocity</li>
+</ul>
+<p>Now we study <strong>limits themselves</strong> as a fundamental concept in calculus, independent of geometry and motion. Limits describe how a function behaves <strong>near a point</strong>, not necessarily at the point.</p>
+<hr />
+<div id="intuitive-idea-of-a-limit" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Intuitive Idea of a Limit<a href="the-limit-of-a-function.html#intuitive-idea-of-a-limit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-8" class="definition"><strong>Definition 2.4  </strong></span>Let <span class="math inline">\(f(x)\)</span> be defined near <span class="math inline">\(a\)</span>. We write:
+<span class="math display">\[
+\lim_{x \to a} f(x) = L
+\]</span>
+and say:
+“The limit of <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(a\)</span> is <span class="math inline">\(L\)</span>”<br />
+if the values of <span class="math inline">\(f(x)\)</span> can be made <strong>arbitrarily close to <span class="math inline">\(L\)</span></strong> by taking <span class="math inline">\(x\)</span> sufficiently close to <span class="math inline">\(a\)</span>, <strong>but not equal to <span class="math inline">\(a\)</span></strong>.</p>
+</div>
+<div class="note">
+<p><strong>Limits depend on behavior near a point, not the value at the point.</strong></p>
+<ul>
+<li><span class="math inline">\(f(a)\)</span> may be undefined<br />
+</li>
+<li><span class="math inline">\(f(a)\)</span> may exist but differ from the limit<br />
+</li>
+<li>the limit may exist even if the function is not defined at <span class="math inline">\(a\)</span></li>
+</ul>
+</div>
+<hr />
+</div>
+<div id="numerical-approach-to-limits" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Numerical Approach to Limits<a href="the-limit-of-a-function.html#numerical-approach-to-limits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We estimate limits using <strong>tables of values</strong>:</p>
+<ul>
+<li>choose values close to <span class="math inline">\(a\)</span><br />
+</li>
+<li>approach from both sides<br />
+</li>
+<li>observe stabilization</li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Example 2.5  </strong></span>Numerical Limit</p>
+<p><strong>Problem</strong></p>
+<p>Estimate:
+<span class="math display">\[
+\lim_{x \to 2} (x^2 - 2x + 2)
+\]</span></p>
+<p><strong>Solution</strong></p>
+<p>Evaluate near <span class="math inline">\(x=2\)</span>:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x\)</span></th>
+<th><span class="math inline">\(f(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.9</td>
+<td>3.71</td>
+</tr>
+<tr class="even">
+<td>1.99</td>
+<td>3.9701</td>
+</tr>
+<tr class="odd">
+<td>2.01</td>
+<td>4.0301</td>
+</tr>
+<tr class="even">
+<td>2.1</td>
+<td>4.31</td>
+</tr>
+</tbody>
+</table>
+<p>Values approach <strong>4</strong>.</p>
+</div>
+<p>Graphically:</p>
+<ul>
+<li>as <span class="math inline">\(x \to a\)</span><br />
+</li>
+<li>the <strong>y-values approach <span class="math inline">\(L\)</span></strong></li>
+</ul>
+<p>even if:
+- the point is missing<br />
+- the point is a hole<br />
+- the point has a different value</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-10" class="example"><strong>Example 2.6  </strong></span>Limit Exists but Function Value Is Different</p>
+<p><strong>Problem</strong></p>
+<p>Let:
+<span class="math display">\[
+f(x)=
+\begin{cases}
+\frac{x-1}{x^2-1}, &amp; x\neq 1 \\
+2, &amp; x=1
+\end{cases}
+\]</span>
+Find:
+<span class="math display">\[
+\lim_{x \to 1} f(x)
+\]</span></p>
+<p><strong>Solution</strong></p>
+<p>Factor:
+<span class="math display">\[
+\frac{x-1}{(x-1)(x+1)}=\frac{1}{x+1}, \quad x\neq 1
+\]</span></p>
+<p><span class="math display">\[
+\lim_{x \to 1} f(x) = \frac{1}{2}
+\]</span></p>
+<p>Even though <span class="math inline">\(f(1)=2\)</span>:
+<span class="math display">\[
+\lim_{x\to 1} f(x)=\frac{1}{2}.
+\]</span></p>
+</div>
+<hr />
+</div>
+<div id="one-sided-limits" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> One-Sided Limits<a href="the-limit-of-a-function.html#one-sided-limits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes behavior differs depending on direction.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-11" class="definition"><strong>Definition 2.5  </strong></span>Left-hand limit: The values of <span class="math inline">\(x\)</span> get closer to <span class="math inline">\(a\)</span> from the left of <span class="math inline">\(a\)</span>
+<span class="math display">\[
+\lim_{x \to a^-} f(x)
+\]</span></p>
+<p>Right-hand limit: The values of <span class="math inline">\(x\)</span> get closer to <span class="math inline">\(a\)</span> from the right of <span class="math inline">\(a\)</span>
+<span class="math display">\[
+\lim_{x \to a^+} f(x)
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-12" class="theorem"><strong>Theorem 2.1  </strong></span><strong>Fundamental Rule</strong></p>
+<p><span class="math display">\[
+\lim_{x \to a} f(x) = L
+\quad \text{iff} \quad
+\lim_{x \to a^-} f(x)=L \;\text{and}\; \lim_{x \to a^+} f(x)=L.
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-13" class="example"><strong>Example 2.7  </strong></span>One-Sided Limits</p>
+<p><strong>Problem</strong></p>
+<p>Let:
+<span class="math display">\[
+f(x)=
+\begin{cases}
+0, &amp; x&lt;0 \\
+1, &amp; x&gt;0
+\end{cases}
+\]</span></p>
+<p>Find:
+<span class="math display">\[
+\lim_{x\to 0^-} f(x), \quad
+\lim_{x\to 0^+} f(x), \quad
+\lim_{x\to 0} f(x)
+\]</span></p>
+<p><strong>Solution</strong></p>
+<p><span class="math display">\[
+\lim_{x\to 0^-} f(x)=0
+\]</span>
+<span class="math display">\[
+\lim_{x\to 0^+} f(x)=1
+\]</span></p>
+<p>Since they are not equal:</p>
+<p><span class="math display">\[
+\lim_{x\to 0} f(x)\ \text{does not exist}
+\]</span></p>
+</div>
+<hr />
+</div>
+<div id="infinite-limits" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Infinite Limits<a href="the-limit-of-a-function.html#infinite-limits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes values grow without bound.
+<span class="math display">\[
+\lim_{x\to a} f(x)=\infty
+\quad \text{or} \quad
+\lim_{x\to a} f(x)=-\infty.
+\]</span>
+These <strong>do not mean the limit exists</strong> — they describe divergence behavior.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-14" class="example"><strong>Example 2.8  </strong></span>Infinite Limit</p>
+<p><strong>Problem</strong></p>
+<p>Evaluate:
+<span class="math display">\[
+\lim_{x \to 0} \frac{1}{x^2}
+\]</span></p>
+<p><strong>Solution</strong></p>
+<p>As <span class="math inline">\(x\to 0\)</span>, <span class="math inline">\(x^2 \to 0^+\)</span>, so:</p>
+<p><span class="math display">\[
+\frac{1}{x^2} \to \infty.
+\]</span>
+Therefore,
+<span class="math display">\[
+\lim_{x\to 0} \frac{1}{x^2}=\infty.
+\]</span></p>
+</div>
+<hr />
+</div>
+<div id="vertical-asymptotes" class="section level3 hasAnchor" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> Vertical Asymptotes<a href="the-limit-of-a-function.html#vertical-asymptotes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-15" class="definition"><strong>Definition 2.6  </strong></span>A line <span class="math inline">\(x=a\)</span> is a <strong>vertical asymptote</strong> if:
+<span class="math display">\[
+\lim_{x\to a} f(x)=\infty \quad \text{or} \quad -\infty
+\]</span>
+(or one-sided versions)</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-16" class="example"><strong>Example 2.9  </strong></span>Vertical Asymptote</p>
+<p><strong>Problem</strong></p>
+<p>Find the vertical asymptote of:
+<span class="math display">\[
+f(x)=\frac{2x}{x-3}
+\]</span></p>
+<p><strong>Solution</strong></p>
+<p>Denominator <span class="math inline">\(=0\)</span> at <span class="math inline">\(x=3\)</span>.</p>
+<p>Right side:
+<span class="math display">\[
+x\to 3^+ \Rightarrow f(x)\to \infty
+\]</span></p>
+<p>Left side:
+<span class="math display">\[
+x\to 3^- \Rightarrow f(x)\to -\infty
+\]</span></p>
+<p><span class="math display">\[
+x=3 \text{ is a vertical asymptote}
+\]</span></p>
+</div>
+<p>Some functions never settle to a value.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-17" class="example"><strong>Example 2.10  </strong></span>Limit Does Not Exist (Oscillation)</p>
+<p><strong>Problem</strong></p>
+<p><span class="math display">\[
+\lim_{x\to 0} \sin\left(\frac{\pi}{x}\right)
+\]</span></p>
+<p><strong>Solution</strong></p>
+<p>As <span class="math inline">\(x\to 0\)</span>:</p>
+<ul>
+<li>function oscillates infinitely between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span></li>
+<li>does not approach a single value</li>
+</ul>
+<p><span class="math display">\[
+\text{Limit does not exist}
+\]</span></p>
+</div>
+<hr />
+</div>
+<div id="putting-it-all-together-5" class="section level3 hasAnchor" number="2.2.6">
+<h3><span class="header-section-number">2.2.6</span> Putting It All Together<a href="the-limit-of-a-function.html#putting-it-all-together-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>A limit describes behavior near a point — not at the point.</strong> Limits are about <strong>tendency</strong>, <strong>approach</strong>, <strong>direction</strong>, and <strong>local structure</strong>, not exact values.</p>
+<div id="conceptual-takeaways-6" class="section level4 hasAnchor" number="2.2.6.1">
+<h4><span class="header-section-number">2.2.6.1</span> Conceptual Takeaways<a href="the-limit-of-a-function.html#conceptual-takeaways-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Limits describe <strong>local behavior</strong>, not point values<br />
+</li>
+<li>A function value and a limit are independent concepts<br />
+</li>
+<li>Limits are about <strong>approach</strong>, not arrival<br />
+</li>
+<li>Tables and graphs are approximations, not proofs<br />
+</li>
+<li>Numerical methods can mislead (rounding errors, cancellation)<br />
+</li>
+<li>One-sided limits detect directional behavior<br />
+</li>
+<li>Limits fail if:
+<ul>
+<li>oscillation occurs<br />
+</li>
+<li>sides disagree<br />
+</li>
+<li>divergence occurs<br />
+</li>
+</ul></li>
+<li>Infinite limits describe <strong>unbounded growth</strong>, not numbers<br />
+</li>
+<li>Vertical asymptotes are geometric expressions of infinite limits<br />
+</li>
+<li>Limits unify algebra, geometry, physics, and data analysis<br />
+</li>
+<li>Limits formalize the idea of “getting close”</li>
+</ul>
+</div>
+<div id="skills-you-should-be-able-to-do-6" class="section level4 hasAnchor" number="2.2.6.2">
+<h4><span class="header-section-number">2.2.6.2</span> Skills You Should Be Able To Do<a href="the-limit-of-a-function.html#skills-you-should-be-able-to-do-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Distinguish limit value from function value<br />
+</li>
+<li>Estimate limits numerically<br />
+</li>
+<li>Estimate and interpret limits graphically</li>
+<li>Use correct limit notation<br />
+</li>
+<li>Recognize non-existent limits<br />
+</li>
+<li>Explain one-sided behavior/ limits<br />
+</li>
+<li>Identify infinite limits and vertical asymptotes<br />
+</li>
+<li>Understand asymptotic behavior<br />
+</li>
+<li>Recognize oscillation and analyze oscillating functions<br />
+</li>
+<li>Interpret discontinuities<br />
+</li>
+<li>Analyze rational functions near singularities<br />
+</li>
+<li>Distinguish removable vs non-removable discontinuities<br />
+</li>
+<li>Interpret divergence<br />
+</li>
+<li>Detect numerical instability</li>
+</ul>
+</div>
+<div id="problems-4" class="section level4 hasAnchor" number="2.2.6.3">
+<h4><span class="header-section-number">2.2.6.3</span> Problems<a href="the-limit-of-a-function.html#problems-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<hr />
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-tangent-and-velocity-problems.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="calculating-limits-using-the-limit-laws.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["M112-Book.pdf", "M112-Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
