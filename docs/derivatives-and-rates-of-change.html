@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.7 Derivatives and Rates of Change | MATH 112: Differential Calculus</title>
+  <meta name="description" content="A companion to Calculus by James Stewart" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.7 Derivatives and Rates of Change | MATH 112: Differential Calculus" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A companion to Calculus by James Stewart" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.7 Derivatives and Rates of Change | MATH 112: Differential Calculus" />
+  
+  <meta name="twitter:description" content="A companion to Calculus by James Stewart" />
+  
+
+<meta name="author" content="The Elements Math" />
+
+
+<meta name="date" content="2026-02-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="limits-at-infinity-horizontal-asymptotes.html"/>
+<link rel="next" href="the-derivative-as-a-function.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">M112: Differential Calculus</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="functions-and-models.html"><a href="functions-and-models.html"><i class="fa fa-check"></i><b>1</b> Functions and Models</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html"><i class="fa fa-check"></i><b>1.1</b> Four Ways to Represent a Function</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#four-representations-of-a-function"><i class="fa fa-check"></i><b>1.1.1</b> Four Representations of a Function</a></li>
+<li class="chapter" data-level="1.1.2" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#piecewise-defined-functions"><i class="fa fa-check"></i><b>1.1.2</b> Piecewise-Defined Functions</a></li>
+<li class="chapter" data-level="1.1.3" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#symmetry"><i class="fa fa-check"></i><b>1.1.3</b> Symmetry</a></li>
+<li class="chapter" data-level="1.1.4" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#increasing-and-decreasing-functions"><i class="fa fa-check"></i><b>1.1.4</b> Increasing and Decreasing Functions</a></li>
+<li class="chapter" data-level="1.1.5" data-path="four-ways-to-represent-a-function.html"><a href="four-ways-to-represent-a-function.html#putting-it-all-together"><i class="fa fa-check"></i><b>1.1.5</b> Putting it All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html"><i class="fa fa-check"></i><b>1.2</b> Mathematical Models: A Catalog of Essential Functions</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#linear-models"><i class="fa fa-check"></i><b>1.2.1</b> Linear Models</a></li>
+<li class="chapter" data-level="1.2.2" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#polynomial-functions"><i class="fa fa-check"></i><b>1.2.2</b> Polynomial Functions</a></li>
+<li class="chapter" data-level="1.2.3" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#power-functions"><i class="fa fa-check"></i><b>1.2.3</b> Power Functions</a></li>
+<li class="chapter" data-level="1.2.4" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#rational-functions"><i class="fa fa-check"></i><b>1.2.4</b> Rational Functions</a></li>
+<li class="chapter" data-level="1.2.5" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#algebraic-functions"><i class="fa fa-check"></i><b>1.2.5</b> Algebraic Functions</a></li>
+<li class="chapter" data-level="1.2.6" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#trigonometric-functions"><i class="fa fa-check"></i><b>1.2.6</b> Trigonometric Functions</a></li>
+<li class="chapter" data-level="1.2.7" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#exponential-functions"><i class="fa fa-check"></i><b>1.2.7</b> Exponential Functions</a></li>
+<li class="chapter" data-level="1.2.8" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#logarithmic-functions"><i class="fa fa-check"></i><b>1.2.8</b> Logarithmic Functions</a></li>
+<li class="chapter" data-level="1.2.9" data-path="mathematical-models-a-catalog-of-essential-functions.html"><a href="mathematical-models-a-catalog-of-essential-functions.html#putting-it-all-together-1"><i class="fa fa-check"></i><b>1.2.9</b> Putting it All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html"><i class="fa fa-check"></i><b>1.3</b> New Functions from Old Functions</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html#transformations-of-functions"><i class="fa fa-check"></i><b>1.3.1</b> Transformations of Functions</a></li>
+<li class="chapter" data-level="1.3.2" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html#combinations-of-functions"><i class="fa fa-check"></i><b>1.3.2</b> Combinations of Functions</a></li>
+<li class="chapter" data-level="1.3.3" data-path="new-functions-from-old-functions.html"><a href="new-functions-from-old-functions.html#putting-it-all-together-2"><i class="fa fa-check"></i><b>1.3.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html"><i class="fa fa-check"></i><b>1.4</b> Exponential Functions</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#graphical-behavior-of-y-bx"><i class="fa fa-check"></i><b>1.4.1</b> Graphical Behavior of <span class="math inline">\(y = b^x\)</span></a></li>
+<li class="chapter" data-level="1.4.2" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#applications-of-exponential-functions"><i class="fa fa-check"></i><b>1.4.2</b> Applications of Exponential Functions</a></li>
+<li class="chapter" data-level="1.4.3" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#the-number-e-and-the-natural-exponential-function"><i class="fa fa-check"></i><b>1.4.3</b> The Number <span class="math inline">\(e\)</span> and the Natural Exponential Function</a></li>
+<li class="chapter" data-level="1.4.4" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#graph-transformations-of-exponentials"><i class="fa fa-check"></i><b>1.4.4</b> Graph Transformations of Exponentials</a></li>
+<li class="chapter" data-level="1.4.5" data-path="exponential-functions-1.html"><a href="exponential-functions-1.html#putting-it-all-together-3"><i class="fa fa-check"></i><b>1.4.5</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html"><i class="fa fa-check"></i><b>1.5</b> Inverse Functions and Logarithms</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#graphs-of-inverse-functions"><i class="fa fa-check"></i><b>1.5.1</b> Graphs of Inverse Functions</a></li>
+<li class="chapter" data-level="1.5.2" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#logarithmic-functions-as-inverses"><i class="fa fa-check"></i><b>1.5.2</b> Logarithmic Functions as Inverses</a></li>
+<li class="chapter" data-level="1.5.3" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#solving-exponential-and-log-equations"><i class="fa fa-check"></i><b>1.5.3</b> Solving Exponential and Log Equations</a></li>
+<li class="chapter" data-level="1.5.4" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#inverse-trigonometric-functions"><i class="fa fa-check"></i><b>1.5.4</b> Inverse Trigonometric Functions</a></li>
+<li class="chapter" data-level="1.5.5" data-path="inverse-functions-and-logarithms.html"><a href="inverse-functions-and-logarithms.html#pulling-it-all-together"><i class="fa fa-check"></i><b>1.5.5</b> Pulling It All Together</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="limits-and-derivatives.html"><a href="limits-and-derivatives.html"><i class="fa fa-check"></i><b>2</b> Limits and Derivatives</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html"><i class="fa fa-check"></i><b>2.1</b> The Tangent and Velocity Problems</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#the-tangent-problem"><i class="fa fa-check"></i><b>2.1.1</b> The Tangent Problem</a></li>
+<li class="chapter" data-level="2.1.2" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#tangents-from-experimental-data"><i class="fa fa-check"></i><b>2.1.2</b> Tangents from Experimental Data</a></li>
+<li class="chapter" data-level="2.1.3" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#the-velocity-problem"><i class="fa fa-check"></i><b>2.1.3</b> The Velocity Problem</a></li>
+<li class="chapter" data-level="2.1.4" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#connection-between-tangents-and-velocity"><i class="fa fa-check"></i><b>2.1.4</b> Connection Between Tangents and Velocity</a></li>
+<li class="chapter" data-level="2.1.5" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#putting-it-all-together-4"><i class="fa fa-check"></i><b>2.1.5</b> Putting It All Together</a></li>
+<li class="chapter" data-level="2.1.6" data-path="the-tangent-and-velocity-problems.html"><a href="the-tangent-and-velocity-problems.html#conceptual-takeaways-5"><i class="fa fa-check"></i><b>2.1.6</b> Conceptual Takeaways</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html"><i class="fa fa-check"></i><b>2.2</b> The Limit of a Function</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#intuitive-idea-of-a-limit"><i class="fa fa-check"></i><b>2.2.1</b> Intuitive Idea of a Limit</a></li>
+<li class="chapter" data-level="2.2.2" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#numerical-approach-to-limits"><i class="fa fa-check"></i><b>2.2.2</b> Numerical Approach to Limits</a></li>
+<li class="chapter" data-level="2.2.3" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#one-sided-limits"><i class="fa fa-check"></i><b>2.2.3</b> One-Sided Limits</a></li>
+<li class="chapter" data-level="2.2.4" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#infinite-limits"><i class="fa fa-check"></i><b>2.2.4</b> Infinite Limits</a></li>
+<li class="chapter" data-level="2.2.5" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#vertical-asymptotes"><i class="fa fa-check"></i><b>2.2.5</b> Vertical Asymptotes</a></li>
+<li class="chapter" data-level="2.2.6" data-path="the-limit-of-a-function.html"><a href="the-limit-of-a-function.html#putting-it-all-together-5"><i class="fa fa-check"></i><b>2.2.6</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html"><i class="fa fa-check"></i><b>2.3</b> Calculating Limits Using the Limit Laws</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html#limit-laws"><i class="fa fa-check"></i><b>2.3.1</b> Limit Laws</a></li>
+<li class="chapter" data-level="2.3.2" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html#the-squeeze-theorem-sandwich-theorem"><i class="fa fa-check"></i><b>2.3.2</b> The Squeeze Theorem (Sandwich Theorem)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="calculating-limits-using-the-limit-laws.html"><a href="calculating-limits-using-the-limit-laws.html#putting-it-all-together-6"><i class="fa fa-check"></i><b>2.3.3</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="the-precise-definition-of-a-limit.html"><a href="the-precise-definition-of-a-limit.html"><i class="fa fa-check"></i><b>2.4</b> The Precise Definition of a Limit</a></li>
+<li class="chapter" data-level="2.5" data-path="continuity.html"><a href="continuity.html"><i class="fa fa-check"></i><b>2.5</b> Continuity</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="continuity.html"><a href="continuity.html#types-of-discontinuities"><i class="fa fa-check"></i><b>2.5.1</b> Types of Discontinuities</a></li>
+<li class="chapter" data-level="2.5.2" data-path="continuity.html"><a href="continuity.html#one-sided-continuity"><i class="fa fa-check"></i><b>2.5.2</b> One-Sided Continuity</a></li>
+<li class="chapter" data-level="2.5.3" data-path="continuity.html"><a href="continuity.html#composite-functions"><i class="fa fa-check"></i><b>2.5.3</b> Composite Functions</a></li>
+<li class="chapter" data-level="2.5.4" data-path="continuity.html"><a href="continuity.html#intermediate-value-theorem-ivt"><i class="fa fa-check"></i><b>2.5.4</b> Intermediate Value Theorem (IVT)</a></li>
+<li class="chapter" data-level="2.5.5" data-path="continuity.html"><a href="continuity.html#putting-it-all-together-7"><i class="fa fa-check"></i><b>2.5.5</b> Putting It All Together</a></li>
+<li class="chapter" data-level="2.5.6" data-path="continuity.html"><a href="continuity.html#skills-you-should-be-able-to-do-7"><i class="fa fa-check"></i><b>2.5.6</b> Skills You Should Be Able To Do</a></li>
+<li class="chapter" data-level="2.5.7" data-path="continuity.html"><a href="continuity.html#problems-6"><i class="fa fa-check"></i><b>2.5.7</b> Problems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html"><i class="fa fa-check"></i><b>2.6</b> Limits at Infinity; Horizontal Asymptotes</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#limits-at-infinity"><i class="fa fa-check"></i><b>2.6.1</b> Limits at Infinity</a></li>
+<li class="chapter" data-level="2.6.2" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#infinite-limits-at-infinity"><i class="fa fa-check"></i><b>2.6.2</b> Infinite Limits at Infinity</a></li>
+<li class="chapter" data-level="2.6.3" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#graph-interpretation"><i class="fa fa-check"></i><b>2.6.3</b> Graph Interpretation</a></li>
+<li class="chapter" data-level="2.6.4" data-path="limits-at-infinity-horizontal-asymptotes.html"><a href="limits-at-infinity-horizontal-asymptotes.html#putting-it-all-together-8"><i class="fa fa-check"></i><b>2.6.4</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html"><i class="fa fa-check"></i><b>2.7</b> Derivatives and Rates of Change</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#tangent-lines-and-limits"><i class="fa fa-check"></i><b>2.7.1</b> Tangent Lines and Limits</a></li>
+<li class="chapter" data-level="2.7.2" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#derivatives"><i class="fa fa-check"></i><b>2.7.2</b> Derivatives</a></li>
+<li class="chapter" data-level="2.7.3" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#tangent-line-using-derivatives"><i class="fa fa-check"></i><b>2.7.3</b> Tangent Line Using Derivatives</a></li>
+<li class="chapter" data-level="2.7.4" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#rates-of-change"><i class="fa fa-check"></i><b>2.7.4</b> Rates of Change</a></li>
+<li class="chapter" data-level="2.7.5" data-path="derivatives-and-rates-of-change.html"><a href="derivatives-and-rates-of-change.html#putting-it-all-together-9"><i class="fa fa-check"></i><b>2.7.5</b> Putting It All Together</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html"><i class="fa fa-check"></i><b>2.8</b> The Derivative as a Function</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html#continuity-vs-differentiability"><i class="fa fa-check"></i><b>2.8.1</b> Continuity vs Differentiability</a></li>
+<li class="chapter" data-level="2.8.2" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html#higher-derivatives"><i class="fa fa-check"></i><b>2.8.2</b> Higher Derivatives</a></li>
+<li class="chapter" data-level="2.8.3" data-path="the-derivative-as-a-function.html"><a href="the-derivative-as-a-function.html#putting-it-all-together-10"><i class="fa fa-check"></i><b>2.8.3</b> Putting It All Together</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH 112: Differential Calculus</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="derivatives-and-rates-of-change" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Derivatives and Rates of Change<a href="derivatives-and-rates-of-change.html#derivatives-and-rates-of-change" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The problems of finding the <strong>tangent line</strong> to a curve and finding the <strong>velocity</strong> of a moving object both involve the same special type of limit.<br />
+This type of limit is called a <strong>derivative</strong>.</p>
+<p>Derivatives are fundamental because they represent:</p>
+<ul>
+<li>Slopes of curves<br />
+</li>
+<li>Velocities of moving objects<br />
+</li>
+<li>Rates of change in science, engineering, economics, biology, and social sciences</li>
+</ul>
+<hr />
+<div id="tangent-lines-and-limits" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Tangent Lines and Limits<a href="derivatives-and-rates-of-change.html#tangent-lines-and-limits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let a curve <span class="math inline">\(C\)</span> be defined by:
+<span class="math display">\[
+y = f(x)
+\]</span>
+and let <span class="math inline">\(P(a, f(a))\)</span> be a point on the curve. Choose a nearby point <span class="math inline">\(Q(x, f(x))\)</span>, where <span class="math inline">\(x \neq a\)</span>.</p>
+<p>The slope of the <strong>secant line</strong> <span class="math inline">\(PQ\)</span> is:
+<span class="math display">\[
+m_{PQ} = \frac{f(x) - f(a)}{x - a}.
+\]</span>
+As <span class="math inline">\(Q \to P\)</span> (that is, as <span class="math inline">\(x \to a\)</span>), the secant line approaches the <strong>tangent line</strong>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-54" class="definition"><strong>Definition 2.19  </strong></span>The tangent line to <span class="math inline">\(y = f(x)\)</span> at the point <span class="math inline">\((a, f(a))\)</span> is the line through <span class="math inline">\((a, f(a))\)</span> with slope:
+<span class="math display">\[
+m = \lim_{x \to a} \frac{f(x) - f(a)}{x - a},
+\]</span>
+if this limit exists.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-55" class="definition"><strong>Definition 2.20  </strong></span>Let:
+<span class="math display">\[
+h = x - a \Rightarrow x = a + h.
+\]</span>
+Then the slope becomes:
+<span class="math display">\[
+m = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}.
+\]</span>
+This form is often easier to compute.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-56" class="example"><strong>Example 2.32  </strong></span>Tangent Line via Definition</p>
+<p>Find the tangent line to <span class="math inline">\(y = x^2\)</span> at <span class="math inline">\((1,1)\)</span>.</p>
+<p><strong>Solution:</strong></p>
+<p><span class="math display">\[
+m = \lim_{x \to 1} \frac{x^2 - 1}{x - 1}
+\]</span></p>
+<p>Factor:</p>
+<p><span class="math display">\[
+= \lim_{x \to 1} \frac{(x-1)(x+1)}{x-1}
+\]</span></p>
+<p><span class="math display">\[
+= \lim_{x \to 1} (x+1) = 2
+\]</span></p>
+<p>Slope <span class="math inline">\(m = 2\)</span></p>
+<p>Equation (point-slope form):</p>
+<p><span class="math display">\[
+y - 1 = 2(x - 1)
+\]</span></p>
+<p><span class="math display">\[
+y = 2x - 1
+\]</span></p>
+</div>
+<hr />
+</div>
+<div id="derivatives" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Derivatives<a href="derivatives-and-rates-of-change.html#derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Because this type of limit appears everywhere, it is given a special name.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-57" class="definition"><strong>Definition 2.21  </strong></span>The <strong>derivative</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span>, denoted <span class="math inline">\(f&#39;(a)\)</span>, is:
+<span class="math display">\[
+f&#39;(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}.
+\]</span>
+Equivalently:
+<span class="math display">\[
+f&#39;(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}.
+\]</span></p>
+</div>
+<p>Geometrically, we’ve seen that <span class="math inline">\(f^{\prime}\)</span> represents the slope of a tangent line to the graph of <span class="math inline">\(f\)</span>.
+<span class="math display">\[
+f&#39;(a) = \text{slope of the tangent line to } y=f(x) \text{ at } x=a
+\]</span></p>
+<p>If <span class="math inline">\(s = f(t)\)</span> is the <strong>position function</strong> of an object:
+<span class="math display">\[
+\text{Average velocity} = \frac{f(t+h)-f(t)}{h}
+\]</span>
+Taking the limit:
+<span class="math display">\[
+v(t) = \lim_{h \to 0} \frac{f(t+h)-f(t)}{h}
+\]</span>
+So, the velocity of an object is:
+<span class="math display">\[
+v(t) = f&#39;(t)
+\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-58" class="example"><strong>Example 2.33  </strong></span>Velocity from Position</p>
+<p>Let:
+<span class="math display">\[
+s(t) = 4.9t^2.
+\]</span>
+Find the velocity.</p>
+<p><strong>Solution:</strong></p>
+<p>Compute velocity:
+<span class="math display">\[
+v(t) = \lim_{h \to 0} \frac{4.9(t+h)^2 - 4.9t^2}{h}
+\]</span>
+<span class="math display">\[
+= \lim_{h \to 0} \frac{4.9(t^2 + 2th + h^2 - t^2)}{h}
+\]</span>
+<span class="math display">\[
+= \lim_{h \to 0} \frac{4.9(2th + h^2)}{h}
+\]</span>
+<span class="math display">\[
+= \lim_{h \to 0} 4.9(2t + h)
+\]</span>
+<span class="math display">\[
+= 9.8t
+\]</span></p>
+<p>So:</p>
+<p><span class="math display">\[
+v(t) = 9.8t.
+\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-59" class="example"><strong>Example 2.34  </strong></span>Derivative at a Point</p>
+<p>Let:
+<span class="math display">\[
+f(x) = x^2 - 8x + 9
+\]</span>
+Find <span class="math inline">\(f&#39;(a)\)</span>.</p>
+<p><strong>Solution:</strong>
+<span class="math display">\[
+f&#39;(a) = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
+\]</span>
+<span class="math display">\[
+= \lim_{h \to 0} \frac{(a+h)^2 - 8(a+h) + 9 - (a^2 - 8a + 9)}{h}
+\]</span>
+<span class="math display">\[
+= \lim_{h \to 0} \frac{2ah + h^2 - 8h}{h}
+\]</span>
+<span class="math display">\[
+= \lim_{h \to 0} (2a + h - 8)
+\]</span>
+<span class="math display">\[
+= 2a - 8.
+\]</span></p>
+<p>So:
+<span class="math display">\[
+f&#39;(a) = 2a - 8.
+\]</span></p>
+</div>
+<hr />
+</div>
+<div id="tangent-line-using-derivatives" class="section level3 hasAnchor" number="2.7.3">
+<h3><span class="header-section-number">2.7.3</span> Tangent Line Using Derivatives<a href="derivatives-and-rates-of-change.html#tangent-line-using-derivatives" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The equation of the tangent line at <span class="math inline">\((a, f(a))\)</span> is:</p>
+<p><span class="math display">\[
+y - f(a) = f&#39;(a)(x - a)
+\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-60" class="example"><strong>Example 2.35  </strong></span>Tangent Line Using Derivative</p>
+<p>Let:
+<span class="math display">\[
+f(x) = x^2 - 8x + 9
+\]</span>
+Find the tangent line to <span class="math inline">\(f\)</span> at <span class="math inline">\(x=3\)</span>.</p>
+<p><strong>Solution:</strong></p>
+<p><span class="math display">\[
+f&#39;(x) = 2x - 8
+\Rightarrow f&#39;(3) = -2
+\]</span>
+At the point <span class="math inline">\(x = 3\)</span>,
+<span class="math display">\[
+f(3) = 9 - 24 + 9 = -6
+\]</span>
+Therefore, the equation is
+<span class="math display">\[
+y + 6 = -2(x - 3)
+\]</span>
+or
+<span class="math display">\[
+y = -2x.
+\]</span></p>
+</div>
+<hr />
+</div>
+<div id="rates-of-change" class="section level3 hasAnchor" number="2.7.4">
+<h3><span class="header-section-number">2.7.4</span> Rates of Change<a href="derivatives-and-rates-of-change.html#rates-of-change" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If <span class="math inline">\(y = f(x)\)</span>, then:</p>
+<ul>
+<li><p>Average rate of change:
+<span class="math display">\[
+\frac{\Delta y}{\Delta x} = \frac{f(x_2)-f(x_1)}{x_2-x_1}
+\]</span></p></li>
+<li><p>Instantaneous rate of change:
+<span class="math display">\[
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = f&#39;(x)
+\]</span></p></li>
+</ul>
+<p>The derivative represents:</p>
+<ul>
+<li>Slope of tangent line<br />
+</li>
+<li>Velocity (physics)<br />
+</li>
+<li>Marginal cost (economics)<br />
+</li>
+<li>Growth rate (biology)<br />
+</li>
+<li>Reaction rate (chemistry)<br />
+</li>
+<li>Power (physics)<br />
+</li>
+<li>Population growth<br />
+</li>
+<li>Debt growth<br />
+</li>
+<li>Production efficiency<br />
+</li>
+<li>Learning curves</li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-61" class="example"><strong>Example 2.36  </strong></span>Real-World Interpretation</p>
+<p>Let <span class="math inline">\(C(x)\)</span> be the cost (in dollars) to produce <span class="math inline">\(x\)</span> units.</p>
+<p>Then:
+<span class="math display">\[
+C&#39;(x) = \text{marginal cost}
+\]</span>
+Units:
+<span class="math display">\[
+\frac{\text{dollars}}{\text{unit}}
+\]</span></p>
+<p>If:
+<span class="math display">\[
+C&#39;(1000) = 9
+\]</span></p>
+<p>Then, the cost of producing the next unit at 1000 units is approximately $9.</p>
+</div>
+<hr />
+</div>
+<div id="putting-it-all-together-9" class="section level3 hasAnchor" number="2.7.5">
+<h3><span class="header-section-number">2.7.5</span> Putting It All Together<a href="derivatives-and-rates-of-change.html#putting-it-all-together-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="conceptual-takeaways-10" class="section level4 hasAnchor" number="2.7.5.1">
+<h4><span class="header-section-number">2.7.5.1</span> Conceptual Takeaways<a href="derivatives-and-rates-of-change.html#conceptual-takeaways-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Derivatives arise from limits of secant slopes<br />
+</li>
+<li>Tangent lines are limiting positions of secant lines<br />
+</li>
+<li>Derivatives unify geometry and motion<br />
+</li>
+<li>Derivatives measure <strong>local behavior</strong><br />
+</li>
+<li>Zooming in makes curves look linear<br />
+</li>
+<li>Velocity is a derivative<br />
+</li>
+<li>Rates of change are derivatives<br />
+</li>
+<li>Tangents and rates of change are the same mathematically<br />
+</li>
+<li>Derivatives apply across disciplines<br />
+</li>
+<li>Slopes encode physical meaning<br />
+</li>
+<li>Units of derivatives matter<br />
+</li>
+<li>Local linearity is fundamental<br />
+</li>
+<li>Calculus connects algebra, geometry, and motion</li>
+</ul>
+</div>
+<div id="skills-you-should-be-able-to-do-9" class="section level4 hasAnchor" number="2.7.5.2">
+<h4><span class="header-section-number">2.7.5.2</span> Skills You Should Be Able To Do<a href="derivatives-and-rates-of-change.html#skills-you-should-be-able-to-do-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>You should now be able to:</p>
+<ul>
+<li>Define a derivative using limits<br />
+</li>
+<li>Compute derivatives from first principles<br />
+</li>
+<li>Interpret derivatives geometrically<br />
+</li>
+<li>Interpret derivatives physically<br />
+</li>
+<li>Find tangent line equations<br />
+</li>
+<li>Compute slopes of tangent lines<br />
+</li>
+<li>Use point-slope form correctly<br />
+</li>
+<li>Model velocity using derivatives<br />
+</li>
+<li>Interpret units of derivatives<br />
+</li>
+<li>Explain rates of change<br />
+</li>
+<li>Distinguish average vs instantaneous change<br />
+</li>
+<li>Apply derivatives to real-world contexts<br />
+</li>
+<li>Connect graphs to derivatives<br />
+</li>
+<li>Understand local linearization<br />
+</li>
+<li>Use both <span class="math inline">\(h \to 0\)</span> and <span class="math inline">\(x \to a\)</span> definitions<br />
+</li>
+<li>Explain the meaning of a derivative in words<br />
+</li>
+<li>Interpret derivative values contextually</li>
+</ul>
+<hr />
+</div>
+<div id="problems-8" class="section level4 hasAnchor" number="2.7.5.3">
+<h4><span class="header-section-number">2.7.5.3</span> Problems<a href="derivatives-and-rates-of-change.html#problems-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="limits-at-infinity-horizontal-asymptotes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-derivative-as-a-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["M112-Book.pdf", "M112-Book.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
