@@ -1,0 +1,10 @@
+bookdown::gitbook:
+  css: style.css
+  split_by: section
+  split_bib: yes
+  config:
+    toc:
+      collapse: subsection
+      before: |
+        <li><a href="./">M112: Differential Calculus</a></li>
+    download: ["pdf", "epub"]

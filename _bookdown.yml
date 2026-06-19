@@ -1,0 +1,19 @@
+book_filename: "M112-Book"
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files:
+  - index.Rmd
+  - "FunctionsAndModels.Rmd"
+  - "LimitsAndDerivatives.Rmd"
+  - "DifferentiationRules.Rmd"
+  - "ApplicationsOfDifferentiation.Rmd"
+  - "Integrals.Rmd"
+  - "ApplicationsOfIntegration.Rmd"
+  - "TechniquesOfIntegration.Rmd"
+  - "FurtherApplicationsOfIntegration.Rmd"
+  - "DifferentialEquations.Rmd"
+  - "ParametricEquationsAndPolarCoordinates.Rmd"
+  - "InfiniteSequencesAndSeries.Rmd"
+delete_merged_file: true
+output_dir: "docs"
