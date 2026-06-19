@@ -1,0 +1,2534 @@
+# Limits and Derivatives
+
+## The Tangent and Velocity Problems 
+
+**Motivation: Why Limits Appear in Calculus**
+
+Two of the most fundamental problems in calculus are:
+
+1. **The Tangent Problem**  
+   → How do we find the slope of a curve at a single point?
+
+2. **The Velocity Problem**  
+   → How do we define the velocity of an object at an exact instant in time?
+
+Both problems involve trying to measure something at **a single point**, where no interval exists — and both naturally lead to the concept of a **limit**.
+
+---
+
+### The Tangent Problem
+
+
+The word *tangent* comes from the Latin **tangens**, meaning *touching*. Informally, a tangent line is a line that:
+
+- touches a curve at a point  
+- has the **same direction** as the curve at that point  
+
+But “touching” alone is not mathematically precise:
+
+- A line can touch a curve but not match its direction  
+- A line can intersect a curve more than once and still behave like a tangent  
+
+So we need a **precise definition**.
+
+
+<div class="definition">
+A **secant line** is a line that intersects a curve at **two or more points**.
+
+If: 
+
+- \( P \) is a fixed point on the curve  
+- \( Q \) is another point on the curve  
+
+Then the slope of the secant line \( PQ \) is:
+\[
+m_{PQ} = \frac{f(x) - f(a)}{x - a}.
+\]
+</div>
+
+
+> **Key Idea:** A tangent line is the **limit of secant lines** as the second point approaches the first point.
+
+Symbolically:
+\[
+\text{slope of tangent at } x=a
+=
+\lim_{x \to a} \frac{f(x)-f(a)}{x-a}.
+\]
+
+This is the foundational idea that leads directly to **derivatives**.
+
+
+::: {.example}
+Tangent to a Curve
+
+**Problem**
+
+Find the equation of the tangent line to the parabola  
+\[
+y = x^2
+\]
+at the point \( P(1,1) \).
+
+**Solution:**
+
+Step 1: Use a nearby point \( Q(x, x^2) \)
+
+Slope of secant line:
+\[
+m_{PQ} = \frac{x^2 - 1}{x - 1}
+\]
+
+
+Step 2: Take the limit
+\[
+m = \lim_{x \to 1} \frac{x^2 - 1}{x - 1}
+\]
+Factor:
+\[
+= \lim_{x \to 1} \frac{(x-1)(x+1)}{x-1}
+= \lim_{x \to 1} (x+1) = 2
+\]
+
+Step 3: Use point-slope form
+\[
+y - 1 = 2(x - 1)
+\]
+:::
+
+Geometrically, as point \( Q \) moves closer to point \( P \):
+
+- secant lines rotate  
+- slopes stabilize  
+- the secant line approaches a single limiting line  
+
+That limiting line **is the tangent line**.
+
+---
+
+### Tangents from Experimental Data
+
+Not all functions come from formulas — many come from **measured data**.
+
+In this case:
+
+- The graph is approximated from data points  
+- Secant slopes are computed between nearby points  
+- The tangent slope is estimated using nearby secants  
+- The tangent slope represents an **instantaneous rate of change**  
+
+
+::: {.example}
+Tangent from a Table of Values
+
+**Problem**
+
+A function has the following values near \( x=1 \):
+
+| \(x\) | \(f(x)\) |
+|------|--------|
+| 0.9  | 1.81 |
+| 0.99 | 1.9801 |
+| 1.01 | 2.0201 |
+| 1.1  | 2.21 |
+
+Estimate the slope of the tangent line at \( x=1 \).
+
+
+**Solution**
+
+Compute secant slopes:
+
+Left side:
+\[
+m \approx \frac{1.9801 - 2}{0.99 - 1} = \frac{-0.0199}{-0.01} = 1.99
+\]
+
+Right side:
+\[
+m \approx \frac{2.0201 - 2}{1.01 - 1} = \frac{0.0201}{0.01} = 2.01
+\]
+
+Estimated tangent slope:
+\[
+m \approx 2
+\]
+:::
+
+
+
+### The Velocity Problem
+
+<div class="definition">
+Average Velocity
+
+Over a time interval \( [t_1, t_2] \):
+
+\[
+\text{Average velocity} =
+\frac{\text{change in position}}{\text{change in time}}
+=
+\frac{s(t_2)-s(t_1)}{t_2-t_1}
+\]
+</div>
+
+Velocity at a **single instant** cannot be computed directly because no time interval exists.
+
+So we define it as a **limit**:
+
+\[
+v(t) = \lim_{h \to 0} \frac{s(t+h)-s(t)}{h}
+\]
+
+
+
+::: {.example}
+Average vs Instantaneous Velocity
+
+**Problem**
+
+A particle moves according to:
+\[
+s(t) = t^2
+\]
+
+1. Find the average velocity on \( [2, 4] \)  
+2. Estimate the instantaneous velocity at \( t=2 \)
+
+
+
+**Solution**
+
+**1) Average velocity**
+
+\[
+v_{avg} = \frac{s(4)-s(2)}{4-2}
+= \frac{16 - 4}{2} = 6
+\]
+
+
+**2) Instantaneous velocity**
+
+\[
+v(2) = \lim_{h \to 0} \frac{s(2+h)-s(2)}{h}
+= \lim_{h \to 0} \frac{(2+h)^2 - 4}{h}
+\]
+
+\[
+= \lim_{h \to 0} \frac{4 + 4h + h^2 - 4}{h}
+= \lim_{h \to 0} \frac{4h + h^2}{h}
+\]
+
+\[
+= \lim_{h \to 0} (4 + h) = 4
+\]
+
+**Final Answers:**
+\[
+\boxed{v_{avg} = 6}, \qquad \boxed{v(2) = 4}
+\]
+:::
+
+---
+
+### Connection Between Tangents and Velocity
+
+These are actually the **same mathematical idea**:
+
+| Interpretation | Meaning |
+|------|--------|
+| Tangent slope | Instantaneous rate of change |
+| Velocity | Instantaneous rate of change of position |
+| Secant slope | Average rate of change |
+| Limit of secants | Derivative |
+| Tangent slope | Derivative |
+| Velocity | Derivative |
+
+
+<div class="definition">
+**Fundamental Unifying Formula**
+
+\[
+\lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
+\]
+
+This represents:
+
+- slope of tangent line  
+- instantaneous velocity  
+- instantaneous rate of change  
+- derivative  
+</div>
+
+
+
+::: {.example}
+Interpreting a Tangent Physically
+
+**Problem**
+
+The position of a vehicle is given by:
+\[
+s(t) = 3t^2 + 2t
+\]
+
+Find the slope of the tangent line at \( t=1 \) and interpret its meaning.
+
+---
+
+**Solution**
+
+\[
+v(1) = \lim_{h \to 0} \frac{s(1+h)-s(1)}{h}
+\]
+
+\[
+s(1) = 5
+\]
+
+\[
+s(1+h) = 3(1+h)^2 + 2(1+h) = 3(1 + 2h + h^2) + 2 + 2h
+\]
+\[
+= 3 + 6h + 3h^2 + 2 + 2h = 5 + 8h + 3h^2
+\]
+
+\[
+v(1) = \lim_{h \to 0} \frac{(5 + 8h + 3h^2) - 5}{h}
+= \lim_{h \to 0} \frac{8h + 3h^2}{h}
+\]
+
+\[
+= \lim_{h \to 0} (8 + 3h) = 8
+\]
+
+
+**Interpretation:**  
+At \( t=1 \), the vehicle’s instantaneous velocity is **8 units per second**.
+:::
+
+---
+
+### Putting It All Together
+
+
+> **Instantaneous change is the limit of average change.**
+
+This single idea connects:
+
+- tangents → slopes  
+- velocity → motion  
+- acceleration → changing velocity  
+- growth → population dynamics  
+- decay → radioactive processes  
+- learning curves → AI training  
+- finance → marginal change  
+- economics → marginal cost  
+- physics → kinematics  
+- data science → gradients  
+- machine learning → optimization  
+
+
+These problems lead directly to:
+\[
+\boxed{\text{Derivative} = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}}
+\]
+Which will become the central object of differential calculus.
+
+
+
+### Conceptual Takeaways
+
+- Tangents are **limits of secant lines**  
+- Velocity is the **limit of average velocities**  
+- Both problems are solved using **limits**  
+- Instantaneous change requires limiting processes  
+- Slopes represent **rates of change**  
+- Physical motion and geometry share the same mathematics  
+- Calculus begins when we formalize “approaching”  
+- The derivative unifies geometry and physics  
+- Data-based tangents are meaningful even without formulas  
+- Limits are not just abstract — they model real processes  
+
+
+#### Skills You Should Be Able To Do
+
+
+- Explain what a tangent line represents  
+- Explain what instantaneous velocity means  
+- Distinguish secant vs tangent lines  
+- Compute slopes of secant lines  
+- Interpret slopes as rates of change  
+- Use difference quotients  
+- Take limits of difference quotients  
+- Connect physical motion to slope  
+- Understand limits as approximation processes  
+- Explain why single-point measurements require limits  
+- Interpret data-based tangent estimates  
+- Use point-slope form  
+- Build tangent line equations  
+- Compute average velocity  
+- Approximate instantaneous velocity  
+
+
+#### Problems
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## The Limit of a Function 
+
+
+
+In the previous section, limits appeared naturally when studying:
+
+- tangent lines  
+- instantaneous velocity  
+
+Now we study **limits themselves** as a fundamental concept in calculus, independent of geometry and motion. Limits describe how a function behaves **near a point**, not necessarily at the point.
+
+---
+
+### Intuitive Idea of a Limit
+
+
+<div class="definition">
+Let \( f(x) \) be defined near \( a \).  We write:
+\[
+\lim_{x \to a} f(x) = L
+\]
+and say: 
+“The limit of \( f(x) \) as \( x \) approaches \( a \) is \( L \)”  
+if the values of \( f(x) \) can be made **arbitrarily close to \( L \)** by taking \( x \) sufficiently close to \( a \), **but not equal to \( a \)**.
+</div>
+
+
+
+<div class="note">
+**Limits depend on behavior near a point, not the value at the point.**
+
+- \( f(a) \) may be undefined  
+- \( f(a) \) may exist but differ from the limit  
+- the limit may exist even if the function is not defined at \( a \)
+</div>
+
+---
+
+### Numerical Approach to Limits
+
+We estimate limits using **tables of values**:
+
+- choose values close to \( a \)  
+- approach from both sides  
+- observe stabilization  
+
+
+::: {.example}
+Numerical Limit
+
+**Problem**
+
+Estimate:
+\[
+\lim_{x \to 2} (x^2 - 2x + 2)
+\]
+
+
+**Solution**
+
+Evaluate near \( x=2 \):
+
+| \(x\) | \(f(x)\) |
+|------|--------|
+| 1.9 | 3.71 |
+| 1.99 | 3.9701 |
+| 2.01 | 4.0301 |
+| 2.1 | 4.31 |
+
+Values approach **4**.
+:::
+
+
+Graphically:
+
+- as \( x \to a \)  
+- the **y-values approach \( L \)**  
+
+even if:
+- the point is missing  
+- the point is a hole  
+- the point has a different value  
+
+
+::: {.example}
+Limit Exists but Function Value Is Different
+
+**Problem**
+
+Let:
+\[
+f(x)=
+\begin{cases}
+\frac{x-1}{x^2-1}, & x\neq 1 \\
+2, & x=1
+\end{cases}
+\]
+Find:
+\[
+\lim_{x \to 1} f(x)
+\]
+
+
+**Solution**
+
+Factor:
+\[
+\frac{x-1}{(x-1)(x+1)}=\frac{1}{x+1}, \quad x\neq 1
+\]
+
+\[
+\lim_{x \to 1} f(x) = \frac{1}{2}
+\]
+
+Even though \( f(1)=2 \):
+\[
+\lim_{x\to 1} f(x)=\frac{1}{2}.
+\]
+:::
+
+---
+
+### One-Sided Limits
+
+Sometimes behavior differs depending on direction.
+
+
+<div class="definition">
+
+Left-hand limit:  The values of $x$ get closer to $a$ from the left of $a$ 
+\[
+\lim_{x \to a^-} f(x)
+\]
+
+Right-hand limit:  The values of $x$ get closer to $a$ from the right of $a$ 
+\[
+\lim_{x \to a^+} f(x)
+\]
+</div>
+
+
+
+<div class="theorem">
+**Fundamental Rule**
+
+\[
+\lim_{x \to a} f(x) = L
+\quad \text{iff} \quad
+\lim_{x \to a^-} f(x)=L \;\text{and}\; \lim_{x \to a^+} f(x)=L.
+\]
+</div>
+
+
+
+::: {.example}
+One-Sided Limits
+
+**Problem**
+
+Let:
+\[
+f(x)=
+\begin{cases}
+0, & x<0 \\
+1, & x>0
+\end{cases}
+\]
+
+Find:
+\[
+\lim_{x\to 0^-} f(x), \quad
+\lim_{x\to 0^+} f(x), \quad
+\lim_{x\to 0} f(x)
+\]
+
+
+**Solution**
+
+\[
+\lim_{x\to 0^-} f(x)=0
+\]
+\[
+\lim_{x\to 0^+} f(x)=1
+\]
+
+Since they are not equal:
+
+\[
+\lim_{x\to 0} f(x)\ \text{does not exist}
+\]
+:::
+
+---
+
+### Infinite Limits
+
+Sometimes values grow without bound.
+\[
+\lim_{x\to a} f(x)=\infty
+\quad \text{or} \quad
+\lim_{x\to a} f(x)=-\infty.
+\]
+These **do not mean the limit exists** — they describe divergence behavior.
+
+
+::: {.example}
+Infinite Limit
+
+**Problem**
+
+Evaluate:
+\[
+\lim_{x \to 0} \frac{1}{x^2}
+\]
+
+
+
+**Solution**
+
+As \( x\to 0 \), \( x^2 \to 0^+ \), so:
+
+\[
+\frac{1}{x^2} \to \infty.
+\]
+Therefore,
+\[
+\lim_{x\to 0} \frac{1}{x^2}=\infty.
+\]
+:::
+
+
+---
+
+### Vertical Asymptotes
+
+
+<div class="definition">
+A line \( x=a \) is a **vertical asymptote** if:
+\[
+\lim_{x\to a} f(x)=\infty \quad \text{or} \quad -\infty
+\]
+(or one-sided versions)
+</div>
+
+
+::: {.example}
+Vertical Asymptote
+
+**Problem**
+
+Find the vertical asymptote of:
+\[
+f(x)=\frac{2x}{x-3}
+\]
+
+
+**Solution**
+
+Denominator \(=0\) at \( x=3 \).
+
+Right side:
+\[
+x\to 3^+ \Rightarrow f(x)\to \infty
+\]
+
+Left side:
+\[
+x\to 3^- \Rightarrow f(x)\to -\infty
+\]
+
+\[
+x=3 \text{ is a vertical asymptote}
+\]
+:::
+
+
+Some functions never settle to a value.
+
+
+::: {.example}
+Limit Does Not Exist (Oscillation)
+
+**Problem**
+
+\[
+\lim_{x\to 0} \sin\left(\frac{\pi}{x}\right)
+\]
+
+
+
+**Solution**
+
+As \( x\to 0 \):
+
+- function oscillates infinitely between \( -1 \) and \( 1 \)
+- does not approach a single value
+
+\[
+\text{Limit does not exist}
+\]
+:::
+
+
+---
+
+### Putting It All Together
+
+
+
+**A limit describes behavior near a point — not at the point.**  Limits are about **tendency**, **approach**, **direction**, and **local structure**, not exact values.
+
+
+
+#### Conceptual Takeaways
+
+- Limits describe **local behavior**, not point values   
+- A function value and a limit are independent concepts  
+- Limits are about **approach**, not arrival  
+- Tables and graphs are approximations, not proofs  
+- Numerical methods can mislead (rounding errors, cancellation)  
+- One-sided limits detect directional behavior  
+- Limits fail if:  
+  - oscillation occurs  
+  - sides disagree  
+  - divergence occurs  
+- Infinite limits describe **unbounded growth**, not numbers  
+- Vertical asymptotes are geometric expressions of infinite limits  
+- Limits unify algebra, geometry, physics, and data analysis  
+- Limits formalize the idea of “getting close”  
+
+
+
+#### Skills You Should Be Able To Do
+
+
+- Distinguish limit value from function value  
+- Estimate limits numerically  
+- Estimate and interpret limits graphically 
+- Use correct limit notation  
+- Recognize non-existent limits  
+- Explain one-sided behavior/ limits  
+- Identify infinite limits and vertical asymptotes  
+- Understand asymptotic behavior  
+- Recognize oscillation and analyze oscillating functions  
+- Interpret discontinuities  
+- Analyze rational functions near singularities  
+- Distinguish removable vs non-removable discontinuities  
+- Interpret divergence  
+- Detect numerical instability  
+
+#### Problems
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Calculating Limits Using the Limit Laws 
+
+
+In earlier sections, limits were often **estimated numerically or graphically**. While useful for intuition, these methods can be unreliable.  This section introduces **Limit Laws**, which provide **algebraic rules** for computing limits exactly and systematically.
+
+These laws allow us to break complicated expressions into simpler pieces and compute limits using known limits.
+
+---
+
+### Limit Laws
+
+Assume that  
+\[
+\lim_{x \to a} f(x) \quad \text{and} \quad \lim_{x \to a} g(x)
+\]
+both exist, and that \( c \) is a constant.
+
+
+<div class="definition">
+**Algebraic Limit Laws**
+
+1. **Sum Law**
+\[
+\lim_{x \to a}[f(x)+g(x)] = \lim_{x \to a} f(x) + \lim_{x \to a} g(x)
+\]
+
+2. **Difference Law**
+\[
+\lim_{x \to a}[f(x)-g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x)
+\]
+
+3. **Constant Multiple Law**
+\[
+\lim_{x \to a}[c f(x)] = c \cdot \lim_{x \to a} f(x)
+\]
+
+4. **Product Law**
+\[
+\lim_{x \to a}[f(x)g(x)] = \lim_{x \to a} f(x)\cdot \lim_{x \to a} g(x)
+\]
+
+5. **Quotient Law**
+\[
+\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)}, 
+\quad \text{if } \lim_{x \to a} g(x) \neq 0
+\]
+</div>
+
+
+<div class="definition">
+**Special Limits**
+
+1.  **Constants and Identity**
+\[
+\lim_{x \to a} c = c, \qquad \lim_{x \to a} x = a
+\]
+
+2.  **Powers and Roots**
+\[
+\lim_{x \to a} x^n = a^n, \qquad 
+\lim_{x \to a} \sqrt[n]{x} = \sqrt[n]{a}
+\]
+
+3.  **Power Law**
+\[
+\lim_{x \to a} [f(x)]^n = \left(\lim_{x \to a} f(x)\right)^n
+\]
+</div>
+
+
+<div class="definition">
+**Direct Substitution Property:**  If \( f(x) \) is a **polynomial** or a **rational function** and \( a \) is in its domain, then:
+\[
+\lim_{x \to a} f(x) = f(a)
+\]
+</div>
+
+> For continuous algebraic functions, limits can be found by direct substitution.
+
+
+::: {.example}
+Polynomial Limit
+
+Evaluate the limit:
+\[
+\lim_{x \to 5} (2x^2 - 3x + 4)
+\]
+
+**Solution**
+
+\[
+= 2(5^2) - 3(5) + 4
+\]
+\[
+= 50 - 15 + 4
+\]
+\[
+= 39
+\]
+:::
+
+::: {.example}
+Rational Function
+
+Evaluate the limit:
+\[
+\lim_{x \to -2} \frac{x^3 + 2x^2 - 1}{5 - 3x}
+\]
+
+**Solution**
+
+\[
+= \frac{(-2)^3 + 2(-2)^2 - 1}{5 - 3(-2)}
+\]
+\[
+= \frac{-8 + 8 - 1}{5 + 6}
+\]
+\[
+= \frac{-1}{11}
+\]
+:::
+
+::: {.example}
+Indeterminate Form \( \frac{0}{0} \)
+
+Evaluate the limit:
+\[
+\lim_{x \to 1} \frac{x^2 - 1}{x - 1}
+\]
+
+
+**Solution**
+
+**Step 1: Factor**
+\[
+= \frac{(x-1)(x+1)}{x-1}
+\]
+
+**Step 2: Cancel**
+\[
+= x+1
+\]
+
+**Step 3: Take limit**
+\[
+\lim_{x \to 1} (x+1) = 2
+\]
+:::
+
+::: {.example}
+Difference of Squares Structure
+
+Evaluate the limit:
+\[
+\lim_{h \to 0} \frac{(3+h)^2 - 9}{h}
+\]
+
+
+**Solution**
+
+**1.  Expand numerator**
+\[
+= \frac{9 + 6h + h^2 - 9}{h}
+\]
+\[
+= \frac{6h + h^2}{h}
+\]
+
+**2.  Simplify**
+\[
+= 6 + h
+\]
+
+**3.  Limit**
+\[
+\lim_{h \to 0} (6+h) = 6
+\]
+:::
+
+::: {.example}
+Rationalization
+
+Evaluate the limit:
+\[
+\lim_{t \to 0} \frac{\sqrt{t+9} - 3}{t}
+\]
+
+
+**Solution**
+
+**1.  Multiply by conjugate:**
+\[
+\frac{\sqrt{t+9} - 3}{t} \cdot \frac{\sqrt{t+9} + 3}{\sqrt{t+9} + 3}
+\]
+
+\[
+= \frac{(t+9)-9}{t(\sqrt{t+9}+3)}
+\]
+
+**2.  Cancel \( t \):**
+\[
+= \frac{1}{\sqrt{t+9}+3}
+\]
+
+**3.  Take limit:**
+\[
+= \frac{1}{3+3} = \frac{1}{6}
+\]
+:::
+
+
+::: {.example}
+Absolute Value
+
+Evaluate the limit:
+\[
+\lim_{x \to 0} |x|
+\]
+
+
+**Solution**
+
+**1.  Right-hand:**
+\[
+\lim_{x \to 0^+} x = 0
+\]
+
+**2.  Left-hand:**
+\[
+\lim_{x \to 0^-} (-x) = 0
+\]
+
+Therefore:
+\[
+\lim_{x \to 0} |x| = 0
+\]
+:::
+
+
+
+::: {.example}
+Nonexistent Limit
+
+Evaluate the limit:
+\[
+\lim_{x \to 0} \frac{|x|}{x}
+\]
+
+
+**Solution**
+
+**1.  Right-hand:**
+\[
+\lim_{x \to 0^+} \frac{x}{x} = 1
+\]
+
+**2.  Left-hand:**
+\[
+\lim_{x \to 0^-} \frac{-x}{x} = -1
+\]
+
+Since they differ:
+\[
+\text{The limit does not exist.}
+\]
+:::
+
+
+### The Squeeze Theorem (Sandwich Theorem)
+
+The **Squeeze Theorem** (also called the **Sandwich Theorem**) is a method for evaluating limits of functions that are **trapped between two simpler functions** whose limits are known and equal.
+
+
+<div class="definition">
+Theorem (Squeeze Theorem)
+
+Suppose that for all \( x \) near \( a \) (except possibly at \( a \)),
+\[
+g(x) \le f(x) \le h(x)
+\]
+and
+\[
+\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L.
+\]
+Then,
+\[
+\lim_{x \to a} f(x) = L.
+\]
+</div>
+
+
+If a function is **always between two other functions**, and both of those functions approach the **same value**, then the trapped function has **no choice** but to approach that same value.
+
+> The outer functions “squeeze” the middle function into a single limit value.
+
+Visually, think of three curves:
+
+- Top curve: \( h(x) \)   
+- Middle curve: \( f(x) \)   
+- Bottom curve: \( g(x) \) 
+
+As \( x \to a \), both \( g(x) \) and \( h(x) \) approach the same height \( L \).  Since \( f(x) \) is stuck between them, it must also approach \( L \).
+
+
+::: {.example}
+Oscillating Function
+
+Evaluate the limit:
+\[
+\lim_{x \to 0} x^2 \sin\left(\frac{1}{x}\right)
+\]
+
+
+**Solution**
+
+**Step 1: Bound the sine function**
+\[
+-1 \le \sin\left(\frac{1}{x}\right) \le 1
+\]
+
+**Step 2: Multiply by \( x^2 \)**
+\[
+- x^2 \le x^2 \sin\left(\frac{1}{x}\right) \le x^2
+\]
+
+**Step 3: Take limits**
+\[
+\lim_{x \to 0} (-x^2) = 0, \qquad \lim_{x \to 0} x^2 = 0
+\]
+
+**Conclusion (Squeeze Theorem):**
+\[
+\lim_{x \to 0} x^2 \sin\left(\frac{1}{x}\right) = 0
+\]
+:::
+
+
+::: {.example}
+Absolute Value Oscillation
+
+Evaluate the limit:
+\[
+\lim_{x \to 0} x \cos\left(\frac{1}{x}\right)
+\]
+
+
+**Solution**
+
+**Bounding:**
+\[
+-1 \le \cos\left(\frac{1}{x}\right) \le 1
+\]
+
+Multiply by \( x \):
+\[
+- |x| \le x\cos\left(\frac{1}{x}\right) \le |x|
+\]
+
+Limits:
+\[
+\lim_{x \to 0} (-|x|) = 0, \qquad \lim_{x \to 0} |x| = 0
+\]
+
+**Conclusion:**
+\[
+\lim_{x \to 0} x\cos\left(\frac{1}{x}\right) = 0
+\]
+:::
+
+
+::: {.example}
+Fractional Squeeze
+
+Evaluate the limit: 
+
+\[
+\lim_{x \to 0} \frac{x^2}{\sqrt{x^2 + 1}}
+\]
+
+
+**Solution**
+
+\[
+\sqrt{x^2 + 1} \ge 1
+\]
+
+So:
+\[
+0 \le \frac{x^2}{\sqrt{x^2+1}} \le x^2
+\]
+
+Taking limits:
+\[
+\lim_{x \to 0} 0 = 0, \qquad \lim_{x \to 0} x^2 = 0
+\]
+
+Therefore,
+\[
+\lim_{x \to 0} \frac{x^2}{\sqrt{x^2 + 1}} = 0
+\]
+:::
+
+
+###  Putting It All Together
+
+#### Conceptual Takeaways
+
+- Limits behave **algebraically** like numbers.  
+- Complicated limits can be broken into **simpler components**.  
+- Not all limits can be evaluated by substitution.  
+- Indeterminate forms like \( \frac{0}{0} \) require algebraic simplification.  
+- The value of a function at a point **does not affect the limit**.  
+- Some limits require:  
+  - One-sided analysis  
+  - Algebraic restructuring  
+  - Bounding arguments (Squeeze Theorem)  
+
+#### Skills Checklist
+
+You should now be able to:
+
+- Apply all **five limit laws**  
+- Use **direct substitution**  
+- Factor and simplify expressions  
+- Rationalize expressions  
+- Identify **indeterminate forms**  
+- Compute **one-sided limits**  
+- Detect **nonexistent limits**  
+- Apply the **Squeeze Theorem**  
+- Distinguish between function value and limit value  
+
+#### Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## The Precise Definition of a Limit 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Continuity 
+
+In earlier sections, we observed that many limits can be found simply by **direct substitution**:
+\[
+\lim_{x \to a} f(x) = f(a).
+\]
+Functions with this property are called **continuous** at \( a \).  Intuitively, continuity means **no sudden jumps, breaks, or holes** in the graph.  A continuous process changes **gradually**, without interruption.
+
+
+<div class="definition">
+A function \( f \) is **continuous at a number \( a \)** if:
+\[
+\lim_{x \to a} f(x) = f(a).
+\]
+</div>
+
+
+This definition requires **three conditions**:
+
+1. \( f(a) \) is defined  
+2. \( \lim_{x \to a} f(x) \) exists  
+3. \( \lim_{x \to a} f(x) = f(a) \)  
+
+If any of these fail, the function is **discontinuous at \( a \)**.
+
+
+Intuitively, this means that:
+
+- Small changes in \( x \) produce small changes in \( f(x) \)  
+- No gaps, jumps, or holes  
+- Graph can be drawn **without lifting your pen**  
+
+---
+
+### Types of Discontinuities
+
+**1. Removable Discontinuity (Hole)**
+Occurs when:
+
+- Limit exists  
+- Function value is missing or incorrect  
+
+Example:
+\[
+f(x) = \frac{x^2-4}{x-2}
+\]
+
+Factor:
+\[
+f(x) = \frac{(x-2)(x+2)}{x-2} = x+2 \quad (x \ne 2)
+\]
+
+Limit exists, but \( f(2) \) undefined → removable discontinuity.
+
+
+**2. Jump Discontinuity**
+Left and right limits exist but are **not equal**.
+
+Example: Greatest integer function \( f(x) = \lfloor x \rfloor \)  
+Discontinuous at every integer.
+
+**3. Infinite Discontinuity**
+Function grows without bound.
+
+Example:
+\[
+f(x) = \frac{1}{x}
+\]
+Discontinuous at \( x=0 \).
+
+---
+
+### One-Sided Continuity
+
+
+<div class="definition">
+A function is right-continuous at \( a \) if:
+\[
+\lim_{x \to a^+} f(x) = f(a)
+\]
+
+A function is left-continuous at \( a \) if:
+\[
+\lim_{x \to a^-} f(x) = f(a).
+\]
+</div>
+
+
+<div class="definition">
+A function is **continuous on an interval** if it is continuous at **every point** in the interval (with one-sided continuity at endpoints if needed).
+</div>
+
+
+<div class="theorem">
+If \( f \) and \( g \) are continuous at \( a \), then the following are also continuous at \( a \):
+
+- \( f+g \)  
+- \( f-g \)  
+- \( cf \)    
+- \( fg \)  
+- \( \frac{f}{g} \), if \( g(a) \ne 0 \)  
+</div>
+
+This leads to the following group of continuous functions.
+
+
+
+<div class="theorem">
+The following are continuous **everywhere on their domains**:
+
+- Polynomials  
+- Rational functions  
+- Root functions  
+- Trigonometric functions  
+- Inverse trigonometric functions  
+- Exponential functions  
+- Logarithmic functions  
+</div>
+
+---
+
+### Composite Functions
+
+If \( t \) is continuous at \( a \) and \( f \) is continuous at \( t(a) \), then the composite function
+\[
+(f \circ t)(x) = f(t(x))
+\]
+is continuous at \( a \).
+
+
+<div class="theorem">
+A continuous function of a continuous function is continuous.
+</div>
+
+
+If a function is continuous at \( a \), then:
+\[
+\lim_{x \to a} f(x) = f(a).
+\]
+This allows **direct substitution** for limits.
+
+
+::: {.example}
+Direct Substitution
+
+Evaluate the following limit:
+\[
+\lim_{x \to 2} (3x^2 - 5x + 1).
+\]
+
+**Solution**
+
+Polynomial → continuous
+
+\[
+\lim_{x \to 2} (3x^2 - 5x + 1) = 3(2)^2 - 5(2) + 1 = 12 - 10 + 1 = 3.
+\]
+:::
+
+::: {.example}
+Rational Function
+
+Evaluate the following limit:
+\[
+\lim_{x \to 1} \frac{x^2+1}{x+2}.
+\]
+
+**Solution**
+
+Denominator ≠ 0 → continuous
+
+\[
+\lim_{x \to 1} \frac{x^2+1}{x+2} = \frac{1^2+1}{1+2} = \frac{2}{3}.
+\]
+:::
+
+::: {.example}
+Composite Function
+
+Where is $h$ continuous?
+\[
+h(x) = \sin(x^2).
+\]
+
+
+**Solution**
+
+- \( x^2 \) is continuous  
+- \( \sin x \) is continuous  
+→ \( \sin(x^2) \) is continuous everywhere
+:::
+
+::: {.example}
+Detecting Discontinuity
+
+Where is $f$ continuous?
+\[
+f(x) = \ln(x) + \frac{1}{x-1}.
+\]
+
+
+**Solution**
+
+
+- \( \ln(x) \): domain \( x>0 \)  
+- \( \frac{1}{x-1} \): undefined at \( x=1 \)
+
+So discontinuous at \( x=1 \), continuous elsewhere on domain.
+:::
+
+---
+
+### Intermediate Value Theorem (IVT)
+
+
+<div class="definition">  **Intermediate Value Theorem (IVT)**:
+If \( f \) is continuous on \( [a,b] \) and \( N \) is any number between \( f(a) \) and \( f(b) \), then there exists \( c \in (a,b) \) such that:
+\[
+f(c) = N.
+\]
+</div>
+
+**Meaning:** A continuous function takes **every intermediate value**.
+
+
+::: {.example}
+Root Existence
+
+Show that the equation
+\[
+f(x) = x^3 - 4x - 1 = 0
+\]
+has a root in \( (1,2) \).
+
+
+**Solution:**
+Compute:
+\[
+f(1) = -4 < 0, \qquad f(2) = 8 - 8 - 1 = -1 < 0
+\]
+
+Try interval:
+\[
+f(1.5) = 3.375 - 6 - 1 = -3.625 < 0
+\]
+\[
+f(2) > 0
+\]
+
+Sign change → by IVT, at least one root exists in the interval.
+:::
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- Continuity links **limits and function values**  
+- Discontinuity comes from:  
+  - Undefined values  
+  - Broken limits  
+  - Mismatched limits and values  
+- Most common functions are continuous on their domains  
+- Algebra preserves continuity  
+- Composition preserves continuity  
+- Continuity guarantees **predictable behavior**  
+- Continuous functions cannot “skip” values (IVT)  
+
+---
+
+### Skills You Should Be Able To Do
+
+You should now be able to:
+
+- Define continuity formally  
+- Identify discontinuities algebraically and graphically  
+- Classify types of discontinuities  
+- Use continuity to evaluate limits  
+- Apply direct substitution correctly  
+- Analyze domains of functions  
+- Determine continuity of composite functions  
+- Use algebra of continuous functions  
+- Apply the Intermediate Value Theorem  
+- Prove existence of roots  
+- Connect graphs, limits, and function values  
+- Reason about function behavior without computation  
+
+---
+
+### Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Limits at Infinity; Horizontal Asymptotes
+
+
+In earlier sections, we studied **infinite limits** where \( x \to a \) and the function values grow without bound.  In this section, we instead study what happens when:
+\[
+x \to \infty \quad \text{or} \quad x \to -\infty.
+\]
+That is, we analyze the **end behavior** of functions.
+
+
+We investigate:
+
+- What happens to \( f(x) \) when \( x \) becomes **very large**?  
+- What happens to \( f(x) \) when \( x \) becomes **very negative**?  
+
+Sometimes:
+
+- \( f(x) \to L \) (approaches a finite number)  
+- \( f(x) \to \infty \) or \( f(x) \to -\infty \)  
+- \( f(x) \) oscillates and does not approach anything  
+
+---
+
+### Limits at Infinity
+
+
+<div class="definition">
+Let \( f \) be defined for large values of \( x \). Then:
+\[
+\lim_{x \to \infty} f(x) = L.
+\]
+means the values of \( f(x) \) can be made arbitrarily close to \( L \) by taking \( x \) sufficiently large.
+</div>
+
+
+Notation:
+\[
+f(x) \to L \quad \text{as } x \to \infty
+\]
+
+
+<div class="definition">
+Let \( f \) be defined for large negative values of \( x \). Then:
+\[
+\lim_{x \to -\infty} f(x) = L
+\]
+means the values of \( f(x) \) approach \( L \) as \( x \) becomes large in the negative direction.
+</div>
+
+
+<div class="definition">
+The line \( y = L \) is a **horizontal asymptote** of \( y = f(x) \) if:
+\[
+\lim_{x \to \infty} f(x) = L
+\quad \text{or} \quad
+\lim_{x \to -\infty} f(x) = L
+\]
+</div>
+
+
+A function may have:
+
+- One horizontal asymptote  
+- Two horizontal asymptotes  
+- No horizontal asymptotes  
+
+
+::: {.example}
+Reciprocal Function
+
+\[
+\lim_{x \to \infty} \frac{1}{x} = 0, \qquad
+\lim_{x \to -\infty} \frac{1}{x} = 0
+\]
+
+So the horizontal asymptote is:
+
+\[
+y = 0
+\]
+:::
+
+::: {.example}
+Polynomial Growth
+
+\[
+\lim_{x \to \infty} x^3 = \infty, \qquad
+\lim_{x \to -\infty} x^3 = -\infty
+\]
+
+No horizontal asymptote.
+:::
+
+::: {.example}
+Exponential Function
+
+\[
+\lim_{x \to -\infty} e^x = 0, \qquad
+\lim_{x \to \infty} e^x = \infty
+\]
+
+Horizontal asymptote:
+
+\[
+y = 0 \quad (\text{as } x \to -\infty)
+\]
+:::
+
+::: {.example}
+Trigonometric Oscillation
+
+\[
+\lim_{x \to \infty} \sin x \quad \text{does not exist}
+\]
+
+The function oscillates forever → no limit → no asymptote.
+:::
+
+
+
+
+
+<div class="note">
+**Key Rule**
+
+For a rational function:
+\[
+f(x) = \frac{P(x)}{Q(x)}
+\]
+
+Let:
+
+- \( n = \deg(P) \)  
+- \( m = \deg(Q) \)  
+
+**Case 1: \( n < m \)**
+\[
+\lim_{x \to \pm\infty} f(x) = 0
+\]
+Horizontal asymptote: \( y = 0 \)
+
+**Case 2: \( n = m \)**
+\[
+\lim_{x \to \pm\infty} f(x) = \frac{\text{leading coeff of } P}{\text{leading coeff of } Q}
+\]
+Horizontal asymptote: ratio of leading coefficients
+
+**Case 3: \( n > m \)**
+\[
+\lim_{x \to \pm\infty} f(x) = \pm\infty
+\]
+No horizontal asymptote  
+(possibly slant/oblique asymptote)
+</div>
+
+
+::: {.example}
+Evaluate the following limit:
+
+\[
+\lim_{x \to \infty} \frac{3x^2 - 2x - 2}{5x^2 + 4x + 1}
+\]
+
+
+**Solution:**
+
+Divide by \( x^2 \):
+
+\[
+\frac{3 - \frac{2}{x} - \frac{2}{x^2}}{5 + \frac{4}{x} + \frac{1}{x^2}}
+\]
+
+Take limits:
+
+\[
+\frac{3 - 0 - 0}{5 + 0 + 0} = \frac{3}{5}
+\]
+
+Horizontal asymptote:
+
+\[
+y = \frac{3}{5}
+\]
+:::
+
+
+A function may have **two different horizontal asymptotes**:
+
+\[
+\lim_{x \to \infty} f(x) = L_1, \qquad
+\lim_{x \to -\infty} f(x) = L_2
+\]
+
+Example:
+
+\[
+\lim_{x \to \infty} \arctan x = \frac{\pi}{2}, \qquad
+\lim_{x \to -\infty} \arctan x = -\frac{\pi}{2}
+\]
+
+Two horizontal asymptotes:
+\[
+y = \frac{\pi}{2}, \qquad y = -\frac{\pi}{2}
+\]
+
+---
+
+### Infinite Limits at Infinity
+
+
+<div class="definition">
+\[
+\lim_{x \to \infty} f(x) = \infty
+\]
+means the values of \( f(x) \) grow arbitrarily large as \( x \to \infty \).
+
+Similarly:
+\[
+\lim_{x \to -\infty} f(x) = -\infty
+\]
+
+means the values of \( f(x) \) grow arbitrarily large and negative as \( x \to - \infty \).
+</div>
+
+
+
+
+
+::: {.example}
+Radical Example
+
+\[
+\lim_{x \to \infty} \left(\sqrt{x^2 + 1} - x \right)
+\]
+
+**Solution:**
+
+Multiply by conjugate:
+\[
+= \lim_{x \to \infty} 
+\frac{1}{\sqrt{x^2 + 1} + x}
+\]
+
+Denominator grows → expression goes to 0
+
+\[
+\lim_{x \to \infty} \left(\sqrt{x^2 + 1} - x \right) = 0.
+\]
+:::
+
+
+---
+
+### Graph Interpretation
+
+- Horizontal asymptote → graph flattens toward a line  
+- Infinite limit → graph grows upward/downward without bound  
+- Oscillation → no limit  
+- Different ends → different asymptotes  
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- Limits at infinity describe **long-term behavior**  
+- Horizontal asymptotes describe **end behavior lines**  
+- A function does not need to touch its asymptote  
+- A function may cross a horizontal asymptote  
+- Rational functions have predictable asymptotic behavior  
+- Degree comparison determines asymptotes  
+- Some functions approach constants (e.g., \( \frac{1}{x}, e^{-x}, \arctan x \))  
+- Some grow without bound (polynomials, exponentials)  
+- Some never settle (trigonometric oscillation)  
+- End behavior helps with **graphing and modeling**  
+
+---
+
+#### Skills You Should Be Able To Do
+
+You should now be able to:
+
+- Interpret limits at infinity conceptually  
+- Compute \( \lim_{x \to \infty} f(x) \) and \( \lim_{x \to -\infty} f(x) \)  
+- Identify horizontal asymptotes  
+- Classify infinite vs finite limits  
+- Analyze rational functions using degree comparison  
+- Use algebraic division by powers of \( x \)  
+- Apply conjugates for radical limits  
+- Recognize oscillating functions  
+- Determine end behavior of polynomials  
+- Connect limits to graph shape  
+- Sketch graphs using asymptotes and intercepts 
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Derivatives and Rates of Change 
+
+The problems of finding the **tangent line** to a curve and finding the **velocity** of a moving object both involve the same special type of limit.  
+This type of limit is called a **derivative**.
+
+Derivatives are fundamental because they represent:
+
+- Slopes of curves  
+- Velocities of moving objects  
+- Rates of change in science, engineering, economics, biology, and social sciences  
+
+---
+
+### Tangent Lines and Limits
+
+Let a curve \( C \) be defined by:
+\[
+y = f(x)
+\]
+and let \( P(a, f(a)) \) be a point on the curve.  Choose a nearby point \( Q(x, f(x)) \), where \( x \neq a \).
+
+The slope of the **secant line** \( PQ \) is:
+\[
+m_{PQ} = \frac{f(x) - f(a)}{x - a}.
+\]
+As \( Q \to P \) (that is, as \( x \to a \)), the secant line approaches the **tangent line**.
+
+
+<div class="definition">
+The tangent line to \( y = f(x) \) at the point \( (a, f(a)) \) is the line through \( (a, f(a)) \) with slope:
+\[
+m = \lim_{x \to a} \frac{f(x) - f(a)}{x - a},
+\]
+if this limit exists.
+</div>
+
+
+
+
+<div class="definition">
+Let:
+\[
+h = x - a \Rightarrow x = a + h.
+\]
+Then the slope becomes:
+\[
+m = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}.
+\]
+This form is often easier to compute.
+</div>
+
+
+::: {.example}
+Tangent Line via Definition
+
+Find the tangent line to \( y = x^2 \) at \( (1,1) \).
+
+**Solution:**
+
+\[
+m = \lim_{x \to 1} \frac{x^2 - 1}{x - 1}
+\]
+
+Factor:
+
+\[
+= \lim_{x \to 1} \frac{(x-1)(x+1)}{x-1}
+\]
+
+\[
+= \lim_{x \to 1} (x+1) = 2
+\]
+
+Slope \( m = 2 \)
+
+Equation (point-slope form):
+
+\[
+y - 1 = 2(x - 1)
+\]
+
+\[
+y = 2x - 1
+\]
+:::
+
+
+---
+
+### Derivatives
+
+Because this type of limit appears everywhere, it is given a special name.
+
+
+<div class="definition">
+The **derivative** of \( f \) at \( a \), denoted \( f'(a) \), is:
+\[
+f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}.
+\]
+Equivalently:
+\[
+f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}.
+\]
+</div>
+
+Geometrically, we've seen that $f^{\prime}$ represents the slope of a tangent line to the graph of $f$.
+\[
+f'(a) = \text{slope of the tangent line to } y=f(x) \text{ at } x=a
+\]
+
+
+If \( s = f(t) \) is the **position function** of an object:
+\[
+\text{Average velocity} = \frac{f(t+h)-f(t)}{h}
+\]
+Taking the limit:
+\[
+v(t) = \lim_{h \to 0} \frac{f(t+h)-f(t)}{h}
+\]
+So, the velocity of an object is:
+\[
+v(t) = f'(t)
+\]
+
+
+
+::: {.example}
+Velocity from Position
+
+Let:
+\[
+s(t) = 4.9t^2.
+\]
+Find the velocity.
+
+**Solution:**
+
+Compute velocity:
+\[
+v(t) = \lim_{h \to 0} \frac{4.9(t+h)^2 - 4.9t^2}{h}
+\]
+\[
+= \lim_{h \to 0} \frac{4.9(t^2 + 2th + h^2 - t^2)}{h}
+\]
+\[
+= \lim_{h \to 0} \frac{4.9(2th + h^2)}{h}
+\]
+\[
+= \lim_{h \to 0} 4.9(2t + h)
+\]
+\[
+= 9.8t
+\]
+
+So:
+
+\[
+v(t) = 9.8t.
+\]
+:::
+
+
+
+
+::: {.example}
+Derivative at a Point
+
+Let:
+\[
+f(x) = x^2 - 8x + 9
+\]
+Find \( f'(a) \).
+
+**Solution:**
+\[
+f'(a) = \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
+\]
+\[
+= \lim_{h \to 0} \frac{(a+h)^2 - 8(a+h) + 9 - (a^2 - 8a + 9)}{h}
+\]
+\[
+= \lim_{h \to 0} \frac{2ah + h^2 - 8h}{h}
+\]
+\[
+= \lim_{h \to 0} (2a + h - 8)
+\]
+\[
+= 2a - 8.
+\]
+
+So:
+\[
+f'(a) = 2a - 8.
+\]
+:::
+
+---
+
+### Tangent Line Using Derivatives
+
+The equation of the tangent line at \( (a, f(a)) \) is:
+
+\[
+y - f(a) = f'(a)(x - a)
+\]
+
+
+
+::: {.example}
+Tangent Line Using Derivative
+
+Let:
+\[
+f(x) = x^2 - 8x + 9
+\]
+Find the tangent line to $f$ at \( x=3 \).
+
+**Solution:**
+
+\[
+f'(x) = 2x - 8
+\Rightarrow f'(3) = -2
+\]
+At the point $x = 3$,
+\[
+f(3) = 9 - 24 + 9 = -6
+\]
+Therefore, the equation is
+\[
+y + 6 = -2(x - 3)
+\]
+or
+\[
+y = -2x.
+\]
+:::
+
+
+---
+
+### Rates of Change
+
+If \( y = f(x) \), then:
+
+- Average rate of change:
+\[
+\frac{\Delta y}{\Delta x} = \frac{f(x_2)-f(x_1)}{x_2-x_1}
+\]
+
+- Instantaneous rate of change:
+\[
+\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = f'(x)
+\]
+
+
+The derivative represents:
+
+- Slope of tangent line  
+- Velocity (physics)  
+- Marginal cost (economics)  
+- Growth rate (biology)  
+- Reaction rate (chemistry)  
+- Power (physics)  
+- Population growth  
+- Debt growth  
+- Production efficiency  
+- Learning curves  
+
+
+::: {.example}
+Real-World Interpretation
+
+Let \( C(x) \) be the cost (in dollars) to produce \( x \) units.
+
+Then:
+\[
+C'(x) = \text{marginal cost}
+\]
+Units:
+\[
+\frac{\text{dollars}}{\text{unit}}
+\]
+
+If:
+\[
+C'(1000) = 9
+\]
+
+Then, the cost of producing the next unit at 1000 units is approximately \$9.
+:::
+
+
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- Derivatives arise from limits of secant slopes  
+- Tangent lines are limiting positions of secant lines  
+- Derivatives unify geometry and motion  
+- Derivatives measure **local behavior**  
+- Zooming in makes curves look linear  
+- Velocity is a derivative  
+- Rates of change are derivatives  
+- Tangents and rates of change are the same mathematically  
+- Derivatives apply across disciplines  
+- Slopes encode physical meaning  
+- Units of derivatives matter  
+- Local linearity is fundamental  
+- Calculus connects algebra, geometry, and motion  
+
+
+
+#### Skills You Should Be Able To Do
+
+You should now be able to:
+
+- Define a derivative using limits  
+- Compute derivatives from first principles  
+- Interpret derivatives geometrically  
+- Interpret derivatives physically  
+- Find tangent line equations  
+- Compute slopes of tangent lines  
+- Use point-slope form correctly  
+- Model velocity using derivatives  
+- Interpret units of derivatives  
+- Explain rates of change  
+- Distinguish average vs instantaneous change  
+- Apply derivatives to real-world contexts  
+- Connect graphs to derivatives  
+- Understand local linearization  
+- Use both \( h \to 0 \) and \( x \to a \) definitions  
+- Explain the meaning of a derivative in words  
+- Interpret derivative values contextually  
+
+---
+
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## The Derivative as a Function 
+
+Previously, we defined the derivative of a function \( f \) at a fixed number \( a \) by
+\[
+f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}.
+\]
+Now we allow the point \( a \) to vary and replace it with a variable \( x \). This gives the **derivative as a function**:
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}.
+\]
+
+This means:
+
+- The derivative is **not just a number** at one point.  
+- The derivative is a **new function** that assigns a slope value to every input \( x \) where the limit exists.  
+
+
+For each value of \( x \) we can interpret \( f'(x) \) as the **slope of the tangent line** to the graph of \( y=f(x) \) at the point \( (x,f(x)) \).  Geometrically, the graph of \( f' \) records the slopes of \( f \).
+
+
+::: {.example}
+Polynomial Function
+
+**Problem:**  
+Let \( f(x) = x^3 - x \). Find \( f'(x) \).
+
+**Solution:**
+
+\begin{align*} 
+f'(x) &= \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} \\
+&= \lim_{h \to 0} \frac{(x+h)^3 - (x+h) - (x^3 - x)}{h} \\
+&= \lim_{h \to 0} \frac{x^3 + 3x^2h + 3xh^2 + h^3 - x - h - x^3 + x}{h} \\
+&= \lim_{h \to 0} \frac{3x^2h + 3xh^2 + h^3 - h}{h} \\
+&= \lim_{h \to 0} \left( 3x^2 + 3xh + h^2 - 1 \right) \\
+&= 3x^2 - 1.
+\end{align*}
+:::
+
+We can interpret the slope of $f$ in terms of increasing and decreasing:
+
+- Where \( f'(x) > 0 \): function increasing  
+- Where \( f'(x) < 0 \): function decreasing  
+- Where \( f'(x) = 0 \): horizontal tangent lines  
+
+---
+
+
+::: {.example}
+Square Root Function and Domain of the Derivative
+
+**Problem:**  
+Let \( f(x) = \sqrt{x} \). Find \( f'(x) \) and its domain.
+
+**Solution:**
+
+\[
+f'(x) = \lim_{h \to 0} \frac{\sqrt{x+h}-\sqrt{x}}{h}
+\]
+
+Multiply by the conjugate:
+\begin{align*}
+f'(x) &= \lim_{h \to 0} \frac{\sqrt{x+h}-\sqrt{x}}{h}\\
+& = \lim_{h \to 0} \frac{(\sqrt{x+h}-\sqrt{x})(\sqrt{x+h}+\sqrt{x})}{h(\sqrt{x+h}+\sqrt{x})} \\
+& = \lim_{h \to 0} \frac{(x+h)-x}{h(\sqrt{x+h}+\sqrt{x})} \\
+& = \lim_{h \to 0} \frac{h}{h(\sqrt{x+h}+\sqrt{x})} \\
+& = \lim_{h \to 0} \frac{1}{\sqrt{x+h}+\sqrt{x}} \\
+& = \frac{1}{2\sqrt{x}}.
+\end{align*}
+
+
+**Domain:**  
+Since division by \( \sqrt{x} \) requires \( x>0 \) (because we take roots of positive numbers and we cannot divide by 0),
+\[
+\text{Domain of } f'(x): (0,\infty)
+\]
+:::
+
+
+
+<div class="definition">
+A function \( f \) is **differentiable at \( a \)** if \( f'(a) \) exists.  It is **differentiable on an interval** if the derivative exists at every point in that interval.
+</div>
+
+
+::: {.example}
+Absolute Value Function
+
+Let \( f(x) = |x| \).  Determine where $f$ is differentiable.
+
+
+**Solution:**
+
+Piecewise form:
+\[
+f(x) =
+\begin{cases}
+x, & x>0 \\
+-x, & x<0
+\end{cases}
+\]
+
+Derivative:
+\[
+f'(x) =
+\begin{cases}
+1, & x>0 \\
+-1, & x<0
+\end{cases}
+\]
+At \( x=0 \):
+
+-  Left-hand limit \( \to -1 \)  
+-  Right-hand limit \( \to 1 \)  
+
+Since the limits are not equal:
+\[
+f'(0) \text{ does not exist}.
+\]
+So \( f(x)=|x| \) is **not differentiable at \( x=0 \)**.
+:::
+
+
+---
+
+### Continuity vs Differentiability
+
+
+<div class="definition">
+If \( f \) is differentiable at \( a \), then \( f \) is continuous at \( a \).
+</div>
+
+
+**Important:**  The converse is false:
+
+> A function can be continuous but not differentiable.
+
+
+How a Function Can Fail to Be Differentiable?  
+
+A function is **not differentiable** at a point if:
+
+1. **Corner / kink** (e.g. \( |x| \) at \( x=0 \))  
+2. **Discontinuity** (jump, hole, asymptote)  
+3. **Vertical tangent** (slope becomes infinite)  
+
+---
+
+### Higher Derivatives
+
+If \( f \) is differentiable, then its derivative \( f' \) is also a function and may itself be differentiable.
+
+
+<div class="note">
+
+- First derivative:  
+  \[
+  f'(x) = \frac{dy}{dx}
+  \]
+
+- Second derivative:  
+  \[
+  f''(x) = \frac{d^2 y}{dx^2}
+  \]
+
+- Third derivative:
+  \[
+  f'''(x) = \frac{d^3 y}{dx^3}
+  \]
+
+- \( n \)-th derivative:
+  \[
+  f^{(n)}(x) = \frac{d^n y}{dx^n}
+  \]
+</div>
+
+
+
+::: {.example}
+Second Derivative
+
+Let \( f(x) = x^3 - x \).  Find the second derivative of $f$.
+
+**Solution:**
+
+\[
+f'(x) = 3x^2 - 1
+\]
+\[
+f''(x) = 6x
+\]
+:::
+
+
+We can interpret derivatives in the following way:
+
+- \( f'(x) \): slope of the curve  
+- \( f''(x) \): rate of change of the slope  
+- \( f''(x) > 0 \): slope increasing  
+- \( f''(x) < 0 \): slope decreasing  
+
+
+
+
+Physically, if \( s(t) \) is the position of a function:
+
+- Velocity:  
+  \[
+  v(t) = s'(t)
+  \]  
+- Acceleration:  
+  \[
+  a(t) = s''(t)
+  \]  
+- Jerk:
+  \[
+  j(t) = s'''(t)
+  \]  
+
+Each derivative represents a **rate of change of the previous quantity**.
+
+---
+
+### Putting It All Together
+
+The derivative transforms a function into a **new function** that describes change.  It unifies geometry (slopes), physics (motion), economics (marginal change), and data science (rates, trends, dynamics) into one mathematical concept:
+
+> **The derivative is the mathematics of change itself.**
+
+#### Conceptual Takeaways
+
+- The derivative is a **function**, not just a number.  
+- \( f'(x) \) represents the **slope of the tangent line** at every point.  
+- The derivative encodes **how the function changes**.  
+- Differentiability implies continuity.  
+- A function may be continuous but not differentiable.  
+- Higher derivatives measure **changes of changes**:  
+  - slope → curvature → acceleration → jerk → etc.  
+
+
+
+
+#### Skills You Should Be Able To Do
+
+By the end of this section, you should be able to:
+
+- Compute derivatives using the **limit definition**  
+- Interpret \( f'(x) \) geometrically  
+- Interpret \( f'(x) \) physically (rate of change)  
+- Identify where a function is:  
+  - differentiable  
+  - not differentiable  
+- Explain why differentiability implies continuity  
+- Find second and higher derivatives  
+- Interpret second derivatives conceptually  
+- Connect:  
+  - \( f \) → position   
+  - \( f' \) → velocity  
+  - \( f'' \) → acceleration  
+  - \( f''' \) → jerk  
+
+
+
+
+
+####  Problems
+
+
+
+
+
+
+
+
+

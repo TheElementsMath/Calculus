@@ -1,0 +1,1601 @@
+# Integrals
+
+##  Areas and Distances 
+
+Two fundamental problems motivate the development of integral calculus:
+
+1. **The Area Problem** – finding the area under a curve.  
+2. **The Distance Problem** – finding the total distance traveled when velocity varies over time.  
+
+Although these problems appear different, they are solved using the same core idea:  **approximate with rectangles, then take a limit**.  This limiting process leads to the concept of the **definite integral**.
+
+---
+
+### The Area Problem
+
+We want to find the area of a region \( S \) bounded by:
+
+- the graph of a continuous function \( y = f(x) \),  
+- the vertical lines \( x = a \) and \( x = b \),  
+- and the \(x\)-axis (with \( f(x) \ge 0 \)).  
+
+For simple shapes (rectangles, triangles, polygons), area formulas are exact.  For curved boundaries, we instead:
+
+1. Divide the interval \([a,b]\) into small subintervals.  
+2. Approximate the region using rectangles.  
+3. Add the rectangle areas.  
+4. Take a limit as the number of rectangles increases.  
+
+This process creates increasingly accurate approximations.
+
+
+<div class="note">
+**Riemann Sum Approximation**
+
+Let the interval \([a,b]\) be divided into \(n\) equal subintervals.
+
+- Width of each subinterval:
+\[
+\Delta x = \frac{b-a}{n}
+\]
+
+- Sample points in each subinterval:  
+  \( x_1^*, x_2^*, \dots, x_n^* \)
+
+- Rectangle areas:
+\[
+f(x_i^*)\Delta x
+\]
+
+**General Area Approximation**
+\[
+A \approx \sum_{i=1}^n f(x_i^*)\,\Delta x
+\]
+
+This sum is called a **Riemann sum**.
+</div>
+
+
+---
+
+### Types of Riemann Sums
+
+- **Left-endpoint sum**:
+\[
+L_n = \sum_{i=1}^n f(x_{i-1})\Delta x
+\]
+
+- **Right-endpoint sum**:
+\[
+R_n = \sum_{i=1}^n f(x_i)\Delta x
+\]
+
+- **Midpoint sum**:
+\[
+M_n = \sum_{i=1}^n f(x_i^*)\Delta x
+\]
+(where \( x_i^* \) is the midpoint of each subinterval)
+
+
+<div class="definition">
+**Definition of Area (Integral Definition)**
+
+The exact area is defined as a limit:
+\[
+A = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x.
+\]
+This limit (when it exists) is the **definite integral**:
+\[
+A = \int_a^b f(x)\,dx.
+\]
+</div>
+
+
+::: {.example}
+Find the area Under \( y = x^2 \) on \([0,1]\)
+
+**Solution:**
+
+**Step 1: Define the partition**
+\[
+\Delta x = \frac{1-0}{n} = \frac{1}{n}
+\]
+
+Right endpoints:
+\[
+x_i = \frac{i}{n}
+\]
+
+**Step 2: Build the Riemann sum**
+\[
+R_n = \sum_{i=1}^n \left(\frac{i}{n}\right)^2 \frac{1}{n}
+= \frac{1}{n^3} \sum_{i=1}^n i^2
+\]
+
+**Step 3: Use the sum formula**
+\[
+\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}
+\]
+
+So:
+\[
+R_n = \frac{1}{n^3}\cdot \frac{n(n+1)(2n+1)}{6}
+= \frac{(n+1)(2n+1)}{6n^2}
+\]
+
+**Step 4: Take the limit**
+\[
+\lim_{n\to\infty} R_n = \frac{1}{3}
+\]
+
+Therefore,
+\[
+A = \int_0^1 x^2\,dx = \frac{1}{3}.
+\]
+:::
+
+
+
+::: {.example}
+Exponential Function
+
+Find the area under \( f(x)=e^{-2x} \) on \([0,2]\) using a limit expression.
+
+**Solution:**
+\[
+\Delta x = \frac{2}{n}, \quad x_i = \frac{2i}{n}
+\]
+
+\[
+A = \lim_{n\to\infty} \sum_{i=1}^n e^{-2x_i}\Delta x
+= \lim_{n\to\infty} \frac{2}{n}\sum_{i=1}^n e^{-4i/n}
+\]
+
+This is a Riemann sum representation of the integral:
+\[
+\int_0^2 e^{-2x}\,dx
+\]
+:::
+
+
+
+---
+
+### The Distance Problem
+
+If velocity varies with time, distance cannot be computed by  
+\[
+\text{distance} = \text{velocity} \times \text{time}.
+\]
+
+Instead, we approximate:
+
+1. Break time into small intervals \(\Delta t\).  
+2. Assume velocity is constant on each interval.  
+3. Add distances:  
+\[
+\text{distance} \approx \sum v(t_i^*)\Delta t
+\]
+
+Taking the limit gives:
+\[
+d = \lim_{n\to\infty} \sum_{i=1}^n v(t_i^*)\Delta t
+= \int_a^b v(t)\,dt
+\]
+
+
+Both the area and distance problems lead to the same structure:
+
+\[
+\text{Accumulated quantity} = \lim_{n\to\infty} \sum (\text{rate})\times(\text{small interval})
+\]
+
+This defines integration as **accumulation of continuous change**.
+
+---
+
+### Putting It All Together
+
+
+> Integration is the mathematical process of approximating accumulation with rectangles and taking a limit to obtain exact total change.
+
+#### Conceptual Takeaways
+
+- Area and distance are both accumulation problems.  
+- Curved regions are handled using rectangle approximations.  
+- Increasing the number of rectangles improves accuracy.  
+- Exact values come from taking limits.  
+- The definite integral is defined as a limit of Riemann sums.  
+- Integration measures **total accumulation**, not just geometric area.  
+
+---
+
+#### Skills You Should Be Able to Do
+
+By the end of this section, you should be able to:
+
+- Construct left, right, and midpoint Riemann sums  
+- Interpret \( \Delta x \) and \( \Delta t \) correctly  
+- Translate word problems into summation form  
+- Write definite integrals as limits of sums  
+- Recognize integrals as accumulation processes  
+- Connect geometry (area) with physical meaning (distance, work, flow, output)  
+- Use sigma notation for compact summation expressions  
+- Explain integration conceptually, not just computationally  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  The Definite Integral 
+
+Many problems in calculus lead to limits of sums of the form
+\[
+\lim_{n\to\infty} \sum_{i=1}^n f(x_i^*)\,\Delta x,
+\]
+where an interval \([a,b]\) is divided into many small subintervals and values of a function are multiplied by small widths and added together.
+
+This structure appears in:
+
+- area under curves,  
+- distance traveled,  
+- work,  
+- volumes,  
+- arc length,  
+- mass and center of mass,  
+- fluid pressure,  
+- and many other physical and geometric applications.  
+
+Because this type of limit occurs so frequently, it is given a special name: **the definite integral**.
+
+
+<div class="definition">
+
+Let \( f \) be defined on \( [a,b] \). Divide the interval into \( n \) subintervals of equal width
+\[
+\Delta x = \frac{b-a}{n}.
+\]
+Let \( x_i^* \) be any sample point in the \(i\)-th subinterval.  
+
+The **definite integral** of \( f \) from \( a \) to \( b \) is defined by
+\[
+\int_a^b f(x)\,dx \;=\; \lim_{n\to\infty} \sum_{i=1}^n f(x_i^*)\,\Delta x,
+\]
+provided the limit exists and is the same for all choices of sample points.
+</div>
+
+
+
+If this limit exists, we say that **\( f \) is integrable on \([a,b]\)**.
+
+
+<div class="note">
+Terminology and Notation
+
+\[
+\int_a^b f(x)\,dx
+\]
+
+- \( \int \) : integral sign (represents a limit of sums)  
+- \( f(x) \) : integrand  
+- \( a \) : lower limit of integration  
+- \( b \) : upper limit of integration  
+- \( dx \) : indicates the variable of integration  
+
+The entire expression \( \int_a^b f(x)\,dx \) represents a number, not a function.
+</div>
+
+---
+
+### Riemann Sums
+
+
+<div class="definition">
+
+The sum
+\[
+\sum_{i=1}^n f(x_i^*)\,\Delta x
+\]
+is called a **Riemann sum**.
+</div>
+
+The definite integral is the **limit of Riemann sums**.
+
+Geometrically,
+
+**Case 1: \( f(x) \ge 0 \) on \([a,b]\)**
+\[
+\int_a^b f(x)\,dx = \text{area under } y=f(x) \text{ from } a \text{ to } b
+\]
+
+**Case 2: \( f(x) \) changes sign**
+\[
+\int_a^b f(x)\,dx = A_{\text{above}} - A_{\text{below}}
+\]
+
+This is called **net area**.
+
+
+<div class="theorem">
+Integrability Theorem
+
+If \( f \) is:
+
+- continuous on \([a,b]\), or   
+- has only finitely many jump discontinuities,
+
+then \( f \) is integrable on \([a,b]\), and the definite integral exists.
+</div>
+
+
+
+If right endpoints are chosen as sample points:
+\[
+x_i = a + i\Delta x,
+\quad \Delta x = \frac{b-a}{n},
+\]
+then
+\[
+\int_a^b f(x)\,dx
+= \lim_{n\to\infty} \sum_{i=1}^n f(x_i)\,\Delta x.
+\]
+
+This form is especially useful for computations.
+
+
+::: {.example}
+Converting a Limit into an Integral
+
+Express the following limit as an integral
+\[
+\lim_{n\to\infty} \sum_{i=1}^n (x_i^3 + x_i\sin x_i)\,\Delta x
+\quad \text{on } [0,\pi]
+\]
+
+**Solution:**
+Identify the function:
+\[
+f(x) = x^3 + x\sin x.
+\]
+
+Then the limit becomes:
+\[
+\int_0^{\pi} (x^3 + x\sin x)\,dx
+\]
+:::
+
+
+
+::: {.example}
+Integral as Net Area
+
+Sketch the area and determine what the integral represents
+\[
+\int_0^3 (x^3 - 6x)\,dx
+\]
+
+**Solution:**
+
+Since the function takes both positive and negative values, the integral represents:
+\[
+\text{net area} = A_{\text{above}} - A_{\text{below}}.
+\]
+
+This is not purely geometric area — it is **signed accumulation**.
+:::
+
+
+
+::: {.example}
+Integral as a Limit of Sums
+
+Set up
+\[
+\int_1^3 e^x\,dx
+\]
+as a limit.
+
+**Solution:**
+
+
+\[
+\Delta x = \frac{3-1}{n} = \frac{2}{n}, 
+\quad x_i = 1 + \frac{2i}{n}
+\]
+
+\[
+\int_1^3 e^x\,dx
+=
+\lim_{n\to\infty}
+\sum_{i=1}^n
+e^{\,1+\frac{2i}{n}}\;\frac{2}{n}
+\]
+:::
+
+### The Midpoint Rule
+
+<div class="theorem">
+The Midpoint Rule (Numerical Approximation)
+
+Instead of using endpoints, choose **midpoints**:
+\[
+x_i^* = \frac{x_{i-1}+x_i}{2}.
+\]
+
+Then
+\[
+\int_a^b f(x)\,dx \;\approx\; 
+\sum_{i=1}^n f(x_i^*)\,\Delta x
+\]
+
+This is called the **Midpoint Rule** and usually gives better accuracy than left or right sums.
+</div>
+
+
+
+::: {.example}
+Midpoint Rule Approximation
+
+Approximate
+\[
+\int_1^2 \frac{1}{x}\,dx
+\quad \text{with } n=5.
+\]
+
+**Solution:**
+
+\[
+\Delta x = \frac{2-1}{5} = \frac{1}{5}
+\]
+
+Midpoints:
+\[
+1.1,\; 1.3,\; 1.5,\; 1.7,\; 1.9
+\]
+
+\[
+\int_1^2 \frac{1}{x}\,dx \approx
+\frac{1}{5}\left(
+\frac{1}{1.1} + \frac{1}{1.3} + \frac{1}{1.5} + \frac{1}{1.7} + \frac{1}{1.9}
+\right)
+\approx 0.692
+\]
+:::
+
+### Properties of the Definite Integral
+
+<div class="theorem">
+Properties of the Definite Integral
+
+For continuous functions \( f \) and \( g \):
+
+1. **Constant Rule**
+\[
+\int_a^b c\,dx = c(b-a)
+\]
+
+2. **Sum Rule**
+\[
+\int_a^b [f(x)+g(x)]dx
+=
+\int_a^b f(x)dx + \int_a^b g(x)dx
+\]
+
+3. **Constant Multiple Rule**
+\[
+\int_a^b cf(x)\,dx = c\int_a^b f(x)\,dx
+\]
+
+4. **Difference Rule**
+\[
+\int_a^b [f(x)-g(x)]dx
+=
+\int_a^b f(x)dx - \int_a^b g(x)dx
+\]
+
+5. **Additivity Over Intervals**
+\[
+\int_a^c f(x)dx + \int_c^b f(x)dx
+=
+\int_a^b f(x)dx
+\]
+</div>
+
+
+
+<div class="theorem">
+Comparison Properties
+
+If \( a<b \):
+
+- If \( f(x) > 0 \), then
+\[
+\int_a^b f(x)\,dx > 0
+\]
+
+- If \( f(x) > g(x) \), then
+\[
+\int_a^b f(x)\,dx > \int_a^b g(x)\,dx
+\]
+
+- If \( m \le f(x) \le M \), then
+\[
+m(b-a) \le \int_a^b f(x)\,dx \le M(b-a)
+\]
+
+</div>
+
+
+::: {.example}
+Bounding an Integral
+
+Estimate
+\[
+\int_0^1 e^{-2x^2}\,dx.
+\]
+
+**Solution:**
+
+Since \( e^{-2x^2} \) is decreasing on \([0,1]\):
+
+\[
+m = e^{-2}, \quad M = 1
+\]
+
+So:
+\[
+e^{-2} < \int_0^1 e^{-2x^2}\,dx < 1
+\]
+
+Numerically:
+\[
+0.367 < \int_0^1 e^{-2x^2}\,dx < 1
+\]
+:::
+
+---
+
+### Putting It All Together
+
+
+> A definite integral is the mathematical limit of accumulation: infinitely many tiny contributions summed to produce total change.
+
+
+#### Conceptual Takeaways
+
+- A definite integral is a **limit of sums**  
+- Integration is **accumulation of continuous change**  
+- Definite integrals produce **numbers**, not functions   
+- Riemann sums are approximations of integrals  
+- Integrals represent:  
+  - area,  
+  - net area,  
+  - distance,  
+  - work,  
+  - mass,  
+  - energy,  
+  - total change  
+- The sign of a function affects the meaning of the integral  
+- Integration is fundamentally about **adding infinitely many infinitesimal contributions**  
+
+---
+
+#### Skills You Should Be Able to Do
+
+By the end of this section, you should be able to:
+
+- Construct Riemann sums from a function  
+- Interpret definite integrals geometrically and physically  
+- Convert limits of sums into integrals  
+- Write integrals as limits of sums  
+- Identify when an integral represents area vs net area  
+- Use the Midpoint Rule for approximation  
+- Apply integral properties to simplify expressions  
+- Estimate integrals using bounds  
+- Compare integrals using inequalities  
+- Interpret integrals as accumulation processes  
+- Recognize integrals in applied contexts (distance, work, growth, flow, mass)  
+
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  The Fundamental Theorem of Calculus 
+
+The **Fundamental Theorem of Calculus** establishes the deep connection between the two main branches of calculus:
+
+- **Differential calculus** (rates of change, slopes, tangents)  
+- **Integral calculus** (accumulation, area, total change)  
+
+Although these areas originated from different problems (tangent lines vs. area), the theorem shows that they are inverse processes of each other.  
+
+This insight transforms calculus from a collection of techniques into a coherent mathematical system, making it possible to compute areas, accumulated quantities, and total change efficiently—without relying on complicated limits of sums.
+
+---
+
+### FTC Part 1: Derivative of an Integral (FTC1)
+
+
+<div class="theorem">
+Let \( f \) be continuous on \([a,b]\), and define a function
+\[
+T(x) = \int_a^x f(t)\,dt.
+\]
+Then:
+\[
+T'(x) = f(x)
+\]
+</div>
+
+This means:
+
+> **The derivative of an accumulation function is the original function.**
+
+**Interpretation:**
+
+- \(T(x)\) represents **accumulated area** (or total change) from \(a\) to \(x\).  
+- The derivative \(T'(x)\) represents the **rate at which that accumulation is changing**.  
+- That rate is exactly the value of the original function \(f(x)\).  
+
+So:
+- accumulation → derivative → original function
+
+Geometrically,
+
+If \( f(x) > 0 \), then:
+
+- \(T(x)\) increases  
+- \(T'(x) > 0\)  
+
+If \( f(x) < 0 \), then:
+
+- \(T(x)\) decreases  
+- \(T'(x) < 0\)  
+
+The graph of \(T'(x)\) has the same shape as the graph of \(f(x)\).
+
+
+::: {.example}
+Area Function
+
+Let
+\[
+T(x) = \int_0^x f(t)\,dt.
+\]
+If \(f\) is positive up to \(x=3\) and negative after, describe the behaviour of $T(x)$.
+
+**Solution:**
+
+By the FTC1,
+\[
+T'(x) = f(x)
+\]
+
+
+If \(f\) is positive up to \(x=3\) and negative after, then:
+
+- \(T(x)\) increases until \(x=3\)  
+- \(T(x)\) has a maximum at \(x=3\)  
+- \(T(x)\) decreases after \(x=3\)  
+:::
+
+
+::: {.example}
+Direct Application of FTC1
+
+Find $T^{\prime}(x)$ given
+\[
+T(x) = \int_0^x (1+t^2)\,dt
+\]
+
+**Solution:**
+\[
+T'(x) = 1 + x^2
+\]
+:::
+
+
+::: {.example}
+Chain Rule + FTC1
+
+Find $T^{\prime}(x)$ given
+\[
+T(x) = \int_1^{x^4} \sec t\,dt
+\]
+
+**Solution:**
+
+Let \(u = x^4\). Then:
+
+\[
+\frac{d}{dx}\int_1^{x^4} \sec t\,dt
+= \sec(x^4)\cdot \frac{d}{dx}(x^4)
+\]
+
+So,
+\[
+T'(x) = 4x^3\sec(x^4).
+\]
+:::
+
+
+---
+
+### FTC Part 2: Evaluating Definite Integrals (FTC2)
+
+
+<div class="theorem">
+If \( f \) is continuous on \([a,b]\) and \(F\) is any antiderivative of \(f\) (so \(F' = f\)), then:
+\[
+\int_a^b f(x)\,dx = F(b) - F(a).
+\]
+</div>
+
+This replaces **limits of sums** with **simple subtraction**.
+
+**Interpretation:**
+
+> **To compute total accumulation, evaluate an antiderivative at the endpoints and subtract.**
+
+This is the computational engine of calculus.
+
+
+::: {.example}
+Polynomial Integral
+
+Evaluate:
+\[
+\int_1^3 e^x\,dx
+\]
+
+**Solution:**
+An antiderivative is \(F(x)=e^x\).  Therefore,
+\[
+\int_1^3 e^x\,dx = e^3 - e.
+\]
+:::
+
+
+
+::: {.example}
+Area Under a Curve
+
+Find the area under \( y=x^2 \) from 0 to 1:
+\[
+A = \int_0^1 x^2\,dx
+\]
+
+**Solution:**
+\[
+A = \left[\frac{x^3}{3}\right]_0^1 = \frac{1}{3}
+\]
+:::
+
+
+
+::: {.example}
+Logarithmic Integral
+
+Evaluate:
+\[
+\int_3^6 \frac{1}{x}\,dx
+\]
+
+**Solution:**
+
+\[
+\int_3^6 \frac{1}{x}\,dx = [\ln x]_3^6 = \ln 6 - \ln 3 = \ln 2
+\]
+:::
+
+
+::: {.example}
+Trigonometric Area
+
+Evaluate
+\[
+\int_0^{\pi/2} \cos x\,dx
+\]
+
+**Solution:**
+\[
+\int_0^{\pi/2} \cos x\,dx = [\sin x]_0^{\pi/2} = 1.
+\]
+:::
+
+
+**Differentiation and Integration are Inverse Processes**
+
+The FTC shows:
+
+-  Integrate → Differentiate  
+\[
+\frac{d}{dx}\left(\int_a^x f(t)\,dt\right) = f(x)
+\]  
+
+-  Differentiate → Integrate  
+\[
+\int_a^b F'(x)\,dx = F(b)-F(a)
+\]
+
+So:
+\[
+\text{Differentiation and integration undo each other.}
+\]
+
+---
+
+### Putting It All Together
+
+
+
+> The Fundamental Theorem of Calculus reveals that **change and accumulation are two sides of the same process**. Differentiation measures change, integration measures accumulation, and each operation undoes the other. This single idea transforms calculus into a unified theory of continuous change.
+
+#### Conceptual Takeaways
+
+- Accumulation creates functions  
+- Derivatives measure accumulation rates  
+- Integration measures total change  
+- Area is a special case of accumulation  
+- Definite integrals depend only on endpoint values  
+- The entire structure of calculus rests on this theorem  
+- Differentiation and integration are inverse operations  
+- Motion interpretation:  
+  - velocity → integrate → position  
+  - position → differentiate → velocity  
+- FTC is the bridge between geometry, physics, and analysis  
+- Complex accumulation problems reduce to simple subtraction  
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Interpret integrals as accumulation functions  
+- Differentiate functions defined by integrals  
+- Apply FTC1 directly  
+- Use the Chain Rule with FTC1  
+- Recognize area functions  
+- Evaluate definite integrals using antiderivatives  
+- Apply FTC2 efficiently  
+- Translate between physical and mathematical interpretations  
+- Identify when FTC applies (continuity conditions)  
+- Compute total change from rate functions  
+- Interpret integrals in motion problems  
+- Understand accumulation graphs  
+- Connect slope behavior to integral behavior  
+- Move fluently between graphs, formulas, and meaning  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Indefinite Integrals and the Net Change Theorem 
+
+
+
+The Fundamental Theorem of Calculus (FTC) creates a powerful link between derivatives, antiderivatives, and definite integrals. This connection allows us to compute areas, accumulated change, and physical quantities using antiderivatives rather than limits of sums.
+
+Two core ideas drive this section:
+
+1. **Indefinite integrals** provide a systematic notation for families of antiderivatives.  
+2. **The Net Change Theorem** interprets definite integrals as total accumulated change of a quantity.  
+
+These ideas form the foundation for applications in physics, biology, economics, and engineering.
+
+---
+
+### Indefinite Integrals
+
+
+<div class="definition">
+An **indefinite integral** represents the family of all antiderivatives of a function.
+\[
+\int f(x)\,dx = F(x) + C
+\quad \text{means} \quad
+F'(x) = f(x).
+\]
+</div>
+
+Here:
+
+- \( F(x) \) is any antiderivative of \( f(x) \)  
+- \( C \) is the **constant of integration**, representing infinitely many antiderivatives  
+
+
+An indefinite integral is:
+
+- **Not a number**  
+- A **family of functions**  
+- A symbolic way to represent all antiderivatives of a function  
+
+In contrast:
+
+- A **definite integral** is a **number**  
+- An **indefinite integral** is a **function (family of functions)**  
+
+---
+
+### Fundamental Connection to Definite Integrals
+
+If \( f \) is continuous on \([a,b]\) and \( F' = f \), then:
+\[
+\int_a^b f(x)\,dx = F(b) - F(a).
+\]
+
+This formula allows us to compute definite integrals by:
+
+1. Finding an antiderivative \( F(x) \)  
+2. Evaluating it at the endpoints  
+3. Subtracting  
+
+
+
+<div class="definition">
+Rules for Indefinite Integrals
+
+**Linearity**
+\[
+\int [af(x) + bg(x)]\,dx = a\int f(x)\,dx + b\int g(x)\,dx
+\]
+
+**Power Rule**
+\[
+\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)
+\]
+
+\[
+\int \frac{1}{x}\,dx = \ln|x| + C
+\]
+
+**Exponential**
+\[
+\int e^x\,dx = e^x + C
+\qquad
+\int b^x\,dx = \frac{b^x}{\ln b} + C
+\]
+
+**Trigonometric**
+\[
+\int \sin x\,dx = -\cos x + C
+\qquad
+\int \cos x\,dx = \sin x + C
+\]
+
+\[
+\int \sec^2 x\,dx = \tan x + C
+\qquad
+\int \csc^2 x\,dx = -\cot x + C
+\]
+</div>
+
+
+
+::: {.example}
+Polynomial and Trigonometric Terms
+
+Evaluate
+\[
+\int \left(10x^4 - 2\sec^2 x\right)\,dx
+\]
+
+**Solution**
+
+\begin{align*}
+\int \left(10x^4 - 2\sec^2 x\right)\,dx &= 10\int x^4 dx - 2\int \sec^2 x dx\\
+&= 10\left(\frac{x^5}{5}\right) - 2(\tan x) + C\\
+&= 2x^5 - 2\tan x + C.
+\end{align*}
+:::
+
+
+::: {.example}
+Trigonometric Simplification
+
+Evaluate
+\[
+\int \frac{\cos \theta}{\sin^2 \theta}\,d\theta
+\]
+
+**Solution**
+
+Rewrite:
+
+\[
+\frac{\cos \theta}{\sin^2 \theta} = \csc \theta \cot \theta
+\]
+
+So:
+
+\[
+\int \csc \theta \cot \theta\, d\theta = -\csc \theta + C
+\]
+:::
+
+
+
+::: {.example}
+Definite Integral Using FTC
+
+Evaluate
+\[
+\int_0^3 (x^3 - 6x)\,dx
+\]
+
+**Solution**
+
+Find antiderivative:
+
+\[
+F(x) = \frac{x^4}{4} - 3x^2
+\]
+
+Apply FTC:
+
+\[
+F(3) - F(0) = \left(\frac{81}{4} - 27\right) - 0 = -\frac{27}{4}
+\]
+:::
+
+
+---
+
+### The Net Change Theorem
+
+
+<div class="theorem">  
+**Net Change Theorem**
+
+
+If \( F'(x) = f(x) \), then:
+\[
+\int_a^b f(x)\,dx = F(b) - F(a)
+\]
+</div>
+
+
+> **The integral of a rate of change is the total (net) change.**
+
+This means:
+
+If a function represents a **rate**, then integrating it gives the **accumulated quantity**.
+
+
+---
+
+### Applications of Net Change
+
+| Rate Function | Integral Represents |
+|------|------|
+| Velocity \( v(t) \) | Displacement |
+| Speed \( |v(t)| \) | Distance traveled |
+| Flow rate | Total volume |
+| Population growth rate | Population change |
+| Marginal cost | Total cost change |
+| Reaction rate | Concentration change |
+| Power | Energy used |
+| Acceleration | Change in velocity |
+
+
+
+
+::: {.example}
+Motion Interpretation
+
+Given that
+\[
+\text{Displacement} = \int_{t_1}^{t_2} v(t)\,dt,
+\]
+the distance traveled is
+\[
+\text{Distance} = \int_{t_1}^{t_2} |v(t)|\,dt.
+\]
+:::
+
+> Displacement measures **net movement**  
+> Distance measures **total path length**
+
+
+---
+
+### Putting It All Together
+
+
+
+Indefinite integrals provide a symbolic language for antiderivatives, while the Fundamental Theorem of Calculus allows definite integrals to be evaluated through these antiderivatives. The Net Change Theorem gives integration its physical and applied meaning: **integration accumulates change**. Together, these ideas transform integration from a computational tool into a universal modeling framework for real-world systems.
+
+
+
+---
+
+#### Conceptual Takeaways
+
+- Indefinite integrals represent **families of antiderivatives**  
+- The constant \( C \) reflects infinitely many vertical shifts  
+- Definite integrals measure **accumulated change**  
+- FTC connects **rates → accumulation**  
+- Integration converts:  
+  - velocity → displacement  
+  - rate → total quantity  
+  - marginal change → net change  
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Distinguish between **definite** and **indefinite** integrals  
+- Compute basic indefinite integrals  
+- Use the constant of integration correctly  
+- Apply FTC to evaluate definite integrals  
+- Interpret integrals as accumulated change  
+- Model physical meaning of integrals (distance, mass, energy, cost, population)  
+- Separate displacement and distance using absolute value  
+- Translate real-world rates into integrals  
+- Use integration to compute net change in applied contexts  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  The Substitution Rule 
+
+
+The Fundamental Theorem of Calculus allows us to evaluate integrals using antiderivatives, but many integrals cannot be evaluated directly using basic antidifferentiation formulas. In these cases, we use a strategy called **substitution**, also known as **u-substitution**.
+
+The core idea is simple:
+
+> Replace a complicated expression inside an integral with a new variable to transform the integral into a simpler form.
+
+> This method is the integration counterpart of the Chain Rule from differentiation.
+
+
+Consider an integral like:
+\[
+\int 2x\sqrt{1+x^2}\,dx
+\]
+
+This cannot be evaluated directly using basic rules.  However, the expression \(1+x^2\) appears inside the square root, and its derivative \(2x\) also appears in the integrand.  This structure suggests a substitution.
+
+
+
+<div class="theorem">
+The Substitution Rule (Indefinite Integrals)
+
+If \( u = g(x) \) is differentiable and \( f \) is continuous, then:
+\[
+\int f(g(x))\,g'(x)\,dx = \int f(u)\,du
+\]
+</div>
+
+
+Since \( du = g'(x)\,dx \), the integral becomes:
+\[
+\int f(g(x))g'(x)\,dx = \int f(u)\,du
+\]
+
+
+> We treat \( dx \) and \( du \) like differentials and change variables to simplify the structure of the integral.
+
+
+
+<div class="note">
+**Strategy for Choosing a Substitution**
+
+1. Look for a **composite function** (an "inside function")  
+2. Choose:  
+   \[
+   u = \text{inner expression}
+   \]  
+3. Check whether \( du \) (or a constant multiple of it) appears in the integrand  
+4. Rewrite the entire integral in terms of \( u \)  
+5. Integrate  
+6. Substitute back to the original variable  
+</div>
+
+> Choosing a good substitution is partly skill and partly pattern recognition.
+
+
+::: {.example}
+Trigonometric Composite Function
+
+Evaluate
+\[
+\int x^3 \cos(x^4+2)\,dx
+\]
+
+**Solution:**
+
+Let:
+\[
+u = x^4 + 2 \quad \Rightarrow \quad du = 4x^3 dx
+\]
+
+So:
+\[
+x^3 dx = \frac{1}{4}du
+\]
+
+Substitute:
+\[
+\int x^3 \cos(x^4+2)\,dx
+= \frac{1}{4}\int \cos u\,du
+= \frac{1}{4}\sin u + C
+\]
+
+Return to \( x \):
+\[
+= \frac{1}{4}\sin(x^4+2) + C
+\]
+:::
+
+
+
+::: {.example}
+Radical Expression
+
+Evaluate
+\[
+\int \sqrt{2x+1}\,dx
+\]
+
+**Solution**
+
+Let:
+\[
+u = 2x+1 \Rightarrow du = 2dx \Rightarrow dx = \frac{1}{2}du
+\]
+
+\[
+= \frac{1}{2}\int u^{1/2}\,du
+= \frac{1}{2}\cdot \frac{2}{3}u^{3/2} + C
+= \frac{1}{3}u^{3/2} + C
+\]
+
+Substitute back:
+\[
+= \frac{1}{3}(2x+1)^{3/2} + C
+\]
+:::
+
+
+
+::: {.example}
+Rational with Radical
+
+Evaluate
+\[
+\int \frac{x}{\sqrt{1+4x^2}}\,dx
+\]
+
+**Solution**
+
+Let:
+\[
+u = 1+4x^2 \Rightarrow du = 8x dx \Rightarrow xdx = \frac{1}{8}du.
+\]
+
+Then,
+\begin{align*}
+\int \frac{x}{\sqrt{1+4x^2}}\,dx &= \frac{1}{8}\int u^{-1/2}\,du\\
+&= \frac{1}{8}\cdot 2u^{1/2} + C \\
+&= \frac{1}{4}\sqrt{u} + C \\
+&= \frac{1}{4}\sqrt{1+4x^2} + C
+\end{align*}
+:::
+
+
+
+::: {.example}
+Exponential Function
+
+Evaluate
+\[
+\int e^{5x}\,dx
+\]
+
+**Solution**
+
+Let:
+\[
+u = 5x \Rightarrow du = 5dx \Rightarrow dx = \frac{1}{5}du
+\]
+
+\begin{align*}
+\int e^{5x}\,dx &= \frac{1}{5}\int e^u\,du \\
+& = \frac{1}{5}e^u + C \\
+& = \frac{1}{5}e^{5x} + C
+\end{align*}
+:::
+
+
+
+::: {.example}
+Trigonometric Ratio
+
+Evaluate
+\[
+\int \tan x\,dx
+\]
+
+**Solution**
+
+Rewrite:
+\[
+\tan x = \frac{\sin x}{\cos x}
+\]
+
+Let:
+\[
+u = \cos x \Rightarrow du = -\sin x\,dx
+\]
+
+\begin{align*}
+\int \tan x\,dx &= -\int \frac{1}{u}\,du\\
+&= -\ln|u| + C \\
+&= -\ln|\cos x| + C
+\end{align*}
+
+Equivalent form:
+\[
+= \ln|\sec x| + C
+\]
+:::
+
+
+<div class="theorem">
+Substitution with Definite Integrals
+
+If \( u = g(x) \), then:
+\[
+\int_a^b f(g(x))g'(x)\,dx = \int_{u(a)}^{u(b)} f(u)\,du
+\]
+</div>
+
+
+**Key Idea**
+
+> When changing variables, change the limits too — and do not switch back to \( x \).
+
+
+::: {.example}
+Definite Integral with Substitution
+
+Evaluate
+\[
+\int_1^e \frac{\ln x}{x}\,dx
+\]
+
+**Solution**
+
+Let:
+\[
+u = \ln x \Rightarrow du = \frac{1}{x}dx
+\]
+
+Change limits:
+
+- \( x=1 \Rightarrow u=0 \)  
+- \( x=e \Rightarrow u=1 \)  
+
+\begin{align*}
+\int_1^e \frac{\ln x}{x}\,dx &= \int_0^1 u\,du\\
+&= \frac{u^2}{2}\Big|_0^1\\
+&= \frac{1}{2}
+\end{align*}
+:::
+
+
+
+<div class="note">
+**Symmetry in Definite Integrals**
+
+
+**Even Functions**
+
+If \( f(-x)=f(x) \):
+\[
+\int_{-a}^{a} f(x)\,dx = 2\int_0^a f(x)\,dx
+\]
+
+**Odd Functions**
+
+If \( f(-x)=-f(x) \):
+\[
+\int_{-a}^{a} f(x)\,dx = 0
+\]
+</div>
+
+
+::: {.example}
+Symmetry
+
+**Even Function**
+\[
+\int_{-2}^{2} (x^6+1)\,dx = 2\int_0^2 (x^6+1)\,dx
+\]
+
+**Odd Function**
+\[
+\int_{-1}^{1} \frac{\tan x}{1+x^2+x^4}\,dx = 0
+\]
+:::
+
+---
+
+###  Putting It All Together
+
+The Substitution Rule transforms difficult integrals into simpler ones by changing variables. It is the inverse operation of the Chain Rule and provides a systematic way to handle composite functions, radicals, exponentials, and trigonometric expressions. When combined with definite integrals and symmetry principles, substitution becomes one of the most powerful tools in single-variable calculus for both computation and modeling.
+
+---
+
+#### Conceptual Takeaways
+
+- Substitution is **reverse Chain Rule**  
+- Integration becomes easier by changing variables  
+- Good substitutions simplify structure  
+- \( du \) must appear (up to a constant factor)  
+- Substitution turns complicated integrals into basic ones  
+- Definite integrals require **changing limits**  
+- Symmetry can eliminate computation entirely  
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Recognize composite functions in integrals  
+- Choose effective substitutions  
+- Compute \( du \) correctly  
+- Rewrite integrals fully in terms of \( u \)  
+- Evaluate substituted integrals  
+- Return to original variables correctly  
+- Apply substitution to definite integrals  
+- Change limits of integration properly  
+- Identify even and odd symmetry  
+- Use symmetry to simplify definite integrals  
+- Interpret substitution as reverse Chain Rule  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

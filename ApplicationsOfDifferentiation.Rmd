@@ -1,0 +1,2722 @@
+# Applications of Differentiation
+
+
+##  Maximum and Minimum Values
+
+
+Many real-world problems require finding the best possible outcome:
+
+- minimizing cost  
+- maximizing efficiency  
+- optimizing performance  
+- reducing energy use  
+- maximizing output  
+
+These are called **optimization problems**, and they are solved using differential calculus by finding maximum and minimum values of functions.
+
+> Mathematically, optimization problems reduce to: **Finding the largest or smallest value of a function on a given domain.**
+
+---
+
+### Types of Extreme Values
+
+
+<div class="definition">
+Absolute (Global) Extreme Values
+
+Let \( f \) be a function defined on a domain \( D \).
+
+**Absolute Maximum:**  \( f(c) \) is an absolute maximum if:
+\[
+f(c) \ge f(x) \quad \text{for all } x \in D.
+\]
+
+**Absolute Minimum:**   \( f(c) \) is an absolute minimum if:
+\[
+f(c) \le f(x) \quad \text{for all } x \in D.
+\]
+</div>
+
+These are also called **global extrema**.
+
+
+<div class="definition">
+**Local Maximum**  
+\( f(c) \) is a local maximum if:
+\[
+f(c) \ge f(x) \quad \text{for } x \text{ near } c.
+\]
+
+**Local Minimum**  
+\( f(c) \) is a local minimum if:
+\[
+f(c) \le f(x) \quad \text{for } x \text{ near } c.
+\]
+</div>
+
+
+Local extrema compare values **only nearby**, not globally.
+
+
+::: {.example}
+Periodic Function
+
+\[
+f(x) = \cos x
+\]
+
+- Absolute maximum value: \( 1 \)
+- Absolute minimum value: \( -1 \)
+- Occur infinitely many times
+- Local and absolute extrema coincide
+:::
+
+
+
+::: {.example}
+Parabola
+
+\[
+f(x) = x^2
+\]
+
+- Absolute minimum: \( f(0)=0 \)
+- No maximum (function increases without bound)
+- Has one local minimum, no local maximum
+:::
+
+
+
+::: {.example}
+Cubic Function
+
+\[
+f(x) = x^3
+\]
+
+- No absolute maximum
+- No absolute minimum
+- No local extrema
+- Horizontal tangent at \( x=0 \), but **not an extremum**
+:::
+
+
+---
+
+### Extreme Value Theorem (EVT)
+
+
+<div class="theorem">
+Extreme Value Theorem
+
+If \( f \) is **continuous** on a closed interval \([a,b]\), then:
+
+\[
+f \text{ attains both an absolute maximum and an absolute minimum on } [a,b].
+\]
+</div>
+
+
+
+**Important Conditions**
+
+Both conditions are required:
+
+1. **Continuity**  
+2. **Closed interval** \([a,b]\)  
+
+If either is missing → extreme values are **not guaranteed**.
+
+---
+
+### Fermat’s Theorem
+
+
+<div class="theorem">
+Fermat
+
+If \( f \) has a **local maximum or minimum** at \( c \) and \( f'(c) \) exists, then:
+
+\[
+f'(c) = 0.
+\]
+</div>
+
+
+
+Local extrema occur where:
+
+- the derivative is zero, or  
+- the derivative does not exist  
+
+But:
+
+> \( f'(c)=0 \) does **not guarantee** a max or min.
+
+---
+
+### Critical Numbers
+
+
+<div class="definition">
+A **critical number** \( c \) is a value in the domain where:
+\[
+f'(c)=0 \quad \text{or} \quad f'(c) \text{ does not exist}
+\]
+</div>
+
+All local extrema occur at **critical numbers**, but not all critical numbers are extrema.
+
+
+
+::: {.example}
+Critical Numbers
+
+\[
+f(x) = x^{3/5}(4-x)
+\]
+
+Differentiate → solve \( f'(x)=0 \) and undefined points  
+
+
+Critical numbers:
+\[
+x=0, \quad x=\frac{3}{2}.
+\]
+:::
+
+
+::: {.example}
+Fermat Warning
+
+\[
+f(x)=x^3
+\]
+
+\[
+f'(x)=3x^2 \Rightarrow f'(0)=0
+\]
+
+But no max or min at \( x=0 \) → horizontal tangent only
+:::
+
+
+
+
+::: {.example}
+Absolute Value
+
+\[
+f(x)=|x|
+\]
+
+Minimum at \( x=0 \), but \( f'(0) \) does not exist → extreme value without derivative
+:::
+
+
+
+---
+
+### Closed Interval Method
+
+**Procedure:**  To find **absolute extrema** of a continuous function on \([a,b]\):
+
+1. Find all **critical numbers** in \( (a,b) \)  
+2. Evaluate \( f(x) \) at:  
+   - each critical number  
+   - endpoints \( a, b \)  
+3. Compare values:  
+   - largest → absolute maximum    
+   - smallest → absolute minimum  
+
+
+
+
+::: {.example}
+Polynomial on Interval
+
+Find the extreme values for
+\[
+f(x)=x^3-3x^2+1,\quad -\frac{1}{2}\le x \le 4
+\]
+
+**Step 1: Derivative**
+\[
+f'(x)=3x^2-6x=3x(x-2)
+\]
+
+Critical numbers:
+\[
+x=0,\; x=2
+\]
+
+**Step 2: Evaluate**
+\[
+f(-1/2)=1/8,\quad f(0)=1,\quad f(2)=-3,\quad f(4)=17
+\]
+
+**Step 3: Compare**
+
+- Absolute max: \( f(4)=17 \)  
+- Absolute min: \( f(2)=-3 \)  
+:::
+
+
+
+::: {.example}
+Trigonometric Optimization
+
+Find the extreme values for
+\[
+f(x)=x^2-2\sin x,\quad 0\le x\le 2\pi
+\]
+
+**Step 1: Derivative**
+\[
+f'(x)=1-2\cos x
+\]
+
+Set \( f'(x)=0 \):
+\[
+\cos x=\frac{1}{2}
+\Rightarrow x=\frac{\pi}{3},\; \frac{5\pi}{3}
+\]
+
+**Step 2: Evaluate**
+\[
+f(0)=0,\quad f(2\pi)=2\pi
+\]
+\[
+f(\pi/3)=\frac{\pi}{3}-\sqrt{3}
+\]
+\[
+f(5\pi/3)=\frac{5\pi}{3}+\sqrt{3}
+\]
+
+**Step 3: Compare**
+
+- Absolute minimum: \( x=\frac{\pi}{3} \)  
+- Absolute maximum: \( x=\frac{5\pi}{3} \)  
+:::
+
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- Optimization = finding extreme values  
+- Extreme values = maximum and minimum values   
+- Absolute vs local extrema are different concepts  
+- EVT guarantees extrema for continuous functions on closed intervals  
+- Local extrema occur only at critical numbers  
+- Not all critical numbers are extrema  
+- Endpoints matter in optimization  
+- Derivatives identify candidates, not answers  
+- Interpretation is essential, not just computation  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- Distinguish absolute vs local extrema  
+- Identify critical numbers  
+- Apply Fermat’s Theorem correctly  
+- Use the Extreme Value Theorem  
+- Apply the Closed Interval Method  
+- Solve optimization problems using derivatives  
+- Interpret critical points  
+- Recognize non-extreme stationary points  
+- Analyze functions graphically and analytically  
+- Translate real-world optimization problems into calculus models  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+##  The Mean Value Theorem
+
+
+Many of the most important results in calculus depend on one central principle:
+
+> **Derivatives control function behavior.**
+
+Rolle’s Theorem and the Mean Value Theorem formalize the connection between:
+
+- **average change** (secant slopes)  
+- **instantaneous change** (tangent slopes)  
+- **function shape**  
+- **existence of special points**  
+
+
+
+> They are **existence theorems**:  They guarantee that certain points exist — without necessarily telling us how to find them.
+
+---
+
+### Rolle’s Theorem
+
+
+<div class="theorem">
+Rolle’s Theorem
+
+Let \( f \) be a function such that:
+
+1. \( f \) is **continuous** on the closed interval \( [a,b] \)  
+2. \( f \) is **differentiable** on the open interval \( (a,b) \)  
+3. \( f(a) = f(b) \)  
+
+Then there exists at least one number \( c \in (a,b) \) such that:
+\[
+f'(c) = 0.
+\]
+</div>
+
+
+
+If a smooth curve:
+
+- starts and ends at the **same height**  
+- is **continuous**  
+- has **no sharp corners**,  
+
+then somewhere in between, the tangent must be **horizontal**.
+
+Geometrically,
+
+- Endpoints have the same y-value  
+- Secant slope = 0  
+- Therefore a tangent line must exist with slope 0   
+→ a horizontal tangent  
+
+
+Rolle's Theorem makes sense because there are only three possible cases:
+
+1. **Constant function** → slope is always 0   
+2. **Has a maximum** → horizontal tangent at max  
+3. **Has a minimum** → horizontal tangent at min  
+
+All lead to \( f'(c) = 0 \).
+
+
+::: {.example}
+Motion Interpretation
+
+If an object has position function \( s = f(t) \) and:
+\[
+f(a) = f(b)
+\]
+
+Then there exists some \( c \in (a,b) \) such that:
+\[
+f'(c) = 0.
+\]
+
+**Meaning:**   The object must have **zero velocity** at some time in between.
+:::
+
+
+**Physical intuition:** 
+A ball thrown straight up must stop before falling down.
+
+
+
+::: {.example}
+Uniqueness of Roots
+
+Let:
+\[
+f(x) = x^3 + x^2 - 1.
+\]
+Show that $f(a) = 0$ for exactly one value of $a$.
+
+**Solution:**
+
+- IVT → shows **a root exists**  
+- Suppose two roots exist → Rolle’s Theorem implies \( f'(c)=0 \)  
+- But:
+\[
+f'(x) = 3x^2 + 2x > 0 \quad \text{for all } x
+\]
+So \( f'(x) \neq 0 \) anywhere → contradiction
+
+**Conclusion:**  
+The equation has **exactly one real root**.
+:::
+
+###  The Mean Value Theorem
+
+<div class="theorem">
+Mean Value Theorem
+
+If \( f \) satisfies:
+
+1. \( f \) is continuous on \( [a,b] \)  
+2. \( f \) is differentiable on \( (a,b) \)  
+
+Then there exists a number \( c \in (a,b) \) such that:
+\[
+f'(c) = \frac{f(b)-f(a)}{b-a}
+\]
+</div>
+
+**Equivalent Form:**
+\[
+f(b)-f(a) = f'(c)(b-a)
+\]
+
+Geometrically, there exists at least one point where:
+
+> **tangent slope = secant slope**
+
+So the tangent line is **parallel** to the secant line between \( (a,f(a)) \) and \( (b,f(b)) \).
+
+
+Intuition of the Mean Value Theorem:
+
+- Average rate of change = secant slope  
+- Instantaneous rate of change = tangent slope  
+
+**MVT says:**
+
+> At some point in the interval, the instantaneous rate equals the average rate.
+
+
+::: {.example}
+Verify the MVT for
+\[
+f(x) = x^3 - 2x,\quad [0,2]
+\]
+
+**Step 1: Verify conditions**
+Polynomial → continuous and differentiable everywhere ✔
+
+**Step 2: Compute average slope**
+\[
+\frac{f(2)-f(0)}{2-0} = \frac{6-0}{2} = 3
+\]
+
+**Step 3: Solve \( f'(c)=3 \)**
+
+\[
+f'(x) = 3x^2 - 2
+\]
+\[
+3x^2 - 2 = 3
+\Rightarrow 3x^2 = 5
+\Rightarrow x = \sqrt{\frac{5}{3}}
+\]
+
+Only value in \( (0,2) \):
+\[
+c = \sqrt{\frac{5}{3}}
+\]
+:::
+
+
+::: {.example}
+Velocity Interpretation
+
+If a car travels 180 km in 2 hours, then:
+\[
+\text{average speed} = 90 \text{ km/h}
+\]
+
+By MVT: The speedometer must have read 90 km/h at least once.
+:::
+
+
+::: {.example}
+Bounding Function Values
+
+Given:
+\[
+f(0) = -3, \quad f'(x) < 5 \text{ for all } x
+\]
+
+Apply MVT on \( [0,2] \):
+\[
+f(2) - f(0) = f'(c)(2-0)
+\Rightarrow f(2) = -3 + 2f'(c)
+\]
+Since \( f'(c) < 5 \):
+\[
+f(2) < -3 + 10 = 7
+\]
+
+**Maximum possible value:**  
+\[
+f(2) = 7
+\]
+:::
+
+
+---
+
+### Consequences of the Mean Value Theorem
+
+
+Zero Derivative ⇒ Constant Function
+
+<div class="theorem">
+If:
+\[
+f'(x)=0 \text{ for all } x \in (a,b)
+\]
+
+Then:
+\[
+f \text{ is constant on } (a,b)
+\]
+</div>
+
+
+<div class="theorem">
+If:
+\[
+f'(x) = g'(x)
+\]
+
+Then:
+\[
+f(x) - g(x) = C
+\]
+So the functions differ by a **constant**.
+</div>
+
+
+
+::: {.example}
+Identity Proof Using MVT Logic
+
+\[
+f(x) = \tan^{-1}x + \cot^{-1}x
+\]
+
+\[
+f'(x) = \frac{1}{1+x^2} - \frac{1}{1+x^2} = 0
+\]
+
+So \( f(x) = C \).
+
+Evaluate at \( x=1 \):
+\[
+C = \frac{\pi}{4} + \frac{\pi}{4} = \frac{\pi}{2}
+\]
+Therefore,
+\[
+\tan^{-1}x + \cot^{-1}x = \frac{\pi}{2}.
+\]
+:::
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- Rolle’s Theorem guarantees **horizontal tangents**  
+- Mean Value Theorem generalizes Rolle’s Theorem  
+- MVT links **average change** and **instantaneous change**  
+- These are **existence theorems**, not algorithms  
+- Derivatives control global behavior  
+- Geometry and algebra are unified  
+- Tangents reveal structure of functions  
+- Motion, growth, and change are mathematically equivalent ideas  
+- Derivatives encode information about the whole function  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- State Rolle’s Theorem and MVT correctly  
+- Verify theorem conditions  
+- Interpret both theorems geometrically  
+- Apply Rolle’s Theorem to motion and root problems  
+- Apply the Mean Value Theorem to functions  
+- Find \( c \)-values from MVT equations  
+- Interpret average vs instantaneous rates of change  
+- Use MVT to bound function values  
+- Prove identities using derivative arguments  
+- Use derivatives to infer global function behavior  
+- Connect secant slopes and tangent slopes  
+- Translate real-world problems into MVT language  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  How Derivatives Affect the Shape of a Graph
+
+Derivatives do more than give slopes — they reveal the **global structure** of a function.
+
+Because \( f'(x) \) represents the slope of the tangent line at \( (x, f(x)) \), it tells us:
+
+- the **direction** of motion of the graph  
+- whether the function is **rising or falling**  
+- where the function has **turning points**  
+- where the graph **bends**  
+- how the **rate of change itself is changing**  
+
+In short:
+
+> **Information about derivatives ⇒ information about the entire function.**
+
+---
+
+### What Does \( f' \) Say About \( f \)?
+
+
+<div class="theorem">
+**Increasing/Decreasing Test (I/D Test)**
+
+Let \( f \) be differentiable on an interval \( I \).
+
+- If \( f'(x) > 0 \) on \( I \), then \( f \) is **increasing** on \( I \)  
+- If \( f'(x) < 0 \) on \( I \), then \( f \) is **decreasing** on \( I \)  
+</div>
+
+
+This follows from the Mean Value Theorem and connects:
+
+- **positive slope → rising graph**  
+- **negative slope → falling graph**  
+ 
+
+::: {.example}
+Increasing and Decreasing Intervals
+
+Let
+\[
+f(x) = 3x^4 - 4x^3 - 12x^2 + 5.
+\]
+Find the intervals of increasing and decreasing.
+
+**Step 1: Differentiate**
+\[
+f'(x) = 12x^3 - 12x^2 - 24x = 12x(x-2)(x+1)
+\]
+
+**Step 2: Find critical numbers**
+\[
+f'(x)=0 \Rightarrow x=-1, 0, 2
+\]
+
+**Step 3: Sign chart analysis**
+
+| Interval | Sign of \( f'(x) \) | Behavior |
+|------|------|------|
+| \( (-\infty,-1) \) | − | decreasing |
+| \( (-1,0) \) | + | increasing |
+| \( (0,2) \) | − | decreasing |
+| \( (2,\infty) \) | + | increasing |
+
+:::
+
+
+---
+
+### Local Extreme Values
+
+
+<div class="theorem">
+**First Derivative Test**
+
+Let \( c \) be a critical number of \( f \).
+
+- If \( f' \) changes **positive → negative** at \( c \)  
+  → **local maximum**  
+- If \( f' \) changes **negative → positive** at \( c \)  
+  → **local minimum**  
+- If no sign change  
+  → **no extremum**  
+</div>
+
+
+
+::: {.example}
+Local Extrema
+
+Find the local extreme values for \[
+f(x) = 3x^4 - 4x^3 - 12x^2 + 5.
+\]
+
+**Solution:**
+
+- \( x=-1 \): \( f' \) changes − → + → **local minimum**  
+- \( x=0 \): \( f' \) changes + → − → **local maximum**  
+- \( x=2 \): \( f' \) changes − → + → **local minimum**  
+
+:::
+
+
+---
+
+### What Does \( f'' \) Say About \( f \)?
+
+
+<div class="definition">
+A function is:
+
+- **Concave Upward (CU):** graph lies **above** its tangents  
+- **Concave Downward (CD):** graph lies **below** its tangents  
+</div>
+
+
+<div class="theorem">
+**Concavity Test**
+
+Let \( f \) be twice differentiable on interval \( I \):
+
+- If \( f''(x) > 0 \) on \( I \) → **concave upward**  
+- If \( f''(x) < 0 \) on \( I \) → **concave downward**  
+</div>
+
+
+---
+
+### Inflection Points
+
+
+<div class="definition">
+A point \( P \) is an **inflection point** if:
+
+- the function is continuous at \( P \)  
+- the concavity changes (CU ↔ CD)  
+</div>
+
+
+This occurs where:
+\[
+f''(x) \text{ changes sign}
+\]
+
+
+::: {.example}
+Population Interpretation
+
+If a population curve:
+
+- starts slow growth  
+- speeds up growth  
+- then slows again  
+
+Then:
+
+- rate of growth is **maximal** at the inflection point  
+- concavity changes there  
+- biologically: **carrying capacity behavior**  
+:::
+
+
+
+
+<div class="theorem">
+Second Derivative Test
+
+Let \( f'(c)=0 \) and \( f'' \) is continuous near \( c \):
+
+- If \( f''(c) > 0 \) → **local minimum**  
+- If \( f''(c) < 0 \) → **local maximum**  
+- If \( f''(c)=0 \) → **test inconclusive**  
+</div>
+
+
+
+::: {.example}
+Let
+\[
+f(x)=x^4-4x^3.
+\]
+Apply the second derivative test to test the critical points.
+
+**Solution:**
+\[
+f'(x)=4x^2(x-3), \quad f''(x)=12x(x-2)
+\]
+
+Critical points: \( x=0,3 \)
+
+\[
+f''(3)=36>0 \Rightarrow \text{local minimum}
+\]
+
+At \( x=0 \): \( f''(0)=0 \) → **use First Derivative Test**
+:::
+
+
+---
+
+### Graph Shape Analysis Framework
+
+To analyze the shape of any graph:
+
+1. Domain  
+2. Asymptotes  
+3. \( f'(x) \) → increasing/decreasing  
+4. Critical points → extrema  
+5. \( f''(x) \) → concavity  
+6. Inflection points  
+7. End behavior  
+8. Combine into global sketch  
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+ 
+- First derivative controls **direction**  
+- Second derivative controls **bending**  
+- Slopes determine growth and decay  
+- Curvature determines shape  
+- Graph structure is encoded in derivatives  
+- Local information gives global behavior  
+- Calculus turns motion into geometry  
+- Rates of change define form  
+- Graphs are dynamic systems  
+- Shape = structure of derivatives  
+- Concavity reflects acceleration  
+- Inflection = change in behavior  
+- Extrema = balance points  
+- Tangents guide geometry  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- Interpret \( f'(x) \) physically and geometrically  
+- Determine increasing/decreasing intervals  
+- Apply the I/D Test  
+- Find critical numbers  
+- Identify local maxima and minima  
+- Apply the First Derivative Test  
+- Apply the Second Derivative Test  
+- Determine concavity  
+- Find inflection points  
+- Interpret concavity in applications  
+- Analyze population and growth models  
+- Use derivative signs to predict shape  
+- Build sign charts  
+- Sketch graphs from derivative data   
+- Combine asymptotes, derivatives, and concavity  
+- Perform full curve sketching  
+- Translate derivative info into geometry  
+- Interpret real-world behavior from graphs  
+- Analyze motion using derivatives  
+- Understand acceleration as curvature  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Indeterminate Forms and l’Hospital’s Rule
+
+Some limits cannot be evaluated using basic limit laws because they produce **undefined expressions** such as
+\[
+\frac{0}{0}, \quad \frac{\infty}{\infty}, \quad 0 \cdot \infty, \quad \infty - \infty, \quad 1^\infty, \quad 0^0, \quad \infty^0
+\]
+
+These are called **indeterminate forms** because the final value is not determined by the form alone —  
+the limit **may exist, may be infinite, or may not exist** depending on the functions involved.
+
+---
+
+### Indeterminate Forms
+
+**Quotient Forms**
+
+- \( \displaystyle \frac{0}{0} \)  
+- \( \displaystyle \frac{\infty}{\infty} \)  
+
+**Product Form**
+
+- \( 0 \cdot \infty \)  
+
+**Difference Form**
+
+- \( \infty - \infty \)  
+
+**Power Forms**
+
+- \( 0^0 \)  
+- \( \infty^0 \)  
+- \( 1^\infty \)  
+
+These must be transformed into quotient forms before evaluation.
+
+
+<div class="theorem">
+l’Hôpital’s Rule
+
+Let \( f \) and \( g \) be differentiable on an open interval containing \( a \) (except possibly at \( a \)), and suppose:
+
+**Case 1:** \( \frac{0}{0} \)
+\[
+\lim_{x \to a} f(x) = 0, \quad \lim_{x \to a} g(x) = 0
+\]
+
+**Case 2:** \( \frac{\infty}{\infty} \)
+\[
+\lim_{x \to a} f(x) = \pm \infty, \quad \lim_{x \to a} g(x) = \pm \infty
+\]
+
+Then:
+\[
+\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
+\]
+if the limit on the right exists (or is \( \pm \infty \)).
+</div>
+
+
+
+---
+
+### Interpretation
+
+Near a point, smooth functions behave almost linearly:
+\[
+f(x) \approx f'(a)(x-a), \quad g(x) \approx g'(a)(x-a)
+\]
+
+So:
+\[
+\frac{f(x)}{g(x)} \approx \frac{f'(a)}{g'(a)}
+\]
+This explains why derivatives control the limit.
+
+
+::: {.example}
+\( \frac{0}{0} \) Form
+
+Evaluate
+\[
+\lim_{x \to 1} \frac{\ln x}{x - 1}
+\]
+
+**Solution:**
+
+Both numerator and denominator → 0.
+
+Apply l’Hôpital’s Rule:
+
+\[
+\lim_{x \to 1} \frac{\ln x}{x - 1}
+= \lim_{x \to 1} \frac{1/x}{1}
+= \lim_{x \to 1} \frac{1}{x} = 1
+\]
+:::
+
+
+
+::: {.example}
+\( \frac{\infty}{\infty} \) Form
+
+Evaluate
+\[
+\lim_{x \to \infty} \frac{e^x}{x^2}
+\]
+
+**Solution:**
+
+
+Apply l’Hôpital’s Rule:
+
+\[
+\lim_{x \to \infty} \frac{e^x}{x^2} = \lim_{x \to \infty} \frac{e^x}{2x}
+\]
+
+Still \( \frac{\infty}{\infty} \), apply again:
+
+\[
+= \lim_{x \to \infty} \frac{e^x}{2} = \infty
+\]
+:::
+
+
+**Conclusion:** exponential growth dominates polynomial growth.
+
+::: {.example}
+Competing Growth Rates
+
+Evaluate
+\[
+\lim_{x \to \infty} \frac{\ln x}{\sqrt{x}}
+\]
+
+**Solution:**
+
+
+
+Apply l’Hôpital’s Rule:
+
+\[
+\lim_{x \to \infty} \frac{\ln x}{\sqrt{x}} = \lim_{x \to \infty} \frac{1/x}{1/(2\sqrt{x})}
+= \lim_{x \to \infty} \frac{2\sqrt{x}}{x}
+= \lim_{x \to \infty} \frac{2}{\sqrt{x}} = 0
+\]
+:::
+
+
+**Conclusion:** algebraic growth dominates logarithmic growth.
+
+
+::: {.example}
+Multiple Applications Example
+
+Evaluate
+\[
+\lim_{x \to 0} \frac{\tan x - x}{x^3}
+\]
+
+**Solution:**
+
+
+Apply l’Hôpital’s Rule repeatedly:
+
+\[
+\lim_{x \to 0} \frac{\tan x - x}{x^3} = \lim_{x \to 0} \frac{\sec^2 x - 1}{3x^2}
+\]
+
+\[
+= \lim_{x \to 0} \frac{2\sec^2 x \tan x}{6x}
+\]
+
+\[
+= \frac{1}{3} \lim_{x \to 0} \frac{\tan x}{x} = \frac{1}{3}
+\]
+:::
+
+
+::: {.example}
+Warning Example (Incorrect Use)
+
+Evaluate
+\[
+\lim_{x \to \pi/2} \frac{\sin x}{1 - \cos x}
+\]
+
+**Solution:**
+
+Denominator does **not** go to 0 ⇒ **NOT indeterminate**
+
+Function is continuous:
+
+\[
+\lim_{x \to \pi/2} \frac{\sin x}{1 - \cos x} = \frac{\sin(\pi/2)}{1-\cos(\pi/2)} = \frac{1}{1-0} = 1
+\]
+:::
+
+
+> **Never apply l’Hôpital unless the form is indeterminate.**
+
+---
+
+### Indeterminate Products \( 0 \cdot \infty \)
+
+**Strategy**
+
+Rewrite as a quotient:
+
+\[
+f(x)g(x) = \frac{f(x)}{1/g(x)} \quad \text{or} \quad \frac{g(x)}{1/f(x)}
+\]
+
+
+::: {.example}
+
+Evaluate
+\[
+\lim_{x \to 0^+} x \ln x
+\]
+
+**Solution:**
+
+
+Rewrite:
+\[
+x \ln x = \frac{\ln x}{1/x}
+\]
+
+Apply l’Hôpital:
+
+\[
+\lim_{x \to 0^+} x \ln x = \lim_{x \to 0^+} \frac{1/x}{-1/x^2}
+= \lim_{x \to 0^+} (-x) = 0
+\]
+:::
+
+
+---
+
+### Indeterminate Differences \( \infty - \infty \)
+
+**Strategy**
+
+Convert to a quotient using:
+
+- common denominators  
+- factoring  
+- rationalization  
+
+
+::: {.example}
+
+Evaluate
+\[
+\lim_{x \to \infty} (e^x - x)
+\]
+
+**Solution:**
+
+
+
+Factor:
+\[
+e^x - x = x\left(\frac{e^x}{x} - 1\right)
+\]
+
+Since \( \frac{e^x}{x} \to \infty \), product → \( \infty \)
+:::
+
+
+---
+
+### Indeterminate Powers
+
+**Types**
+
+- \( 0^0 \)  
+- \( \infty^0 \)  
+- \( 1^\infty \)  
+
+Strategy:  Let
+\[
+y = f(x)^{g(x)}
+\]
+Take logs:
+\[
+\ln y = g(x)\ln f(x)
+\]
+
+Now evaluate the limit of the product  
+→ convert to quotient → apply l’Hôpital → exponentiate.
+
+
+::: {.example}
+
+Evaluate
+\[
+\lim_{x \to 0^+} x^x
+\]
+
+**Solution:**
+
+
+Rewrite:
+\[
+x^x = e^{x\ln x}
+\]
+
+We know:
+\[
+\lim_{x \to 0^+} x\ln x = 0
+\]
+
+So:
+\[
+\lim_{x \to 0^+} x^x = e^0 = 1
+\]
+:::
+
+
+
+---
+
+### Putting It All Together
+
+When evaluating limits:
+
+1. Try direct substitution  
+2. Check continuity  
+3. Identify form  
+4. If indeterminate:  
+   - transform expression  
+   - apply l’Hôpital’s Rule  
+5. Simplify after each derivative  
+6. Re-check form after each step  
+7. Stop when limit becomes determinate  
+
+#### Conceptual Takeaways
+
+- Indeterminate ≠ undefined  
+- Form alone does not determine the limit  
+- Growth rates matter more than size  
+- Derivatives compare growth speeds  
+- l’Hôpital compares **rates of change**  
+- Exponentials dominate polynomials  
+- Polynomials dominate logarithms  
+- Limits encode competition between functions  
+- Algebra transforms indeterminacy  
+- Logarithms linearize powers  
+- Products and differences hide quotients  
+- Structure determines behavior  
+- Calculus reveals dominance  
+- Limits measure asymptotic behavior  
+- Growth hierarchy governs infinity  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- Identify indeterminate forms  
+- Classify limit types  
+- Apply l’Hôpital’s Rule correctly  
+- Verify applicability conditions  
+- Perform multiple applications  
+- Transform products into quotients  
+- Transform differences into quotients  
+- Handle power indeterminate forms   
+- Use logarithmic transformations  
+- Analyze growth rates  
+- Compare exponential, polynomial, and logarithmic growth  
+- Recognize invalid uses of l’Hôpital  
+- Choose simpler transformations  
+- Interpret infinite limits  
+- Convert algebraic forms strategically  
+- Solve limits at infinity   
+- Solve one-sided limits  
+- Evaluate asymptotic behavior  
+- Analyze dominant terms  
+- Build structured solution workflows  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Summary of Curve Sketching
+
+In calculus, graphing a function is not simply about producing a visual picture — it is about understanding the structure and behavior of the function. By combining algebraic properties with calculus tools, we can reveal important features of a curve such as where it increases or decreases, where it bends, where it reaches extreme values, and how it behaves near boundaries and infinity.
+
+Modern graphing technology can produce accurate plots, but without mathematical analysis these graphs can be misleading or incomplete. Calculus allows us to:
+
+- Detect subtle local maxima and minima  
+- Identify inflection points  
+- Determine exact locations of key features  
+- Understand long-term behavior  
+- Avoid false conclusions from visual approximations  
+
+A complete graph is the result of combining:
+
+- Algebraic structure  
+- Limits  
+- Derivatives  
+- Second derivatives  
+- Symmetry  
+- Asymptotic behavior  
+
+This integration of ideas transforms graphing from plotting points into mathematical reasoning.
+
+---
+
+### A Structured Framework for Sketching Curves
+
+To sketch a function \( y = f(x) \) effectively, we follow a systematic analysis:
+
+**1. Domain**
+Determine all values of \( x \) for which the function is defined.
+
+
+
+**2. Intercepts**
+
+- **\( y \)-intercept**: \( f(0) \), if defined   
+- **\( x \)-intercepts**: Solve \( f(x) = 0 \)  
+
+
+
+**3. Symmetry**
+
+- **Even function**:  
+  \[
+  f(-x) = f(x) \Rightarrow \text{symmetry about the } y\text{-axis}
+  \]
+
+- **Odd function**:  
+  \[
+  f(-x) = -f(x) \Rightarrow \text{symmetry about the origin}
+  \]
+
+- **Periodic function**:  
+  \[
+  f(x+p) = f(x) \Rightarrow \text{repeating behavior with period } p
+  \]
+
+**4. Asymptotes**
+
+**Horizontal asymptotes:**
+\[
+\lim_{x \to \pm \infty} f(x) = L \Rightarrow y = L
+\]
+
+**Vertical asymptotes:**
+\[
+\lim_{x \to a^\pm} f(x) = \pm \infty \Rightarrow x = a
+\]
+
+**Slant asymptotes:**
+\[
+\lim_{x \to \pm \infty} \left(f(x) - (mx+b)\right) = 0 \Rightarrow y = mx + b
+\]
+
+**5. Increasing and Decreasing Behavior**
+
+Compute \( f'(x) \):
+
+- \( f'(x) > 0 \Rightarrow f \) increasing  
+- \( f'(x) < 0 \Rightarrow f \) decreasing  
+
+**6. Local Extrema**
+
+Find **critical numbers** where:
+\[
+f'(x) = 0 \quad \text{or} \quad f'(x) \text{ does not exist}
+\]
+
+Use:
+
+- **First Derivative Test**  
+- **Second Derivative Test**  
+
+
+**7. Concavity and Inflection Points**
+
+Compute \( f''(x) \):
+
+- \( f''(x) > 0 \Rightarrow \) concave up  
+- \( f''(x) < 0 \Rightarrow \) concave down  
+
+Inflection points occur where concavity changes.
+
+
+
+**8. Final Sketch**
+
+Combine: 
+
+- Intercepts  
+- Asymptotes  
+- Increasing/decreasing intervals  
+- Local extrema  
+- Concavity  
+- Inflection points  
+- Symmetry  
+
+to produce a mathematically accurate graph.
+
+
+::: {.example}
+Rational Function
+
+Sketch:
+\[
+f(x) = \frac{2x^2}{x^2 - 1}
+\]
+
+
+**Solution:**
+
+Key Features
+
+- **Domain**: \( x \neq \pm 1 \)  
+- **Intercepts**: \( (0,0) \)  
+- **Symmetry**: Even function → symmetry about \( y \)-axis  
+- **Asymptotes**:  
+  - Vertical: \( x = \pm 1 \)  
+  - Horizontal: \( y = 2 \)  
+- **Monotonicity**: Increasing on \( (-\infty,-1) \cup (-1,0) \), decreasing on \( (0,1) \cup (1,\infty) \)  
+- **Extrema**: Local maximum at \( x=0 \)  
+- **Concavity**:  
+  - Concave up on \( |x|>1 \)  
+  - Concave down on \( |x|<1 \)  
+:::
+
+
+
+::: {.example}
+Exponential Growth/Decay Interaction
+
+Sketch
+\[
+f(x) = x e^x
+\]
+
+**Solution:**
+
+Key Features
+
+- **Domain**: \( \mathbb{R} \)  
+- **Intercept**: \( (0,0) \)  
+- **Asymptote**: Horizontal asymptote \( y=0 \) as \( x \to -\infty \)  
+- **Critical point**: \( x=-1 \)  
+- **Minimum value**: \( f(-1) = -e^{-1} \)  
+- **Concavity change**: Inflection point at \( x=-2 \)  
+
+This function shows how exponential decay dominates polynomial growth for large negative \( x \).
+:::
+
+
+
+::: {.example}
+Logarithmic Function
+
+Sketch
+\[
+f(x) = \ln(4 - x^2)
+\]
+
+**Solution:**
+
+Key Features
+
+- **Domain**: \( (-2,2) \)  
+- **Vertical asymptotes**: \( x=\pm 2 \)  
+- **Symmetry**: Even  
+- **Maximum**: at \( x=0 \)  
+- **Concavity**: Always concave down  
+
+This graph demonstrates **domain-restricted behavior** and vertical asymptotic boundaries.
+:::
+
+
+---
+
+### Putting It All Together
+
+> A graph is not an image — it is a mathematical story told by derivatives, limits, and structure.
+
+Calculus gives us the language to read that story precisely.
+
+
+
+#### Conceptual Takeaways
+
+- Graphing is **not plotting** — it is **analysis**.  
+- Every curve has structure that can be revealed using calculus.  
+- Derivatives describe **motion and direction**.  
+- Second derivatives describe **bending and shape**.  
+- Limits describe **boundaries and long-term behavior**.  
+- Algebra reveals **symmetry and structure**.  
+- Calculus connects local behavior (tangents) to global shape (entire graph).  
+
+A correct graph is a **logical consequence of mathematical properties**, not a visual guess.
+
+---
+
+#### Skills You Should Be Able to Do
+
+After mastering this section, you should be able to:
+
+- Determine the domain of a function  
+- Identify symmetry (even, odd, periodic)  
+- Find intercepts  
+- Compute and interpret limits  
+- Identify asymptotes (horizontal, vertical, slant)  
+- Compute derivatives and determine monotonicity  
+- Find and classify critical points  
+- Analyze concavity using second derivatives  
+- Identify inflection points  
+- Construct a full graph using mathematical reasoning  
+- Explain *why* a graph behaves as it does  
+
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Graphing with Calculus and Calculators
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Optimization Problems
+
+Optimization is one of the most important real-world applications of calculus. Many practical problems involve **maximizing** or **minimizing** quantities such as:
+
+- Area and volume  
+- Cost and profit  
+- Time and distance  
+- Energy and material usage  
+- Revenue and efficiency  
+
+Calculus provides a systematic way to solve these problems by converting real-world situations into mathematical models and then analyzing those models using derivatives.
+
+The central challenge in optimization is **modeling**: translating words, diagrams, and constraints into a function that can be optimized.
+
+---
+
+### General Strategy for Solving Optimization Problems
+
+**Step 1: Understand the Problem**
+
+Identify:
+
+- What quantity is being optimized (maximize or minimize)  
+- What quantities are known  
+- What constraints are given  
+
+**Step 2: Draw a Diagram**
+
+Visualize the situation and label known and unknown quantities.
+
+**Step 3: Introduce Notation**
+
+Let:
+
+- \( Q \) = quantity to optimize  
+- \( x, y, r, h, \dots \) = variables representing dimensions or quantities  
+
+Use meaningful symbols:
+
+- \( A \) for area  
+- \( V \) for volume  
+- \( C \) for cost  
+- \( T \) for time  
+- \( R \) for revenue  
+
+**Step 4: Write the Objective Function**
+
+Express the quantity \( Q \) in terms of the variables:
+\[
+Q = f(x,y,\dots)
+\]
+
+**Step 5: Reduce to One Variable**
+
+Use constraints to eliminate variables so that:
+\[
+Q = f(x)
+\]
+Also determine the **domain** of \( x \) from physical or contextual restrictions.
+
+**Step 6: Optimize Using Calculus**
+
+- Compute \( f'(x) \)  
+- Find critical points  
+- Apply:  
+  - Closed Interval Method (if domain is closed)  
+  - First Derivative Test  
+  - Behavior at boundaries  
+- Identify absolute maxima or minima  
+
+
+
+::: {.example}
+Maximum Area with Fixed Fencing
+
+A rectangular field borders a river and needs fencing on only three sides.  Total fencing available: 2400 ft. Find the dimensions that maximize the area.
+
+
+**Solution:**
+
+Model:  Let
+
+- \( x \) = depth  
+- \( y \) = width  
+
+Constraint:
+\[
+2x + y = 2400 \Rightarrow y = 2400 - 2x
+\]
+
+Area function:
+\[
+A(x) = x(2400 - 2x) = 2400x - 2x^2
+\]
+
+Domain:
+\[
+0 < x < 1200
+\]
+
+Optimization
+
+\[
+A'(x) = 2400 - 4x
+\]
+\[
+A'(x)=0 \Rightarrow x=600
+\]
+
+Then:
+\[
+y = 2400 - 2(600) = 1200
+\]
+
+Therefore, maximum area occurs when depth = 600 ft, width = 1200 ft.
+:::
+
+
+
+::: {.example}
+Minimum Cost Cylinder
+
+A cylindrical can must hold \( 1000 \text{ cm}^3 \) of liquid.  Find dimensions that minimize surface area (material cost).
+
+**Solution:**
+
+Model:  Surface area is given by
+\[
+A = 2\pi r^2 + 2\pi rh
+\]
+
+Volume constraint:
+\[
+\pi r^2 h = 1000 \Rightarrow h = \frac{1000}{\pi r^2}
+\]
+
+Substitute:
+\[
+A(r) = 2\pi r^2 + \frac{2000}{r}
+\]
+
+Domain:
+\[
+r > 0
+\]
+
+Optimization
+
+\[
+A'(r) = 4\pi r - \frac{2000}{r^2}
+\]
+\[
+A'(r)=0 \Rightarrow \pi r^3 = 500
+\]
+
+Then,
+\[
+r = \sqrt[3]{\frac{500}{\pi}}, \quad h = 2r.
+\]
+
+Therefore, minimum cost occurs when height = diameter.
+:::
+
+
+
+
+::: {.example}
+Closest Point on a Curve
+
+Find the point on \( y^2 = 2x \) closest to \( (1,4) \).
+
+**Solution:**
+
+Distance squared:
+\[
+d^2 = (x-1)^2 + (y-4)^2
+\]
+
+Constraint:
+\[
+x = \frac{1}{2}y^2
+\]
+
+Substitute:
+\[
+d^2(y) = \left(\frac{1}{2}y^2 - 1\right)^2 + (y-4)^2
+\]
+
+Differentiate and minimize:
+\[
+d'(y)=0 \Rightarrow y=2
+\Rightarrow x=2
+\]
+
+Therefore, the closest point is (2,2).
+:::
+
+
+
+::: {.example}
+Time Minimization (Boat and Running Problem)
+
+Total time:
+\[
+T(x) = \frac{\sqrt{x^2+9}}{6} + \frac{8-x}{8}
+\]
+Find the minimum time.
+
+**Solution:**
+
+Domain:
+\[
+0 \le x \le 8
+\]
+
+Differentiate:
+\[
+T'(x)=0 \Rightarrow x=\frac{9}{\sqrt{7}}
+\]
+
+Therefore, land $\frac{9}{\sqrt{7}}$ km downstream from starting point
+:::
+
+
+
+
+###  Applications in Business and Economics
+
+Let:
+
+- \( C(x) \) = cost function  
+- \( R(x) \) = revenue function  
+- \( P(x) = R(x) - C(x) \) = profit function  
+
+Derivatives:
+
+- \( C'(x) \) = marginal cost  
+- \( R'(x) \) = marginal revenue  
+- \( P'(x) \) = marginal profit  
+
+Optimization principles:
+
+- Max profit when \( P'(x)=0 \)  
+- Max revenue when \( R'(x)=0 \)  
+- Min cost when \( C'(x)=0 \)  
+
+
+::: {.example}
+Revenue Maximization
+
+Demand function after a rebate of $x$ is given by:
+\[
+p(x) = 450 - \frac{1}{2}x.
+\]
+Maximize the total revenue.
+
+**Solution:**
+
+Revenue:
+\[
+R(x) = xp(x) = 450x - \frac{1}{2}x^2
+\]
+
+Differentiate:
+\[
+R'(x)=450-x
+\Rightarrow x=450
+\]
+
+Price:
+\[
+p(450)=225
+\]
+
+Rebate:
+\[
+350-225=125
+\]
+
+Therefore, maximum revenue occurs with a \$125 rebate
+:::
+
+
+---
+
+### Putting It All Together
+
+
+> Optimization is not about formulas — it is about decision-making using structure, logic, and calculus.
+
+Calculus provides the mathematics of **best possible outcomes**.
+
+
+#### Conceptual Takeaways
+
+- Optimization is **modeling + calculus**, not just differentiation  
+- The hardest step is **translating words into functions**  
+- Constraints create structure  
+- Derivatives locate **optimal behavior**  
+- Real-world optimization always involves:  
+  - Trade-offs  
+  - Constraints  
+  - Competing effects  
+- Geometry, physics, business, and engineering all reduce to the same calculus logic  
+
+Optimization problems follow a universal pattern:
+\[
+\text{Real situation} \rightarrow \text{Model} \rightarrow \text{Function} \rightarrow \text{Derivative} \rightarrow \text{Decision}
+\]
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Translate word problems into mathematical models   
+- Identify objective functions  
+- Identify constraints  
+- Reduce multivariable problems to one variable  
+- Determine valid domains from context  
+- Differentiate and find critical points  
+- Apply the Closed Interval Method  
+- Use derivative tests for absolute extrema  
+- Solve geometry-based optimization problems  
+- Solve distance and time minimization problems  
+- Solve cost, revenue, and profit optimization problems  
+- Interpret mathematical results in real-world language  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Newton’s Method
+
+Many equations that arise in real-world applications cannot be solved exactly using algebraic formulas. While quadratic equations have explicit solution formulas, and cubic and quartic equations also have formulas (though complicated), there is no general formula for solving:
+
+- Polynomials of degree 5 or higher  
+- Transcendental equations such as  
+  \[
+  \cos x = x
+  \]
+  or  
+  \[
+  e^x = x^2
+  \]  
+
+As a result, we must rely on **numerical methods** to find approximate solutions. One of the most important and widely used methods is **Newton’s Method**, also called the **Newton–Raphson Method**.
+
+This method is the mathematical foundation behind how calculators and computer algebra systems solve equations numerically.
+
+**The Root-Finding Problem**
+
+We want to solve equations of the form:
+\[
+f(x) = 0
+\]
+
+Geometrically, this means finding the **x-intercepts** of the graph \( y = f(x) \).
+
+**Geometric Idea of Newton’s Method**
+
+1. Start with an initial guess \( x_1 \) for the root.  
+2. Draw the tangent line to the curve \( y = f(x) \) at \( (x_1, f(x_1)) \).  
+3. Use the **x-intercept of the tangent line** as the next approximation \( x_2 \).  
+4. Repeat the process using \( x_2 \), then \( x_3 \), and so on.  
+
+The key idea is:
+
+> A tangent line is a good local approximation of a curve, so its x-intercept is close to the true root.
+
+---
+
+### Derivation of the Formula
+
+The tangent line at \( x_n \) has slope \( f'(x_n) \) and equation:
+\[
+y - f(x_n) = f'(x_n)(x - x_n)
+\]
+
+At the x-intercept, \( y = 0 \), so:
+\[
+0 - f(x_n) = f'(x_n)(x_{n+1} - x_n)
+\]
+
+Solving for \( x_{n+1} \):
+\[
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\]
+
+This is **Newton’s Method formula**.
+
+
+<div class="note">
+Newton’s Method Algorithm
+
+Given an initial guess \( x_1 \):
+\[
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\]
+
+This produces a sequence:
+\[
+x_1, x_2, x_3, x_4, \dots
+\]
+
+If the sequence approaches a value \( r \), then:
+\[
+\lim_{n \to \infty} x_n = r
+\]
+and \( r \) is a root of \( f(x) = 0 \).
+</div>
+
+
+---
+
+### Convergence and Failure
+
+Newton’s method:
+
+- Converges **rapidly** when the initial guess is good  
+- Can fail when:  
+  - \( f'(x_n) \approx 0 \)  
+  - The function is highly curved  
+  - The tangent line jumps outside the domain  
+  - The initial guess is poor  
+
+Thus, choosing a good starting value matters.
+
+
+::: {.example}
+Polynomial Equation
+
+Solve approximately:
+\[
+x^3 - 2x - 5 = 0
+\]
+
+**Solution:**
+
+Let:
+\[
+f(x) = x^3 - 2x - 5
+\quad \Rightarrow \quad
+f'(x) = 3x^2 - 2
+\]
+
+Newton’s formula:
+\[
+x_{n+1} = x_n - \frac{x_n^3 - 2x_n - 5}{3x_n^2 - 2}
+\]
+
+Start with \( x_1 = 2 \):
+
+\[
+x_2 \approx 2.1
+\]
+\[
+x_3 \approx 2.0946
+\]
+
+Result: $x \approx 2.0946$
+:::
+
+
+::: {.example}
+Computing a Root Value
+
+Compute:
+\[
+\sqrt[6]{2}
+\]
+
+**Solution:**
+
+This is the positive root of:
+\[
+x^6 - 2 = 0
+\]
+
+Let:
+\[
+f(x) = x^6 - 2
+\quad \Rightarrow \quad
+f'(x) = 6x^5
+\]
+
+Newton’s formula:
+\[
+x_{n+1} = x_n - \frac{x_n^6 - 2}{6x_n^5}
+\]
+
+Start with \( x_1 = 1 \):
+
+\[
+x_2 \approx 1.16666667
+\]
+\[
+x_3 \approx 1.12644368
+\]
+\[
+x_4 \approx 1.12249707
+\]
+\[
+x_5 \approx 1.12246205
+\]
+
+Result: $\sqrt[6]{2} \approx 1.12246205$.
+:::
+
+
+::: {.example}
+Transcendental Equation
+
+Solve:
+\[
+\cos x = x
+\]
+
+**Solution:**
+
+Rewrite:
+\[
+\cos x - x = 0
+\]
+
+Let:
+\[
+f(x) = \cos x - x
+\quad \Rightarrow \quad
+f'(x) = -\sin x - 1
+\]
+
+Newton’s formula:
+\[
+x_{n+1} = x_n - \frac{\cos x_n - x_n}{-\sin x_n - 1}
+= x_n + \frac{\cos x_n - x_n}{\sin x_n + 1}
+\]
+
+Start with \( x_1 = 1 \):
+
+\[
+x_2 \approx 0.75036387
+\]
+\[
+x_3 \approx 0.73911289
+\]
+\[
+x_4 \approx 0.73908513
+\]
+
+Result: $x \approx 0.739085$.
+:::
+
+
+---
+
+### Stopping Criterion
+
+In practice, we stop when:
+\[
+|x_{n+1} - x_n| \text{ is very small}
+\]
+
+Rule of thumb:
+
+> Stop when successive approximations agree to the required number of decimal places.
+
+---
+
+### Putting It All Together
+
+
+> Newton’s Method transforms calculus into a computational tool for solving problems that algebra cannot.
+
+It is not just a technique — it is a bridge between theory, geometry, and computation.
+
+
+
+---
+
+#### Conceptual Takeaways
+
+- Many equations **cannot be solved exactly**  
+- Numerical methods are essential in applied mathematics  
+- Newton’s Method uses:  
+  - Tangent lines   
+  - Linear approximation  
+  - Iteration  
+- It transforms geometry into computation  
+- Root-finding becomes a **dynamic process**, not a formula  
+- Calculus provides **algorithms**, not just symbolic results  
+- Technology relies heavily on Newton’s method internally  
+- Newton’s Method is an application of **local linearization**  
+- Convergence depends on:  
+  - Function behavior  
+  - Starting value  
+  - Derivative size  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- Rewrite equations in the form \( f(x) = 0 \)  
+- Identify appropriate functions \( f(x) \)  
+- Compute derivatives \( f'(x) \)  
+- Apply Newton’s Method formula  
+- Generate iterative approximations  
+- Interpret convergence behavior  
+- Choose reasonable initial guesses  
+- Detect possible failure conditions  
+- Solve algebraic equations numerically  
+- Solve transcendental equations numerically  
+- Use graphs to guide starting values  
+- Understand how calculators solve equations  
+- Apply linear approximation to nonlinear problems  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+##  Antiderivatives
+
+
+In many real-world situations, we know the rate of change of a quantity and want to determine the quantity itself. For example:
+
+- A physicist may know the **velocity** of a particle and want its **position**.  
+- An engineer may know the **rate of leakage** from a tank and want the **total leaked volume**.  
+- A biologist may know the **growth rate** of a population and want the **population size**.  
+
+In each case, the problem is to find a function whose derivative is known.
+
+
+<div class="definition">
+A function \( F \) is called an **antiderivative** of a function \( f \) on an interval \( I \) if
+\[
+F'(x) = f(x) \quad \text{for all } x \in I
+\]
+</div>
+
+That is, \( F \) is an antiderivative of \( f \) if differentiating \( F \) gives back \( f \).
+
+
+Antiderivatives are **not unique**.
+
+Example:
+\[
+f(x) = x^2
+\]
+
+An antiderivative is:
+\[
+F(x) = \frac{1}{3}x^3
+\]
+
+But also:
+\[
+G(x) = \frac{1}{3}x^3 + 100
+\]
+
+Both satisfy:
+\[
+F'(x) = G'(x) = x^2
+\]
+
+---
+
+### General Antiderivative Theorem
+
+
+
+
+<div class="theorem">
+If \( F \) is an antiderivative of \( f \), then **all antiderivatives** of \( f \) are given by:
+\[
+F(x) + C
+\]
+where \( C \) is an arbitrary constant.
+</div>
+
+This constant is called the **constant of integration**.
+
+Geometrically, this represents a **family of vertical translations** of the same curve.
+
+---
+
+### Basic Antidifferentiation Rules
+
+Every differentiation rule can be read **backwards** to produce an antidifferentiation rule.
+
+
+<div class="theorem">
+Linearity
+\[
+\int c f(x)\,dx = c \int f(x)\,dx
+\]
+\[
+\int [f(x) + g(x)]\,dx = \int f(x)\,dx + \int g(x)\,dx
+\]
+
+Power Rule (for \( n \neq -1 \))
+\[
+\int x^n \, dx = \frac{x^{n+1}}{n+1} + C
+\]
+
+Other Common Antiderivatives
+\[
+\int \sin x \, dx = -\cos x + C
+\]
+
+\[
+\int \cos x \, dx = \sin x + C
+\]
+
+\[
+\int e^x \, dx = e^x + C
+\]
+
+\[
+\int \frac{1}{x} \, dx = \ln|x| + C
+\]
+
+\[
+\int \frac{1}{1+x^2} \, dx = \tan^{-1}x + C
+\]
+
+\[
+\int \sec^2 x \, dx = \tan x + C
+\]
+</div>
+
+
+
+::: {.example}
+Basic Antiderivatives
+
+Find the general antiderivative.
+
+a.  $f(x) = \sin x$
+
+\[
+F(x) = -\cos x + C
+\]
+
+b.  $f(x) = \frac{1}{x}$
+
+\[
+F(x) = \ln|x| + C
+\]
+
+c.  $f(x) = x^n, \quad n \neq -1$
+
+\[
+F(x) = \frac{x^{n+1}}{n+1} + C
+\]
+:::
+
+
+
+::: {.example}
+Solving a Differential Equation
+
+Find all functions \( t(x) \) such that:
+\[
+t'(x) = 4\sin x + 2x^{4} - x^{-1/2}
+\]
+
+**Solution:**
+
+Antidifferentiate term-by-term:
+\[
+t(x) = -4\cos x + \frac{2}{5}x^5 - 2x^{1/2} + C
+\]
+:::
+
+
+
+::: {.example}
+Initial Value Problem
+
+Find \( f(x) \) if:
+\[
+f'(x) = e^x + \frac{20}{1+x^2}, \qquad f(0) = -2
+\]
+
+**Solution:**
+
+General antiderivative:
+\[
+f(x) = e^x + 20\tan^{-1}x + C
+\]
+
+Apply condition:
+\[
+-2 = e^0 + 20\tan^{-1}(0) + C
+\Rightarrow -2 = 1 + 0 + C
+\Rightarrow C = -3
+\]
+
+\[
+f(x) = e^x + 20\tan^{-1}x - 3
+\]
+:::
+
+
+
+::: {.example}
+Second-Order Differential Equation
+
+Given:
+\[
+f''(x) = 12x^2 + 6x - 4, \quad f(0)=4, \quad f(1)=1
+\]
+Find $f(x)$.
+
+**Solution:**
+
+First integration:
+\[
+f'(x) = 4x^3 + 3x^2 - 4x + C
+\]
+
+Second integration:
+\[
+f(x) = x^4 + x^3 - 2x^2 + Cx + D
+\]
+
+Apply conditions:
+\[
+f(0)=4 \Rightarrow D=4
+\]
+\[
+f(1)=1 \Rightarrow 1 = 1 + 1 - 2 + C + 4 \Rightarrow C=-3
+\]
+
+Therefore,
+\[
+f(x) = x^4 + x^3 - 2x^2 - 3x + 4.
+\]
+:::
+
+
+---
+
+### Graphical Interpretation
+
+If \( F'(x) = f(x) \), then:
+
+- \( f(x) > 0 \Rightarrow F \) is increasing   
+- \( f(x) < 0 \Rightarrow F \) is decreasing  
+- \( f(x) = 0 \Rightarrow F \) has a horizontal tangent  
+- Max/min of \( f \) correspond to **inflection points** of \( F \)  
+
+This allows sketching antiderivatives even without formulas, using slope information alone.
+
+
+
+
+::: {.example}
+Applications to Motion (Rectilinear Motion)
+
+Let:
+
+- \( s(t) \) = position  
+- \( v(t) = s'(t) \) = velocity  
+- \( a(t) = v'(t) = s''(t) \) = acceleration  
+
+Thus:
+\[
+v(t) = \int a(t)\,dt
+\]
+\[
+s(t) = \int v(t)\,dt
+\]
+:::
+
+
+
+::: {.example}
+Motion with Acceleration
+
+Given:
+\[
+a(t) = 6t + 4, \quad v(0) = -6, \quad s(0)=9
+\]
+
+Velocity:
+\[
+v(t) = 3t^2 + 4t - 6
+\]
+
+Position:
+\[
+s(t) = t^3 + 2t^2 - 6t + 9
+\]
+:::
+
+
+
+
+---
+
+### Putting It All Together
+
+> Differentiation describes change.  
+> Antidifferentiation reconstructs reality from change.
+
+Antiderivatives transform **rates into structure**, making calculus a tool for **prediction, reconstruction, and modeling**.
+
+#### Conceptual Takeaways
+
+- Antiderivatives reverse differentiation  
+- Rates of change encode full system behavior  
+- Constants of integration represent **missing information**  
+- Differential equations model real systems  
+- Motion, growth, flow, and accumulation all use antiderivatives   
+- Integration begins as **inverse differentiation**  
+- Graphs of derivatives determine shape of original functions  
+- Calculus links **rates → accumulation → prediction**  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- Define antiderivatives formally    
+- Compute basic antiderivatives    
+- Apply antidifferentiation rules  
+- Use the power rule for integration  
+- Solve first-order differential equations  
+- Solve initial value problems  
+- Interpret constants of integration  
+- Solve second-order differential equations  
+- Model motion using acceleration → velocity → position  
+- Interpret graphs of derivatives  
+- Sketch antiderivatives from slope data  
+- Apply integration to physical systems  
+- Translate real-world rates into mathematical models  
+
+
+
+---
+
+####  Problems

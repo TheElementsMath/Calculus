@@ -1,0 +1,2242 @@
+# Functions and Models
+
+## Four Ways to Represent a Function
+
+
+A **function** is a rule that assigns **exactly one output** to each input from a specified set.  Functions model relationships where one quantity depends on another and appear throughout mathematics, science, and real-world applications.
+
+
+
+<div class="definition">
+A **function** is a rule assigning each input \( x \) in a domain \( D \) exactly one output \( f(x) \) in a set \( E \). 
+</div>
+
+
+<div class="definition">  For any function, the **domain** is the set of all allowable inputs.  The **range** is the set of all possible outputs.
+</div>
+
+
+
+
+
+<div class="definition">  For a single variable function, the **independent variable** is the input variable while the **dependent variable** is the output variable.
+</div>
+
+
+
+
+
+<div class="note">
+**Conceptual Models of a Function**
+
+- **Machine Model:**  
+  Input → Function rule → Output
+
+- **Arrow Diagram:**  
+  Domain elements mapped to range elements
+
+- **Graph Model:**  
+  Set of ordered pairs \( (x, f(x)) \)
+</div> 
+
+::: {.example}
+One Function, Multiple Interpretations
+
+Let the function be:
+\[
+f(x) = 2x + 1
+\]
+
+We interpret this function in multiple connected ways.
+
+**1. Independent and Dependent Variables**
+
+- The **independent variable** is \( x \) (the input)
+- The **dependent variable** is \( f(x) \) (the output)
+
+This means the value of \( f(x) \) **depends on** the value of \( x \).
+
+**2. Domain and Range**
+
+If no restrictions are given:
+
+- **Domain:** all real numbers  
+  \[
+  (-\infty, \infty)
+  \]
+
+- **Range:** all real numbers  
+  \[
+  (-\infty, \infty)
+  \]
+
+So every real input produces exactly one real output.
+
+**3. Machine Model (Process View)**
+
+Think of the function as a machine:
+
+Input (x) → multiply by 2 → add 1 → Output (f(x))
+
+\[x = 3 → (2·3) + 1 → 7\]
+
+So, \[f(3) = 7.\]
+
+**4. Arrow Diagram (Mapping View)**
+
+Domain → Range
+
+\begin{align*}
+-2&  →  -3 \\
+-1&  →  -1 \\
+0&  →   1 \\
+1&  →   3 \\
+2&  →   5 \\
+\end{align*}
+
+Each input has exactly one arrow pointing to one output.
+
+**5. Graph Model (Geometric View)**
+
+The graph of \[f(x)=2x+1\] is a straight line:
+
+*  slope = 2
+*  $y$-intercept = 1
+
+Each $x$-value corresponds to exactly one $y$-value, so the graph passes the Vertical Line Test.
+:::
+
+
+
+<div class="note">
+**Graphical Interpretation**
+
+- The graph shows the **behavior** of a function.  
+- Function values are read as **heights** above the \( x \)-axis.  
+- Domain is visualized on the \( x \)-axis.  
+- Range is visualized on the \( y \)-axis. 
+</div> 
+
+
+
+
+
+<div class="note">
+**Domain Rules**
+
+- Square roots → radicand \( \ge 0 \)  
+- Denominators → cannot be 0  
+- **Domain convention:** If not stated, the domain is all real numbers where the formula is defined
+</div> 
+
+
+
+::: {.example}
+**Identifying Domain and Range**  
+
+Let \( f(x) = \sqrt{x - 3} \).
+
+1. Find the domain of \( f \)  
+2. Find the range of \( f \)
+
+**Solution**
+
+The square root function is defined only when the radicand is nonnegative:
+
+\[
+x - 3 \ge 0 \Rightarrow x \ge 3
+\]
+
+So the **domain** is:
+\[
+[3, \infty)
+\]
+
+Since \( \sqrt{x-3} \ge 0 \) for all \( x \ge 3 \), the smallest value of \( f(x) \) occurs at \( x=3 \):
+
+\[
+f(3) = 0
+\]
+
+Thus the **range** is:
+\[
+[0, \infty)
+\]
+:::
+
+
+
+### Four Representations of a Function 
+
+<div class="note">
+**Four Representations of a Function**
+
+1. **Verbal** — Description in words  
+   *Example: population depends on time*
+
+2. **Numerical** — Table of values  
+   *Example: population data by year*
+
+3. **Visual** — Graph  
+   *Example: seismograph output, population scatter plot*
+
+4. **Algebraic** — Formula  
+   *Example: \( A(r) = \pi r^2 \)*
+</div>
+
+> A single function may be represented in multiple ways, and moving between representations improves understanding.
+
+::: {.example}
+**Representations of a Function**  
+
+The area \( A \) of a circle depends on the radius \( r \).
+
+1. Give a **verbal** representation  
+2. Give an **algebraic** representation  
+3. Describe a **graphical** representation  
+4. Describe a **numerical** representation  
+
+**Solution**
+
+1. **Verbal:**  
+   The area of a circle increases as the radius increases.
+
+2. **Algebraic:**  
+   \[
+   A(r) = \pi r^2
+   \]
+
+3. **Graphical:**  
+   The graph is the right half of an upward-opening parabola in the \( (r, A) \)-plane, defined for \( r \ge 0 \).
+
+4. **Numerical:**  
+   A table of values:
+   \[
+   \begin{array}{c|c}
+   r & A \\
+   \hline
+   1 & \pi \\
+   2 & 4\pi \\
+   3 & 9\pi
+   \end{array}
+   \]
+:::
+
+
+
+
+<div class="definition">
+**Vertical Line Test**
+
+A graph represents a function **if and only if** no vertical line intersects the graph more than once.
+</div> 
+
+::: {.example}
+**Vertical Line Test**  
+
+Determine whether the graph defined by the equation  
+\[
+x = y^2 - 1
+\]
+represents a function of \( x \).
+
+**Solution**
+
+Rewriting:
+\[
+y^2 = x + 1 \Rightarrow y = \pm \sqrt{x+1}
+\]
+
+For many values of \( x \), there are **two corresponding values of \( y \)**.
+
+Therefore, vertical lines intersect the graph more than once.
+
+\[
+\text{The graph does NOT represent a function of } x.
+\]
+
+This fails the **Vertical Line Test**.
+:::
+
+
+###  Piecewise-Defined Functions
+
+Some functions are defined by **different formulas on different intervals**:
+
+\[
+f(x) =
+\begin{cases}
+\text{rule 1} & \text{if condition 1} \\
+\text{rule 2} & \text{if condition 2}
+\end{cases}.
+\]
+
+
+
+Examples:
+- Absolute value function  
+- Step functions (e.g., postage cost)  
+- Physical systems with phase changes  
+
+
+::: {.example}
+**Piecewise Function Evaluation**
+
+Let
+\[
+f(x) =
+\begin{cases}
+x+2, & x < 0 \\
+x^2, & x \ge 0
+\end{cases}
+\]
+
+Compute:
+1. \( f(-3) \)  
+2. \( f(0) \)  
+3. \( f(2) \)
+
+**Solution**
+
+Since the function is piecewise, choose the rule based on the value of \( x \):
+
+- \( x=-3 < 0 \Rightarrow f(-3) = -3 + 2 = -1 \)
+- \( x=0 \ge 0 \Rightarrow f(0) = 0^2 = 0 \)
+- \( x=2 \ge 0 \Rightarrow f(2) = 2^2 = 4 \)
+
+So:
+\[
+f(-3)=-1,\quad f(0)=0,\quad f(2)=4
+\]
+:::
+
+
+
+
+::: {.example}
+**Function as a Model**
+
+Suppose the cost \( C \) of shipping a package is:
+
+- $5 for up to 1 kg  
+- $3 for each additional kg (or part thereof)
+
+Define \( C(w) \) as a piecewise function.
+
+**Solution**
+
+\[
+C(w) =
+\begin{cases}
+5, & 0 < w \le 1 \\
+5 + 3(w-1), & w > 1
+\end{cases}
+\]
+
+This defines a **step-type piecewise function** modeling real-world cost rules.
+:::
+
+
+
+---
+
+### Symmetry
+
+
+<div class="definition">
+- **Even function:**  
+  \[
+  f(-x) = f(x)
+  \]
+  → symmetry about the **y-axis**
+
+- **Odd function:**  
+  \[
+  f(-x) = -f(x)
+  \]
+  → symmetry about the **origin**
+</div>
+
+
+::: {.example}
+**Even, Odd, or Neither**
+
+Determine whether the function  
+\[
+f(x) = x^4 - x^2
+\]
+is even, odd, or neither.
+
+**Solution**
+
+Compute \( f(-x) \):
+
+\[
+f(-x) = (-x)^4 - (-x)^2 = x^4 - x^2 = f(x)
+\]
+
+Since:
+\[
+f(-x) = f(x)
+\]
+
+The function is **even**.
+
+Therefore, its graph is **symmetric about the y-axis**.
+:::
+
+
+---
+
+### Increasing and Decreasing Functions
+
+
+<div class="definition">
+- **Increasing on interval \( I \):**
+  \[
+  x_1 < x_2 \Rightarrow f(x_1) < f(x_2)
+  \]
+
+- **Decreasing on interval \( I \):**
+  \[
+  x_1 < x_2 \Rightarrow f(x_1) > f(x_2)
+  \]
+</div>
+
+::: {.example}
+**Increasing and Decreasing Intervals**
+
+Let \( f(x) = x^3 \).
+
+Determine where the function is increasing or decreasing.
+
+**Solution**
+
+As \( x \) increases, the value of \( x^3 \) always increases.
+
+For any \( x_1 < x_2 \):
+\[
+f(x_1) = x_1^3 < x_2^3 = f(x_2)
+\]
+
+Therefore, \( f(x) = x^3 \) is:
+
+- **Increasing on** \( (-\infty, \infty) \)
+- **Decreasing on:** none
+:::
+
+
+---
+
+### Putting it All Together
+
+Functions are the **language of calculus**:
+
+> They connect structure (math) to behavior (systems), data (tables), meaning (graphs), and rules (formulas).
+
+####  Conceptual Takeaways
+
+- Functions model **dependency**.
+- Representations emphasize **different insights**.
+- Graphs reveal **behavior**.
+- Tables reveal **data structure**.
+- Formulas enable **analysis**.
+- Real-world functions often lack exact formulas but still support calculus operations.
+- Mathematical models approximate reality.
+
+---
+
+#### Skills You Should Be Able To Do:
+
+- Identify domain and range.  
+- Convert between representations.  
+- Interpret graphs.  
+- Apply the vertical line test.  
+- Construct piecewise functions.  
+- Analyze symmetry.  
+- Determine increasing/decreasing intervals.  
+- Model real-world systems as functions.  
+
+---
+
+#### Practice Problems:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Mathematical Models: A Catalog of Essential Functions
+
+
+
+The purpose of a model is to **understand behavior** and **make predictions**.
+
+
+<div class="definition">
+A **mathematical model** is a mathematical description (using functions or equations) of a real-world phenomenon such as population growth, motion, economics, chemical reactions, or environmental change. 
+</div>
+
+
+
+
+
+<div class="note">
+**The Modeling Cycle**
+
+1. **Formulate**  
+   - Identify independent and dependent variables  
+   - Make simplifying assumptions  
+   - Use physical laws or data patterns  
+   - Collect and organize data if no physical law exists
+
+2. **Solve**  
+   - Apply mathematical tools (algebra, calculus, statistics)
+
+3. **Interpret**  
+   - Translate mathematical results into real-world meaning
+
+4. **Test & Refine**  
+   - Compare predictions with new data  
+   - Revise or rebuild the model if necessary
+</div>
+
+> Mathematical models are **idealizations**: they simplify reality to make analysis possible, but are never perfectly accurate.
+
+---
+
+### Linear Models
+
+
+
+<div class="definition">
+A **linear model** has the form:
+\[
+y = mx + b
+\]
+where  
+
+- \( m \) = slope (rate of change)  
+- \( b \) = intercept  
+</div>
+
+
+
+
+**Properties:**
+
+- Constant rate of change  
+- Straight-line graph  
+- Used for steady growth or decline  
+
+
+
+
+
+
+::: {.example}
+
+Linear Model – Temperature vs Height
+
+**Problem:**  
+The temperature decreases linearly as you go up a mountain. At the base (0 km), the temperature is 25°C, and at 2 km, it is 15°C.  
+(a) Find a linear function \(T(h)\) for temperature as a function of height \(h\) in km.  
+(b) Predict the temperature at 3.5 km.
+
+**Solution:**
+
+(a) Linear model: \(T(h) = m h + b\)  
+
+- Slope: \( m = \frac{15 - 25}{2 - 0} = \frac{-10}{2} = -5 \)  
+- Intercept: \( b = 25 \)  
+
+\[
+T(h) = -5h + 25.
+\]
+
+(b) Temperature at 3.5 km:  
+\[
+T(3.5) = -5(3.5) + 25 = -17.5 + 25 = 7.5^\circ \text{C}
+\]
+:::
+
+---
+
+### Polynomial Functions
+
+
+
+<div class="definition">
+A function \( P(x) \) is a polynomial if:
+\[
+P(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0
+\]
+
+- Degree = highest power of \( x \)  
+- Domain: \( \mathbb{R} \)
+</div>
+
+
+
+
+<div class="note">
+
+**Special Cases:**
+
+- **Linear** (degree 1): straight line \(y = mx + b. \)  
+- **Quadratic** (degree 2): parabola  \(y = ax^2 + bx + c.\)
+- **Cubic** (degree 3): S-shaped curve  \(y = ax^3 + bx^2 + cx + d.\)
+</div>
+
+
+
+::: {.example}
+
+Polynomial Model – Falling Object
+
+**Problem:**
+A ball is dropped from a height of 100 m. Its height $h(t)$ after 
+$t$ seconds follows a quadratic model due to gravity: 
+\[h(t)=−4.9t^2+100.\]
+When does the ball hit the ground?
+
+
+**Solution:**
+
+Solve $h(t)=0:$
+\[0 = −4.9t^2+100 \Longrightarrow  t^2 = \frac{100}{4.9} \Longrightarrow t \approx 4.52 s.\]
+:::
+
+Polynomials are widely used in:
+
+- Economics (cost models)  
+- Physics  
+- Engineering  
+- Natural sciences  
+
+---
+
+### Power Functions
+
+
+
+<div class="definition">
+For a real number $a$, a function $f$ is a power function if it has the form
+\[
+f(x) = x^a.
+\]
+</div>
+
+
+::: {.example}
+**Power Function – Projectile Height**
+
+The height $h(x)$ of a projectile is modeled as a power function:
+\[h(x)=50x^{0.5},\] where $x$ is the horizontal distance in meters. Find the height at $x=16$m and plot the trajectory.
+
+**Solution:**
+
+Height at $x=16$: \[h(16)=50⋅16^{0.5}=50⋅4=200 m.\]
+:::
+
+
+<div class="note">
+**Common Types**
+
+1. **Integer powers** (\( a = n \))  
+   - Even \( n \): symmetric (parabola-like)  
+   - Odd \( n \): odd symmetry (S-shaped)
+
+2. **Root functions** (\( a = \frac{1}{n} \))  
+   - Square root: \( \sqrt{x} \)  
+   - Cube root: \( \sqrt[3]{x} \)
+
+3. **Reciprocal function**:
+\[
+f(x) = \frac{1}{x}
+\]  
+  - Hyperbola  
+  - Asymptotes at axes  
+  - Appears in physics (e.g. Boyle’s Law)  
+</div>
+
+---
+
+### Rational Functions
+
+
+
+<div class="definition">
+A function $f$ is a **rational function** if 
+\[
+f(x) = \frac{P(x)}{Q(x)}
+\]
+where \( P, Q \) are polynomials and \( Q(x) \neq 0 \).
+
+- Domain excludes zeros of denominator
+- Includes reciprocal function as a special case
+</div>
+
+---
+
+### Algebraic Functions
+
+
+
+<div class="definition">
+A function is **algebraic** if it is formed using:
+
+- Addition  
+- Subtraction  
+- Multiplication  
+- Division  
+- Roots  
+
+Starting from polynomials.
+</div>
+
+Includes:
+
+- Polynomials  
+- Rational functions  
+- Root functions  
+
+---
+
+### Trigonometric Functions
+
+
+
+<div class="note">
+
+Core trigonometric functions include:  
+  - \( \sin x \),   
+  - \( \cos x \),  
+  - \( \tan x \)  
+</div>
+
+
+
+<div class="note">
+**Properties**
+
+- Domain of \( \sin x, \cos x \): \( \mathbb{R} \)  
+- Range: \([-1, 1]\)  
+- Periodic with period \( 2\pi \)
+
+\[
+\sin(x + 2\pi) = \sin x,\quad \cos(x + 2\pi) = \cos x
+\]
+</div>
+
+
+
+
+::: {.example}
+**Trigonometric Model – Daylight Hours**
+
+The number of daylight hours $L(t)$ in a city varies periodically over the year:
+\[L(t)=12+2.5\sin(\frac{2\pi}{365}(t−80)),\]
+where $t$ is the day of the year. Plot the daylight hours for one year.
+
+Solution:
+
+Max daylight: 
+\[L_{max}=12+2.5=14.5 \; hours.\]
+Min daylight: 
+\[L_{min}= 12 - 2.5 = 9.5 \; hours.\]
+:::
+
+
+**Applications**
+
+Used to model **periodic phenomena**:
+
+- Sound waves  
+- Vibrations  
+- Tides  
+- Seasonal patterns  
+- Daylight cycles  
+
+---
+
+### Exponential Functions
+
+
+
+<div class="definition">
+For $b>0$, an **exponential function** has the form
+\[
+f(x) = b^x.
+\]
+
+- Domain: \( \mathbb{R} \)  
+- Range: \( (0, \infty) \)
+</div>
+
+
+
+::: {.example}
+**Exponential Model – Population Growth**
+
+**Problem:**
+A small town has 10,000 residents. The population grows at 3% per year. Model the population after $t$ years using an exponential function and predict the population in 10 years.
+
+**Solution:**
+
+Exponential model:
+
+\[P(t)=P⋅(1+r)^t,\]
+where $P_0=10000$, $r=0.03$ and \[P(t)=10000⋅1.03^t.\]
+
+Population in 10 years:
+\[P(10)=10000⋅1.03^{10} ≈13439.\]
+:::
+
+
+
+**Applications:**
+
+- Population growth (\( b > 1 \))  
+- Radioactive decay (\( 0 < b < 1 \))  
+- Finance  
+- Epidemics  
+
+---
+
+### Logarithmic Functions
+
+
+
+<div class="definition">
+For $b>0$, the **logarithmic function** is defined to be
+\[
+f(x) = \log_b x,
+\]
+where $x = b^{f(x)}$.
+
+- Inverse of exponential functions  
+- Domain: \( (0, \infty) \)  
+- Range: \( \mathbb{R} \)  
+- Slow growth for large \( x \)  
+</div>
+
+
+
+
+---
+
+### Putting it All Together
+
+
+
+> Mathematical modeling is a **cyclic process**:
+
+> **Reality → Mathematics → Predictions → Testing → Refinement**
+
+
+**Function Classification Summary**
+
+| Type | Example |
+|------|--------|
+| Linear | \( y = mx + b \) |
+| Polynomial | \( x^5 - 3x^2 + 1 \) |
+| Power | \( x^3 \), \( \sqrt{x} \) |
+| Rational | \( \frac{x^2+1}{x-2} \) |
+| Algebraic | \( \sqrt{x^2+1} \) |
+| Trigonometric | \( \sin x \), \( \cos x \) |
+| Exponential | \( 2^x \) |
+| Logarithmic | \( \log x \) |
+
+
+Good models are:
+
+  - Simple enough to compute  
+  - Accurate enough to be useful  
+  - Always approximations of reality  
+
+#### Conceptual Takeaways
+
+
+- Models help explain, predict, and understand phenomena  
+- The cycle is iterative: Formulate → Solve → Interpret → Test → Refine  
+- Linear functions model constant-rate relationships   
+- Degree of a polynomial determines the graph shape   
+- Power functions generalize polynomials  
+- Roots are inverse powers  
+- Reciprocal functions show inverse proportionality  
+- Denominator zeros create restrictions and vertical asymptotes  
+- Trigonometric functions repeat periodically  
+- Sine/cosine model oscillatory behavior  
+
+####  Skills You Should be Able to Do
+
+
+- Identify appropriate function types for real-world data  
+- Write linear equations from data points  
+- Interpret slope and intercept in context  
+- Identify polynomial degree and leading term  
+- Sketch basic polynomial graphs  
+- Identify the type of power function  
+- Identify domain restrictions  
+- Sketch simple rational function graphs  
+- Combine operations to form new algebraic functions 
+- Solve simple trigonometric equations  
+- Recognize exponential trends  
+- Convert between exponential and logarithmic forms  
+- Identify the base and domain of log functions  
+
+
+#### Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## New Functions from Old Functions
+
+
+
+
+This section focuses on creating **new functions from existing ones** using:
+
+- Graph transformations (shifts, stretches, reflections, absolute value)  
+- Algebraic combinations of functions  
+- Function composition  
+
+These tools allow us to:  
+
+- Sketch graphs efficiently  
+- Build complex models from simple functions  
+- Interpret how equations change graph behavior  
+
+---
+
+### Transformations of Functions
+
+Transformations modify the **graph of a function** to produce related functions without re-deriving everything from scratch.
+
+They allow us to quickly sketch graphs and write equations for transformed graphs.
+
+
+<div class="note">
+**Translations (Shifts)**
+
+Let \( c > 0 \). For a base function \( y = f(x) \):
+
+**Vertical Shifts**  
+
+  - \( y = f(x) + c \) → shift **up** \( c \) units  
+  - \( y = f(x) - c \) → shift **down** \( c \) units  
+
+**Horizontal Shifts**  
+
+  - \( y = f(x - c) \) → shift **right** \( c \) units  
+  - \( y = f(x + c) \) → shift **left** \( c \) units 
+
+</div>
+
+
+> Vertical shifts affect **outputs (y-values)**.  
+> Horizontal shifts affect **inputs (x-values)** and reverse direction.
+
+
+
+::: {.example}
+Vertical and Horizontal Shifts
+
+**Problem:**  
+Given the base function \( f(x) = x^2 \), find equations for the following transformations:
+
+(a) Shift up 3 units  
+(b) Shift down 5 units  
+(c) Shift right 2 units  
+(d) Shift left 4 units  
+
+**Solution:**
+
+(a) Shift up 3:
+\[
+y = f(x) + 3 = x^2 + 3.
+\]
+
+(b) Shift down 5:
+\[
+y = f(x) - 5 = x^2 - 5.
+\]
+
+(c) Shift right 2:
+\[
+y = f(x-2) = (x-2)^2.
+\]
+
+(d) Shift left 4:
+\[
+y = f(x+4) = (x+4)^2.
+\]
+:::
+
+
+<div class="note">
+**Stretching and Shrinking**
+
+Let \( c > 1 \):
+
+**Vertical Scaling:**  
+
+  - \( y = c f(x) \) → vertical **stretch** by factor \( c \)  
+  - \( y = \frac{1}{c} f(x) \) → vertical **shrink** by factor \( c \)
+
+**Horizontal Scaling:**  
+
+  - \( y = f(cx) \) → horizontal **shrink** by factor \( c \)  
+  - \( y = f\!\left(\frac{x}{c}\right) \) → horizontal **stretch** by factor \( c \)
+
+**Reflections:**  
+
+  - \( y = -f(x) \) → reflect about the **x-axis**  
+  - \( y = f(-x) \) → reflect about the **y-axis**
+</div>
+
+
+
+
+::: {.example}
+Stretching, Shrinking, and Reflections
+
+**Problem:**  
+Let \( f(x) = \sqrt{x} \). Write equations for:
+
+(a) Vertical stretch by factor 3  
+(b) Vertical shrink by factor 2  
+(c) Reflection about the x-axis  
+(d) Reflection about the y-axis  
+
+**Solution:**
+
+(a) Vertical stretch:
+\[
+y = 3f(x) = 3\sqrt{x}.
+\]
+
+(b) Vertical shrink:
+\[
+y = \frac{1}{2}f(x) = \frac{1}{2}\sqrt{x}.
+\]
+
+(c) Reflect about x-axis:
+\[
+y = -f(x) = -\sqrt{x}.
+\]
+
+(d) Reflect about y-axis:
+\[
+y = f(-x) = \sqrt{-x}.
+\]
+(Domain now requires \( x \le 0 \))
+:::
+
+<div class="note">
+**Absolute Value Transformation**
+
+For \( y = |f(x)| \):
+
+- Parts of the graph **above** the x-axis stay the same  
+- Parts of the graph **below** the x-axis are reflected upward
+
+This creates a “folding” effect across the x-axis.
+</div>
+
+
+
+::: {.example}
+Absolute Value Transformation
+
+**Problem:**  
+Graph the function:
+\[
+y = |x^2 - 4|
+\]
+
+**Solution:**
+
+1. Base function: \( y = x^2 - 4 \) (parabola shifted down 4 units)  
+2. Identify where \( x^2 - 4 < 0 \):
+\[
+-2 < x < 2
+\]
+3. Reflect the part of the graph between \( x=-2 \) and \( x=2 \) upward
+
+Thus:
+\[
+y =
+\begin{cases}
+x^2 - 4, & |x| \ge 2 \\
+-(x^2 - 4), & |x| < 2
+\end{cases}
+\]
+:::
+
+
+Many real-world models are built using transformed base functions:
+
+- Quadratics → motion, gravity, trajectories  
+- Sine/cosine → seasonal cycles, daylight, tides  
+- Exponentials → population growth, decay  
+- Square root → diffusion, growth limits  
+
+A general transformed sine model:
+\[
+L(t) = A + B \sin\!\left(\frac{2\pi}{P}(t - C)\right)
+\]
+where:
+
+  - \( A \) = vertical shift (midline)
+  - \( B \) = amplitude (vertical stretch)
+  - \( P \) = period (horizontal stretch)
+  - \( C \) = phase shift (horizontal translation)
+
+
+
+
+
+::: {.example}
+Combined Transformations
+
+**Problem:**  
+Given \( f(x) = x^2 \), find the equation for the function obtained by:
+
+- Shifting right 3 units  
+- Reflecting about the x-axis  
+- Stretching vertically by factor 2  
+- Shifting up 1 unit  
+
+**Solution:**
+
+Step-by-step:
+
+1. Shift right 3:  
+\[
+f(x-3) = (x-3)^2.
+\]
+
+2. Reflect about x-axis:  
+\[
+-(x-3)^2.
+\]
+
+3. Vertical stretch by 2:  
+\[
+-2(x-3)^2.
+\]
+
+4. Shift up 1:  
+\[
+y = -2(x-3)^2 + 1.
+\]
+:::
+
+
+---
+
+### Combinations of Functions
+
+Two functions \( f \) and \( g \) can be combined algebraically.
+
+
+
+
+
+<div class="note">
+**Arithmetic Combinations**
+
+- **Sum:**  
+  \[
+  (f+g)(x) = f(x) + g(x).
+  \]
+
+- **Difference:**  
+  \[
+  (f-g)(x) = f(x) - g(x).
+  \]
+
+- **Product:**  
+  \[
+  (fg)(x) = f(x)g(x).
+  \]
+
+- **Quotient:**  
+  \[
+  \left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}, \quad g(x) \neq 0.
+  \]
+</div>
+
+
+**Domains**
+
+- The domain of \( f \pm g \), \( fg \): intersection of domains of \( f \) and \( g \)  .
+- The domain of \( \frac{f}{g} \): intersection of domains **excluding where \( g(x)=0 \)**.
+
+
+
+
+
+::: {.example}
+Arithmetic Combination of Functions
+
+**Problem:**  
+Let \( f(x) = x^2 \) and \( g(x) = \sqrt{x} \). Find:
+
+(a) \( (f+g)(x) \)  
+(b) \( (f-g)(x) \)  
+(c) \( (fg)(x) \)  
+(d) \( \left(\frac{f}{g}\right)(x) \)  
+
+and state the domains.
+
+**Solution:**
+
+(a) Sum:
+\[
+(f+g)(x) = x^2 + \sqrt{x}.
+\]
+
+(b) Difference:
+\[
+(f-g)(x) = x^2 - \sqrt{x}.
+\]
+
+(c) Product:
+\[
+(fg)(x) = x^2\sqrt{x}.
+\]
+
+(d) Quotient:
+\[
+\left(\frac{f}{g}\right)(x) = \frac{x^2}{\sqrt{x}} = x^{3/2}.
+\]
+
+
+**Domains:**
+
+- \( f(x) \) domain: \( \mathbb{R} \)  
+- \( g(x) \) domain: \( x \ge 0 \)  
+
+So for all combinations:
+\[
+\text{Domain} = [0, \infty)
+\]
+and for the quotient also exclude \( x=0 \):
+\[
+(0, \infty).
+\]
+:::
+
+
+
+
+<div class="definition">
+The **composition** of two functions \( f \) and \( g \) is:
+\[
+(f \circ g)(x) = f(g(x))
+\]
+</div>
+
+This means:  
+
+1. Apply \( g \) first,  
+2. Use its output as input to \( f \).  
+
+
+
+<div class="definition">
+The domain of \( f \circ g \) consists of all \( x \) such that:
+
+- \( x \) is in the domain of \( g \), and  
+- \( g(x) \) is in the domain of \( f \)  
+</div>
+
+
+
+In general:
+\[
+f \circ g \neq g \circ f
+\]
+
+Composition is **not commutative**.
+
+
+
+::: {.example}
+Composition of Functions
+
+**Problem:**  
+Let \( f(x) = x^2 \), \( g(x) = \sqrt{x-1} \). Find:
+
+(a) \( (f \circ g)(x) \)  
+(b) \( (g \circ f)(x) \)  
+and their domains.
+
+**Solution:**
+
+(a) Composition \( f \circ g \):
+\[
+(f \circ g)(x) = f(g(x)) = f(\sqrt{x-1}) = (\sqrt{x-1})^2 = x-1
+\]
+
+Domain:  
+For \( g(x) \), require \( x-1 \ge 0 \Rightarrow x \ge 1 \). So domain is \( [1, \infty) \).
+
+
+
+(b) Composition \( g \circ f \):
+\[
+(g \circ f)(x) = g(f(x)) = g(x^2) = \sqrt{x^2 - 1}
+\]
+
+Domain:
+\[
+x^2 - 1 \ge 0 \Rightarrow |x| \ge 1
+\]
+So domain:
+\[
+(-\infty, -1] \cup [1, \infty)
+\]
+:::
+
+
+Functions can be composed repeatedly:
+\[
+f \circ g \circ h (x) = f(g(h(x))).
+\]
+
+This represents **layered processes**:
+
+input → transformation → transformation → output
+
+
+Complex functions can be broken into simpler components.
+
+Example structure:
+\[
+F(x) = \cos^2(x+9)
+\]
+
+Interpretation:  
+  1. Add 9  
+  2. Take cosine  
+  3. Square result  
+
+This gives:  
+
+  - \( h(x) = x+9 \)  
+  - \( g(x) = \cos x \)  
+  - \( f(x) = x^2 \).  
+
+So,
+\[
+F = f \circ g \circ h
+\]
+
+
+
+
+
+
+::: {.example}
+Multi-Level Composition
+
+**Problem:**  
+Let  
+\[
+f(x) = x^2, \quad g(x) = \cos x, \quad h(x) = x + 3
+\]
+Find \( (f \circ g \circ h)(x) \).
+
+**Solution:**
+
+Stepwise:
+\[
+h(x) = x+3
+\]
+\[
+g(h(x)) = \cos(x+3)
+\]
+\[
+f(g(h(x))) = (\cos(x+3))^2
+\]
+
+\[
+(f \circ g \circ h)(x) = \cos^2(x+3)
+\]
+:::
+
+
+
+::: {.example}
+Decomposition of a Function
+
+**Problem:**  
+Given:
+\[
+F(x) = \ln\!\big((x-2)^2 + 1\big).
+\]
+Find functions \( f \), \( g \), and \( h \) such that:
+\[
+F = f \circ g \circ h.
+\]
+
+**Solution:**
+
+Interpretation:  
+  1. Subtract 2  
+  2. Square  
+  3. Add 1  
+  4. Take natural log  
+
+Define:
+\[
+h(x) = x-2
+\]
+\[
+g(x) = x^2 + 1
+\]
+\[
+f(x) = \ln x
+\]
+
+Then:
+\[
+(f \circ g \circ h)(x) = \ln\!\big((x-2)^2 + 1\big) = F(x)
+\]
+:::
+
+
+
+---
+
+### Putting It All Together
+
+Transformations, combinations, and composition form a **function-building system**:
+
+- Transformations modify shape and position
+- Arithmetic combinations merge outputs
+- Composition links processes sequentially
+- Models are built by layering simple functions into complex structures
+
+
+---
+
+#### Conceptual Takeaways
+
+- Transformations encode meaning (scale, shift, reflection, symmetry)  
+- Composition models **process chains**  
+- Complex systems emerge from simple components  
+
+---
+
+
+#### Skills You Should Be Able to Do
+
+- Identify graph transformations from equations  
+- Write equations from transformed graphs  
+- Apply vertical and horizontal shifts correctly  
+- Apply stretching, shrinking, and reflections  
+- Model real-world systems using transformed base functions  
+- Combine functions algebraically  
+- Determine domains of combined functions  
+- Compute composite functions \( f \circ g \)  
+- Determine domains of compositions  
+- Decompose complex functions into simpler components  
+- Build multi-layer function models  
+
+---
+
+#### Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Exponential Functions 
+
+
+
+
+<div class="definition">
+An **exponential function** is a function where the variable appears in the exponent:
+\[
+f(x) = b^x, \quad b > 0,\; b \neq 1.
+\]
+</div>
+
+This should not be confused with a **power function**:
+\[
+g(x) = x^n,
+\]
+where the variable is the base, not the exponent.
+
+
+
+| Type | Form | Variable Location |
+|------|------|-------------------|
+| Exponential | \( b^x \) | Variable in exponent |
+| Power | \( x^n \) | Variable in base |
+
+
+
+<div class="theorem">
+For a base \( b>0 \):
+
+- Integer exponents:
+\[
+b^n = \underbrace{b \cdot b \cdot \dots \cdot b}_{n \text{ times}}
+\]  
+- Zero exponent:
+\[
+b^0 = 1
+\]   
+- Negative exponent:
+\[
+b^{-n} = \frac{1}{b^n}
+\]   
+- Rational exponents:
+\[
+b^{p/q} = \sqrt[q]{b^p}
+\]   
+- **Irrational exponents** are defined using limits and approximations, ensuring:
+\[
+b^x \text{ is defined for all real } x
+\]  
+
+This allows exponential functions to have domain \( \mathbb{R} \) (all real numbers).
+</div>
+
+---
+
+### Graphical Behavior of \( y = b^x \)
+
+There are three Fundamental Cases
+
+1. **Growth**: \( b > 1 \)  → Increasing function  
+2. **Decay**: \( 0 < b < 1 \)  → Decreasing function   
+3. **Constant**: \( b = 1 \)  → \( y = 1 \)  
+
+
+<div class="note">
+**Properties**
+
+- Domain: \( (-\infty, \infty) \)  
+- Range: \( (0, \infty) \)  
+- Always passes through: $(0,1)$  
+- Horizontal asymptote:  $y = 0$  
+</div>
+
+<div class="theorem">
+**Laws of Exponents**
+
+For \( a,b>0 \) and real \( x,y \):
+
+\[
+\begin{aligned}
+b^{x+y} &= b^x b^y \\
+b^{x-y} &= \frac{b^x}{b^y} \\
+(b^x)^y &= b^{xy} \\
+(ab)^x &= a^x b^x
+\end{aligned}
+\]
+</div>
+
+
+
+
+
+
+
+::: {.example}
+
+**Example 1: Product Rule**
+
+Simplify:
+\[
+2^x \cdot 2^3 \cdot 2^{x-1}
+\]
+
+**Solution**
+
+All terms have the same base \(2\), so we add the exponents:
+
+\[
+2^x \cdot 2^3 \cdot 2^{x-1}
+= 2^{x + 3 + (x-1)}
+= 2^{2x + 2}.
+\]
+
+**Example 2: Quotient Rule**
+
+Simplify:
+\[
+\frac{5^{2x+1}}{5^{x-4}}
+\]
+
+**Solution**
+
+Same base \(5\), so subtract the exponents:
+
+\[
+\frac{5^{2x+1}}{5^{x-4}}
+= 5^{(2x+1) - (x-4)}
+= 5^{2x+1-x+4}
+= 5^{x+5}.
+\]
+
+**Example 3: Power of a Power**
+
+Simplify:
+\[
+(3^{x-2})^4
+\]
+
+**Solution**
+
+Multiply the exponents:
+\[
+(3^{x-2})^4 = 3^{4(x-2)} = 3^{4x-8}.
+\]
+
+**Example 4: Product to a Power**
+
+Simplify:
+\[
+(2x^3)^4
+\]
+
+**Solution**
+
+Apply the power to each factor:
+\[
+(2x^3)^4 = 2^4 \cdot (x^3)^4 = 16x^{12}.
+\]
+
+
+**Example 5: Rational Exponents**
+
+Simplify:
+\[
+16^{3/4}
+\]
+
+**Solution**
+
+Rewrite using roots:
+\[
+16^{3/4} = (\sqrt[4]{16})^3.
+\]
+
+Since \( \sqrt[4]{16} = 2 \):
+\[
+16^{3/4} = 2^3 = 8.
+\]
+:::
+
+Exponential functions **eventually grow faster than any power function**, no matter the degree of the power.  This is a fundamental concept in calculus and modeling.
+
+
+
+::: {.example}
+**Mixed Laws**
+
+Simplify:
+\[
+\frac{(4^x \cdot 2^{2x})^2}{8^x}
+\]
+
+**Solution**
+
+Step 1: Rewrite everything in base 2:
+\[
+4 = 2^2, \quad 8 = 2^3
+\]
+\[
+(4^x \cdot 2^{2x})^2 = ((2^2)^x \cdot 2^{2x})^2 = (2^{2x} \cdot 2^{2x})^2
+\]
+\[
+= (2^{4x})^2 = 2^{8x}
+\]
+Denominator:
+\[
+8^x = (2^3)^x = 2^{3x}
+\]
+
+Step 2: Apply quotient rule:
+\[
+\frac{2^{8x}}{2^{3x}} = 2^{5x}
+\]
+:::
+
+
+### Applications of Exponential Functions
+
+**1. Population Growth**
+
+If a population doubles every unit of time:
+\[
+P(t) = P_0 \cdot 2^t
+\]
+
+
+
+::: {.example}
+If the initial population is 1000 and doubles every year, then
+\[
+P(0)=1000 \Rightarrow P(t)=1000 \cdot 2^t.
+\]
+:::
+
+**2. Exponential Decay (Half-Life Model)**
+
+If a quantity halves every \( h \) units of time:
+\[
+M(t) = M_0 \left(\frac{1}{2}\right)^{t/h}
+\]
+
+
+
+::: {.example}
+If the initial mass of a redioactive element is 24 and it has a half life of 25 years, then
+\[
+M(t)=24\left(\frac12\right)^{t/25}
+\]
+:::
+
+**3. General Exponential Model**
+
+The general exponential model is
+\[
+y = a b^t
+\]
+where  
+- \( a \) = initial value  
+- \( b \) = growth/decay factor  
+- \( t \) = time  
+
+---
+
+### The Number \( e \) and the Natural Exponential Function
+
+
+<div class="definition">
+There exists a special base \( e \approx 2.71828 \) such that:
+\[
+f(x) = e^x
+\]
+has a **slope of 1 at the point (0,1)**.
+</div>
+
+This property makes it the most natural base for calculus.
+
+
+
+<div class="note">
+**Properties of the Natural Exponential Function**
+\[
+f(x) = e^x
+\]
+
+- Domain: \( \mathbb{R} \)
+- Range: \( (0,\infty) \)
+- Passes through \( (0,1) \)
+- Growth is extremely rapid
+</div>
+
+
+---
+
+### Graph Transformations of Exponentials
+
+Starting from \( y = b^x \) or \( y = e^x \):
+
+| Transformation | Effect |
+|------|--------|
+| \( b^{-x} \) | Reflect across y-axis |
+| \( -b^x \) | Reflect across x-axis |
+| \( c b^x \) | Vertical stretch/compression |
+| \( b^x + k \) | Vertical shift |
+
+
+::: {.example}
+Describe the graph of:
+\[
+y = \frac{1}{2} e^{-x} - 1.
+\]
+
+**Solution:**
+
+Steps:  
+
+1. Reflect \( e^x \) → \( e^{-x} \)    
+2. Vertical compression by factor \( \frac{1}{2} \)    
+3. Shift down 1 unit    
+:::
+
+---
+
+### Putting It All Together
+
+**Exponential functions describe systems where the rate of change is proportional to the current size of the system.**  This single idea explains why they appear everywhere in science, engineering, economics, biology, computing, and data science.
+
+#### Conceptual Takeaways
+
+- Exponential functions model **multiplicative change**, not additive change  
+- Small growth rates → massive long-term effects  
+- Exponential growth eventually dominates polynomial growth  
+- The base controls behavior:  
+  - \( b>1 \): growth  
+  - \( 0<b<1 \): decay  
+- \( e^x \) is special because it behaves optimally for calculus  
+- Real-world systems often follow exponential laws:  
+  - populations  
+  - finance  
+  - radioactive decay  
+  - virus spread  
+  - charging/discharging systems  
+  - learning curves  
+  - neural activity  
+  - data growth  
+  - computing performance scaling  
+
+---
+
+#### Skills You Should Be Able To Do
+
+- Identify exponential functions  
+- Distinguish exponential vs power functions  
+- Interpret growth vs decay from equations  
+- Find domain and range  
+- Explain why exponential growth is “fast”  
+- Compare growth rates of functions  
+- Understand the meaning of base \( b \)  
+- Understand why \( e \) is special  
+- Apply laws of exponents  
+- Graph exponential functions  
+- Perform graph transformations  
+- Solve basic exponential equations  
+
+---
+
+####  Problems 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Inverse Functions and Logarithms
+
+
+In many situations, we model one quantity as a function of another.
+
+Example:  
+
+- \( N = f(t) \): population as a function of time  
+- But sometimes we want the reverse view:  
+  - \( t = f^{-1}(N) \): time required to reach a given population size  
+
+This reversal leads to the concept of an **inverse function**.
+
+
+<div class="definition">
+A function \( f \) is **one-to-one** if it never takes the same value twice:
+\[
+f(x_1) \neq f(x_2) \quad \text{whenever } x_1 \neq x_2
+\]
+</div>
+
+**Meaning:**  Each output corresponds to **exactly one input**.
+
+
+<div class="definition">
+A function is one-to-one **if and only if** no horizontal line intersects its graph more than once.
+</div>
+
+
+**Interpretation:**  If a single \( y \)-value comes from multiple \( x \)-values → not one-to-one → no inverse function.
+
+
+
+<div class="definition">
+If \( f \) is one-to-one with domain \( A \) and range \( B \), then its inverse function \( f^{-1} \) is defined by:
+\[
+f^{-1}(y) = x \iff f(x) = y
+\]
+</div>
+
+This means:
+
+- Domain of \( f^{-1} \) = Range of \( f \)  
+- Range of \( f^{-1} \) = Domain of \( f \)
+
+
+<div class="note">
+An inverse function undoes the original function:
+\[
+f^{-1}(f(x)) = x \quad \text{and} \quad f(f^{-1}(x)) = x
+\]
+
+**Interpretation:**  Applying a function and its inverse in succession **undoes** the operation.
+</div>
+
+
+<div class="note">
+**How to Find an Inverse Function**
+
+**Algorithm**
+
+1. Write:  
+   \[
+   y = f(x)
+   \]
+2. Solve for \( x \) in terms of \( y \)  
+3. Swap \( x \) and \( y \)  
+4. The result is:
+   \[
+   y = f^{-1}(x)
+   \]
+</div>
+
+
+::: {.example}
+Find the inverse of 
+\[
+f(x) = x^3 + 2.
+\]
+
+**Solution**
+
+Step 1:
+\[
+y = x^3 + 2
+\]
+
+Step 2:
+\[
+x^3 = y - 2
+\]
+\[
+x = \sqrt[3]{y - 2}
+\]
+
+Step 3: Swap variables:
+\[
+f^{-1}(x) = \sqrt[3]{x - 2}
+\]
+:::
+
+
+---
+
+### Graphs of Inverse Functions
+
+
+<div class="definition">
+**Reflection Rule**
+
+The graph of \( f^{-1} \) is the reflection of the graph of \( f \) across the line  
+\[
+y = x.
+\]
+
+**Geometric meaning:**  Points \( (a,b) \leftrightarrow (b,a) \)
+</div>
+
+
+---
+
+### Logarithmic Functions as Inverses
+
+If
+\[
+f(x) = b^x \quad (b>0,\; b\neq 1)
+\]
+
+Then its inverse is the logarithmic function:
+
+\[
+f^{-1}(x) = \log_b x
+\]
+
+
+<div class="definition">
+\[
+\log_b x = y \iff b^y = x
+\]
+**Meaning:**  A logarithm gives the **exponent** needed to produce a number.
+</div>
+
+
+We give a special notation to the natural logarithm:
+
+Special base:
+\[
+e \approx 2.71828
+\]
+
+Special logarithm:
+\[
+\ln x = \log_e x
+\]
+
+
+<div class="theorem">
+**Core Identities**
+
+\[
+\ln(e^x) = x
+\qquad
+e^{\ln x} = x
+\]
+
+For \( x>0,\; y>0 \):
+
+\[
+\log_b(xy) = \log_b x + \log_b y
+\]
+\[
+\log_b\!\left(\frac{x}{y}\right) = \log_b x - \log_b y
+\]
+\[
+\log_b(x^r) = r\log_b x
+\]
+</div>
+
+
+::: {.example}
+Write as a single logarithm:
+\[
+\log_2 80 - \log_2 5
+\]
+
+**Solution**
+\[
+\log_2 80 - \log_2 5 = \log_2\!\left(\frac{80}{5}\right) = \log_2 16 = 4
+\]
+:::
+
+---
+
+### Solving Exponential and Log Equations
+
+
+To solve logarithm equations, simply switch between logarithms and exponentials.
+\[
+\ln x = 5 \Longleftrightarrow x = e^5.
+\]
+
+
+
+::: {.example}
+Solve the equation:
+\[
+e^{5-3x} = 10
+\]
+
+**Solution:**
+
+1.  Take natural logs on both sides and simplify:
+\[
+\ln(e^{5-3x}) = \ln 10 \Longleftrightarrow 5 - 3x = \ln 10
+\]
+2.  Solve for $x$:
+\[
+x = \frac{5 - \ln 10}{3}.
+\]
+:::
+
+
+
+<div class="definition">
+**Change of Base Formula**
+
+\[
+\log_b x = \frac{\ln x}{\ln b}
+\]
+</div>
+
+This allows any logarithm to be computed using natural logs.
+
+---
+
+### Inverse Trigonometric Functions
+
+Because trig functions are **not one-to-one**, their domains are restricted to define inverses.
+
+
+<div class="note">
+\[
+\sin^{-1} x = \arcsin x, \quad x \in [-1,1]
+\]
+\[
+\cos^{-1} x = \arccos x, \quad x \in [-1,1]
+\]
+\[
+\tan^{-1} x = \arctan x, \quad x \in \mathbb{R}
+\]
+</div>
+
+
+
+::: {.example}
+Evaluate $\sin^{-1}(1/2)$.
+
+**Solution:**
+Since $\sin(\pi/6) = 1/2$, we have
+\[
+\sin^{-1}\!\left(\frac{1}{2}\right) = \frac{\pi}{6}.
+\]
+:::
+
+
+
+::: {.example}
+Evaluate $\cos(\tan^{-1}(x))$.
+
+**Solution:**
+Let $y = \tan^{-1}(x)$.  So, $x = \tan(y)$ and we want to find $\cos(y)$.  Since $\tan(y) = \frac{x}{1} = \frac{opp}{adj}$, then $\cos(y) = \frac{adj}{hyp} = \frac{1}{1 + x^2}$.  Therefore, 
+\[
+\cos(\tan^{-1} (x)) = \cos(y) = \frac{1}{\sqrt{1+x^2}}.
+\]
+:::
+
+---
+
+### Pulling It All Together
+
+**An inverse function undoes a process.**  If a function represents a transformation, its inverse represents reversing that transformation.
+
+
+
+#### Conceptual Takeaways
+
+- Inverse functions **reverse relationships**  
+- Only **one-to-one** functions can have inverses  
+- The Horizontal Line Test is the geometric test for invertibility  
+- Inverses undo each other:
+  \[
+  f^{-1}(f(x)) = x
+  \]
+- Inverse graphs reflect across \( y=x \)  
+- Logarithms are **inverse exponentials**  
+- Logarithms convert multiplication into addition  
+- Natural logarithms (\( \ln \)) are the most important logarithms in calculus  
+- Inverse trig functions require **restricted domains**  
+- Inverse functions represent **reversibility of processes**  
+
+---
+
+#### Skills You Should Be Able To Do
+
+
+- Identify whether a function is one-to-one  
+- Apply the Horizontal Line Test  
+- Determine if a function is invertible  
+- Compute inverse functions algebraically  
+- Verify inverse functions using composition  
+- Understand logarithms as inverse exponentials  
+- Understand domain restrictions in inverse trig functions  
+- Graph inverse functions using reflection  
+- Apply laws of logarithms  
+- Solve exponential and logarithmic equations  
+- Use change-of-base formula  
+- Evaluate inverse trig expressions  
+
+
+
+
+---
+
+
+
+
+
+
+
+

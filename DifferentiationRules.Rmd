@@ -1,0 +1,3224 @@
+#  Differentiation Rules
+
+##  Derivatives of Polynomials and Exponential Functions 
+
+In this section, we learn how to differentiate:
+
+- Constant functions  
+- Power functions  
+- Polynomials  
+- Exponential functions  
+
+These rules allow us to compute derivatives without using limits every time, making differentiation fast, systematic, and scalable.
+
+
+<div class="theorem">
+
+**Derivative of a Constant Function**
+
+Let \( f(x) = c \), where \( c \) is a constant.
+\[
+\frac{d}{dx}(c) = 0
+\]
+The graph of \( y = c \) is a horizontal line, and horizontal lines have slope \( 0 \).
+
+**Power Functions and the Power Rule**
+
+A power function has the form:
+\[
+f(x) = x^n, \;\;\; \text{ for all } n
+\]
+</div>
+
+
+
+::: {.example}
+If
+\[
+f(x) = x^6,
+\]
+then
+\[
+f'(x) = 6x^5.
+\]
+:::
+
+
+::: {.example}
+If
+\[
+f(x) = \frac{1}{x^2} = x^{-2},
+\]
+then
+\[
+f'(x) = -2x^{-3} = -\frac{2}{x^3}
+\]
+:::
+
+
+::: {.example}
+If
+\[
+f(x) = \sqrt[3]{x^2} = x^{2/3},
+\]
+then
+\[
+f'(x) = \frac{2}{3}x^{-1/3}
+\]
+:::
+
+
+For a function $f$, recall that
+
+- **Tangent line**: slope = derivative \( f'(x) \)  
+- **Normal line**: perpendicular to tangent line  
+  \[
+  m_{\text{normal}} = -\frac{1}{m_{\text{tangent}}}
+  \]
+
+
+::: {.example}
+Let \( y = x^{3/2} \). Find tangent and normal lines at \( (1,1) \).
+
+**Solution:**
+\[
+y' = \frac{3}{2}x^{1/2}
+\]
+\[
+y'(1) = \frac{3}{2}
+\]
+
+**Tangent line:**
+\[
+y - 1 = \frac{3}{2}(x - 1)
+\]
+
+**Normal line:**
+\[
+m = -\frac{2}{3}
+\]
+\[
+y - 1 = -\frac{2}{3}(x - 1)
+\]
+:::
+
+
+---
+
+### New Derivatives from Old
+
+
+<div class="theorem">
+**Constant Multiple Rule**
+\[
+\frac{d}{dx}[c f(x)] = c f'(x)
+\]
+
+**Sum Rule**
+\[
+\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)
+\]
+
+**Difference Rule**
+\[
+\frac{d}{dx}[f(x) - g(x)] = f'(x) - g'(x)
+\]
+</div>
+
+
+Because polynomials are sums of powers of \( x \), we combine:
+
+- Power Rule  
+- Constant Multiple Rule  
+- Sum Rule  
+- Difference Rule  
+
+
+::: {.example}
+If
+\[
+f(x) = x^4 - 6x^2 + 4,
+\]
+then
+\[
+f'(x) = 4x^3 - 12x.
+\]
+:::
+
+
+Horizontal tangents occur where:
+\[
+f'(x) = 0.
+\]
+
+
+::: {.example}
+Find where the tangent lines are horizontal for 
+\[
+y = x^4 - 6x^2 + 4.
+\]
+
+**Solution:**
+\[
+y' = 4x^3 - 12x = 4x(x^2 - 3)
+\]
+
+Set equal to zero:
+\[
+x = 0, \ \pm \sqrt{3}
+\]
+
+These are the points where the tangent line is horizontal.
+:::
+
+
+
+If \( s(t) \) is position:
+
+- Velocity:
+\[
+v(t) = s'(t)
+\]  
+- Acceleration:
+\[
+a(t) = s''(t)
+\]  
+
+
+::: {.example}
+Let 
+\[
+s(t) = 2t^3 - 5t^2 + 3t + 4.
+\]
+Then, we can find the velocity and acceleration by taking derivatives:
+\[
+v(t) = 6t^2 - 10t + 3,
+\]
+and
+\[
+a(t) = 12t - 10.
+\]
+:::
+
+---
+
+### Exponential Functions
+
+
+
+<div class="theorem">
+Let:
+\[
+f(x) = b^x.
+\]
+Then:
+\[
+f'(x) = f'(0)\, b^x
+\]
+</div>
+
+So the derivative of an exponential function is **proportional to the function itself**.
+
+
+We discussed the number $e$ in the previous chapter.  It has the property that:
+\[
+\lim_{h \to 0} \frac{e^h - 1}{h} = 1
+\]
+
+
+<div class="definition">
+The number $e$ is the number that satisfies 
+\[\lim_{h \to 0} \frac{e^h - 1}{h} = 1.\]
+It is approximately 2.71828.
+</div>
+
+
+<div class="theorem">
+\[
+\frac{d}{dx}(e^x) = e^x
+\]
+</div>
+
+
+This means:
+
+> The function \( e^x \) is its **own derivative**.
+
+
+::: {.example}
+Exponential Functions
+
+Let
+\[
+f(x) = e^x - x.
+\]
+Then
+\[
+f'(x) = e^x - 1
+\]
+\[
+f''(x) = e^x
+\]
+:::
+
+
+
+::: {.example}
+Parallel Tangent Line
+
+Find where the tangent to \( y = e^x \) is parallel to \( y = 2x \).
+
+**Solution:**
+
+Parallel means same slope.  So, the slope of $e^x$ must be the same as the slope of $2x$:
+\[
+e^x = 2.
+\]
+Therefore,
+\[
+x = \ln 2.
+\]
+This is the point:
+\[
+(\ln 2, 2).
+\]
+
+:::
+
+
+
+---
+
+### Putting It All Together
+
+Differentiation transforms functions into **rate-of-change functions**.  With a small set of powerful rules, we can compute derivatives for entire families of functions efficiently and meaningfully.
+
+> Differentiation is not just a technique — it is a language for describing change.
+
+#### Conceptual Takeaways
+
+- Derivatives measure rates of change  
+- Constants differentiate to zero  
+- Power functions follow a universal rule:    
+  \( x^n \rightarrow nx^{n-1} \)  
+- Polynomials differentiate term-by-term  
+- Tangent lines use the derivative as slope  
+- Normal lines are perpendicular to tangents  
+- Motion problems are applications of derivatives:  
+  - position → velocity → acceleration  
+- Exponential functions grow at rates proportional to their size  
+- \( e^x \) is unique because it equals its own derivative  
+- Derivatives connect:  
+  - geometry (slopes)  
+  - physics (motion)  
+  - biology (growth)  
+  - economics (rates)  
+  - data science (change, trends, dynamics)  
+
+---
+
+#### Skills You Should Be Able To Do
+
+By the end of this section, you should be able to:
+
+- Differentiate constant functions  
+- Apply the Power Rule for any real exponent  
+- Differentiate polynomials efficiently  
+- Find equations of tangent lines  
+- Find equations of normal lines  
+- Identify horizontal tangents  
+- Use derivatives in motion problems  
+- Apply sum, difference, and constant multiple rules  
+- Differentiate exponential functions  
+- Use \( \frac{d}{dx}(e^x) = e^x \)  
+- Solve slope-matching (parallel line) problems  
+- Interpret derivatives conceptually, not just computationally  
+- Connect derivatives to real-world meaning  
+
+
+---
+
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  The Product and Quotient Rules 
+
+In this section, we learn how to differentiate new functions formed from old functions using:
+
+- Multiplication  → **Product Rule**  
+- Division → **Quotient Rule**  
+
+These rules extend differentiation beyond sums and powers, allowing us to handle realistic models involving interacting quantities.
+
+---
+
+### The Product Rule
+
+
+It is **not true** that the derivative of a product is the product of the derivatives:
+\[
+(fg)' \neq f'g'
+\]
+
+Instead, differentiation of products requires a special rule.
+
+<div class="theorem">
+**Product Rule**
+
+If \( f(x) \) and \( g(x) \) are differentiable, then:
+\[
+\frac{d}{dx}[f(x)g(x)] = f(x)g'(x) + g(x)f'(x)
+\]
+</div>
+
+Using our prime notation,
+\[
+(fg)' = fg' + gf'
+\]
+
+> The derivative of a product is  
+> the **first function times the derivative of the second**  
+> plus  
+> the **second function times the derivative of the first**.
+
+
+
+Geometrically, think of \( u \cdot v \) as the area of a rectangle.  When both sides change, the total change in area comes from:
+
+- Change in width  
+- Change in height  
+- Interaction between both changes  
+
+This naturally produces two main terms, explaining the structure of the Product Rule.
+
+
+::: {.example}
+Let
+\[
+f(x) = x e^x.
+\]
+Then
+\[
+f'(x) = x(e^x)' + e^x(x)' = x e^x + e^x.
+\]
+:::
+
+
+::: {.example}
+Higher Derivatives Example
+
+Find the $n^{th}$ derivative of $f$ given
+\[
+f(x) = x e^x.
+\]
+
+
+**Solution:**
+\[
+f''(x) = (x+2)e^x
+\]
+\[
+f^{(3)}(x) = (x+3)e^x
+\]
+
+**Pattern:**
+\[
+f^{(n)}(x) = (x+n)e^x
+\]
+:::
+
+
+
+::: {.example}
+Let
+\[
+f(t) = t\sqrt{a+bt}.
+\]
+Find the derivative of $f$.
+
+
+**Solution:**
+
+\begin{align*}
+f'(t) &= u'v + v'u \\
+& = t \cdot \frac{d}{dt}(\sqrt{a+bt}) + \sqrt{a+bt} \cdot \frac{d}{dt}(t)\\
+& = t \cdot \frac{b}{2\sqrt{a+bt}} + \sqrt{a+bt}\\
+& = \frac{bt + 2(a+bt)}{2\sqrt{a+bt}}.
+\end{align*}
+:::
+
+
+> **Pedagogical insight:**  
+> Sometimes simplifying first is easier than applying the Product Rule immediately.
+
+
+::: {.example}
+Let \( f(x) = x\,t(x) \), and:
+\[
+t(4)=2, \quad t'(4)=3.
+\]
+
+Then:
+\[
+f'(x) = x t'(x) + t(x).
+\]
+So,
+\[
+f'(4) = 4(3) + 2 = 14.
+\]
+:::
+
+---
+
+### The Quotient Rule
+
+
+<div class="definition">
+If \( f(x) \) and \( g(x) \) are differentiable and \( g(x) \neq 0 \):
+
+\[
+\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right)
+=
+\frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}
+\]
+</div>
+
+Using our prime notation,
+\[
+\left(\frac{f}{g}\right)' = \frac{gf' - fg'}{g^2}
+\]
+
+
+> **Bottom × derivative of top  
+> minus  
+> top × derivative of bottom  
+> all over bottom squared**
+
+
+
+::: {.example}
+Let
+\[
+y = \frac{x^2 + x - 2}{x^3 + 6}.
+\]
+Then,
+\[
+y' = \frac{gf' - fg'}{g^2} =
+\frac{(x^3+6)(2x+1) - (x^2+x-2)(3x^2)}{(x^3+6)^2}.
+\]
+:::
+
+
+
+::: {.example}
+Let 
+\[
+y = \frac{e^x}{1+x^2}.
+\]
+Find the tangent line at $x = 1$.
+
+**Solution:**
+
+Differentiate:
+\[
+y' =
+\frac{(1+x^2)e^x - e^x(2x)}{(1+x^2)^2}.
+\]
+
+At \( x=1 \):
+\[
+y'(1)=0.
+\]
+So the tangent line is **horizontal**.
+
+Point:
+\[
+y(1) = \frac{e}{2}.
+\]
+So, the tangent line is
+\[
+y = \frac{e}{2}.
+\]
+:::
+
+
+> Strategy Note:
+> **Do not automatically use the Quotient Rule.**
+
+Sometimes it is easier to simplify first:
+\[
+F(x)=\frac{3x^2+2x}{x} = 3x + 2x^{-1}.
+\]
+Then differentiate directly using the Power Rule.
+
+
+
+<div class="note">
+**Summary Table of Differentiation Rules**
+
+\begin{align*}
+\frac{d}{dx}(c) &= 0 \\
+
+\frac{d}{dx}(x^n) &= nx^{n-1} \\
+
+\frac{d}{dx}(e^x) &= e^x \\
+
+(cf)' &= cf' \\
+
+(f+g)' &= f'+g' \\
+
+(f-g)' &= f'-g' \\
+
+(fg)' &= fg'+gf' \\
+
+\left(\frac{f}{g}\right)' &= \frac{gf'-fg'}{g^2}
+\end{align*}
+</div>
+
+---
+
+### Putting It All Together
+
+
+
+The Product and Quotient Rules extend differentiation from simple functions to interacting systems and structured relationships.
+
+They allow calculus to model:
+
+- Growth with resistance   
+- Change with constraints  
+- Coupled systems  
+- Competing influences  
+- Physical interactions  
+- Economic tradeoffs  
+- Biological processes  
+- Machine learning gradients  
+
+> Differentiation is no longer just about curves —  it becomes a language for systems, interactions, and structure.
+
+
+#### Conceptual Takeaways
+
+- Derivatives describe how quantities change together  
+- Products model interacting variables  
+- Quotients model rates, densities, efficiencies, and ratios  
+- Change in products involves two sources of variation  
+- Quotients introduce competition between growth rates  
+- Simplification is often more powerful than memorization  
+- Differentiation is structural, not mechanical  
+- Rules reflect how change propagates through systems  
+- Geometry, algebra, and physics interpretations are unified  
+- Real-world systems almost always require Product and Quotient Rules  
+
+---
+
+#### Skills You Should Be Able To Do
+
+By the end of this section, you should be able to:
+
+- Apply the Product Rule correctly  
+- Apply the Quotient Rule correctly  
+- Recognize when **not** to use the Quotient Rule  
+- Simplify expressions before differentiating  
+- Compute higher-order derivatives of products  
+- Differentiate rational functions  
+- Find tangent lines using Product/Quotient Rules  
+- Combine Product Rule with Power Rule  
+- Combine Product Rule with Exponential Rule  
+- Interpret derivatives of products physically  
+- Interpret derivatives of quotients conceptually  
+- Identify growth vs competition dynamics  
+- Translate word models into derivative structure  
+- Recognize structural patterns in differentiation  
+- Solve mixed-rule problems efficiently
+
+---
+
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Derivatives of Trigonometric Functions 
+
+
+All trigonometric functions are defined using **radians**, not degrees.  When we write \( \sin x \), it means the sine of the angle whose **radian measure** is \( x \).
+
+All trigonometric functions are:
+
+- Continuous on their domains  
+- Smooth (infinitely differentiable where defined)  
+- Periodic  
+- Interpretable geometrically and physically  
+
+This allows us to meaningfully define and compute their derivatives.
+
+
+
+A key limit in calculus is:
+
+\[
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+\]
+
+This limit is geometrically justified using the unit circle and the Squeeze Theorem and forms the foundation for differentiating trigonometric functions.  It leads directly to the derivative of sine and cosine.
+
+
+
+<div class="theorem">
+These formulas are **valid only when angles are measured in radians**.
+
+\begin{align*}
+\frac{d}{dx}(\sin x) &= \cos x \\
+
+\frac{d}{dx}(\cos x) &= -\sin x \\
+
+\frac{d}{dx}(\tan x) &= \sec^2 x \\
+
+\frac{d}{dx}(\csc x) &= -\csc x \cot x \\
+
+\frac{d}{dx}(\sec x) &= \sec x \tan x \\
+
+\frac{d}{dx}(\cot x) &= -\csc^2 x \\
+\end{align*}
+</div>
+
+
+
+The minus signs occur with the **cofunctions**:
+
+- cosine  
+- cosecant  
+- cotangent  
+
+
+
+::: {.example}
+Product Rule with Trigonometric Function
+
+Find the derivative of
+\[
+y = x^2 \sin x.
+\]
+
+**Solution:**
+
+Differentiate:
+
+\[
+y' = u'v + v'u = x^2(\cos x) + \sin x(2x)
+\]
+:::
+
+
+
+::: {.example}
+Quotient Rule with Trigonometric Functions
+
+Find the derivative of
+\[
+f(x) = \frac{\sec x}{1 + \tan x}.
+\]
+
+
+**Solution:**
+
+Differentiate using the Quotient Rule:
+\[
+f'(x) = \frac{(1+\tan x)(\sec x \tan x) - \sec x(\sec^2 x)}{(1+\tan x)^2}
+\]
+Simplify using identities:
+\[
+\tan^2 x + 1 = \sec^2 x.
+\]
+Horizontal tangents occur when:
+\[
+\tan x = 1 \Rightarrow x = n\pi + \frac{\pi}{4}.
+\]
+:::
+
+
+
+
+
+::: {.example}
+Simple Harmonic Motion (Modeling Application)
+
+Position function:
+\[
+s(t) = 4\cos t.
+\]
+Find the velocity and acceleration.
+
+
+**Solution:**
+
+
+Velocity:
+\[
+v(t) = -4\sin t.
+\]
+Acceleration:
+\[
+a(t) = -4\cos t.
+\]
+:::
+
+Interpretation:
+
+- Motion is periodic  
+- Speed is greatest at equilibrium  
+- Acceleration is greatest at endpoints  
+- The system oscillates between \( s = \pm 4 \)  
+- Period = \( 2\pi \)  
+
+This models simple harmonic motion, common in:
+
+- springs  
+- vibrations  
+- waves  
+- circuits  
+- signal processing  
+- mechanical systems  
+
+
+::: {.example}
+Higher Derivatives and Cycles
+
+Find the $27^{th}$ derivative of \( f(x) = \cos x \).
+
+
+**Solution:**
+
+\[
+f'(x) = -\sin x
+\]
+\[
+f''(x) = -\cos x
+\]
+\[
+f^{(3)}(x) = \sin x
+\]
+\[
+f^{(4)}(x) = \cos x
+\]
+
+**Pattern:**
+Derivatives cycle every 4 steps.
+
+So:
+\[
+f^{(4k)}(x) = \cos x
+\]
+That means,
+\begin{align*}
+f^{(24)}(x) &= \cos x \\
+f^{(25)}(x) &= -\sin x \\
+f^{(26)}(x) &= -\cos x \\
+f^{(27)}(x) &= \sin x \\
+\end{align*}
+:::
+
+
+::: {.example}
+Trigonometric Limits
+
+Evaluate
+\[
+\lim_{x \to 0} \frac{\sin(7x)}{4x}
+\]
+
+
+**Solution:**
+
+Rewrite:
+
+\[
+\lim_{x \to 0} \frac{\sin(7x)}{4x} = \frac{7}{4} \cdot \frac{\sin(7x)}{7x}
+\]
+
+Apply fundamental limit:
+
+\[
+\lim_{x \to 0} \frac{\sin(7x)}{4x} = \frac{7}{4}
+\]
+:::
+
+
+
+::: {.example}
+Evaluate
+\[
+\lim_{x \to 0} x \cot x.
+\]
+
+
+**Solution:**
+
+Rewrite:
+\begin{align*}
+\lim_{x \to 0} x \cot x &= \frac{x\cos x}{\sin x}\\
+&= \frac{\cos x}{\sin x/x}\\
+&=1
+\end{align*}
+:::
+
+
+
+Trigonometric derivatives reflect cyclic structure:
+
+- sine ↔ cosine  
+- positive ↔ negative  
+- oscillation ↔ periodicity  
+- curvature ↔ acceleration  
+- slope ↔ motion  
+
+Differentiation preserves the wave nature of trigonometric functions.
+
+---
+
+### Putting It All Together
+
+Derivatives of trigonometric functions transform geometry into motion.
+
+They allow calculus to describe:
+
+- Vibrations  
+- Waves  
+- Cycles  
+- Oscillations  
+- Rotations  
+- Energy transfer  
+- Signals  
+- Periodic systems  
+- Mechanical motion  
+- Biological rhythms  
+
+> Trigonometric differentiation is where calculus becomes the mathematics of motion and waves.
+
+
+#### Conceptual Takeaways
+
+- Trigonometric derivatives are rooted in geometry  
+- Radians are essential for correct differentiation  
+- Trig functions model periodic change  
+- Derivatives preserve oscillatory structure  
+- Motion, waves, and vibration use trig derivatives  
+- Cyclic derivative patterns reveal deep structure  
+- Limits connect geometry to algebra  
+- Differentiation reflects physical behavior  
+- Curvature, slope, and motion are unified concepts  
+- Trigonometry provides natural models for change  
+
+---
+
+#### Skills You Should Be Able To Do
+
+By the end of this section, you should be able to:
+
+- Differentiate all six trigonometric functions  
+- Apply Product Rule with trig functions  
+- Apply Quotient Rule with trig functions  
+- Use trig identities to simplify derivatives  
+- Recognize derivative cycles  
+- Compute high-order trig derivatives  
+- Solve trig limit problems  
+- Apply the fundamental trig limit  
+- Identify horizontal tangents    
+- Analyze oscillatory motion  
+- Interpret velocity and acceleration  
+- Model periodic systems  
+- Connect derivatives to physical motion  
+- Use trig derivatives in real-world modeling  
+- Recognize structural patterns in trig calculus  
+
+---
+
+
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  The Chain Rule 
+
+
+Many functions in calculus are **composite functions** — functions built from other functions.
+
+Example:
+\[
+F(x) = \sqrt{x^2 + 1}
+\]
+
+This is not a basic function, but a **composition**:
+
+- Inner function: \( u = x^2 + 1 \)  
+- Outer function: \( y = \sqrt{u} \)  
+
+Previously learned differentiation rules are not sufficient for this structure alone.  We need a new rule to differentiate **functions inside functions**.
+
+Conceptually, if:
+
+- \( u \) changes with respect to \( x \)  
+- \( y \) changes with respect to \( u \)  
+
+Then \( y \) changes with respect to \( x \) through **both changes**.  So the total rate of change is:
+\[
+\text{(change of y wrt u)} \times \text{(change of u wrt x)}.
+\]
+This leads to the Chain Rule.
+
+
+<div class="theorem">
+**The Chain Rule**
+
+If:
+
+- \( u = t(x) \)  
+- \( y = f(u) \)  
+
+Then the composite function:
+\[
+y = f(t(x))
+\]
+has derivative:
+\[
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}.
+\]
+</div>
+
+In prime notation,
+\[
+(f \circ t)'(x) = f'(t(x)) \cdot t'(x).
+\]
+
+
+
+> Differentiate the **outer function**  
+> Keep the **inner function unchanged**  
+> Multiply by the **derivative of the inner function**
+
+**Structure:**
+
+\[
+\frac{d}{dx}[f(t(x))] =
+\underbrace{f'(t(x))}_{\text{outer derivative}}
+\cdot
+\underbrace{t'(x)}_{\text{inner derivative}}
+\]
+
+
+::: {.example}
+Square Root Composition
+
+Differentiate:
+\[
+F(x) = \sqrt{x^2 + 1}
+\]
+
+**Solution:**
+
+Let:
+
+- \( u = x^2 + 1 \)  
+- \( y = \sqrt{u} = u^{1/2} \)  
+
+Derivatives:
+\[
+\frac{dy}{du} = \frac{1}{2}u^{-1/2}, \quad \frac{du}{dx} = 2x.
+\]
+Apply Chain Rule:
+\[
+F'(x) = \frac{1}{2}(x^2+1)^{-1/2} \cdot 2x = \frac{x}{\sqrt{x^2+1}}.
+\]
+:::
+
+
+
+::: {.example}
+Trigonometric Composition
+
+Differentiate \( y = \sin(x^2) \) and \( y = \sin^2 x \)
+
+
+
+**Solution:**  \( y = \sin(x^2) \)
+
+
+Outer: \( \sin(u) \)  
+Inner: \( u = x^2 \)
+
+So,
+\[
+y' = \cos(x^2)\cdot 2x = 2x\cos(x^2).
+\]
+
+
+**Solution:**   \( y = \sin^2 x \)
+
+Rewrite:
+\[
+y = (\sin x)^2.
+\]
+
+Outer: \( u^2 \)   
+Inner: \( u = \sin x \)  
+
+\[
+y' = 2\sin x \cdot \cos x = \sin(2x).
+\]
+:::
+
+
+<div class="theorem">
+Power Rule + Chain Rule
+
+If \( y = [t(x)]^n \), then:
+\[
+\frac{d}{dx}[t(x)]^n = n[t(x)]^{n-1} \cdot t'(x).
+\]
+</div>
+
+
+::: {.example}
+If
+\[
+y = (x^3 - 1)^{100},
+\]
+then
+\[
+y' = 100(x^3-1)^{99} \cdot 3x^2 = 300x^2(x^3-1)^{99}.
+\]
+:::
+
+
+
+
+
+::: {.example}
+Differentiate
+\[
+f(x) = \frac{1}{\sqrt[3]{x^2+x+1}}.
+\]
+
+**Solution:**
+
+Rewrite:
+\[
+f(x) = (x^2+x+1)^{-1/3}.
+\]
+Then,
+\[
+f'(x) = -\frac{1}{3}(x^2+x+1)^{-4/3}(2x+1) = -\frac{2x+1}{3(x^2+x+1)^{4/3}}.
+\]
+:::
+
+
+
+::: {.example}
+Differentiate
+\[
+y = e^{\sin x}
+\]
+
+**Solution:**
+
+
+Outer: \( e^u \)  
+Inner: \( u = \sin x \)
+
+Then,
+\[
+y' = e^{\sin x} \cdot \cos x = e^{\sin x}\cos x.
+\]
+:::
+
+In general,
+\[
+\frac{d}{dx}(e^{u}) = e^{u}\cdot \frac{du}{dx}.
+\]
+
+
+::: {.example}
+Multi-Layer Chain Rule
+
+Differentiate
+\[
+f(x) = \sin(\cos(\tan x))
+\]
+
+
+**Solution:**
+
+
+Layers:
+
+- Outer: \( \sin(\cdot) \)  
+- Middle: \( \cos(\cdot) \)  
+- Inner: \( \tan x \)  
+
+Differentiate step-by-step:
+
+\[
+f'(x) = \cos(\cos(\tan x)) \cdot (-\sin(\tan x)) \cdot \sec^2 x = -\cos(\cos(\tan x))\sin(\tan x)\sec^2 x.
+\]
+:::
+
+
+The Chain Rule reflects information flow:
+\[
+x \rightarrow u(x) \rightarrow y(u).
+\]
+Change propagates through layers.
+
+---
+
+### Putting It All Together
+
+
+> The Chain Rule is the rule of **dependency**.
+
+It formalizes how change flows through systems.  Calculus becomes the mathematics of structure and flow.
+
+
+
+#### Conceptual Takeaways
+
+- Most real-world functions are composite  
+- Differentiation follows structure  
+- Rates of change multiply through layers  
+- Inner change amplifies outer change  
+- The Chain Rule is universal  
+- It connects structure and motion  
+- It unifies algebraic, trig, and exponential differentiation  
+- It explains nested system behavior  
+- It models cascaded processes  
+- It formalizes dependency chains  
+
+---
+
+#### Skills You Should Be Able To Do
+
+By the end of this section, you should be able to:
+
+- Identify composite functions  
+- Decompose functions into layers  
+- Apply the Chain Rule correctly  
+- Use Leibniz notation meaningfully  
+- Combine Chain Rule with:  
+  - Power Rule  
+  - Product Rule  
+  - Quotient Rule  
+- Differentiate nested trig functions  
+- Differentiate nested exponential functions  
+- Handle multi-layer compositions  
+- Recognize inner vs outer functions  
+- Apply structure-first differentiation  
+- Work from outside to inside  
+- Interpret derivatives structurally  
+- Model multi-stage systems  
+- Solve complex composite derivatives  
+- Translate symbolic structure into derivatives  
+
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Implicit Differentiation 
+
+
+So far, most functions have been written **explicitly** as:
+\[
+y = f(x)
+\]
+For example:
+\[
+y = x^3 + 1, \quad y = x\sin x.
+\]
+In these cases, $y$ is isolated and written directly as a function of \( x \).
+
+
+
+Some relationships define \( x \) and \( y \) together, without solving for \( y \).  For example:
+\[
+x^2 + y^2 = 25
+\]
+\[
+x^3 + y^3 = 6xy
+\]
+These equations define **curves**, not single functions.
+
+Sometimes we *can* solve for \( y \), but:
+
+- the formulas may be complicated  
+- there may be multiple branches  
+- it may be algebraically impractical  
+- or impossible in closed form  
+
+Yet these equations still define \( y \) as a function of \( x \) locally.
+
+
+Even if \( y \) is not isolated:
+
+> We can still differentiate by treating \( y \) as a function of \( x \)
+
+So whenever we differentiate:
+
+- any term involving \( y \) must use the **Chain Rule**  
+- because \( y = y(x) \)  
+
+
+<div class="note">
+Implicit Differentiation
+
+Given an equation involving \( x \) and \( y \):
+
+1. Differentiate **both sides** with respect to \( x \)  
+2. Treat \( y \) as \( y(x) \)  
+3. Apply the **Chain Rule** to any \( y \)-terms  
+4. Apply Product Rule and Quotient Rule when needed  
+5. Collect all \( y' \) terms  
+6. Solve algebraically for \( \frac{dy}{dx} \)  
+</div>
+
+
+::: {.example}
+Circle
+
+Find $y^{\prime}$ if
+\[
+x^2 + y^2 = 25
+\]
+
+**Solution:**
+
+Differentiate:
+\begin{align*}
+\frac{d}{dx}(x^2) + \frac{d}{dx}(y^2) &= \frac{d}{dx}(25)\\
+
+2x + 2y\frac{dy}{dx} &= 0.
+\end{align*}
+Solve for \( \frac{dy}{dx} \):
+\begin{align*}
+2y\frac{dy}{dx} &= -2x\\
+
+\frac{dy}{dx} &= -\frac{x}{y}
+\end{align*}
+:::
+
+
+::: {.example}
+Tangent Line 
+
+Find the tangent line to 
+\[
+x^2 + y^2 = 25
+\]
+at point \( (3,4) \):
+
+
+**Solution:**
+
+\[
+\frac{dy}{dx} = -\frac{x}{y}
+\Rightarrow m = -\frac{3}{4}
+\]
+Point–slope form:
+\[
+y - 4 = -\frac{3}{4}(x - 3)
+\]
+
+Standard form:
+\[
+3x + 4y = 25.
+\]
+:::
+
+
+
+
+::: {.example}
+Folium-Type Curve
+
+Find $y^{\prime}$ if
+\[
+x^3 + y^3 = 6xy
+\]
+
+**Solution:**
+
+Differentiate:
+
+\[
+3x^2 + 3y^2 y' = 6x y' + 6y
+\]
+
+Group \( y' \) terms:
+\[
+3y^2 y' - 6x y' = 6y - 3x^2
+\]
+
+Factor:
+\[
+y'(3y^2 - 6x) = 6y - 3x^2
+\]
+
+Solve:
+\[
+y' = \frac{6y - 3x^2}{3y^2 - 6x}
+= \frac{2y - x^2}{y^2 - 2x}
+\]
+:::
+
+
+
+---
+
+### Horizontal Tangent Condition
+
+Horizontal tangent means:
+
+\[
+y' = 0
+\]
+
+So numerator must be zero:
+
+\[
+2y - x^2 = 0 \Rightarrow y = \frac{x^2}{2}
+\]
+
+Substitute into original equation to find point(s).
+
+
+::: {.example}
+Trigonometric Implicit Function
+
+Find $y^{\prime}$ given:
+\[
+\sin(x + y) = y^2 \cos x.
+\]
+
+**Solution:**
+
+Differentiate:
+
+Left side:
+\[
+\cos(x+y)(1 + y')
+\]
+
+Right side (Product Rule + Chain Rule):
+\[
+2y y' \cos x - y^2 \sin x
+\]
+
+Set equal:
+\[
+\cos(x+y)(1+y') = 2y y'\cos x - y^2 \sin x
+\]
+
+Solve for \( y' \):
+\[
+y' = \frac{y^2 \sin x + \cos(x+y)}{2y\cos x - \cos(x+y)}.
+\]
+:::
+
+
+
+::: {.example}
+Second Derivatives (Implicit)
+
+Find $y^{\prime \prime}$ if
+\[
+x^4 + y^4 = 16
+\]
+
+
+
+**Solution:**
+
+First derivative:
+\[
+4x^3 + 4y^3 y' = 0
+\Rightarrow
+y' = -\frac{x^3}{y^3}
+\]
+
+Differentiate again (Quotient Rule + Chain Rule):
+\[
+y'' = -\frac{48x^2}{y^7}
+\]
+:::
+
+
+---
+
+### Inverse Trigonometric Functions via Implicit Differentiation
+
+
+::: {.example}
+Find the derivative of $\sin^{-1}(x)$.
+
+
+**Solution:**
+
+Write:
+\( y = \sin^{-1}(x) \)
+
+Rewrite:
+\[
+\sin y = x
+\]
+
+Differentiate:
+\begin{align*}
+\cos y \cdot y' &= 1\\
+
+y' &= \frac{1}{\cos y}.
+\end{align*}
+
+Use identity:
+\[
+\cos y = \sqrt{1-\sin^2 y} = \sqrt{1-x^2}
+\]
+
+Therefore,
+\[
+\frac{d}{dx}(\sin^{-1} x) = \frac{1}{\sqrt{1-x^2}}
+\]
+:::
+
+
+::: {.example}
+Find $y^{\prime}$ if $y = \arctan(x)$.
+
+
+
+
+**Solution:**
+
+Write:
+\( y = \tan^{-1}(x) \)
+
+Rewrite and differentiate:
+\[
+\tan y = x
+\Rightarrow \sec^2 y \cdot y' = 1
+\]
+
+Therefore,
+\[
+y' = \frac{1}{\sec^2 y} = \frac{1}{1+x^2}.
+\]
+:::
+
+
+
+<div class="theorem">
+\[
+\frac{d}{dx}(\sin^{-1}x) = \frac{1}{\sqrt{1-x^2}}
+\]
+
+\[
+\frac{d}{dx}(\cos^{-1}x) = -\frac{1}{\sqrt{1-x^2}}
+\]
+
+\[
+\frac{d}{dx}(\tan^{-1}x) = \frac{1}{1+x^2}
+\]
+
+\[
+\frac{d}{dx}(\cot^{-1}x) = -\frac{1}{1+x^2}
+\]
+
+\[
+\frac{d}{dx}(\sec^{-1}x) = \frac{1}{|x|\sqrt{x^2-1}}
+\]
+
+\[
+\frac{d}{dx}(\csc^{-1}x) = -\frac{1}{|x|\sqrt{x^2-1}}
+\]
+
+</div>
+
+---
+
+### Putting It All Together
+
+
+> Implicit differentiation is the mathematics of hidden structure.  Calculus becomes the language of structure, not just formulas.
+
+
+
+#### Conceptual Takeaways
+
+- Not all functions can be solved explicitly  
+- Many curves define \( y \) implicitly  
+- Differentiation does not require solving for \( y \)  
+- Variables can be dependent without isolation  
+- Change propagates through relationships  
+- The Chain Rule governs hidden dependencies  
+- Implicit differentiation handles:  
+  - multi-branch curves  
+  - closed curves  
+  - self-intersecting curves  
+  - inverse functions  
+  - algebraically unsolvable equations  
+- Calculus works on **relationships**, not just formulas   
+- Geometry and algebra are unified through differentiation  
+
+---
+
+#### Skills You Should Be Able To Do
+
+By the end of this section, you should be able to:
+
+- Distinguish explicit vs implicit functions   
+- Differentiate implicit equations  
+- Apply the Chain Rule to \( y \)-terms  
+- Solve algebraically for \( y' \)  
+- Compute tangent lines from implicit equations  
+- Find horizontal and vertical tangents  
+- Compute second derivatives implicitly  
+- Work with trigonometric implicit equations  
+- Handle mixed algebraic–trigonometric forms  
+- Differentiate inverse trig functions implicitly  
+- Analyze curves not representable as functions  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Derivatives of Logarithmic Functions 
+
+
+Logarithmic functions are differentiable and play a central role in calculus, especially when working with:
+
+- growth and decay models  
+- rates of change  
+- inverse functions  
+- complicated products and powers  
+- exponential relationships  
+
+Two key logarithmic forms appear in calculus:
+
+- General logarithm: \( y = \log_b x \)  
+- Natural logarithm: \( y = \ln x \) (base \( e \))  
+
+Natural logarithms are especially important because their derivative has the simplest form.
+
+
+<div class="theorem">
+
+\[
+\frac{d}{dx}(\log_b x) = \frac{1}{x \ln b}
+\]
+
+\[
+\frac{d}{dx}(\ln x) = \frac{1}{x}
+\]
+</div>
+
+> This simplicity is one of the main reasons base \( e \) is fundamental in calculus.
+
+
+
+<div class="theorem">
+
+\[
+\frac{d}{dx}(\ln u) = \frac{1}{u}\frac{du}{dx}
+\]
+
+or equivalently,
+
+\[
+\frac{d}{dx}\big[\ln(f(x))\big] = \frac{f'(x)}{f(x)}
+\]
+</div>
+
+
+::: {.example}
+Chain Rule with Natural Log
+
+Find the derivative of
+\[
+y = \ln(x^3 + 1)
+\]
+
+**Solution**
+
+Let \( u = x^3 + 1 \). Then:
+
+\[
+\frac{dy}{dx} = \frac{1}{u} \frac{du}{dx} = \frac{1}{x^3+1} (3x^2)  = \frac{3x^2}{x^3+1}
+\]
+:::
+
+
+
+::: {.example}
+Log of a Trig Function
+
+Differentiate:
+\[
+y = \ln(\sin x)
+\]
+
+**Solution**
+
+\[
+y' = \frac{1}{\sin x}(\cos x) = \cot x.
+\]
+:::
+
+
+::: {.example}
+Logarithm as Inner Function
+
+Differentiate
+\[
+f(x) = \sqrt{\ln x}
+\]
+
+**Solution**
+
+\[
+f'(x) = \frac{1}{2\sqrt{\ln x}} \cdot \frac{1}{x} = \frac{1}{2x\sqrt{\ln x}}
+\]
+:::
+
+
+::: {.example}
+Base-10 Logarithm
+
+Differentiate
+\[
+f(x) = \log_{10}(2 + \sin x)
+\]
+
+**Solution**
+
+\[
+f'(x) = \frac{1}{(2+\sin x)\ln 10} \cdot \cos x = \frac{\cos x}{(2+\sin x)\ln 10}.
+\]
+:::
+
+
+::: {.example}
+Absolute Value
+
+Differentiate
+\[
+f(x) = \ln|x|
+\]
+
+**Solution**
+
+\[
+f'(x) = \frac{1}{x}, \quad x \ne 0
+\]
+:::
+
+---
+
+### Logarithmic Differentiation
+
+Logarithmic differentiation is a technique used when functions involve:
+
+- products  
+- quotients  
+- powers with variable exponents  
+- complicated expressions  
+
+
+<div class="note">
+**Steps in Logarithmic Differentiation**
+
+1. Take natural logarithms of both sides  
+2. Use laws of logarithms to simplify  
+3. Differentiate implicitly  
+4. Solve for \( \frac{dy}{dx} \)  
+5. Substitute back for \( y \)
+</div>
+
+
+::: {.example}
+Product, Quotient, and Powers
+
+Find $y^{\prime}$ if
+\[
+y = \frac{x^{3/4}(x^2+1)^{1/2}}{(3x+2)^5}.
+\]
+
+**Solution:**
+
+Take logs:
+\[
+\ln y = \frac{3}{4}\ln x + \frac{1}{2}\ln(x^2+1) - 5\ln(3x+2)
+\]
+
+Differentiate:
+\[
+\frac{1}{y}y' = \frac{3}{4x} + \frac{x}{x^2+1} - \frac{15}{3x+2}
+\]
+
+Solve:
+\[
+y' = y\left(\frac{3}{4x} + \frac{x}{x^2+1} - \frac{15}{3x+2}\right)
+\]
+
+Substitute original \( y \):
+\[
+y' = \frac{x^{3/4}(x^2+1)^{1/2}}{(3x+2)^5}\left(\frac{3}{4x} + \frac{x}{x^2+1} - \frac{15}{3x+2}\right)
+\]
+:::
+
+
+
+::: {.example}
+Variable Base and Variable Exponent
+
+Differentiate
+\[
+y = x^x
+\]
+
+**Solution**
+
+\[
+\ln y = x\ln x
+\]
+
+Differentiate:
+\[
+\frac{1}{y}y' = \ln x + 1
+\]
+So,
+\[
+y' = x^x(\ln x + 1)
+\]
+:::
+
+---
+
+### Putting It All Together
+
+Logarithmic derivatives unify many differentiation rules:
+
+- Product Rule  
+- Quotient Rule  
+- Power Rule  
+- Chain Rule  
+- Exponential differentiation  
+- Implicit differentiation  
+
+into one powerful method.  They allow us to differentiate functions that would otherwise require long, error-prone algebra.
+
+---
+
+#### Conceptual Takeaways
+
+- Natural logarithms are fundamental because \( \frac{d}{dx}(\ln x) = \frac{1}{x} \)  
+- Logarithms convert multiplication into addition    
+- Logarithms convert powers into products  
+- Logarithmic differentiation simplifies structure before differentiation  
+- Absolute values are required for logarithms of expressions that may be negative  
+- Differentiation becomes algebraically easier after taking logs  
+- Many “hard-looking” derivatives become simple after log transformation  
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Differentiate \( \ln x \), \( \log_b x \), and \( \ln(f(x)) \)  
+- Apply the Chain Rule with logarithms  
+- Differentiate \( \ln|x| \)  
+- Use logarithmic identities to simplify derivatives  
+- Differentiate functions of the form \( f(x)^{g(x)} \)  
+- Recognize when logarithmic differentiation is the best method  
+- Combine logarithmic differentiation with implicit differentiation  
+
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Rates of Change in the Natural and Social Sciences 
+
+
+In calculus, the derivative represents rate of change.  If  
+\[
+y = f(x)
+\]
+then the derivative  
+\[
+\frac{dy}{dx}
+\]
+represents the **rate of change of \( y \) with respect to \( x \)**.
+
+This single mathematical idea appears across:
+
+- physics   
+- chemistry  
+- biology  
+- economics  
+- engineering  
+- social sciences  
+
+If \( x \) changes from \( x_1 \) to \( x_2 \), then:
+\[
+\Delta x = x_2 - x_1
+\]
+\[
+\Delta y = f(x_2) - f(x_1)
+\]
+
+The **average rate of change** is:
+\[
+\frac{\Delta y}{\Delta x} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+\]
+
+**Interpretation:**
+
+- Slope of the **secant line**  
+- Average change over an interval  
+- Mean behavior over time/space  
+
+
+The **instantaneous rate of change** is the limit of the average rate of change:
+\[
+\frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
+\]
+
+
+**Interpretation:**
+
+- Slope of the tangent line  
+- Rate of change at a single point  
+- Local behavior of a function  
+
+---
+
+### Physics Applications
+
+
+Let:
+
+- \( s(t) \) = position  
+- \( v(t) = \frac{ds}{dt} \) = velocity  
+- \( a(t) = \frac{dv}{dt} = \frac{d^2s}{dt^2} \) = acceleration  
+
+Relationships:
+\[
+v(t) = s'(t)
+\]
+\[
+a(t) = v'(t) = s''(t)
+\]
+
+
+::: {.example}
+Motion of a Particle
+
+Find the velocity and acceleration.
+\[
+s(t) = t^3 - 6t^2 + 9t.
+\]
+Determine the velocity at $t = 2$ and when the particle is at rest.
+
+**Solution:**
+
+(a) Velocity:
+\[
+v(t) = s'(t) = 3t^2 - 12t + 9
+\]
+
+(b) Acceleration:
+\[
+a(t) = v'(t) = 6t - 12
+\]
+
+(c) Velocity at \( t=2 \):
+\[
+v(2) = 3(4) - 12(2) + 9 = 12 - 24 + 9 = -3
+\]
+
+(d) Particle at rest:
+\[
+v(t)=0 \Rightarrow 3t^2 - 12t + 9 = 0
+\]
+\[
+t=1,\; t=3
+\]
+:::
+
+**Interpretation:**
+
+- derivative = velocity  
+- second derivative = acceleration  
+- zeros of velocity = rest points  
+- sign of velocity = direction of motion  
+
+---
+
+### Physics: Density and Current
+
+
+
+If \( m(x) \) = mass up to position \( x \), then:
+\[
+\rho(x) = \frac{dm}{dx}.
+\]
+This is **mass per unit length**.
+
+
+::: {.example}
+Density of a Rod
+
+Let
+\[
+m(x) = x^2.
+\]
+Find $\rho(x)$ and $\rho(1)$.
+
+**Solution:**
+
+\[
+\rho(x) = m'(x) = 2x
+\]
+
+At \( x=1 \):
+\[
+\rho(1) = 2 \text{ kg/m}
+\]
+:::
+
+
+---
+
+### Electric Current
+
+If \( Q(t) \) = charge, then:
+\[
+I(t) = \frac{dQ}{dt}.
+\]
+This is **charge flow per unit time**.
+
+---
+
+### Chemistry Applications
+
+
+If \( C(t) \) = concentration of a substance:
+\[
+\text{Rate of reaction} = \frac{dC}{dt}
+\]
+
+**Interpretation:**
+
+- products: positive derivative    
+- reactants: negative derivative  
+
+
+
+::: {.example}
+Reaction Rate
+
+If:
+\[
+C(t) = 5t^2.
+\]
+Find the rate of reaction at $t=2$.
+
+**Solution:**
+\[
+\frac{dC}{dt} = 10t.
+\]
+
+At \( t=2 \):
+\[
+\frac{dC}{dt} = 20 \text{ units/time}
+\]
+:::
+
+
+---
+
+### Biology Applications
+
+
+If \( n(t) \) = population size:
+\[
+\text{Growth rate} = \frac{dn}{dt}
+\]
+
+
+
+::: {.example}
+Exponential Growth
+
+Find the growth rate at $t = 4$ if
+\[
+n(t) = 100\cdot 2^t
+\]
+
+**Solution**
+\[
+\frac{dn}{dt} = 100\cdot 2^t \ln 2.
+\]
+At \( t=4 \):
+\[
+\frac{dn}{dt} = 100(16)\ln2 \approx 1109 \text{ organisms/hour}.
+\]
+:::
+
+
+---
+
+### Economics Applications
+
+If \( C(x) \) = total cost:
+\[
+\text{Marginal cost} = C'(x).
+\]
+
+This approximates the **cost of producing one more unit**.
+
+
+
+::: {.example}
+Cost Function
+
+Find the marginal cost and the cost of producing the $501^{st}$ unit if:
+\[
+C(x) = 10{,}000 + 5x + 0.01x^2.
+\]
+
+**Solution:**
+
+\[
+C'(x) = 5 + 0.02x
+\]
+
+At \( x=500 \):
+\[
+C'(500) = 15 \text{ dollars/item}
+\]
+
+Cost of producing the next unit ≈ $15.
+:::
+
+---
+
+### Putting It All Together
+
+
+> The derivative is a universal language of change.
+
+Different sciences interpret it differently, but mathematically it is always:
+\[
+\frac{dy}{dx}
+\]
+
+
+Across all disciplines:
+
+| Field | Meaning of Derivative |
+|------|------|
+| Physics | velocity, acceleration |
+| Chemistry | reaction rate |
+| Biology | population growth |
+| Economics | marginal cost |
+| Engineering | flow rates |
+| Medicine | blood flow gradient |
+| Sociology | spread of information |
+| Psychology | learning rate |
+
+**Different meanings — same mathematics.**
+
+
+
+---
+
+#### Conceptual Takeaways
+
+- A derivative is always a **rate**  
+- Average rate of change → secant slope  
+- Instantaneous rate of change → tangent slope  
+- Units matter:  
+  \[
+  \frac{\text{units of } y}{\text{units of } x}
+  \]  
+- Every derivative has a **physical interpretation**  
+- Graphs encode rates through slopes  
+- Derivatives unify many scientific ideas    
+- Calculus translates real-world change into mathematics  
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Interpret derivatives as rates of change  
+- Compute average rates of change  
+- Compute instantaneous rates of change  
+- Translate word problems into derivatives  
+- Interpret units of derivatives  
+- Identify physical meaning of derivatives  
+- Use derivatives to model motion  
+- Use derivatives in growth models  
+- Apply derivatives in economics problems  
+- Interpret sign of derivatives  
+- Explain what a derivative means in context  
+
+---
+
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Exponential Growth and Decay 
+
+
+
+Many real-world quantities grow or decay at a rate proportional to their size.
+
+This means:
+
+- large quantities change faster than small ones  
+- growth/decay accelerates as size increases  
+- the process is self-reinforcing  
+
+Examples include:
+
+- population growth  
+- radioactive decay  
+- chemical reactions  
+- cooling and heating  
+- bacterial growth  
+- continuously compounded interest  
+- investment growth  
+
+---
+
+### The Law of Natural Growth and Decay
+
+If \( y(t) \) is a quantity that changes at a rate proportional to its size, then:
+\[
+\frac{dy}{dt} = ky
+\]
+
+where:
+
+- \( k \) is a constant  
+- \( k > 0 \) → growth    
+- \( k < 0 \) → decay    
+
+This is a **differential equation** because it relates a function to its derivative.
+
+
+<div class="theorem">
+The only solutions of
+\[
+\frac{dy}{dt} = ky
+\]
+are exponential functions:
+\[
+y(t) = y_0 e^{kt},
+\]
+
+where:
+
+- \( y_0 = y(0) \) is the **initial value**  
+- \( k \) is the **relative growth/decay rate**  
+</div>
+
+
+From
+\[
+\frac{dP}{dt} = kP,
+\]
+divide both sides by \( P \):
+\[
+\frac{1}{P}\frac{dP}{dt} = k,
+\]
+so
+\[ \ln(P) = kt \Longrightarrow P = e^{kt}.\]
+
+
+**Interpretation:**
+
+- \( k \) is the **relative growth rate**  
+- percentage change per unit time  
+- constant proportional growth  
+
+---
+
+### Population Growth Model
+
+If $P_0$ is the initial population and $k$ is the growth rate, the population is given by:
+\[
+P(t) = P_0 e^{kt}
+\]
+
+::: {.example}
+Population Model
+
+Let
+\[
+P(t) = P_0 e^{kt}
+\]
+with
+
+-  Initial population: \( P_0 = 1000 \)   
+-  Growth rate: \( k = 0.03 \) (3% per year)  
+
+Then,
+\[
+P(t) = 1000e^{0.03t}
+\]
+
+If we look at the population after 10 years,
+\[
+P(10) = 1000e^{0.3} \approx 1349
+\]
+:::
+
+**Radioactive Decay:**
+
+Decay also follows:
+\[
+m(t) = m_0 e^{kt}, \quad k<0
+\]
+
+**Half-Life Model:**
+
+If \( h \) is the half-life:
+\[
+m(t) = m_0\left(\frac{1}{2}\right)^{t/h}
+\]
+
+
+::: {.example}
+Half-Life
+
+If the initial mass is \( m_0 = 80 \) g, and half-life is \( h = 5 \) years, find the mass in 10 years and the time it takes to reach 10 g.
+
+**Solution:**
+
+\[
+m(t) = 80\left(\frac{1}{2}\right)^{t/5}
+\]
+**Mass after 10 years:**
+\[
+m(10) = 80\left(\frac{1}{2}\right)^2 = 20 \text{ g}
+\]
+
+**Time to reach 10 g:**
+\[
+80\left(\frac{1}{2}\right)^{t/5} = 10
+\]
+\[
+\left(\frac{1}{2}\right)^{t/5} = \frac{1}{8}
+\Rightarrow t=15 \text{ years}
+\]
+:::
+
+---
+
+### Newton’s Law of Cooling
+
+Newton's law of cooling is 
+\[
+\frac{dT}{dt} = k(T - T_s)
+\]
+where:
+
+- \( T(t) \) = object temperature  
+- \( T_s \) = surrounding temperature  
+-  \(k \) = a constant  
+
+Solution:
+\[
+T(t) = T_s + (T_0 - T_s)e^{kt}
+\]
+
+
+::: {.example}
+Cooling
+
+Suppose the room temperature is \( T_s = 20^\circ C \) and the initial temperature: \( T_0 = 90^\circ C \).  
+Find the temperature after 10 minutes if \( k = -0.1 \).
+
+**Solution:**
+
+\[
+T(t) = 20 + 70e^{-0.1t}
+\]
+
+Temperature after 10 minutes:
+\[
+T(10) = 20 + 70e^{-1} \approx 45.8^\circ C
+\]
+:::
+
+---
+
+### Continuously Compounded Interest
+
+\[
+A(t) = A_0 e^{rt}
+\]
+
+where:
+
+- \( A_0 \) = initial investment   
+- \( r \) = interest rate  
+- \( t \) = time  
+
+
+::: {.example}
+Investment Growth
+
+Initial investment: \( A_0 = 1000 \). Interest rate: \( r = 0.05 \). How much do we have after 10 years.
+
+**Solution:**
+
+\[
+A(t) = 1000e^{0.05t}
+\]
+Value after 10 years:
+\[
+A(10) = 1000e^{0.5} \approx 1649
+\]
+:::
+
+---
+
+### Putting It All Together
+
+All of the following follow the same structure:
+\[
+\frac{dy}{dt} = ky
+\]
+\[
+y(t) = y_0 e^{kt}
+\]
+
+
+| Context | Meaning of \( y \) |
+|------|------|
+| Population | number of organisms |
+| Finance | account balance |
+| Physics | radioactive mass |
+| Chemistry | concentration |
+| Biology | bacteria count |
+| Thermodynamics | temperature difference |
+| Economics | capital growth |
+
+**Different meanings — same mathematics.**
+
+
+---
+
+#### Conceptual Takeaways
+
+- Proportional change leads to exponential behavior  
+- Growth and decay use the same equation  
+- The sign of \( k \) determines growth vs decay  
+- The initial value controls scaling  
+- Exponential change is nonlinear  
+- Small growth rates produce large long-term effects  
+- Relative growth rate is constant in these models  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- Recognize exponential growth and decay  
+- Write differential equations from word problems  
+- Solve \( \frac{dy}{dt} = ky \)  
+- Interpret growth and decay constants  
+- Use half-life formulas  
+- Model radioactive decay  
+- Model population growth  
+- Apply Newton’s Law of Cooling  
+- Use continuous compounding formulas  
+- Solve exponential equations  
+- Interpret parameters in models  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Related Rates 
+
+In many real-world situations, multiple quantities change over time and are mathematically related.  
+A **related rates problem** asks us to compute the rate of change of one quantity in terms of the rate of change of another.
+
+Often, one rate is easy to measure directly (like volume or distance), while another is difficult to measure directly (like radius, angle, or height).  Calculus allows us to connect these rates using:
+
+- geometric or physical relationships  
+- the Chain Rule  
+- implicit differentiation with respect to time  
+
+
+
+<div class="note">
+**General Strategy for Related Rates Problems**
+
+1. **Read the problem carefully**
+2. **Draw a diagram** (if possible)
+3. **Define variables** for all quantities that change with time
+4. **Translate words into derivatives**
+5. **Write an equation** relating the variables
+6. **Differentiate with respect to time** using the Chain Rule
+7. **Substitute known values**
+8. **Solve for the desired rate**
+</div>
+
+> Important rule:  
+> **Never substitute numerical values before differentiating.**
+
+
+
+::: {.example}
+Expanding Sphere (Balloon Problem)
+
+**Problem**
+Air is pumped into a spherical balloon so that its volume increases at a rate of  
+\[
+\frac{dV}{dt} = 100 \text{ cm}^3/\text{s}.
+\]  
+How fast is the **radius** increasing when the **diameter** is 50 cm?
+
+**Solution:**
+
+**Step 1: Define Variables**
+
+Let:
+
+- \( V(t) \) = volume of balloon  
+- \( r(t) \) = radius of balloon  
+
+Given:
+\[
+\frac{dV}{dt} = 100
+\]
+Find:
+\[
+\frac{dr}{dt} \text{ when } r = 25 \text{ cm}
+\]
+
+**Step 2: Geometric Relationship**
+
+Volume of a sphere:
+\[
+V = \frac{4}{3}\pi r^3
+\]
+
+**Step 3: Differentiate with Respect to Time**
+\[
+\frac{dV}{dt} = \frac{d}{dt}\left(\frac{4}{3}\pi r^3\right)
+\]
+
+Using Chain Rule:
+\[
+\frac{dV}{dt} = 4\pi r^2 \frac{dr}{dt}
+\]
+
+**Step 4: Solve for Desired Rate**
+\[
+\frac{dr}{dt} = \frac{1}{4\pi r^2} \frac{dV}{dt}
+\]
+
+**Step 5: Substitute Values**
+\[
+\frac{dr}{dt} = \frac{1}{4\pi (25)^2}(100)
+\]
+
+\[
+\frac{dr}{dt} = \frac{100}{2500\pi} = \frac{1}{25\pi}
+\]
+
+\[
+\frac{dr}{dt} \approx 0.0127 \text{ cm/s}
+\]
+:::
+
+
+
+
+::: {.example}
+Sliding Ladder
+
+**Problem:**
+A 10 ft ladder leans against a wall. The bottom slides away at 1 ft/s.  How fast is the top sliding down the wall when the bottom is 6 ft from the wall?
+
+**Solution:**
+
+**Step 1: Define Variables**
+
+Let:
+
+- \( x(t) \) = distance of bottom from wall   
+- \( y(t) \) = height of top of ladder  
+
+Given:
+\[
+\frac{dx}{dt} = 1
+\]
+Find:
+\[
+\frac{dy}{dt} \text{ when } x = 6
+\]
+
+**Step 2: Relationship (Pythagorean Theorem)**
+\[
+x^2 + y^2 = 100
+\]
+
+**Step 3: Differentiate**
+\[
+2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0
+\]
+
+Solve for \( \frac{dy}{dt} \):
+\[
+\frac{dy}{dt} = -\frac{x}{y}\frac{dx}{dt}
+\]
+
+**Step 4: Substitute Values**
+
+When \( x=6 \):
+\[
+y = \sqrt{100 - 36} = 8
+\]
+
+\[
+\frac{dy}{dt} = -\frac{6}{8}(1) = -\frac{3}{4}
+\]
+
+**Final Answer**
+\[
+\frac{dy}{dt} = -0.75 \text{ ft/s}
+\]
+
+**Interpretation:**  
+The top of the ladder is sliding **downward** at 0.75 ft/s.
+:::
+
+
+
+
+::: {.example}
+Filling a Conical Tank
+
+**Problem**
+An inverted cone tank has height 4 m and base radius 2 m.  Water is pumped in at 2 m³/min.  Find the rate the water level rises when the water depth is 3 m.
+
+**Solution:**
+
+**Step 1: Variables**
+
+Let:
+
+- \( V(t) \) = volume of water  
+- \( h(t) \) = water height  
+- \( r(t) \) = surface radius  
+
+Given:
+\[
+\frac{dV}{dt} = 2
+\]
+
+Find:
+\[
+\frac{dh}{dt} \text{ when } h = 3
+\]
+
+**Step 2: Similar Triangles**
+\[
+\frac{r}{h} = \frac{2}{4} \Rightarrow r = \frac{h}{2}
+\]
+
+**Step 3: Volume Formula**
+\[
+V = \frac{1}{3}\pi r^2 h
+\]
+Substitute \( r = \frac{h}{2} \):
+\[
+V = \frac{1}{3}\pi \left(\frac{h}{2}\right)^2 h = \frac{\pi}{12}h^3
+\]
+
+**Step 4: Differentiate**
+\[
+\frac{dV}{dt} = \frac{\pi}{4} h^2 \frac{dh}{dt}
+\]
+
+**Step 5: Solve for \( \frac{dh}{dt} \)**
+\[
+\frac{dh}{dt} = \frac{4}{\pi h^2} \frac{dV}{dt}
+\]
+
+**Step 6: Substitute Values**
+\[
+\frac{dh}{dt} = \frac{4}{\pi(3)^2}(2) = \frac{8}{9\pi}
+\]
+
+\[
+\frac{dh}{dt} \approx 0.28 \text{ m/min}
+\]
+:::
+
+
+
+
+::: {.example}
+Two Cars Approaching an Intersection
+
+**Problem**
+Car A travels west at 50 mi/h.  Car B travels north at 60 mi/h.  At what rate is the distance between them changing when A is 0.3 mi from the intersection and B is 0.4 mi away?
+
+**Solution:**
+
+**Variables**
+
+- \( x(t) \), \( y(t) \) = distances to intersection  
+- \( z(t) \) = distance between cars  
+
+\[
+\frac{dx}{dt} = -50,\quad \frac{dy}{dt} = -60
+\]
+
+**Equation**
+\[
+z^2 = x^2 + y^2
+\]
+
+Differentiate:
+\[
+2z\frac{dz}{dt} = 2x\frac{dx}{dt} + 2y\frac{dy}{dt}
+\]
+
+\[
+\frac{dz}{dt} = \frac{x\frac{dx}{dt} + y\frac{dy}{dt}}{z}
+\]
+
+**Substitute Values**
+
+\[
+z = \sqrt{0.3^2 + 0.4^2} = 0.5
+\]
+
+\[
+\frac{dz}{dt} = \frac{0.3(-50) + 0.4(-60)}{0.5}
+\]
+
+\[
+\frac{dz}{dt} = -78 \text{ mi/h}
+\]
+
+**Interpretation**
+
+Cars are approaching each other at **78 mi/h**.
+:::
+
+---
+
+### Putting It All Together
+
+Master Template for Any Related Rates Problem  
+
+
+1. Define variables
+2. Write known rates
+3. Write target rate
+4. Write relationship equation
+5. Differentiate with respect to time
+6. Solve for target derivative
+7. Substitute values
+8. Interpret result
+
+#### Conceptual Takeaways
+
+- Related rates problems model linked motion  
+- Variables are functions of time even if time is not explicitly stated  
+- Differentiation with respect to time connects rates  
+- Geometry and physics create the relationships  
+- Chain Rule is the core calculus tool  
+- Units matter and help validate answers  
+- Negative rates indicate decreasing quantities  
+- Interpretation is as important as computation  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- Translate word problems into derivative notation    
+- Identify dependent and independent variables  
+- Set up geometric and physical equations  
+- Use implicit differentiation with respect to time  
+- Apply the Chain Rule in multi-variable systems  
+- Eliminate variables using geometry  
+- Solve for unknown rates  
+- Interpret signs and units of rates  
+- Model real-world motion and growth  
+- Solve complex multi-step applied calculus problems  
+
+---
+
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  Linear Approximations and Differentials 
+
+
+In calculus, we often need to approximate the values of functions near a known point. One powerful method is **linear approximation**, based on the idea that a differentiable function looks very similar to its tangent line when zoomed in near a point.
+
+---
+
+### Tangent Line Approximation
+
+If a function \(f\) is differentiable at \(x = a\), the tangent line at \((a, f(a))\) can be used to approximate \(f(x)\) near \(x = a\).
+\[
+y - f(a) = f'(a)(x - a)
+\]
+So, we can approximate $y = f(x)$ by solving:
+\[
+f(x) \approx f(a) + f'(a)(x - a).
+\]
+
+
+<div class="definition">
+The function
+\[
+L(x) = f(a) + f'(a)(x - a)
+\]
+is called the **linearization** of \(f\) at \(a\).
+</div>
+
+
+
+::: {.example}
+Linearization and Approximation
+
+Find the linearization of \(f(x) = \sqrt{x + 3}\) at \(a = 1\) and use it to approximate \(\sqrt{3.98}\) and \(\sqrt{4.05}\).
+
+**Solution:**
+
+1. Compute derivative:
+\[
+f'(x) = \frac{1}{2\sqrt{x + 3}}
+\]
+
+2. Evaluate at \(a = 1\):
+\[
+f(1) = 2, \quad f'(1) = \frac{1}{4}
+\]
+
+3. Linearization:
+\[
+L(x) = f(1) + f'(1)(x - 1) = 2 + \frac{1}{4}(x - 1) = \frac{7}{4} + \frac{x}{4}
+\]
+
+4. Approximations:
+\[
+\sqrt{3.98} \approx L(3.98) = 2 - 0.005 = 1.995
+\]
+
+\[
+\sqrt{4.05} \approx L(4.05) = 2 + 0.0125 = 2.0125
+\]
+:::
+
+> These approximations are **overestimates**, because the tangent line lies above the curve.
+
+
+
+The accuracy of a linear approximation depends on how close \(x\) is to \(a\).
+
+
+::: {.example}
+Accuracy Interval
+
+For \(f(x) = \sqrt{x+3}\) with linearization \(L(x) = \frac{7}{4} + \frac{x}{4}\):
+
+- To be accurate within \(0.5\): \( -22.6 < x < 8.6 \)  
+- To be accurate within \(0.1\): \( -1.1 < x < 3.9 \)  
+:::
+
+> Linear approximations are more accurate closer to the point of tangency.
+
+
+
+Linear approximations simplify functions for practical use:
+
+- **Pendulum period**: For small angles, \(\sin \theta \approx \theta\)  
+- **Paraxial optics**: \(\sin \theta \approx \theta, \cos \theta \approx 1\)  
+
+---
+
+### Differentials
+
+Differentials provide another way to formalize linear approximations.
+
+
+<div class="definition">
+- Let \(y = f(x)\). If \(dx\) is a small change in \(x\), define:
+\[
+dy = f'(x) dx
+\]
+- \(dy\) approximates the actual change in \(y\) (denoted \(\Delta y\)):
+
+Then,
+\[
+\Delta y = f(x + \Delta x) - f(x)
+\]
+</div>
+
+> As \(\Delta x\) becomes small, \(dy \approx \Delta y\).
+
+
+::: {.example}
+Using Differentials
+
+Let \(y = x^3 + x^2 - 2x + 1\), \(x = 2\).  Find $dy$ when $dx$ is 0.05 and 0.01.
+
+**Solution:**
+
+- Case (a): \(dx = 0.05\)
+\[
+dy = f'(2) \cdot 0.05 = 0.7
+\]
+\[
+\Delta y = f(2.05) - f(2) = 0.717625
+\]
+
+- Case (b): \(dx = 0.01\)
+\[
+dy = f'(2) \cdot 0.01 = 0.14
+\]
+\[
+\Delta y = f(2.01) - f(2) = 0.140701
+\]
+:::
+
+> The approximation improves as \(\Delta x\) gets smaller.
+
+
+::: {.example}
+Error Estimation
+
+A sphere has radius \(r = 21 \text{ cm}\) with a possible measurement error of \(dr = 0.05 \text{ cm}\). Estimate the maximum error in volume.
+
+**Solution:**
+
+- Sphere volume: \(V = \frac{4}{3} \pi r^3\)
+- Differential: \(dV = 4 \pi r^2 dr\)
+
+\[
+dV = 4 \pi (21)^2 (0.05) \approx 277 \text{ cm}^3
+\]
+
+**Relative error:**
+\[
+\frac{dV}{V} = 3 \frac{dr}{r} \approx 0.007.
+\]
+:::
+
+> The volume error is roughly three times the relative error in the radius.
+
+---
+
+### Putting It All Together
+
+- **Linearization** approximates a differentiable function using its tangent line.
+- **Differentials** formalize this approximation for small changes.
+- The methods are widely used in physics and engineering to simplify computations.
+- **Accuracy** decreases as the point moves further from the tangent point.
+
+---
+
+#### Skills You Should Be Able to Do
+
+-  Compute the derivative of a function and form its tangent line.  
+-  Find the linearization \(L(x)\) at a given point.  
+-  Use linear approximations to estimate function values.  
+-  Determine intervals of accuracy for linear approximations.  
+-  Use differentials to estimate small changes in functions.  
+-  Apply linear approximations in practical contexts (e.g., physics, error estimation).  
+
+---
+
+#### Conceptual Takeaways
+
+- A differentiable function locally behaves like its tangent line.  
+- Linear approximations give quick estimates without full calculation.  
+- Differentials \(dy = f'(x) dx\) quantify small changes in the dependent variable.  
+- Errors in measurement or approximation can be efficiently estimated using differentials.  
+- These concepts bridge calculus with real-world applications in science and engineering.  
+
+####  Problems
+
+
+
+
+
+
+##  Hyperbolic Functions 
+
+####  Problems
+
+
+
+

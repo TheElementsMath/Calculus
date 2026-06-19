@@ -1,0 +1,3040 @@
+#  Infinite Sequences and Series
+
+##   Sequences
+
+
+A sequence can be defined using a formula for the general term \( a_n \).  By putting numbers in place of $n$ allows you to find exact values of points in the sequence.
+
+
+::: {.example}
+**Rational sequence:**
+\[
+a_n = \frac{n}{n+1}
+\]
+\[
+\{a_n\} = \left\{\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \dots \right\}
+\]
+
+
+**Alternating exponential sequence:**
+\[
+a_n = \frac{(-1)^n}{3^n}
+\]
+\[
+\{a_n\} = \left\{-\frac{1}{3}, \frac{1}{9}, -\frac{1}{27}, \frac{1}{81}, \dots \right\}
+\]
+
+
+**Shifted sequence:**
+\[
+a_n = n - 3
+\]
+\[
+\{a_n\} = \{-2, -1, 0,1,2,3,4,\dots\}
+\]
+
+
+**Trigonometric sequence:**
+\[
+a_n = \cos\left(\frac{n\pi}{6}\right)
+\]
+:::
+
+We can construct a sequence from a pattern.  For example, given the sequence:
+\[
+\left\{ \frac{3}{5}, -\frac{4}{25}, \frac{5}{125}, -\frac{6}{625}, \frac{7}{3125}, \dots \right\}
+\]
+
+**Step-by-step structure:**
+
+- Numerator increases by 1 → \( n+2 \)  
+- Denominator is powers of 5 → \( 5^n \)  
+- Alternating signs → \( (-1)^{n-1} \)  
+
+\[
+a_n = \frac{(-1)^{n-1}(n+2)}{5^n}
+\]
+
+
+Recursive sequences are defined using previous terms.
+
+**Fibonacci Sequence**
+\[
+f_1 = 1, \quad f_2 = 1
+\]
+\[
+f_n = f_{n-1} + f_{n-2}, \quad n \ge 3
+\]
+
+\[
+\{f_n\} = \{1,1,2,3,5,8,13,21,\dots\}
+\]
+
+
+A sequence is a function with **discrete inputs**, so its graph consists of isolated points:
+\[
+(1,a_1), (2,a_2), (3,a_3), \dots, (n,a_n), \dots
+\]
+
+---
+
+### Limits of Sequences
+
+
+<div class="definition">
+A sequence \( \{a_n\} \) has limit \( L \) if the terms get arbitrarily close to \( L \) as \( n \to \infty \):
+\[
+\lim_{n\to\infty} a_n = L
+\]
+
+If the limit exists, the sequence is **convergent**.  If not, it is **divergent**.
+</div>
+
+
+
+### Limit Laws for Sequences
+
+
+<div class="theorem">
+If \( \{a_n\} \to L \), \( \{b_n\} \to M \), and \( c \) is a constant:
+
+\begin{align*}
+\lim (a_n + b_n) &= L + M \\ \\
+\lim (a_n - b_n) &= L - M \\ \\
+\lim (c a_n) &= cL \\ \\
+\lim (a_n b_n) &= LM \\ \\
+\lim \frac{a_n}{b_n} &= \frac{L}{M}, \quad M \ne 0 \\ \\
+\lim (a_n)^p &= L^p, \quad p>0 
+\end{align*}
+</div>
+
+
+<div class="theorem">
+**The Squeeze Theorem for Sequences**
+
+If
+\[
+a_n \le b_n \le c_n
+\]
+and
+\[
+\lim a_n = \lim c_n = L,
+\]
+then
+\[
+\lim b_n = L.
+\]
+</div>
+
+---
+
+### Some Additional Important Theorems
+
+
+<div class="theorem">
+**Absolute Value Theorem**
+
+If
+\[
+\lim |a_n| = 0
+\quad \Rightarrow \quad
+\lim a_n = 0
+\]
+</div>
+
+
+
+
+<div class="theorem">
+**Continuity Theorem**
+
+If \( a_n \to L \) and \( f \) is continuous at \( L \), then
+\[
+f(a_n) \to f(L)
+\]
+</div>
+
+
+---
+
+### Special Sequences
+
+
+<div class="definition">
+**Exponential Sequences**
+
+For \( a_n = r^n \):
+
+\[
+\lim_{n\to\infty} r^n =
+\begin{cases}
+0, & -1 < r < 1 \\
+1, & r = 1 \\
+\text{diverges}, & \text{otherwise}
+\end{cases}
+\]
+</div>
+
+
+<div class="definition">
+**Monotonic Sequences**
+
+
+- **Increasing:** \( a_n < a_{n+1} \)  
+- **Decreasing:** \( a_n > a_{n+1} \)  
+- **Monotonic:** Increasing or decreasing  
+</div>
+
+
+
+
+<div class="definition">
+**Bounded Sequences**
+
+- **Bounded above:** \( a_n \le M \)  
+- **Bounded below:** \( a_n \ge m \)  
+- **Bounded:** Both  
+</div>
+
+
+<div class="theorem">
+**Monotone Convergence Theorem**
+
+Every **bounded, monotonic** sequence is convergent.
+</div>
+
+
+::: {.example}
+Given:
+\[
+a_1 = 2, \quad a_{n+1} = \frac{1}{2}(a_n + 6)
+\]
+
+This sequence is:
+
+- increasing  
+- bounded above by 6  
+- therefore convergent  
+
+Let \( L = \lim a_n \). Then:
+\[
+L = \frac{1}{2}(L + 6)
+\Rightarrow L = 6
+\]
+:::
+
+---
+
+### Putting It All Together
+
+> A sequence describes how a process evolves step-by-step.  Limits describe what value that process stabilizes around — if it stabilizes at all.
+
+This forms the foundation for:
+
+- infinite series  
+- numerical methods  
+- machine learning optimization  
+- algorithms  
+- dynamical systems  
+- iterative models  
+- convergence analysis  
+
+#### Conceptual Takeaways
+
+- Sequences are functions with **discrete domains**.  
+- Convergence means **approaching a number**, not reaching it.  
+- Divergence can happen by:  
+  - oscillation  
+  - unbounded growth  
+  - instability    
+- Structure matters:  
+  - monotonicity + boundedness ⇒ convergence  
+- Limits of sequences behave like limits of functions.  
+- Recursive rules can define stable long-term behavior.  
+- Continuity transfers limits through functions.  
+- Exponentials dominate growth behavior.  
+
+---
+
+#### Skills You Should Be Able To Do
+
+By the end of this section, you should be able to:
+
+- Define sequences using:  
+  - explicit formulas  
+  - recursive rules  
+  - verbal descriptions  
+- Convert patterns into formulas  
+- Determine convergence or divergence  
+- Compute limits of sequences  
+- Apply limit laws  
+- Use the Squeeze Theorem  
+- Analyze exponential sequences  
+- Identify monotonic and bounded sequences  
+- Apply the Monotone Convergence Theorem  
+- Solve recursive limit equations  
+- Interpret sequences graphically  
+- Relate function limits to sequence limits  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Series
+
+
+When we write a number as an infinite decimal, we are really expressing it as an **infinite sum**.  For example,
+\[
+\pi = 3.1415926535\ldots
+\]
+means
+\[
+\pi = 3 + \frac{1}{10} + \frac{4}{10^2} + \frac{1}{10^3} + \frac{5}{10^4} + \frac{9}{10^5} + \cdots
+\]
+Each additional term adds more precision, and the value of the sum gets closer and closer to the true number.
+
+This idea motivates the concept of an **infinite series**.
+
+---
+
+### Sequences vs. Series
+
+
+<div class="definition">
+
+- A **sequence** is a list of numbers:
+  \[
+  a_1, a_2, a_3, \dots
+  \]
+
+- A **series** is the sum of the terms of a sequence:
+  \[
+  a_1 + a_2 + a_3 + \cdots
+  \]
+</div>
+
+We use sigma notation to write an infinite series compactly:
+\[
+\sum_{n=1}^{\infty} a_n
+\]
+
+---
+
+### Partial Sums and the Meaning of “Sum”
+
+Since we cannot literally add infinitely many numbers, we define the sum of a series using **partial sums**.
+
+
+<div class="definition">
+**Partial Sums**
+
+The *nth partial sum* of a series is
+\[
+s_n = a_1 + a_2 + \cdots + a_n = \sum_{i=1}^n a_i
+\]
+</div>
+
+
+This creates a **new sequence**:
+\[
+\{s_n\} = s_1, s_2, s_3, \dots
+\]
+
+
+<div class="definition">
+**Convergence of a Series**
+
+An infinite series  
+\[
+\sum_{n=1}^{\infty} a_n
+\]
+is called **convergent** if the sequence of partial sums \(\{s_n\}\) converges to a finite number \(s\):
+\[
+\lim_{n \to \infty} s_n = s
+\]
+
+In this case, we define the sum of the series as:
+\[
+\sum_{n=1}^{\infty} a_n = s
+\]
+
+If the partial sums diverge, the series is called **divergent**.
+</div>
+
+
+
+::: {.example}
+A Convergent Series
+
+Consider the series:
+\[
+\sum_{n=1}^{\infty} \frac{1}{2^n}
+= \frac12 + \frac14 + \frac18 + \frac1{16} + \cdots
+\]  Determine if the series converges.
+
+**Solution:**
+
+Partial sums:
+\[
+s_1 = 0.5, \quad
+s_2 = 0.75, \quad
+s_3 = 0.875, \quad
+s_4 = 0.9375, \dots
+\]
+
+These values get closer and closer to **1**, so:
+\[
+\sum_{n=1}^{\infty} \frac{1}{2^n} = 1
+\]
+
+This series **converges**.
+:::
+
+
+::: {.example}
+A Divergent Series
+
+Consider:
+\[
+\sum_{n=1}^{\infty} n = 1 + 2 + 3 + 4 + \cdots
+\]Determine if the series converges.
+
+**Solution:**
+
+
+Partial sums:
+\[
+1,\; 3,\; 6,\; 10,\; 15,\; 21,\; \dots
+\]
+
+These grow without bound, so:
+
+- The partial sums diverge  
+- The series **diverges**  
+:::
+
+---
+
+### Geometric Series
+
+
+<div class="definition">
+A **geometric series** has the form:
+\[
+\sum_{n=1}^{\infty} ar^{n-1}
+= a + ar + ar^2 + ar^3 + \cdots
+\]
+where:
+
+- \(a\) = first term  
+- \(r\) = common ratio  
+</div>
+
+
+
+<div class="definition">
+**The Geometric Series Theorem**
+
+The geometric series converges **if and only if**
+\[
+|r| < 1
+\]
+
+When it converges, the sum is:
+\[
+\sum_{n=1}^{\infty} ar^{n-1} = \frac{a}{1-r}
+\]
+
+If \(|r| \ge 1\), the series **diverges**.
+</div>
+
+
+
+::: {.example}
+Convergent Geometric Series
+
+\[
+5 - \frac{10}{3} + \frac{20}{9} - \frac{40}{27} + \cdots
+\]  Determine if the series converges.
+
+**Solution:**
+
+Identify parameters:
+
+- \(a = 5\)  
+- \(r = -\frac{2}{3}\)  
+- \(|r| < 1\) ⇒ convergent  
+
+\begin{align*}
+5 - \frac{10}{3} + \frac{20}{9} - \frac{40}{27} + \cdots &= \frac{a}{1-r}\\
+&= \frac{5}{1 - (-2/3)} \\
+&= \frac{5}{5/3} \\
+&= 3
+\end{align*}
+:::
+
+
+::: {.example}
+Divergent Geometric Series
+
+\[
+\sum_{n=1}^{\infty} 4\left(\frac{4}{3}\right)^{n-1}
+\]  Determine if the series converges.
+
+**Solution:**
+
+Here \(r=\frac{4}{3}\), so \(|r|>1\) ⇒ **divergent**.
+:::
+
+
+---
+
+### Telescoping Series
+
+Some series simplify through cancellation.
+
+
+::: {.example}
+\[
+\sum_{n=1}^{\infty} \frac{1}{n(n+1)}
+\]  Determine if the series converges.
+
+**Solution:**
+
+Use partial fractions:
+\[
+\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}
+\]
+
+Partial sums:
+\[
+s_n = \left(1-\frac12\right) + \left(\frac12-\frac13\right) + \cdots + \left(\frac1n - \frac1{n+1}\right)
+\]
+
+Everything cancels except:
+\[
+s_n = 1 - \frac{1}{n+1}
+\]
+
+\[
+\lim_{n\to\infty} s_n = 1
+\]
+
+So:
+\[
+\sum_{n=1}^{\infty} \frac{1}{n(n+1)} = 1
+\]
+:::
+
+
+
+<div class="definition">
+Harmonic Series
+
+\[
+\sum_{n=1}^{\infty} \frac{1}{n}
+= 1 + \frac12 + \frac13 + \frac14 + \cdots
+\]
+</div>
+
+Even though:
+\[
+\lim_{n\to\infty} \frac{1}{n} = 0
+\]
+the series **diverges**.
+
+> Term → 0 does **not** imply convergence.
+
+---
+
+### Fundamental Tests and Theorems
+
+
+<div class="theorem">
+**Necessary Condition for Convergence**
+
+If
+\[
+\sum a_n \text{ converges, then } \lim_{n\to\infty} a_n = 0
+\]
+</div>
+
+
+
+<div class="theorem">
+**Test for Divergence**
+
+If
+\[
+\lim_{n\to\infty} a_n \neq 0 \quad \text{or does not exist}
+\]
+then
+\[
+\sum a_n \text{ diverges.}
+\]
+</div>
+
+---
+
+### Putting It All Together
+
+
+> A series does not “add infinitely many numbers.”  It asks whether a **process of accumulation stabilizes** as we add more and more terms.
+
+If it stabilizes → **converges**  
+If it grows without bound or oscillates → **diverges**
+
+
+
+#### Conceptual Takeaways
+
+- An **infinite series** is defined using **limits**, not direct addition.  
+- The sum of a series is the **limit of its partial sums**.  
+- Convergence is about **behavior**, not size of individual terms.  
+- Partial sums are the bridge between sequences and series.  
+- Infinite processes are made precise using limits.  
+- Not all infinite sums make sense — **some diverge**.  
+- Structure matters: geometry (geometric series), cancellation (telescoping), growth rate (harmonic series).  
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Distinguish between a **sequence** and a **series**  
+- Construct **partial sums**  
+- Determine whether a series converges using partial sums  
+- Recognize and sum **geometric series**  
+- Identify **telescoping series**  
+- Apply the **Test for Divergence**  
+- Interpret convergence as a **limit process**  
+- Translate infinite decimals into **infinite series**  
+- Model real systems (e.g. accumulation, decay) using series  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   The Integral Test and Estimates of Sums
+
+
+In most cases, it is **not possible** to find the exact sum of an infinite series.  
+Only special series (like geometric series) have closed-form formulas for their sums.
+
+Because of this, we focus on:
+
+- **Determining convergence or divergence**  
+- **Estimating sums when convergence occurs**  
+
+The main tool in this section is the **Integral Test**, which connects infinite series to improper integrals.
+
+
+Given a series
+\[
+\sum_{n=1}^{\infty} a_n
+\]
+we usually cannot find a formula for the partial sum \( s_n \).  Instead, we ask:
+
+> Does the series converge or diverge?
+
+To answer this, we compare the series to an **improper integral**.
+
+
+<div class="definition">
+**The Integral Test**
+
+
+Let \( f(x) \) be a function such that:
+
+- \( f(x) \) is **continuous**  
+- \( f(x) > 0 \)  
+- \( f(x) \) is **decreasing**  
+- \( a_n = f(n) \) for all \( n \ge 1 \)  
+
+Then:
+
+\[
+\sum_{n=1}^{\infty} a_n \text{ converges } \iff \int_1^{\infty} f(x)\,dx \text{ converges}
+\]
+
+\[
+\sum_{n=1}^{\infty} a_n \text{ diverges } \iff \int_1^{\infty} f(x)\,dx \text{ diverges}
+\]
+</div>
+
+
+
+Think of each term \( a_n \) as the area of a rectangle of width 1 and height \( f(n) \).  The series:
+\[
+\sum_{n=1}^{\infty} a_n \approx \text{ sum of rectangle areas} \]  
+
+The integral:
+\[
+\int_1^{\infty} f(x)\,dx = \text{  continuous area under the curve} \]
+
+If the **area under the curve is finite**, the series converges.  If the **area is infinite**, the series diverges.
+
+
+::: {.example}
+A Convergent Series
+
+Determine if the series converges
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^2}.
+\]
+
+**Solution:**
+Let:
+\[
+f(x) = \frac{1}{x^2}
+\]
+
+Then:
+\[
+\int_1^{\infty} \frac{1}{x^2}\,dx 
+= \left[ -\frac{1}{x} \right]_1^{\infty}
+= 1
+\]
+
+Since the integral converges, the series **converges** by the Integral Test.
+:::
+
+
+
+::: {.example}
+A Divergent Series
+
+\[
+\sum_{n=1}^{\infty} \frac{1}{\sqrt{n}}
+\]
+
+Let:
+\[
+f(x) = \frac{1}{\sqrt{x}} = x^{-1/2}
+\]
+
+\[
+\int_1^{\infty} x^{-1/2}\,dx 
+= \left[ 2\sqrt{x} \right]_1^{\infty}
+= \infty
+\]
+
+The integral diverges ⇒ the series **diverges**.
+:::
+
+
+---
+
+### The p-Series
+
+
+<div class="definition">
+A **p-series** has the form:
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^p}
+\]
+</div>
+
+
+
+<div class="theorem">
+The p-Series Test
+
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^p}
+\begin{cases}
+\text{converges} & \text{if } p > 1 \\
+\text{diverges} & \text{if } p \le 1
+\end{cases}
+\]
+</div>
+
+
+::: {.example}
+**Convergent**
+
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^3} \quad (p=3>1)
+\]
+
+**Divergent**
+
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^{1/3}} \quad (p=\tfrac13<1)
+\]
+:::
+
+
+<div class="definition">
+Harmonic Series
+\[
+\sum_{n=1}^{\infty} \frac{1}{n} \quad (p=1)
+\]
+This series **diverges**.
+</div>
+
+
+::: {.example}
+Logarithmic Series
+
+Determine if the series converges
+\[
+\sum_{n=1}^{\infty} \frac{\ln n}{n}
+\]
+
+**Solution:**
+
+Let:
+\[
+f(x) = \frac{\ln x}{x}
+\]
+
+\[
+\int_1^{\infty} \frac{\ln x}{x}\,dx
+= \left[ \frac{(\ln x)^2}{2} \right]_1^{\infty}
+= \infty
+\]
+
+So the series **diverges** by the Integral Test.
+:::
+
+###  Error Estimates
+
+Even if a series converges, we usually **cannot find its exact sum**.  Instead, we approximate using **partial sums**:
+\[
+s_n = a_1 + a_2 + \cdots + a_n
+\]
+
+The **remainder** (error) is:
+\[
+R_n = s - s_n
+\]
+
+
+<div class="theorem">
+Remainder Estimate (Integral Test)
+
+If \( f(x) \) is positive, continuous, decreasing and \( a_n=f(n) \), then:
+\[
+\int_{n+1}^{\infty} f(x)\,dx \;<\; R_n \;<\; \int_n^{\infty} f(x)\,dx.
+\]
+This gives **error bounds** for approximations.
+</div>
+
+
+::: {.example}
+Error Estimation
+
+Approximate:
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^3}
+\]
+using \( s_{10} \)
+
+**Solution:**
+
+Let \( f(x)=\frac{1}{x^3} \)
+\[
+\int_n^{\infty} \frac{1}{x^3}dx = \frac{1}{2n^2}
+\]
+So:
+\[
+R_{10} < \frac{1}{2(10)^2} = \frac{1}{200} = 0.005
+\]
+Meaning:
+\[
+s \approx s_{10} \quad \text{with error } < 0.005
+\]
+:::
+
+**Improved Bounds for the Sum**
+
+\[
+s_n + \int_{n+1}^{\infty} f(x)\,dx 
+\;<\; s \;<\;
+s_n + \int_n^{\infty} f(x)\,dx
+\]
+
+This gives a **numerical interval** that traps the true sum.
+
+---
+
+### Putting It All Together
+
+
+> A series converges if accumulation slows down fast enough.  
+> A series diverges if accumulation keeps growing without bound.
+
+Series behavior is governed by **rate of decay**, not term size alone.
+
+
+#### Conceptual Takeaways
+
+- Most series **cannot be summed exactly**  
+- Convergence is determined by **comparison and structure**, not formulas  
+- The Integral Test connects:  
+  - discrete sums (series)  
+  - continuous accumulation (integrals)  
+- Area under a curve explains series behavior  
+- Growth rate of terms determines convergence  
+- Slower decay ⇒ divergence  
+- Faster decay ⇒ convergence  
+- Infinite sums are analyzed using **limits, not addition**  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- Apply the **Integral Test** correctly  
+- Identify valid functions for the test    
+- Recognize **p-series** and classify convergence  
+- Distinguish convergent vs divergent series by growth rates  
+- Estimate infinite sums using **partial sums**  
+- Compute **error bounds** using improper integrals  
+- Determine how many terms are needed for a given accuracy  
+- Interpret series behavior using geometric intuition  
+- Connect discrete summation to continuous area  
+- Use inequalities to bound infinite sums  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   The Comparison Tests
+
+
+When studying infinite series, a powerful strategy is to **compare an unknown series** to a series whose behavior we already understand.  The core idea is simple:
+
+> If a series behaves like a known convergent series, it converges.  
+> If a series behaves like a known divergent series, it diverges.
+
+This leads to two fundamental tools:
+
+- The **Direct Comparison Test**  
+- The **Limit Comparison Test**  
+
+
+Consider the series:
+\[
+\sum_{n=1}^{\infty} \frac{1}{2n+1}.
+\]
+
+It looks very similar to the geometric series:
+\[
+\sum_{n=1}^{\infty} \left(\frac{1}{2}\right)^n.
+\]
+
+Since
+\[
+\frac{1}{2n+1} < \frac{1}{2n}
+\]
+and
+\[
+\sum_{n=1}^{\infty} \frac{1}{2n} = \sum_{n=1}^{\infty} \left(\frac{1}{2}\right)^n
+\]
+is convergent, the given series must also converge.  This is the logic behind the **Comparison Test**.
+
+### The Comparison Test
+
+<div class="definition">
+The Direct Comparison Test
+
+
+Let \( \sum a_n \) and \( \sum b_n \) be series with **positive terms**.
+
+**(i) Comparison with a convergent series**
+If:
+\[
+0 \le a_n \le b_n \quad \text{and} \quad \sum b_n \text{ converges}
+\]
+then:
+\[
+\sum a_n \text{ also converges.}
+\]
+
+**(ii) Comparison with a divergent series**
+If:
+\[
+0 \le b_n \le a_n \quad \text{and} \quad \sum b_n \text{ diverges}
+\]
+then:
+\[
+\sum a_n \text{ also diverges.}
+\]
+</div>
+
+
+<div class="note">
+Standard Comparison Series
+
+These are the most common reference series:
+
+**p-series**
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^p}
+\begin{cases}
+\text{converges} & p>1 \\
+\text{diverges} & p\le 1
+\end{cases}
+\]
+
+**Geometric series**
+\[
+\sum_{n=0}^{\infty} ar^n
+\begin{cases}
+\text{converges} & |r|<1 \\
+\text{diverges} & |r|\ge 1
+\end{cases}
+\]
+</div>
+
+
+
+::: {.example}
+Polynomial Comparison (Convergent)
+
+Determine if the following converges
+\[
+\sum_{n=1}^{\infty} \frac{5}{2n^2 + 4n + 3}
+\]
+
+**Solution:**
+
+For large \( n \), the dominant term in the denominator is \( 2n^2 \), so compare with:
+\[
+\frac{5}{2n^2}
+\]
+
+Since:
+\[
+\frac{5}{2n^2 + 4n + 3} < \frac{5}{2n^2}
+\]
+and
+\[
+\sum \frac{5}{2n^2} = \frac{5}{2} \sum \frac{1}{n^2}
+\]
+is convergent (p-series with \( p=2>1 \)), the given series **converges** by comparison.
+:::
+
+
+::: {.example}
+Comparison with Harmonic Series (Divergent)
+
+Determine if the following converges
+\[
+\sum_{k=1}^{\infty} \frac{\ln k}{k}
+\]
+
+**Solution:**
+
+
+For large \( k \), we have \( \ln k > 1 \), so:
+\[
+\frac{\ln k}{k} > \frac{1}{k}
+\]
+Since:
+\[
+\sum \frac{1}{k}
+\]
+diverges (harmonic series), the given series **diverges** by comparison.
+:::
+
+
+**Why the Direct Comparison Test Sometimes Fails**
+
+Sometimes we get inequalities in the *wrong direction*, for example:
+\[
+\frac{1}{n^2-1} > \frac{1}{n^2}
+\]
+but
+\[
+\sum \frac{1}{n^2}
+\]
+converges.
+
+This does **not** allow a conclusion.  In these cases, we use the **Limit Comparison Test**.
+
+---
+
+### The Limit Comparison Test
+
+
+<div class="definition">
+Limit Comparison Test
+
+Let \( \sum a_n \) and \( \sum b_n \) be series with positive terms.  If:
+\[
+\lim_{n\to\infty} \frac{a_n}{b_n} = c
+\]
+where \( 0 < c < \infty \), then:
+\[
+\sum a_n \text{ and } \sum b_n \text{ either both converge or both diverge.}
+\]
+</div>
+
+
+::: {.example}
+Geometric-Type Comparison
+
+Determine if the following series converges
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^2-1}
+\]
+
+**Solution:**
+
+Compare with:
+\[
+b_n = \frac{1}{n^2}.
+\]
+
+Compute:
+\[
+\lim_{n\to\infty} \frac{a_n}{b_n}
+= \lim_{n\to\infty} \frac{1/(n^2-1)}{1/(n^2)}
+= \lim_{n\to\infty} \frac{n^2}{n^2-1} = 1
+\]
+
+Since the limit is finite and positive, and
+\[
+\sum \frac{1}{n^2}
+\]
+is convergent, the given series **converges** by the Limit Comparison Test.
+:::
+
+
+::: {.example}
+Rational Function Comparison (Divergent)
+
+Determine if the following series converges
+\[
+\sum_{n=1}^{\infty} \frac{2n^2 + 3n}{5 + n^{5/2}}
+\]
+
+**Solution:**
+
+Dominant terms:
+
+- Numerator: \( 2n^2 \)  
+- Denominator: \( n^{5/2} \)  
+
+Compare with:
+\[
+b_n = \frac{2n^2}{n^{5/2}} = \frac{2}{n^{1/2}}.
+\]
+This is a p-series with \( p=\frac{1}{2} < 1 \), so it diverges.
+
+Compute limit:
+\[
+\lim_{n\to\infty} \frac{a_n}{b_n} = 1
+\]
+Therefore, the given series **diverges** by the Limit Comparison Test.
+:::
+
+
+---
+
+### Estimating Sums Using Comparison
+
+If:
+\[
+0 \le a_n \le b_n
+\]
+and \( \sum b_n \) is convergent, then the **remainders** satisfy:
+\[
+R_n < T_n
+\]
+where:
+
+- \( R_n \) = remainder of \( \sum a_n \)  
+- \( T_n \) = remainder of \( \sum b_n \)  
+
+This allows **error estimation** using known formulas.
+
+
+::: {.example}
+Error Estimation
+
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^3 + 1}
+\]
+
+Since:
+\[
+\frac{1}{n^3 + 1} < \frac{1}{n^3}
+\]
+and \( \sum \frac{1}{n^3} \) converges, the series converges.
+
+Using integral remainder bound for \( \sum \frac{1}{n^3} \):
+\[
+T_n < \frac{1}{2n^2}
+\]
+
+So:
+\[
+R_n < \frac{1}{2n^2}
+\]
+
+With \( n=100 \):
+\[
+R_{100} < \frac{1}{2(100)^2} = 0.00005
+\]
+:::
+
+
+---
+
+### Putting It All Together
+
+> A complicated series behaves like its dominant term.  If the dominant term converges → the series converges.  If the dominant term diverges → the series diverges.
+
+Comparison tests turn difficult series into simple ones.
+
+#### Conceptual Takeaways
+
+- Convergence is about **growth rate**, not term size  
+- Series behave like simpler “model series”  
+- Comparison reduces complex series to simple ones  
+- Dominant terms control behavior  
+- Inequalities guide convergence logic  
+- Structure matters more than formulas  
+- Infinite sums are controlled by **asymptotic behavior**  
+- You don’t need exact sums to understand infinite processes  
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+- Apply the **Direct Comparison Test** 
+- Identify valid comparison series  
+- Recognize when comparison fails  
+- Apply the **Limit Comparison Test**  
+- Extract dominant terms correctly  
+- Compare rational functions using highest powers  
+- Classify convergence/divergence efficiently  
+- Choose between p-series and geometric comparisons  
+- Use inequalities logically  
+- Estimate errors using comparison remainders  
+- Bound infinite sums numerically  
+- Analyze series using asymptotic reasoning  
+
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Alternating Series
+
+
+
+So far, most convergence tests apply only to **series with positive terms**.  However, many important series contain **both positive and negative terms**.  A particularly important class of such series is **alternating series**, where the signs of the terms switch back and forth.
+
+
+<div class="definition">
+An **alternating series** is a series whose terms alternate in sign:
+\[
+\sum_{n=1}^{\infty} (-1)^{n-1} b_n
+\qquad \text{or} \qquad
+\sum_{n=1}^{\infty} (-1)^n b_n
+\]
+where  
+\[
+b_n > 0 \quad \text{and} \quad b_n = |a_n|
+\]
+</div>
+
+Some examples include:
+\[
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \cdots
+\]
+and
+\[
+\frac{1}{2} - \frac{2}{3} + \frac{3}{4} - \frac{4}{5} + \frac{5}{6} - \cdots
+\]
+
+---
+
+### Alternating Series Test (AST)
+
+<div class="theorem">
+**The Alternating Series Test**
+
+An alternating series  
+\[
+\sum_{n=1}^{\infty} (-1)^{n-1} b_n
+\quad \text{with } b_n > 0
+\]
+**converges** if the following two conditions are satisfied:
+
+1. **Decreasing condition**
+\[
+b_{n+1} \le b_n \quad \text{for all sufficiently large } n
+\]
+
+2. **Limit condition**
+\[
+\lim_{n \to \infty} b_n = 0
+\]
+</div>
+
+
+The intuition is that
+
+- Partial sums zig-zag back and forth across a limiting value   
+- The jumps get smaller and smaller   
+- The sequence of partial sums becomes trapped and settles toward a limit   
+
+Even partial sums increase, odd partial sums decrease → both converge to the same value.
+
+
+::: {.example}
+Alternating Harmonic Series
+
+Does the series converge
+\[
+\sum_{n=1}^{\infty} (-1)^{n-1}\frac{1}{n}
+\]
+
+**Solution:**
+
+Step 1: Identify \( b_n \)
+\[
+b_n = \frac{1}{n}
+\]
+
+Step 2: Check conditions
+
+**Decreasing:**
+\[
+\frac{1}{n+1} < \frac{1}{n}
+\]
+
+**Limit:**
+\[
+\lim_{n \to \infty} \frac{1}{n} = 0
+\]
+
+Conclusion
+The series **converges by the Alternating Series Test**.
+:::
+
+
+
+
+::: {.example}
+When AST Fails
+
+Determine if the series converges
+\[
+\sum_{n=1}^{\infty} (-1)^n \frac{3n}{4n+1}
+\]
+
+**Solution:**
+
+\[
+b_n = \frac{3n}{4n+1}
+\]
+
+\[
+\lim_{n \to \infty} b_n = \frac{3}{4} \neq 0
+\]
+
+Conclusion:
+Since \( b_n \nrightarrow 0 \), the series **diverges** (by the Test for Divergence).
+:::
+
+
+
+::: {.example}
+Non-obvious Monotonicity
+
+Determine if the series converges
+\[
+\sum_{n=1}^{\infty} (-1)^{n+1} \frac{n^2}{n^3+1}
+\]
+
+**Solution:**
+
+\[
+b_n = \frac{n^2}{n^3+1}
+\]
+
+Limit check:
+\[
+\lim_{n \to \infty} \frac{n^2}{n^3+1} = 0
+\]
+
+Monotonicity:
+For large \(n\), \( b_n \sim \frac{1}{n} \), which decreases.
+
+Conclusion:  The series **converges by AST**.
+:::
+
+---
+
+### Estimating Sums of Alternating Series
+
+
+<div class="theorem">
+**Alternating Series Estimation Theorem**
+
+If an alternating series satisfies the AST conditions, then:
+\[
+|s - s_n| \le b_{n+1}
+\]
+That is:
+
+> The **error** after \( n \) terms is **less than the absolute value of the first neglected term**.
+</div>
+
+
+
+
+::: {.example}
+Error Control
+
+Evaluate
+\[
+\sum_{n=0}^{\infty} (-1)^n \frac{1}{n!}.
+\]
+We want the sum **correct to three decimal places**.
+
+**Solution:**
+
+
+Step 1: Compute partial sums
+\[
+s_6 = 1 - 1 + \frac{1}{2} - \frac{1}{6} + \frac{1}{24} - \frac{1}{120} + \frac{1}{720}
+\]
+\[
+s_6 \approx 0.368056
+\]
+
+Step 2: Error bound
+\[
+b_7 = \frac{1}{5040} \approx 0.000198
+\]
+\[
+|s - s_6| < 0.0002
+\]
+
+Conclusion
+\[
+s \approx 0.368 \quad \text{(correct to three decimal places)}
+\]
+:::
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- Alternating series **can converge even if the corresponding positive series diverges**  
+- Convergence comes from **cancellation** between positive and negative terms  
+- The partial sums **oscillate** and shrink toward a limit  
+- Alternating convergence is controlled by **monotonic decay + vanishing term size**  
+- Error estimation is **simple and powerful** for alternating series  
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Recognize alternating series  
+- Write series in the form \( (-1)^n b_n \)  
+- Extract \( b_n = |a_n| \)  
+- Apply the Alternating Series Test  
+- Verify monotonic decrease  
+- Evaluate limits of \( b_n \)  
+- Use the Test for Divergence when needed  
+- Approximate sums using partial sums  
+- Bound errors using the first neglected term  
+- Determine how many terms are needed for a given accuracy  
+- Understand oscillation of partial sums  
+- Interpret convergence geometrically  
+- Distinguish conditional convergence from absolute convergence (next topic)  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Absolute Convergence and the Ratio and Root Tests
+
+
+Many series contain both positive and negative terms with irregular sign patterns.  In these cases, standard tests for positive-term series or alternating series may fail. To handle this, we introduce the idea of **absolute convergence**, which allows us to
+study convergence using the **absolute values of terms**.
+
+---
+
+### Absolute Convergence
+
+
+<div class="definition">
+Given a series
+\[
+\sum_{n=1}^{\infty} a_n,
+\]
+consider the associated series of absolute values:
+\[
+\sum_{n=1}^{\infty} |a_n|.
+\]
+
+A series is called:
+
+- **Absolutely convergent** if  
+\[
+\sum |a_n| \quad \text{converges}
+\]
+
+- **Conditionally convergent** if  
+\[
+\sum a_n \text{ converges but } \sum |a_n| \text{ diverges}
+\]
+</div>
+
+
+<div class="theorem">
+**Absolute Convergence Theorem**
+
+If a series is **absolutely convergent**, then it is **convergent**.
+</div>
+
+\[
+\sum |a_n| \text{ convergent } \;\Rightarrow\; \sum a_n \text{ convergent}
+\]
+
+This means:
+
+> Absolute convergence is **stronger** than ordinary convergence.
+
+
+::: {.example}
+Absolute Convergence
+
+Determine if the series is convergent
+\[
+\sum_{n=1}^{\infty} (-1)^{n-1}\frac{1}{n^2}
+\]
+
+**Solution:**
+\[
+\sum |a_n| = \sum_{n=1}^{\infty} \frac{1}{n^2}
+\]
+This is a **p-series** with \( p=2>1 \), so it converges.  The series is **absolutely convergent**, and therefore **convergent**.
+:::
+
+
+::: {.example}
+Conditional Convergence
+
+Determine if the series is convergent
+\[
+\sum_{n=1}^{\infty} (-1)^{n-1}\frac{1}{n}
+\quad \text{(alternating harmonic series)}
+\]
+
+**Solution:**
+
+This series converges by the **Alternating Series Test**, but
+
+\[
+\sum |a_n| = \sum \frac{1}{n}
+\]
+is the harmonic series, which diverges.
+
+So, the conclusion is that the series is **conditionally convergent**.
+:::
+
+
+::: {.example}
+Irregular Signs
+
+Consider
+\[
+\sum_{n=1}^{\infty} \frac{\cos n}{n^2}
+\]
+
+This is **not alternating** (signs are irregular), but:
+\[
+\sum |a_n| = \sum \frac{|\cos n|}{n^2}
+\le \sum \frac{1}{n^2}.
+\]
+Since \( \sum \frac{1}{n^2} \) converges, the Comparison Test gives convergence.
+
+Conclusion:  The series is **absolutely convergent**, hence **convergent**.
+:::
+
+
+---
+
+### The Ratio Test
+
+
+<div class="theorem">
+**Ratio Test**
+
+For a series \( \sum a_n \), define
+\[
+L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|.
+\]
+
+- If \( L < 1 \) → **absolutely convergent**  
+- If \( L > 1 \) or \( L = \infty \) → **divergent**  
+- If \( L = 1 \) → **inconclusive**  
+</div>
+
+
+
+::: {.example}
+Ratio Test
+
+Determine if the series converges
+\[
+\sum_{n=1}^{\infty} (-1)^n \frac{n^3}{3^n}
+\]
+
+**Solution:**
+
+\[
+\left|\frac{a_{n+1}}{a_n}\right|
+= \frac{(n+1)^3}{3^{n+1}} \cdot \frac{3^n}{n^3}
+= \frac{1}{3}\left(\frac{n+1}{n}\right)^3
+\to \frac{1}{3}
+\]
+
+Conclusion:
+Since \( L=\frac{1}{3}<1 \), the series is **absolutely convergent**.
+:::
+
+
+---
+
+### The Root Test
+
+
+<div class="theorem">
+**The Root Test**
+
+For a series \( \sum a_n \), define
+\[
+L = \lim_{n \to \infty} \sqrt[n]{|a_n|}.
+\]
+
+- If \( L < 1 \) → **absolutely convergent**  
+- If \( L > 1 \) → **divergent**  
+- If \( L = 1 \) → **inconclusive**  
+</div>
+
+
+
+::: {.example}
+Root Test
+
+Determine if the series converges
+\[
+\sum_{n=1}^{\infty} \left(\frac{2n+3}{3n+2}\right)^n
+\]
+
+**Solution:**
+\[
+\sqrt[n]{|a_n|} = \frac{2n+3}{3n+2} \to \frac{2}{3}
+\]
+
+Conclusion:
+Since \( \frac{2}{3}<1 \), the series is **absolutely convergent**.
+:::
+
+
+---
+
+### Rearrangements of Series
+
+**Finite vs Infinite Sums**
+
+- Finite sums → rearranging terms **does not change the sum**  
+- Infinite series → rearranging terms **can change the sum**  
+
+**Fundamental Results**
+
+>  Absolutely Convergent Series: Any rearrangement has the **same sum**
+
+>  Conditionally Convergent Series:  Rearrangements can change the sum.  
+
+In fact, conditionally convergent series can be rearranged to converge to **any real number**. (This is known as **Riemann’s Rearrangement Theorem**.)
+
+
+Absolute convergence behaves like finite sums.  Conditional convergence behaves like order-sensitive infinite processes.
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- Absolute convergence guarantees **stability**  
+- Conditional convergence means **cancellation-based convergence**  
+- Irregular sign series require **absolute value analysis**  
+- Ratio & Root Tests detect **exponential/factorial growth**  
+- Rearrangements reveal the **structure** of infinite sums  
+- Absolute convergence = **safe convergence**  
+- Conditional convergence = **fragile convergence**  
+
+---
+
+#### Skills You Should Be Able to Do
+
+
+- Recognize absolute vs conditional convergence  
+- Form the absolute-value series \( \sum |a_n| \)  
+- Detect irregular sign patterns    
+- Apply Comparison Test to \( \sum |a_n| \)  
+- Use Alternating Series Test vs absolute convergence  
+- Apply Ratio Test correctly  
+- Apply Root Test correctly  
+- Recognize inconclusive cases    
+- Distinguish absolute vs conditional convergence  
+- Understand stability of sums  
+- Interpret rearrangements  
+- Classify convergence types  
+- Choose correct test based on structure:  
+  - factorials → Ratio Test  
+  - exponentials → Ratio Test  
+  - powers → Root Test  
+  - irregular signs → absolute convergence  
+  - alternating → AST  
+  - rational functions → Comparison / Limit Comparison  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Strategy for Testing Series
+
+When studying infinite series, we quickly accumulate many convergence tests:
+
+- p-series  
+- geometric series  
+- comparison tests  
+- divergence test  
+- alternating series test  
+- ratio test  
+- root test  
+- integral test  
+
+The challenge is **not knowing the tests**, but knowing **which test to use**.  This is similar to integration:
+
+> There is no fixed order of techniques — the key is **classification**.
+
+Rather than trying tests randomly, we first analyze the **structure** of the series and then choose the test that naturally fits its form.
+
+**Core Strategy: Classify First, Test Second**
+
+The primary strategy is:
+
+> **Classify the form of the series before choosing a test.**
+
+Each structural form suggests a natural test.
+
+**1. p-Series Structure**
+
+If the series has the form
+\[
+\sum \frac{1}{n^p},
+\]
+
+then it is a **p-series**:
+
+- Converges if \( p > 1 \)  
+- Diverges if \( p \le 1 \)  
+
+
+::: {.example}
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^{3/2}}
+\]
+
+This is a p-series with \( p=\frac{3}{2}>1 \), so it **converges**.
+:::
+
+
+**2.  Geometric Series Structure**
+
+If the series has the form
+\[
+\sum ar^n \quad \text{or} \quad \sum ar^{n-1},
+\]
+
+then it is **geometric**:
+
+- Converges if \( |r|<1 \)    
+- Diverges if \( |r|\ge 1 \)
+
+Some algebra may be required to reveal this form.
+
+
+::: {.example}
+\[
+\sum_{n=1}^{\infty} \frac{1}{3^n}
+\]
+
+This is geometric with \( r=\frac{1}{3} \), so it **converges**.
+:::
+
+
+**3. Rational or Algebraic Functions of \( n \)**
+
+If \( a_n \) is a **rational** or **algebraic** function of \( n \)  (polynomials, roots of polynomials, fractions of polynomials),
+
+→ Compare with a **p-series** using:
+
+- Comparison Test  
+- Limit Comparison Test  
+
+Use **highest powers of \( n \)** to choose the comparison series.
+
+
+::: {.example}
+\[
+\sum_{n=1}^{\infty} \frac{n^3+1}{3n^3+4n^2+2}
+\]
+
+Leading terms give:
+\[
+\frac{n^3}{3n^3} \sim \frac{1}{3}
+\]
+
+So compare with:
+\[
+\sum 1/3= (1/3) \sum 1
+\]
+
+which diverges → the given series **diverges**.
+:::
+
+
+**4. Terms That Do Not Go to Zero**
+
+If
+\[
+\lim_{n\to\infty} a_n \ne 0,
+\]
+
+then use the **Test for Divergence** immediately.
+
+
+::: {.example}
+Example
+\[
+\sum_{n=1}^{\infty} \frac{2n+1}{2n-1}
+\]
+
+\[
+\lim_{n\to\infty} a_n = 1 \ne 0
+\]
+
+→ Series **diverges**.
+:::
+
+
+**5. Alternating Structure**
+
+If the series has the form
+\[
+\sum (-1)^n b_n \quad \text{or} \quad \sum (-1)^{n-1} b_n,
+\]
+with \( b_n>0 \),
+
+→ Use the **Alternating Series Test**.
+
+
+::: {.example}
+\[
+\sum_{n=1}^{\infty} (-1)^n \frac{n^3}{n^4+1}
+\]
+
+This is alternating, and \( b_n \to 0 \) and decreases → **converges**.
+:::
+
+
+**6. Factorials, Products, Exponentials**
+
+If the series involves:
+
+- factorials \( n! \)    
+- products    
+- exponentials like \( c^n \)    
+- combinations of these  
+
+→ Use the **Ratio Test**
+
+> The Ratio Test is **not** useful for p-series or rational functions of \( n \), since
+\[
+\left|\frac{a_{n+1}}{a_n}\right|\to 1
+\]
+for those forms.
+
+
+::: {.example}
+\[
+\sum_{k=1}^{\infty} \frac{2^k}{k!}
+\]
+
+Contains factorial → **Ratio Test** is natural.
+:::
+
+
+**7. Exponential Power Structure**
+
+If
+\[
+a_n = (b_n)^n,
+\]
+
+→ Use the **Root Test**.
+
+
+::: {.example}
+\[
+\sum_{n=1}^{\infty} \left(\frac{2n+1}{3n+1}\right)^n
+\]
+
+Apply Root Test:
+\[
+\sqrt[n]{a_n} = \frac{2n+1}{3n+1} \to \frac{2}{3}<1
+\]
+
+→ **Converges**
+:::
+
+**8. Integral Structure**
+
+If
+\[
+a_n = f(n),
+\]
+and
+\[
+\int_1^\infty f(x)\,dx
+\]
+is easy to evaluate,
+
+→ Use the **Integral Test** (if hypotheses are satisfied).
+
+
+::: {.example}
+\[
+\sum_{n=1}^{\infty} n e^{-2n^2}
+\]
+
+\[
+\int_1^\infty x e^{-2x^2}\,dx
+\]
+is easy to evaluate → **Integral Test applies**.
+:::
+
+
+---
+
+### Worked Strategy Examples
+
+
+::: {.example}
+\[
+\sum \frac{n-1}{2n+1}
+\]
+
+\[
+\lim_{n\to\infty} a_n = \frac{1}{2} \ne 0
+\]
+
+→ **Test for Divergence**
+:::
+
+
+::: {.example}
+\[
+\sum \frac{n^3+1}{3n^3+4n^2+2}
+\]
+
+Algebraic function → **Limit Comparison Test with p-series**
+:::
+
+
+
+::: {.example}
+\[
+\sum n e^{-2n^2}
+\]
+
+Integral is simple → **Integral Test** (Ratio Test also works)
+:::
+
+
+
+::: {.example}
+\[
+\sum (-1)^n \frac{n^3}{n^4+1}
+\]
+
+Alternating → **Alternating Series Test**
+:::
+
+
+
+::: {.example}
+\[
+\sum \frac{2^k}{k!}
+\]
+
+Factorial present → **Ratio Test**
+:::
+
+
+
+::: {.example}
+\[
+\sum \frac{1}{2+3^n}
+\]
+
+Geometric-like → **Comparison Test with geometric series**
+:::
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- There is **no universal order** of convergence tests  
+- The correct test comes from **structural recognition**
+- Series testing is a **classification problem**, not a procedural one
+- Most efficient strategy:  Recognize structure → classify → select test  
+- Random test application wastes time and increases error  
+- Structural patterns determine convergence behavior  
+- Good testing strategy is about **pattern recognition**, not memorization  
+
+---
+
+#### Skills You Should Be Able To Do
+
+
+- Identify p-series structure  
+- Recognize geometric series forms  
+- Detect algebraic/rational functions of \( n \)  
+- Identify factorial/exponential growth  
+- Recognize alternating patterns  
+- Recognize integral-test-friendly forms  
+- Choose p-series test appropriately  
+- Choose geometric test appropriately  
+- Select correct comparison series  
+- Apply divergence test immediately when applicable  
+- Use AST for alternating series  
+- Use Ratio Test for factorials/products  
+- Use Root Test for exponential powers  
+- Use Integral Test for integrable forms  
+- Extract dominant terms  
+- Compare leading powers  
+- Simplify expressions structurally  
+- Identify growth rates  
+- Choose efficient tests  
+- Avoid ineffective tests  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Power Series
+
+
+<div class="definition">
+A **power series** is a series of the form
+\[
+\sum_{n=0}^{\infty} c_n x^n
+= c_0 + c_1 x + c_2 x^2 + c_3 x^3 + \cdots
+\]
+where:
+
+- \(x\) is a variable,  
+- \(c_n\) are constants called the **coefficients**.  
+
+</div>
+
+For each fixed value of \(x\), a power series becomes a **numerical series**, which can be tested for convergence or divergence.
+
+If the series converges, its sum defines a **function**:
+\[
+f(x) = \sum_{n=0}^{\infty} c_n x^n
+\]
+This function looks like a polynomial, but with **infinitely many terms**.
+
+---
+
+### Power Series as Functions
+
+A power series is not just a sum — it defines a function whose **domain** consists of all \(x\)-values for which the series converges.
+
+This means:
+
+- A power series may converge for some values of \(x\),  
+- and diverge for others.  
+
+
+::: {.example}
+Geometric Series as a Power Series
+
+Let \(c_n = 1\) for all \(n\). Then:
+\[
+\sum_{n=0}^{\infty} x^n = 1 + x + x^2 + x^3 + \cdots
+\]
+
+This is a geometric series:
+
+- Converges when \( |x| < 1 \)  
+- Diverges when \( |x| \ge 1 \)  
+
+So the **domain of convergence** is \( (-1,1) \).
+:::
+
+
+
+<div class="definition">
+A more general form is:
+\[
+\sum_{n=0}^{\infty} c_n (x-a)^n
+\]
+
+This is called a **power series centered at \(a\)**.
+</div>
+
+
+
+Key facts:
+
+- The center is \(x=a\)  
+- When \(x=a\), all terms with \(n>0\) vanish  
+- Therefore, **every power series converges at its center**  
+
+---
+
+### Radius and Interval of Convergence
+
+For a power series
+\[
+\sum_{n=0}^{\infty} c_n (x-a)^n
+\]
+
+there are only **three possible behaviors**:
+
+1. Converges **only at** \(x=a\)  
+   → radius \(R=0\)
+
+2. Converges for **all real \(x\)**  
+   → radius \(R=\infty\)
+
+3. Converges when  
+\[
+|x-a|<R
+\]
+and diverges when  
+\[
+|x-a|>R
+\]
+
+This defines the **radius of convergence** \(R\) and the **interval of convergence**:
+\[
+(a-R,\, a+R)
+\]
+
+**Important:**  The endpoints \(x=a\pm R\) must always be tested **separately**.  They may converge or diverge independently.
+
+
+<div class="note">
+How to Find Radius of Convergence
+
+Use:
+
+- **Ratio Test** (most common)  
+- **Root Test** (sometimes useful)  
+
+These tests determine \(R\), but **never decide endpoint behavior**.
+</div>
+
+
+
+::: {.example}
+Factorial Power Series
+
+\[
+\sum_{n=0}^{\infty} n! x^n
+\]
+
+Apply Ratio Test:
+\[
+\left|\frac{a_{n+1}}{a_n}\right| = (n+1)|x| \to \infty \quad \text{for } x\ne 0
+\]
+
+**Conclusion:**
+
+- Converges only at \(x=0\)  
+- Radius \(R=0\)  
+- Interval of convergence: \(\{0\}\)  
+:::
+
+
+
+::: {.example}
+Shifted Power Series
+
+\[
+\sum_{n=1}^{\infty} \frac{(x-3)^n}{n}
+\]
+
+Ratio Test gives:
+\[
+|x-3|<1
+\Rightarrow 2<x<4
+\]
+
+Now test endpoints:
+
+- \(x=4\): becomes \(\sum \frac{1}{n}\) → diverges    
+- \(x=2\): becomes \(\sum \frac{(-1)^n}{n}\) → converges (Alternating Series Test)
+
+**Conclusion:**
+
+- Radius \(R=1\)  
+- Interval of convergence: \((2,4]\)
+:::
+
+
+
+::: {.example}
+Converges for All \(x\)
+
+\[
+\sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{2^{2n}(n!)^2}
+\]
+
+Ratio Test gives limit \(0\) for all \(x\)
+
+**Conclusion:**
+
+- Radius \(R=\infty\)  
+- Interval: \((-\infty,\infty)\)  
+:::
+
+
+
+**General Theorem (Structure of Convergence)**
+
+Every power series fits exactly one of the following:
+
+| Case | Radius \(R\) | Interval of Convergence |
+|------|--------------|--------------------------|
+| Only center | \(R=0\) | \(\{a\}\) |
+| All real numbers | \(R=\infty\) | \((-\infty,\infty)\) |
+| Finite radius | \(0<R<\infty\) | \((a-R, a+R)\) with endpoints tested separately |
+
+
+::: {.example}
+Full Radius + Endpoint Analysis
+
+\[
+\sum_{n=0}^{\infty} \frac{(-3)^n x^n}{\sqrt{n+1}}
+\]
+
+Ratio Test → \(3|x|<1\) → \( |x|<\frac{1}{3} \)
+
+So \(R=\frac{1}{3}\), interval \(\left(-\frac13,\frac13\right)\)
+
+Test endpoints:
+
+- \(x=\frac{1}{3}\): alternating, decreasing → converges  
+- \(x=-\frac{1}{3}\): positive p-series with \(p=\frac12\) → diverges  
+
+**Final interval:** \(\left(-\frac13,\frac13\right]\)
+:::
+
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- A power series is both a **series** and a **function**  
+- Convergence depends on the value of \(x\)  
+- Every power series has:  
+  - a **center**   
+  - a **radius of convergence**  
+  - an **interval of convergence**  
+- Convergence always forms an **interval** 
+- The Ratio Test determines the radius  
+- Endpoints must always be tested separately  
+- Power series allow functions to be represented by infinite polynomials  
+- Partial sums are polynomial approximations to functions  
+
+---
+
+#### Skills You Should Be Able To Do
+
+
+- Recognize power series forms  
+- Identify the center \(a\)  
+- Interpret series as functions  
+- Understand domain vs convergence set  
+- Apply Ratio Test to find \(R\)  
+- Apply Root Test when appropriate  
+- Convert inequalities to intervals  
+- Test endpoints using:  
+  - p-series  
+  - Alternating Series Test   
+  - Divergence Test  
+  - Comparison Test  
+- Extract radius of convergence  
+- Build interval of convergence  
+- Interpret convergence geometrically  
+- Understand approximation via partial sums  
+- Classify convergence types  
+- Connect series behavior to function behavior  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Representations of Functions as Power Series
+
+
+Many important functions can be written as **infinite sums of powers of \(x\)** (power series).  This is useful because power series allow us to:
+
+- Approximate functions using polynomials  
+- Integrate functions with no elementary antiderivatives  
+- Solve differential equations  
+- Perform numerical computations efficiently  
+- Represent functions in computers and calculators  
+- Simplify complicated expressions in science and engineering  
+
+In practice, power series turn **difficult functions** into **manageable infinite polynomials**.
+
+---
+
+### The Fundamental Geometric Series Model
+
+The starting point is the geometric series:
+\[
+\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots = \sum_{n=0}^{\infty} x^n,
+\qquad |x|<1
+\]
+
+This is the **core template** from which many power series representations are built.
+
+We now interpret this as a **function representation**:
+\[
+f(x) = \frac{1}{1-x} \quad \text{is represented by a power series.}
+\]
+
+
+<div class="definition">
+Strategy for Building New Power Series
+
+We generate new power series representations by:
+
+1. **Algebraic substitution** into geometric series  
+2. **Multiplication by powers of \(x\)**  
+3. **Differentiation** of known series  
+4. **Integration** of known series  
+
+These operations preserve convergence inside the radius of convergence.
+</div>
+
+
+
+::: {.example}
+Substitution into a Geometric Series
+
+Represent:
+\[
+\frac{1}{1+x^2}
+\]
+
+Start from:
+\[
+\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n
+\]
+
+Replace \(x \to -x^2\):
+\[
+\frac{1}{1-(-x^2)} = \frac{1}{1+x^2}
+= \sum_{n=0}^{\infty} (-x^2)^n
+= \sum_{n=0}^{\infty} (-1)^n x^{2n}
+\]
+
+So:
+\[
+\frac{1}{1+x^2} = 1 - x^2 + x^4 - x^6 + \cdots
+\]
+
+**Interval of convergence:**
+\[
+|x|<1
+\]
+:::
+
+
+
+::: {.example}
+Algebraic Manipulation
+
+Find a series for:
+\[
+\frac{1}{x+2}
+\]
+
+Factor:
+\[
+\frac{1}{x+2} = \frac{1}{2}\cdot \frac{1}{1+\frac{x}{2}}
+= \frac{1}{2}\cdot \frac{1}{1-(-x/2)}
+\]
+
+Apply geometric series:
+\[
+\frac{1}{x+2}
+= \frac{1}{2}\sum_{n=0}^{\infty} (-1)^n \left(\frac{x}{2}\right)^n
+= \sum_{n=0}^{\infty} (-1)^n \frac{x^n}{2^{n+1}}
+\]
+
+**Interval of convergence:**
+\[
+|x|<2
+\]
+:::
+
+
+::: {.example}
+Multiplying a Series
+
+Find a series for:
+\[
+\frac{x^3}{x+2}
+\]
+
+Multiply the series from Example 2 by \(x^3\):
+\[
+\frac{x^3}{x+2}
+= x^3 \sum_{n=0}^{\infty} (-1)^n \frac{x^n}{2^{n+1}}
+= \sum_{n=0}^{\infty} (-1)^n \frac{x^{n+3}}{2^{n+1}}
+\]
+
+**Same interval of convergence:**  
+\[
+|x|<2
+\]
+:::
+
+
+---
+
+### Differentiation and Integration of Power Series
+
+
+<div class="definition">
+If
+\[
+f(x)=\sum_{n=0}^{\infty} c_n (x-a)^n
+\]
+has radius of convergence \(R>0\), then:
+
+**Term-by-term differentiation:**
+\[
+f'(x)=\sum_{n=1}^{\infty} n c_n (x-a)^{n-1}
+\]
+
+**Term-by-term integration:**
+\[
+\int f(x)\,dx
+= C + \sum_{n=0}^{\infty} \frac{c_n}{n+1}(x-a)^{n+1}
+\]
+</div>
+
+
+
+**Important facts:**
+
+- The **radius of convergence stays the same**  
+- The **interval of convergence may change at endpoints**  
+- Inside the radius, power series behave like polynomials  
+
+
+::: {.example}
+Differentiation
+
+From:
+\[
+\frac{1}{1-x}=\sum_{n=0}^{\infty} x^n
+\]
+
+Differentiate:
+\[
+\frac{1}{(1-x)^2}
+= \sum_{n=1}^{\infty} n x^{n-1}
+= \sum_{n=0}^{\infty} (n+1)x^n
+\]
+
+**Radius of convergence:** \(R=1\)
+:::
+
+
+
+::: {.example}
+Logarithmic Series
+
+Find a power series for \(\ln(1+x)\).
+
+We know:
+\[
+\frac{d}{dx}\ln(1+x)=\frac{1}{1+x}
+\]
+
+Using geometric series:
+\[
+\frac{1}{1+x} = 1 - x + x^2 - x^3 + \cdots \quad (|x|<1)
+\]
+
+Integrate term-by-term:
+\[
+\ln(1+x)
+= x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots
+= \sum_{n=1}^{\infty} (-1)^{n-1}\frac{x^n}{n}
+\]
+
+**Radius of convergence:** \(R=1\)
+:::
+
+
+::: {.example}
+Inverse Tangent Series
+
+Find a series for \(\tan^{-1}x\).
+
+We know:
+\[
+\frac{d}{dx}\tan^{-1}x = \frac{1}{1+x^2}
+\]
+
+From earlier:
+\[
+\frac{1}{1+x^2} = 1 - x^2 + x^4 - x^6 + \cdots
+\]
+
+Integrate:
+\[
+\tan^{-1}x
+= x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots
+\]
+
+\[
+\tan^{-1}x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1}
+\]
+
+**Radius of convergence:** \(R=1\)
+:::
+
+
+
+::: {.example}
+Using Power Series to Evaluate Integrals
+
+Represent:
+\[
+\int \frac{1}{1+x^7}\,dx
+\]
+
+Start from:
+\[
+\frac{1}{1-x}=\sum_{n=0}^{\infty} x^n
+\]
+
+Replace \(x \to -x^7\):
+\[
+\frac{1}{1+x^7}=\sum_{n=0}^{\infty} (-1)^n x^{7n}
+\]
+
+Integrate:
+\[
+\int \frac{1}{1+x^7}\,dx
+= C + \sum_{n=0}^{\infty} (-1)^n \frac{x^{7n+1}}{7n+1}
+\]
+
+This gives an **exact infinite-series antiderivative** for a function that has no simple elementary form.
+:::
+
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- Functions can be represented as **infinite polynomials**  
+- Power series convert hard problems into algebra problems  
+- Geometric series is the foundation of most constructions  
+- Substitution builds new series 
+- Differentiation and integration work **term-by-term**  
+- Power series enable approximation, computation, and modeling  
+- Infinite series can define functions  
+- Partial sums approximate functions  
+- Complicated functions become simple algebraic objects  
+- Series expansions connect calculus, analysis, physics, and computation  
+
+---
+
+#### Skills You Should Be Able To Do
+
+- Recognize geometric series structures  
+- Perform algebraic substitutions  
+- Shift and rescale series  
+- Multiply series by powers of \(x\)  
+- Differentiate power series term-by-term  
+- Integrate power series term-by-term  
+- Identify radius of convergence  
+- Identify intervals of convergence  
+- Use series to approximate functions  
+- Use series to evaluate integrals  
+- Build series representations from known templates  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Taylor and Maclaurin Series
+
+In earlier sections, we learned how to build power series representations for specific functions using geometric series and algebraic manipulation.  Now we address the deeper questions:
+
+- **Which functions can be represented by power series?**  
+- **How do we systematically find those representations?**  
+- **When does a power series actually equal the function?**  
+
+This leads to one of the most important ideas in calculus:
+
+> Functions can be reconstructed from their derivatives at a single point.
+
+
+
+**General Power Series Representation**
+
+Suppose a function \( f(x) \) can be written as a power series centered at \( a \):
+\[
+f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots
+= \sum_{n=0}^{\infty} c_n (x-a)^n
+\]
+We want to determine the coefficients \( c_n \) using the function itself.
+
+
+By evaluating the function and its derivatives at \( x=a \), we obtain:
+
+\[
+c_0 = f(a)
+\]
+\[
+c_1 = f'(a)
+\]
+\[
+c_2 = \frac{f''(a)}{2!}
+\]
+\[
+c_3 = \frac{f^{(3)}(a)}{3!}
+\]
+\[
+\vdots
+\]
+
+**General Formula:**
+\[
+c_n = \frac{f^{(n)}(a)}{n!}
+\]
+
+
+<div class="definition">
+Taylor Series
+
+If a function \( f \) has derivatives of all orders at \( a \), then its power series representation must be:
+\[
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n
+\]
+This is called the **Taylor series of \( f \) centered at \( a \)**.
+</div>
+
+
+
+<div class="definition">
+Maclaurin Series (Special Case)
+
+If the center is \( a=0 \), the Taylor series becomes:
+\[
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}x^n
+\]
+This is called the **Maclaurin series**.
+</div>
+
+---
+
+### Taylor Polynomials (Finite Approximations)
+
+The finite partial sums are called **Taylor polynomials**:
+\[
+T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k
+\]
+These are **polynomial approximations** of the function near \( x=a \).
+
+
+::: {.example}
+Maclaurin Series of \( e^x \)
+
+Since all derivatives of \( e^x \) equal \( e^x \), and \( e^0=1 \):
+
+\[
+e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}
+\]
+
+Expanded form:
+\[
+e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots
+\]
+
+**Radius of convergence:**  
+\[
+R = \infty
+\]
+:::
+
+
+
+::: {.example}
+Taylor Series of \( e^x \) Centered at \( a=2 \)
+
+\[
+e^x = \sum_{n=0}^{\infty} \frac{e^2}{n!}(x-2)^n
+\]
+
+This is better for approximations when \( x \) is near 2.
+:::
+
+
+
+::: {.example}
+Maclaurin Series for \( \sin x \)
+
+Derivatives cycle every 4 steps:
+
+\[
+\sin x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
+\]
+
+Expanded:
+\[
+\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots
+\]
+:::
+
+
+
+::: {.example}
+Maclaurin Series for \( \cos x \)
+
+\[
+\cos x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!}
+\]
+
+Expanded:
+\[
+\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots
+\]
+:::
+
+
+
+::: {.example}
+Binomial Series
+
+For any real number \( k \):
+
+\[
+(1+x)^k = \sum_{n=0}^{\infty} \binom{k}{n} x^n
+\quad \text{for } |x|<1
+\]
+
+Where:
+\[
+\binom{k}{n} = \frac{k(k-1)(k-2)\cdots(k-n+1)}{n!}
+\]
+:::
+
+
+---
+
+### Remainder and Convergence Idea
+
+The Taylor polynomial gives an approximation:
+\[
+f(x) \approx T_n(x)
+\]
+
+The error is:
+\[
+R_n(x) = f(x) - T_n(x)
+\]
+
+If:
+\[
+\lim_{n\to\infty} R_n(x) = 0
+\]
+then:
+\[
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n
+\]
+
+So the function **equals its Taylor series**.
+
+Conceptually, a Taylor series says:
+
+> A function is completely determined by its derivatives at a single point.
+
+This is one of the deepest ideas in calculus.
+
+---
+
+### Putting It All Together
+
+#### Conceptual Takeaways
+
+- Functions can be encoded as infinite polynomials  
+- Derivatives store complete information about a function  
+- Taylor series reconstruct functions from local data  
+- Maclaurin series are Taylor series centered at zero  
+- Taylor polynomials give local approximations  
+- Power series provide both exact representations and approximations  
+- Some functions equal their Taylor series everywhere  
+- Others only locally  
+- Series representations unify algebra, calculus, and analysis  
+- Approximation is a core theme of calculus  
+
+---
+
+#### Skills You Should Be Able To Do
+
+
+- Compute derivatives of all orders  
+- Evaluate derivatives at a point  
+- Build Taylor series from derivatives  
+- Build Maclaurin series  
+- Construct Taylor polynomials  
+- Identify center \( a \)  
+- Write series in sigma notation  
+- Expand series explicitly  
+- Understand local approximation  
+- Interpret polynomial approximations  
+- Compare Taylor vs Maclaurin  
+- Recognize convergence behavior  
+- Interpret radius of convergence  
+- Understand remainder/error  
+- Approximate function values  
+- Evaluate limits using series  
+- Integrate using series  
+- Represent non-elementary integrals  
+- Approximate constants  
+- Analyze function behavior locally  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Applications of Taylor Polynomials
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+

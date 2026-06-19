@@ -1,0 +1,2169 @@
+# Techniques of Integration
+
+##   Integration by Parts  
+
+
+Every differentiation rule has a corresponding integration rule:
+
+- Chain Rule  → Substitution Rule  
+- Product Rule → **Integration by Parts**
+
+Integration by parts is the **integration version of the Product Rule** and is used when integrating products of functions.
+
+---
+
+### From the Product Rule to Integration by Parts
+
+The Product Rule for differentiation states:
+\[
+\frac{d}{dx}[f(x)g(x)] = f(x)g'(x) + g(x)f'(x)
+\]
+
+Rewriting this in integral form:
+\[
+\int \big(f(x)g'(x) + g(x)f'(x)\big)\,dx = f(x)g(x)
+\]
+
+Rearranging:
+\[
+\int f(x)g'(x)\,dx = f(x)g(x) - \int g(x)f'(x)\,dx
+\]
+
+---
+
+### Integration by Parts Formula
+
+Let:
+
+- \( u = f(x) \)  
+- \( dv = g'(x)\,dx \)  
+- \( du = f'(x)\,dx \)  
+- \( v = g(x) \)  
+
+Then:
+\[
+\int u\,dv = uv - \int v\,du.
+\]
+
+**Strategy Pattern:**
+
+Always organize your work as:
+\begin{align*}
+u &= \underline{\hspace{0.75in}}        &dv &= \underline{\hspace{0.75in}} \\
+du &= \underline{\hspace{0.75in}}       &v &= \underline{\hspace{0.75in}} \\
+\end{align*}
+
+
+###  Choosing $u$ and $dv$
+
+General Principle:
+
+Choose:
+
+-  $u$: the function that becomes simpler when differentiated   
+-  $dv$: the function that is easy to integrate   
+
+Common heuristic (LIATE rule):
+
+>  Logarithmic → Inverse trig → Algebraic → Trig → Exponential
+
+Choose $u$ from the earliest category in this list.
+
+
+
+::: {.example}
+Integrate
+\[\int x \sin(x) \; dx\]
+
+**Solution:**
+\begin{align*}
+u &= x        &dv &= \sin(x) dx\\
+du &= dx       &v &= -\cos(x)\\
+\end{align*}
+
+Then,
+\begin{align*}
+\int x \sin(x) \; dx &= uv - \int v \; du\\
+&= -x\cos(x) + \int \cos(x) \; dx\\
+&= -x\cos(x) + \sin(x) + C
+\end{align*}
+:::
+
+
+
+::: {.example}
+Integrate
+\[\int \ln(x) \; dx\]
+
+**Solution:**
+\begin{align*}
+u &= \ln x        &dv &= dx\\
+du &= 1/x dx       &v &= x\\
+\end{align*}
+
+Then,
+\begin{align*}
+\int \ln(x) \; dx &= uv - \int v \; du\\
+&= x\ln(x) - \int 1 \; dx\\
+&= x\ln(x) - x + C
+\end{align*}
+:::
+
+
+::: {.example}
+Integrate
+\[\int t^2 e^t \; dt\]
+
+**Solution:**
+\begin{align*}
+u &= t^2        &dv &= e^t dt\\
+du &= 2t dt       &v &= e^t\\
+\end{align*}
+
+Then,
+\begin{align*}
+\int t^2 e^t \; dt &= uv - \int v \; du\\
+&= t^2 e^t - 2\int te^t\; dt
+\end{align*}
+
+Second iteration
+\begin{align*}
+u &= t        &dv &= e^t dt\\
+du &= dt       &v &= e^t\\
+\end{align*}
+Then,
+\begin{align*}
+\int t e^t \; dt &= uv - \int v \; du\\
+&= t e^t - \int e^t\; dt\\
+&= t e^t - e^t
+\end{align*}
+Therefore,
+\[ \int t^2 e^t \; dt = t^2 e^t - 2 \int t e^t \; dt = t^2 e^t - 2(t e^t - e^t) + C.\]
+
+:::
+
+
+::: {.example}
+Integrate
+\[\int e^x \sin(x) \; dx\]
+
+**Solution:**
+\begin{align*}
+u &= e^x        &dv &= \sin(x) dx\\
+du &= e^x dx       &v &= -\cos(x)\\
+\end{align*}
+
+Then,
+\begin{align*}
+\int e^x \sin(x) \; dx &= uv - \int v \; du\\
+&= -e^x\cos(x) + \int e^x \cos(x) \; dx
+\end{align*}
+
+Second pass:
+\begin{align*}
+u &= e^x        &dv &= \cos(x) dx\\
+du &= e^x dx       &v &= \sin(x)\\
+\end{align*}
+
+\begin{align*}
+\int e^x \cos(x) \; dx &= uv - \int v \; du\\
+&= e^x\sin(x) - \int e^x \sin(x) \; dx
+\end{align*}
+
+Put that together:
+\begin{align*}
+\int e^x \sin(x) \; dx &= -e^x\cos(x) + e^x\sin(x) - \int e^x \sin(x) \; dx \\
+2\int e^x \sin(x) \; dx &= -e^x\cos(x) + e^x\sin(x) \\
+\int e^x \sin(x) \; dx &= \dfrac{-e^x\cos(x) + e^x\sin(x)}{2}
+\end{align*}
+
+Therefore, 
+
+\[ \int e^x \sin(x) \; dx = \frac{ -e^x \cos(x) + e^x \sin(x) }{2} + C. \]
+
+:::
+
+Definite integrals work the same way:
+\[\int_{{\,a}}^{{\,b}}{{u\,dv}} = \left. {uv} \right|_a^b - \int_{{\,a}}^{{\,b}}{{v\,du}}\]
+
+::: {.example}
+Integrate
+\[\int_{{\, - 1}}^{{\,2}}{{x{{\bf{e}}^{6x}}\,dx}}\]
+
+**Solution:**
+Using integration by parts:
+
+
+\begin{align*}
+\int_{{\, - 1}}^{{\,2}}{{x{{\bf{e}}^{6x}}\,dx}} 
+& = \left. {\frac{x}{6}{{\bf{e}}^{6x}}} \right|_{ - 1}^2 - \frac{1}{6}\int_{{\, - 1}}^{{\,2}}{{{{\bf{e}}^{6x}}\,dx}}\\ 
+&  = \left. {\frac{x}{6}{{\bf{e}}^{6x}}} \right|_{ - 1}^2 - \left. {\frac{1}{{36}}{{\bf{e}}^{6x}}} \right|_{ - 1}^2\\ 
+&  = \frac{{11}}{{36}}{{\bf{e}}^{12}} + \frac{7}{{36}}{{\bf{e}}^{ - 6}}.
+\end{align*}
+
+:::
+
+
+::: {.example}
+Integrate
+\[\int_{{\, 0}}^{{\,1}} \tan^{-1}(x) \; dx.\]
+
+**Solution:**
+Using IBP,
+\begin{align*}
+\int_{{\, 0}}^{{\,1}} \tan^{-1}(x) \; dx &= uv - \int v \; du\\
+&= \left. x \tan^{-1}(x) \right|_{ 0}^1 - \int_{{\, 0}}^{{\,1}} \frac{x}{1 + x^2} \,dx\\
+&= \frac{\pi}{4} - \frac{1}{2} \ln(2).\\
+\end{align*}
+:::
+
+
+
+
+---
+
+### Putting It All Together
+
+---
+
+#### Conceptual Takeaways
+
+-  Integration by parts is the inverse of the Product Rule  
+-  It is a structure-based method, not mechanical  
+-  The goal is always simplification  
+-  It transfers differentiation from one function to another  
+-  Some integrals require repeated application  
+-  Some integrals create self-referential equations  
+-  It generates reduction formulas  
+-  It connects derivative structure to integral structure 
+
+---
+
+#### Skills You Should Be Able To Do
+
+After this section, you should be able to:
+
+  
+-  Identify when integration by parts is appropriate  
+-  Choose effective $u$ and $dv$  
+-  Apply the formula correctly  
+-  Perform repeated integration by parts  
+-  Solve cyclic integrals algebraically  
+-  Evaluate definite integrals by parts  
+-  Build reduction formulas  
+-  Combine with substitution  
+-  Verify answers by differentiation  
+-  Recognize poor choices of $u$ and $dv$  
+-  Use structural reasoning, not memorization
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Trigonometric Integrals
+
+Many integrals involving trigonometric functions cannot be evaluated using substitution alone.  Instead, we use trigonometric identities to rewrite integrands into forms that allow substitution.  The key idea is **structure recognition**:
+
+> We rewrite the integrand so that one trig factor becomes the derivative of another.
+
+This section focuses on integrals involving:
+
+- powers of sine and cosine  
+- powers of tangent and secant  
+- products of trig functions  
+- trigonometric identities  
+- half-angle identities  
+- Pythagorean identities  
+
+---
+
+### Powers of Sine and Cosine
+
+We use the identity:
+\[
+\sin^2 x + \cos^2 x = 1
+\]
+
+This allows us to convert even powers of sine into cosine, and vice versa.
+
+**Strategy:**
+
+**Case 1 — Odd power of cosine  **
+Save one cosine factor and convert the rest to sine.
+
+\[
+\cos^2 x = 1 - \sin^2 x
+\]
+
+Then substitute:
+\[
+u = \sin x
+\]
+
+**Case 2 — Odd power of sine  **
+Save one sine factor and convert the rest to cosine.
+
+\[
+\sin^2 x = 1 - \cos^2 x
+\]
+
+Then substitute:
+\[
+u = \cos x
+\]
+
+**Case 3 — Both powers even  **
+Use half-angle identities:
+\[
+\sin^2 x = \frac{1}{2}(1 - \cos 2x)
+\]
+\[
+\cos^2 x = \frac{1}{2}(1 + \cos 2x)
+\]
+
+
+::: {.example}
+Odd Power of Cosine
+
+Integrate
+\[
+\int \cos^3 x \, dx
+\]
+
+**Solution:**
+
+**Step 1: Separate one cosine**
+\[
+\int \cos^3 x \, dx= \int \cos^2 x \cos x \, dx
+\]
+
+**Step 2: Convert even power**
+\[
+\cos^2 x = 1 - \sin^2 x
+\]
+
+\[
+\int \cos^3 x \, dx= \int (1 - \sin^2 x)\cos x \, dx
+\]
+
+**Step 3: Substitution**
+\[
+u = \sin x, \quad du = \cos x\,dx
+\]
+
+\[
+\int \cos^3 x \, dx= \int (1 - u^2)\,du
+= u - \frac{u^3}{3} + C
+\]
+
+**Final Answer**
+\[
+\int \cos^3 x \, dx = \sin x - \frac{1}{3}\sin^3 x + C
+\]
+:::
+
+
+::: {.example}
+Odd Power of Sine
+
+Integrate
+\[
+\int \sin^5 x \cos^2 x \, dx
+\]
+
+**Solution:**
+
+**Step 1: Save one sine**
+\[
+\int \sin^5 x \cos^2 x \, dx= \int \sin^4 x \sin x \cos^2 x \, dx
+\]
+
+**Step 2: Convert even sine power**
+\[
+\sin^2 x = 1 - \cos^2 x
+\Rightarrow \sin^4 x = (1 - \cos^2 x)^2
+\]
+
+\[
+\int \sin^5 x \cos^2 x \, dx = \int (1 - \cos^2 x)^2 \cos^2 x \sin x \, dx
+\]
+
+**Step 3: Substitution**
+\[
+u = \cos x, \quad du = -\sin x\,dx
+\]
+
+\[
+\int \sin^5 x \cos^2 x \, dx = -\int (1 - u^2)^2 u^2 \, du
+\]
+
+Polynomial expansion → integrate term-by-term.
+
+\[
+\int \sin^5 x \cos^2 x \, dx = -\frac{\cos^3(x)}{3}  + \frac{2 \cos^5(x)}{5} - \frac{\cos^7(x)}{7} + C.
+\]
+:::
+
+
+For even powers of both sine and cosine, use half-angle identities.
+
+\[
+\sin^2 x = \frac{1}{2}(1 - \cos 2x)
+\]
+\[
+\cos^2 x = \frac{1}{2}(1 + \cos 2x)
+\]
+
+
+::: {.example}
+Even Powers
+
+Integrate
+\[
+\int \sin^2 x \, dx
+\]
+
+**Solution:**
+
+\[
+\int \sin^2 x \, dx= \int \frac{1}{2}(1 - \cos 2x)\,dx
+\]
+
+\[
+\int \sin^2 x \, dx= \frac{1}{2}\left(x - \frac{1}{2}\sin 2x\right) + C
+\]
+
+**Final Answer**
+\[
+\int \sin^2 x \, dx = \frac{x}{2} - \frac{\sin 2x}{4} + C.
+\]
+:::
+
+
+
+
+::: {.example}
+Higher Even Powers
+
+Integrate:
+\[
+\int \sin^4 x \, dx
+\]
+
+**Solution:**
+
+\[
+\sin^4 x = (\sin^2 x)^2
+= \left(\frac{1}{2}(1 - \cos 2x)\right)^2
+\]
+
+Apply identity twice → integrate term-by-term.
+
+\[
+\sin^4 x = (\sin^2 x)^2
+= \frac{1}{4} \left( \frac{3}{2} x - \sin(2x) + \frac{1}{8} \sin(4x) \right) + C.
+\]
+:::
+
+
+---
+
+### Tangent and Secant Integrals
+
+Use identities:
+\[
+1 + \tan^2 x = \sec^2 x
+\]
+\[
+1 + \cot^2 x = \csc^2 x
+\]
+
+**Strategy for \( \int \tan^m x \sec^n x\,dx \)**
+
+**Case 1 — Even power of secant  **
+Save a \( \sec^2 x \) factor:
+
+\[
+u = \tan x, \quad du = \sec^2 x\,dx
+\]
+
+Convert remaining secants to tangent using:
+\[
+\sec^2 x = 1 + \tan^2 x.
+\]
+
+**Case 2 — Odd power of tangent  **
+Save a \( \sec x \tan x \) factor:
+
+\[
+u = \sec x, \quad du = \sec x \tan x\,dx
+\]
+
+Convert remaining tangent using:
+\[
+\tan^2 x = \sec^2 x - 1.
+\]
+
+
+
+::: {.example}
+Integrate
+\[
+\int \tan^6 x \sec^4 x \, dx
+\]
+
+Save \( \sec^2 x \):
+
+\[
+u = \tan x, \quad du = \sec^2 x\,dx
+\]
+
+Convert remaining \( \sec^2 x \rightarrow 1 + \tan^2 x \)
+
+Then integrate polynomial in \( u \).
+
+\begin{align*}
+\int \tan^6 x \sec^4 x \, dx &= \int \tan^6 x (1 + \tan^2 x)\sec^2 x \, dx\\
+&= \int u^6 (1 + u^2) \, du\\
+&= \frac{1}{7} \tan^7 (x) + \frac{1}{9} \tan^9(x) + C.
+\end{align*}
+:::
+
+
+---
+
+### Special Integrals
+
+\[
+\int \tan x \, dx = \ln|\sec x| + C
+\]
+
+\[
+\int \sec x \, dx = \ln|\sec x + \tan x| + C
+\]
+
+
+**Product-to-Sum Identities**
+
+Used for products like:
+
+\[
+\sin(mx)\cos(nx), \quad \sin(mx)\sin(nx), \quad \cos(mx)\cos(nx)
+\]
+
+**Identities:**
+
+\[
+\sin A \cos B = \frac{1}{2}[\sin(A+B) + \sin(A-B)]
+\]
+
+\[
+\sin A \sin B = \frac{1}{2}[\cos(A-B) - \cos(A+B)]
+\]
+
+\[
+\cos A \cos B = \frac{1}{2}[\cos(A-B) + \cos(A+B)]
+\]
+
+
+::: {.example}
+Integrate
+
+\[
+\int \sin(4x)\cos(5x)\,dx
+\]
+
+**Solution:**
+
+\begin{align*}
+\int \sin(4x)\cos(5x)\,dx
+&= \frac{1}{2}\int [\sin(9x) + \sin(-x)]\,dx\\
+&= \frac{1}{2}\left(-\frac{1}{9}\cos(9x) + \cos x \right) + C
+\end{align*}
+:::
+
+
+
+---
+
+### Putting It All Together
+
+**Strategy Map**
+
+- **Odd sine or cosine?** → save one factor, substitute  
+- **Both even?** → half-angle identities  
+- **Tangent + secant?** → save derivative pair  
+- **Only tan/sec?** → use identities  
+- **Product of different angles?** → product-to-sum identities  
+- **Pure powers of sec?** → integration by parts  
+- **No derivative structure?** → identity manipulation  
+
+**Master Formula Summary**
+
+\[
+\sin^2 x = \frac{1}{2}(1 - \cos 2x), \qquad
+\cos^2 x = \frac{1}{2}(1 + \cos 2x)
+\]
+
+\[
+1 + \tan^2 x = \sec^2 x, \qquad
+1 + \cot^2 x = \csc^2 x
+\]
+
+\[
+\int \tan x\,dx = \ln|\sec x| + C
+\]
+
+\[
+\int \sec x\,dx = \ln|\sec x + \tan x| + C
+\]
+
+
+#### Conceptual Takeaways
+
+- Trigonometric integrals are **structure problems**, not formula problems  
+- Identities are used to **create substitution opportunities**  
+- The goal is always to create:  
+  - a function  
+  - and its derivative  
+- Even powers → half-angle identities  
+- Odd powers → save one factor and substitute  
+- Products → identities or substitution  
+- Some integrals require **multiple identity layers**  
+- Some require **integration by parts**  
+- Strategy selection matters more than computation  
+- Recognition is the core skill  
+- This topic connects algebra, trig, and calculus structure  
+
+---
+
+
+
+#### Skills You Should Be Able to Do
+
+- Recognize integrable trig structures  
+- Apply Pythagorean identities  
+- Apply half-angle identities  
+- Convert even powers  
+- Separate odd powers  
+- Choose correct substitutions  
+- Perform multi-step identity transformations  
+- Use tangent/secant strategies  
+- Apply product-to-sum identities  
+- Combine identities and substitution  
+- Use integration by parts with trig  
+- Recognize derivative pairs  
+- Reduce integrals to polynomials  
+- Translate trig forms into algebraic forms  
+- Select efficient strategies  
+- Verify answers by differentiation  
+
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Trigonometric Substitution
+
+Some integrals involve expressions with square roots such as:
+\[
+\sqrt{a^2 - x^2}, \qquad \sqrt{a^2 + x^2}, \qquad \sqrt{x^2 - a^2}
+\]
+
+These integrals are difficult to evaluate using standard substitution.  Instead, we use **trigonometric substitution**, which replaces the variable \(x\) with a trigonometric expression so that the radical simplifies using trigonometric identities.
+
+The core idea is:
+
+> Use trigonometric identities to eliminate square roots.
+
+This works because of fundamental identities like:
+\[
+1 - \sin^2\theta = \cos^2\theta, \quad
+1 + \tan^2\theta = \sec^2\theta, \quad
+\sec^2\theta - 1 = \tan^2\theta
+\]
+
+---
+
+### Inverse Substitution Idea
+
+Instead of defining a new variable as a function of \(x\), we define \(x\) as a function of a new variable:
+\[
+x = g(\theta)
+\]
+
+This is called **inverse substitution** and uses the substitution rule in reverse.
+
+**Standard Trigonometric Substitutions**
+
+| Radical Form | Substitution | Identity Used |
+|------|------|------|
+| \( \sqrt{a^2 - x^2} \) | \( x = a\sin\theta \) | \( 1-\sin^2\theta=\cos^2\theta \) |
+| \( \sqrt{a^2 + x^2} \) | \( x = a\tan\theta \) | \( 1+\tan^2\theta=\sec^2\theta \) |
+| \( \sqrt{x^2 - a^2} \) | \( x = a\sec\theta \) | \( \sec^2\theta-1=\tan^2\theta \) |
+
+Angle restrictions are used so the substitutions are one-to-one and signs are consistent.
+
+
+::: {.example}
+\( \sqrt{a^2 - x^2} \) Type
+
+Integrate
+\[
+\int \frac{\sqrt{9 - x^2}}{x^2}\,dx
+\]
+
+**Solution:**
+
+**Step 1: Substitution**
+\[
+x = 3\sin\theta, \quad dx = 3\cos\theta\,d\theta
+\]
+
+\[
+\sqrt{9 - x^2} = 3\cos\theta
+\]
+
+**Step 2: Substitute**
+\begin{align*}
+\int \frac{\sqrt{9 - x^2}}{x^2}\,dx
+&= \int \frac{3\cos\theta}{9\sin^2\theta} \cdot 3\cos\theta\,d\theta\\
+&= \int \frac{\cos^2\theta}{\sin^2\theta}\,d\theta\\
+&= \int \cot^2\theta\,d\theta
+\end{align*}
+
+**Step 3: Integrate**
+\[
+\cot^2\theta = \csc^2\theta - 1
+\]
+
+\[
+\int \cot^2\theta\,d\theta = \int (\csc^2\theta - 1)\,d\theta
+= -\cot\theta - \theta + C
+\]
+
+**Step 4: Triangle Back-Substitution**
+
+From \( x = 3\sin\theta \):
+\[
+\sin\theta = \frac{x}{3}, \quad
+\cot\theta = \frac{\sqrt{9-x^2}}{x}
+\]
+
+**Final Answer**
+\[
+\int \frac{\sqrt{9 - x^2}}{x^2}\,dx = -\frac{\sqrt{9-x^2}}{x} - \sin^{-1}\!\left(\frac{x}{3}\right) + C
+\]
+:::
+
+
+::: {.example}
+Area of an Ellipse
+
+Ellipse:
+\[
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
+\]
+
+Solve for \(y\):
+\[
+y = \frac{b}{a}\sqrt{a^2 - x^2}
+\]
+
+Area (by symmetry):
+\[
+A = 4\int_0^a \frac{b}{a}\sqrt{a^2 - x^2}\,dx
+\]
+
+Use substitution:
+\[
+x = a\sin\theta, \quad dx = a\cos\theta\,d\theta
+\]
+
+\[
+\sqrt{a^2 - x^2} = a\cos\theta
+\]
+
+Then:
+\begin{align*}
+A 
+&= 4\frac{b}{a}\int_0^{\pi/2} a^2\cos^2\theta\,d\theta\\
+&= 4ab\int_0^{\pi/2} \cos^2\theta\,d\theta\\
+&= 4ab \cdot \frac{\pi}{4} \\
+&= \pi ab
+\end{align*}
+
+**Result**
+\[
+A_{\text{ellipse}} = \pi ab
+\]
+
+Special case \( a=b=r \):
+\[
+A_{\text{circle}} = \pi r^2
+\]
+:::
+
+
+::: {.example}
+\( \sqrt{x^2 + a^2} \) Type
+
+Integrate
+\[
+\int \frac{dx}{x^2\sqrt{x^2 + 4}}
+\]
+
+**Solution:**
+
+Substitute:
+\[
+x = 2\tan\theta, \quad dx = 2\sec^2\theta\,d\theta
+\]
+
+\[
+\sqrt{x^2+4} = 2\sec\theta
+\]
+
+Substitute and simplify → reduce to trig integral → integrate → triangle substitution back.
+
+Final form:
+\[
+\int \frac{dx}{x^2\sqrt{x^2 + 4}} = -\frac{\sqrt{x^2+4}}{4x} + C
+\]
+:::
+
+
+::: {.example}
+Simpler Substitution Wins
+
+\[
+\int \frac{x}{\sqrt{x^2+4}}\,dx
+\]
+
+Let:
+\[
+u = x^2+4 \Rightarrow du = 2x\,dx
+\]
+
+\[
+\int \frac{x}{\sqrt{x^2+4}}\,dx= \frac{1}{2}\int \frac{du}{\sqrt{u}} = \sqrt{x^2+4} + C
+\]
+
+**Lesson:**  
+Even if trig substitution works, **always look for simpler methods first**.
+
+:::
+
+
+---
+
+### Putting It All Together
+
+**Strategy Map**
+
+- \( \sqrt{a^2 - x^2} \) → \( x = a\sin\theta \)  
+- \( \sqrt{a^2 + x^2} \) → \( x = a\tan\theta \)  
+- \( \sqrt{x^2 - a^2} \) → \( x = a\sec\theta \)  
+- Always draw a triangle  
+- Always convert back to \(x\)  
+- Always check for simpler substitutions first  
+- Use geometry to interpret trig ratios  
+- Use identities to simplify  
+
+#### Conceptual Takeaways
+
+- Trigonometric substitution is a **structure-based technique**  
+- It is used to eliminate square roots  
+- It converts algebraic radicals into trig expressions  
+- Trig identities replace radicals with squares   
+- Right triangles are used to return to \(x\)  
+- Geometry and algebra merge in this method  
+- Inverse substitution is conceptually different from normal substitution  
+- Trig substitution is often used for:  
+  - geometry problems  
+  - area formulas  
+  - physics integrals  
+  - arc length  
+  - special definite integrals  
+- It builds bridges between:  
+  - algebra    
+  - trigonometry    
+  - calculus  
+  - geometry  
+
+
+---
+
+#### Skills You Should Be Able To Do
+
+- Recognize when trig substitution is appropriate  
+- Identify radical patterns  
+- Choose correct substitutions  
+- Apply inverse substitution  
+- Compute \(dx\) correctly  
+- Simplify radicals using identities  
+- Transform integrals into trig form  
+- Evaluate resulting trig integrals  
+- Use trig identities  
+- Draw right triangles for back-substitution  
+- Convert trig expressions back to algebraic form  
+- Change limits in definite integrals  
+- Select efficient methods  
+- Compare trig substitution with regular substitution  
+- Interpret geometry in calculus contexts  
+- Recognize ellipse/circle area derivations  
+- Justify substitution choices  
+- Verify answers by differentiation  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Integration of Rational Functions by Partial Fractions
+
+
+A **rational function** is a ratio of two polynomials:
+\[
+f(x) = \frac{P(x)}{Q(x)}
+\]
+
+The goal of **partial fraction decomposition** is to rewrite a complicated rational function as a **sum of simpler fractions** that we already know how to integrate.
+\[
+\frac{P(x)}{Q(x)} 
+\;\; \longrightarrow \;\;
+\text{sum of simpler rational terms}
+\]
+
+This method works by:
+
+1. Simplifying the rational function  
+2. Factoring the denominator  
+3. Decomposing into partial fractions  
+4. Integrating each term separately  
+
+**Step 0: Proper vs Improper Rational Functions**
+
+A rational function is:
+
+**Proper**
+\[
+\deg(P) < \deg(Q)
+\]
+
+**Improper**
+\[
+\deg(P) \ge \deg(Q)
+\]
+
+If the function is **improper**, we must first use **polynomial long division** to rewrite it as:
+\[
+\frac{P(x)}{Q(x)} = S(x) + \frac{R(x)}{Q(x)}
+\]
+where:
+
+- \( S(x) \) is a polynomial  
+- \( \frac{R(x)}{Q(x)} \) is proper  
+
+Only the proper fraction is decomposed.
+
+---
+
+###  General Strategy
+
+1. Check if the rational function is proper  
+2. If improper → perform long division  
+3. Factor the denominator completely  
+4. Set up the partial fraction form  
+5. Solve for coefficients  
+6. Integrate term-by-term  
+
+**Case I — Distinct Linear Factors**
+
+If:
+\[
+Q(x) = (a_1x+b_1)(a_2x+b_2)\cdots(a_kx+b_k)
+\]
+
+Then:
+\[
+\frac{R(x)}{Q(x)} 
+= \frac{A_1}{a_1x+b_1}
++ \frac{A_2}{a_2x+b_2}
++ \cdots
++ \frac{A_k}{a_kx+b_k}
+\]
+
+
+::: {.example}
+Distinct Linear Factors
+
+Evaluate
+\[
+\int \frac{x+5}{(x-1)(x+2)}\,dx
+\]
+
+**Solution:**
+Decomposition:
+\[
+\frac{x+5}{(x-1)(x+2)} 
+= \frac{A}{x-1} + \frac{B}{x+2}
+\]
+
+Solve for \(A,B\), then integrate:
+\[
+\int \frac{A}{x-1}dx + \int \frac{B}{x+2}dx
+\]
+
+\[
+= A\ln|x-1| + B\ln|x+2| + C
+\]
+:::
+
+
+
+**Case II — Repeated Linear Factors**
+
+If:
+\[
+Q(x) = (ax+b)^r
+\]
+
+Then:
+\[
+\frac{R(x)}{Q(x)} 
+= \frac{A_1}{ax+b} + \frac{A_2}{(ax+b)^2} + \cdots + \frac{A_r}{(ax+b)^r}
+\]
+
+
+::: {.example}
+Repeated Factor
+
+\[
+\int \frac{4x}{(x-1)^2(x+1)}\,dx
+\]
+
+Decomposition:
+\[
+\frac{4x}{(x-1)^2(x+1)} 
+= \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+1}
+\]
+
+Integrate term-by-term:
+\[
+\int \frac{A}{x-1}dx 
++ \int \frac{B}{(x-1)^2}dx
++ \int \frac{C}{x+1}dx
+\]
+:::
+
+
+**Case III — Irreducible Quadratic Factors**
+
+If the denominator contains:
+\[
+ax^2 + bx + c \quad \text{with} \quad b^2 - 4ac < 0
+\]
+
+Then the form is:
+\[
+\frac{Ax + B}{ax^2 + bx + c}
+\]
+
+
+::: {.example}
+Irreducible Quadratic
+
+\[
+\int \frac{2x+1}{x^2+4}\,dx
+\]
+
+Split:
+\[
+\int \frac{2x+1}{x^2+4}\,dx = \int \frac{2x}{x^2+4}dx + \int \frac{1}{x^2+4}dx
+= \ln(x^2+4) + \frac{1}{2}\tan^{-1}\!\left(\frac{x}{2}\right) + C
+\]
+:::
+
+
+**Repeated Irreducible Quadratics**
+
+If:
+\[
+(ax^2+bx+c)^r
+\]
+
+Then:
+\[
+\frac{A_1x+B_1}{ax^2+bx+c}
++ \frac{A_2x+B_2}{(ax^2+bx+c)^2}
++ \cdots
++ \frac{A_rx+B_r}{(ax^2+bx+c)^r}
+\]
+
+---
+
+### Special Technique: Rationalizing Substitutions
+
+Some integrals that are not rational can be made rational by substitution:
+\[
+u = \sqrt[n]{g(x)}
+\]
+
+This transforms the integrand into a rational function in \(u\).
+
+
+::: {.example}
+Rationalizing Substitution
+
+Evaluate
+\[
+\int \frac{\sqrt{x+4}}{x}\,dx
+\]
+
+Let:
+\[
+u = \sqrt{x+4} \Rightarrow x = u^2 - 4,\quad dx = 2u\,du
+\]
+
+Transforms into a rational function in \(u\), then integrate using partial fractions.
+
+\begin{align*}
+\int \frac{\sqrt{x+4}}{x}\,dx &= \int \frac{2u^2}{u^2 - 4}\,du\\ 
+&= 2\int \left(1 + \frac{4}{u^2 - 4} \right)\,du\\ 
+&= 2 u + 4\int \frac{A}{u - 2}\,du - 4\int \frac{B}{u + 2}\,du\\ 
+&= 2 u + 2 \ln|u - 2| - 2 \ln|u + 2|\\ 
+&= 2 \sqrt{x+4}+ 2 \ln| \sqrt{x+4} - 2| - 2 \ln| \sqrt{x+4} + 2|
+\end{align*}
+:::
+
+
+---
+
+### Putting It All Together
+
+**Strategy Flowchart**
+
+1. Check degrees → proper vs improper  
+2. If improper → long division  
+3. Factor denominator completely  
+4. Identify factor types:
+   - distinct linear  
+   - repeated linear  
+   - irreducible quadratic  
+   - repeated irreducible quadratic  
+5. Write decomposition form  
+6. Solve coefficients  
+7. Integrate each term  
+8. Simplify result  
+
+
+
+
+#### Conceptual Takeaways
+
+- Partial fractions decomposes complex rational functions into simple pieces  
+- Integration becomes a sum of basic logarithmic and inverse trig integrals  
+- Structure recognition is essential  
+- Factoring controls the entire method  
+- Algebra drives the calculus  
+- Partial fractions is algorithmic, not guesswork  
+- Long division is a required preprocessing step  
+- Different denominator structures produce different decomposition forms  
+- Integration becomes pattern recognition  
+- This method unifies algebra and integration techniques  
+
+
+---
+
+#### Skills You Should Be Able To Do
+
+- Classify rational functions  
+- Perform polynomial long division  
+- Factor polynomials completely  
+- Recognize denominator structures  
+- Build correct partial fraction forms  
+- Solve coefficient systems  
+- Use cover-up methods  
+- Integrate logarithmic forms  
+- Integrate inverse tangent forms  
+- Complete the square  
+- Use substitutions  
+- Combine algebra and calculus methods  
+- Detect when partial fractions is unnecessary  
+- Simplify rational integrals efficiently  
+- Verify answers by differentiation  
+- Choose optimal integration strategies  
+- Transform non-rational integrals into rational form  
+- Apply rationalizing substitutions  
+- Recognize structural patterns in integrands  
+- Solve mixed-technique problems  
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Strategy for Integration
+
+Unlike differentiation, where the correct rule is usually obvious, integration requires strategy and recognition.  For many integrals, there is no immediately clear method, and the main challenge is deciding which technique to use.
+
+Integration is not about memorizing steps — it is about:
+
+- recognizing structure,  
+- classifying forms,  
+- selecting appropriate tools,  
+- and combining techniques intelligently.  
+
+
+
+> Integration is a **decision process**, not a single technique.
+
+To integrate successfully, we must:
+
+- understand basic formulas,  
+- recognize structural patterns,  
+- and choose methods adaptively.  
+
+
+A strong integration strategy begins with mastery of basic antiderivatives.  
+These form the building blocks of all integration techniques.
+
+<div class="note">
+Fundamental Forms
+
+\[
+\int x^n dx = \frac{x^{n+1}}{n+1} \quad (n \neq -1)
+\]
+
+\[
+\int \frac{1}{x} dx = \ln|x|
+\]
+
+\[
+\int e^x dx = e^x
+\qquad
+\int b^x dx = \frac{b^x}{\ln b}
+\]
+
+\[
+\int \sin x\,dx = -\cos x
+\qquad
+\int \cos x\,dx = \sin x
+\]
+
+\[
+\int \sec^2 x\,dx = \tan x
+\qquad
+\int \csc^2 x\,dx = -\cot x
+\]
+
+\[
+\int \frac{dx}{x^2+a^2} = \frac{1}{a}\tan^{-1}\!\left(\frac{x}{a}\right)
+\]
+
+\[
+\int \frac{dx}{x^2-a^2} = \frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|
+\]
+</div>
+
+These formulas are not optional — strategy depends on recognizing them inside complex integrands.
+
+---
+
+### A Practical Strategy for Integration
+
+When you do not immediately see how to integrate a function, use the following structured approach.
+
+**Step 1 — Simplify the Integrand**
+
+Use algebra and identities to rewrite the expression into a simpler form.
+
+
+::: {.example}
+Evaluate
+\[
+\int \frac{\tan^3 x}{\cos^3 x}\,dx
+\]
+
+Rewrite:
+\[
+\tan x = \frac{\sin x}{\cos x}, \quad \frac{1}{\cos x} = \sec x
+\]
+
+\[
+\int \tan^3 x \sec^3 x\,dx
+\]
+
+Now the structure becomes recognizable as a trigonometric product.
+:::
+
+
+**Step 2 — Look for an Obvious Substitution**
+
+Search for a function \(u = g(x)\) such that \(du\) appears (up to a constant factor).
+
+
+::: {.example}
+Evaluate
+\[
+\int \frac{x}{x^2-1}\,dx
+\]
+
+Let:
+\[
+u = x^2-1 \quad \Rightarrow \quad du = 2x\,dx
+\]
+
+This becomes a basic logarithmic integral.
+:::
+
+
+**Step 3 — Classify the Integrand**
+
+If Steps 1–2 fail, classify the form of the integrand:
+
+**(a) Trigonometric products  **
+→ Use trigonometric identities and substitutions  
+
+**(b) Rational functions  **
+→ Use **partial fractions**
+
+**(c) Polynomial × transcendental  **
+→ Use **integration by parts**
+
+**(d) Radicals  **
+→ Use special substitutions:
+
+- \( \sqrt{a^2-x^2} \) → trigonometric substitution  
+- \( \sqrt[n]{ax+b} \) → rationalizing substitution  
+
+
+
+**Step 4 — Try Again (Adaptive Strategy)**
+
+If nothing works immediately:
+
+- Try a **non-obvious substitution**  
+- Try **integration by parts**, even for single functions  
+- Manipulate algebraically  
+- Use identities  
+- Relate to previously solved integrals  
+- Combine methods  
+- Apply multiple techniques sequentially  
+
+
+::: {.example}
+Structure Recognition
+
+
+\[
+\int \frac{\tan^3 x}{\cos^3 x}\,dx
+\]
+
+Rewrite → recognize trig structure → apply trig substitution rules.
+:::
+
+
+
+::: {.example}
+Hidden Substitution
+
+\[
+\int e^{\sqrt{x}}\,dx
+\]
+
+Let:
+\[
+u = \sqrt{x} \Rightarrow x = u^2,\quad dx = 2u\,du
+\]
+
+Becomes:
+\[
+2\int u e^u\,du
+\]
+
+Now apply integration by parts.
+:::
+
+
+::: {.example}
+Classification
+\[
+\int \frac{x^5+1}{x^3-3x^2-10x}\,dx
+\]
+
+Rational function → use partial fractions... First step: polynomial division.
+:::
+
+
+::: {.example}
+Direct Substitution
+\[
+\int \frac{dx}{x\ln x}
+\]
+
+Let:
+\[
+u = \ln x \Rightarrow du = \frac{dx}{x}
+\]
+:::
+
+
+
+
+::: {.example}
+Manipulation Beats Substitution
+\[
+\int \frac{\sqrt{1-x}}{1+x}\,dx
+\]
+
+Instead of substitution, multiply numerator and denominator appropriately to simplify,
+leading to inverse trig integrals.
+:::
+
+
+
+---
+
+### Important Theoretical Insight
+
+Not all elementary functions have elementary antiderivatives.
+
+Example:
+\[
+\int e^{x^2}\,dx
+\]
+
+This integral **exists**, but it **cannot be expressed** using elementary functions.
+
+Such functions require:
+
+- numerical integration,  
+- series expansions,  
+- or special functions.  
+
+This means:
+
+> Integration is fundamentally more complex than differentiation.
+
+---
+
+### Putting It All Together
+
+There are no universal rules that guarantee the correct method on the first attempt. Instead, effective integration relies on strategic thinking, experience, and pattern recognition.
+
+>  Simplify → Substitute → Classify → Adapt → Combine → Solve
+
+#### Conceptual Takeaways
+
+- Integration is a **strategy problem**, not a formula problem  
+- Recognition matters more than memorization  
+- Structure determines method  
+- Algebra supports calculus  
+- Multiple methods may be required  
+- No single technique dominates  
+- Experience improves pattern recognition  
+- Flexibility is essential  
+- Integration is iterative  
+- Not all functions have elementary antiderivatives  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Integration Using Tables and Computer Algebra Systems
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Approximate Integration
+
+
+
+In many real-world and mathematical settings, it is impossible to compute the exact value of a definite integral. This occurs in two main situations:
+
+1. **No elementary antiderivative exists:**  Some functions do not have antiderivatives that can be written using elementary functions (polynomials, exponentials, trig, logs, etc.), such as  
+   \[
+   \int_0^1 e^{x^2}\,dx \qquad \text{or} \qquad \int_{-1}^1 \sqrt{1+x^3}\,dx.
+   \]
+
+2. **The function is known only from data:**  In scientific experiments, engineering measurements, or data collection, the function may only be given as a table of values or a graph, not a formula.
+
+In these cases, we must use **numerical integration**: methods that approximate the value of a definite integral using finite computations.
+
+---
+
+### Riemann Sum Approximations
+
+
+
+<div class="note">
+Let \( f(x) \) be continuous on \([a,b]\).  Divide the interval into \( n \) equal subintervals of width
+\[
+\Delta x = \frac{b-a}{n}.
+\]
+
+**Left Endpoint Rule**
+\[
+L_n = \sum_{i=0}^{n-1} f(x_i)\,\Delta x
+\]
+
+**Right Endpoint Rule**
+\[
+R_n = \sum_{i=1}^{n} f(x_i)\,\Delta x
+\]
+
+**Midpoint Rule**
+\[
+M_n = \Delta x \sum_{i=1}^{n} f(x_i^*)
+\]
+where \( x_i^* \) is the midpoint of each subinterval.
+</div>
+
+
+
+**Geometric interpretation:**  
+Each method approximates area using rectangles:
+
+- Left: height from left endpoint   
+- Right: height from right endpoint  
+- Midpoint: height from center of each interval  
+
+The midpoint rule typically gives better accuracy because it better balances over- and under-estimation.
+
+---
+
+### Trapezoidal Rule
+
+Instead of rectangles, this method approximates the region using **trapezoids**:
+
+
+
+<div class="note">
+**Trapezoidal Rule**
+
+\[
+T_n = \frac{\Delta x}{2}
+\left[
+f(x_0) + 2f(x_1) + 2f(x_2) + \cdots + 2f(x_{n-1}) + f(x_n)
+\right]
+\]
+</div>
+
+
+**Idea:** Each subinterval is approximated by a straight line segment, forming a trapezoid instead of a rectangle.
+
+---
+
+### Simpson’s Rule
+
+Simpson’s Rule uses **parabolas** instead of lines to approximate the curve.  
+The interval must be divided into an **even number** of subintervals.
+
+
+<div class="note">
+**Simpsons Rule**
+
+\[
+S_n = \frac{\Delta x}{3}
+\left[
+f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \cdots + 2f(x_{n-2}) + 4f(x_{n-1}) + f(x_n)
+\right]
+\]
+
+**Coefficient pattern:**
+\[
+1,\;4,\;2,\;4,\;2,\;\dots,\;4,\;1
+\]
+</div>
+
+**Key idea:**  Parabolas fit curved graphs better than straight lines → much higher accuracy.
+
+
+::: {.example}
+Midpoint Rule
+
+Approximate:
+\[
+\int_1^2 \frac{1}{x}\,dx
+\]
+using the Midpoint Rule with \( n=5 \).
+
+**Solution:**
+
+**Step 1: Compute \( \Delta x \)**
+\[
+\Delta x = \frac{2-1}{5} = 0.2
+\]
+
+**Step 2: Midpoints**
+\[
+1.1,\;1.3,\;1.5,\;1.7,\;1.9
+\]
+
+**Step 3: Apply formula**
+\begin{align*}
+M_5 &= 0.2\left[f(1.1)+f(1.3)+f(1.5)+f(1.7)+f(1.9)\right]\\
+&=0.2\left(\frac1{1.1}+\frac1{1.3}+\frac1{1.5}+\frac1{1.7}+\frac1{1.9}\right)\\
+&\approx 0.6919
+\end{align*}
+
+Exact value:
+\[
+\int_1^2 \frac{1}{x}\,dx = \ln 2 \approx 0.6931
+\]
+:::
+
+
+
+::: {.example}
+Trapezoidal Rule
+
+Approximate:
+\[
+\int_1^2 \frac{1}{x}\,dx
+\]
+using the Trapezoidal Rule with \( n=5 \).
+
+**Solution:**
+\[
+T_5=\frac{0.2}{2}
+\left[f(1)+2f(1.2)+2f(1.4)+2f(1.6)+2f(1.8)+f(2)\right]
+\approx 0.6956
+\]
+:::
+
+
+::: {.example}
+Simpson’s Rule
+
+Approximate:
+\[
+\int_1^2 \frac{1}{x}\,dx
+\]
+using Simpson’s Rule with \( n=10 \).
+
+**Solution:**
+\[
+S_{10}=\frac{0.1}{3}
+\left[f(1)+4f(1.1)+2f(1.2)+\cdots+4f(1.9)+f(2)\right]
+\approx 0.69315
+\]
+
+This is extremely close to the true value \( \ln 2 \approx 0.693147 \).
+:::
+
+
+---
+
+### Error Behavior (Conceptual)
+
+As \( n \) increases:
+
+- Left and Right rules converge **slowly**  
+- Trapezoidal Rule converges **faster**  
+- Midpoint Rule converges **faster than trapezoidal**  
+- Simpson’s Rule converges **much faster than all others**  
+
+Typical accuracy order:
+\[
+\text{Simpson} \;>\; \text{Midpoint} \;>\; \text{Trapezoidal} \;>\; \text{Left/Right}
+\]
+
+---
+
+### Putting It All Together
+
+> When exact mathematics fails, **approximation becomes the mathematics**.  
+Numerical integration is not a fallback—it is a fundamental tool for science, engineering, data science, and real-world modeling.
+
+#### Conceptual Takeaways
+
+- Exact integration is not always possible.  
+- Definite integrals represent **net area**, not just antiderivatives.  
+- Numerical integration replaces curves with:  
+  - rectangles (Riemann sums),  
+  - trapezoids (Trapezoidal Rule),  
+  - parabolas (Simpson’s Rule).  
+- Increasing \( n \) increases accuracy but also computation.  
+- Simpson’s Rule is typically the most efficient and accurate practical method.  
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Explain why some integrals cannot be computed exactly  
+- Set up left, right, and midpoint Riemann sums  
+- Apply the Trapezoidal Rule correctly  
+- Apply Simpson’s Rule correctly  
+- Compute \( \Delta x \) and partition intervals  
+- Construct numerical approximations from:  
+  - formulas  
+  - graphs  
+  - tables of data  
+- Compare accuracy of different approximation methods  
+- Choose an appropriate numerical method for a given problem  
+- Interpret numerical integrals in real-world contexts (distance, area, total change, data accumulation)  
+
+
+---
+
+####  Problems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##   Improper Integrals
+
+
+In earlier sections, we defined the definite integral  
+\[
+\int_a^b f(x)\,dx
+\]
+for functions defined on finite intervals with no infinite discontinuities.  This section extends the idea of integration to more extreme situations where:
+
+1. The **interval is infinite**, or  
+2. The **function becomes unbounded** (has a vertical asymptote) on the interval.
+
+Integrals of this type are called **improper integrals**.  They are defined using limits, and their behavior is classified as:
+
+- **Convergent** → the limit exists as a finite number  
+- **Divergent** → the limit does not exist or is infinite
+
+---
+
+### Type 1 Improper Integrals — Infinite Intervals
+
+These occur when the interval of integration is infinite:
+
+- \(\int_a^{\infty} f(x)\,dx\)  
+- \(\int_{-\infty}^b f(x)\,dx\)  
+- \(\int_{-\infty}^{\infty} f(x)\,dx\)  
+
+
+<div class="definition">
+**Right-infinite interval**
+\[
+\int_a^{\infty} f(x)\,dx 
+= \lim_{t\to\infty} \int_a^t f(x)\,dx
+\]
+
+**Left-infinite interval**
+\[
+\int_{-\infty}^b f(x)\,dx 
+= \lim_{t\to -\infty} \int_t^b f(x)\,dx
+\]
+
+**Entire real line**
+\[
+\int_{-\infty}^{\infty} f(x)\,dx 
+= \int_{-\infty}^{a} f(x)\,dx + \int_{a}^{\infty} f(x)\,dx
+\]
+(both parts must converge)
+</div>
+
+
+
+::: {.example}
+Convergent Integral
+
+Integrate
+\[
+\int_1^{\infty} \frac{1}{x^2}\,dx
+\]
+
+**Solution:**
+\begin{align*}
+\int_1^{\infty} \frac{1}{x^2}\,dx \\
+&= \lim_{t\to\infty} \int_1^t x^{-2}\,dx \\
+&= \lim_{t\to\infty} \left[-\frac{1}{x}\right]_1^t \\
+&= \lim_{t\to\infty}\left(-\frac{1}{t}+1\right) \\
+&= 1.
+\end{align*}
+
+**Conclusion:** Convergent (finite area).
+:::
+
+
+
+::: {.example}
+Divergent Integral
+
+Evaluate:
+\[
+\int_1^{\infty} \frac{1}{x}\,dx
+\]
+
+**Solution:**
+
+\begin{align*}
+\int_1^{\infty} \frac{1}{x}\,dx
+&= \lim_{t\to\infty} \int_1^t \frac{1}{x}\,dx\\
+&= \lim_{t\to\infty} [\ln x]_1^t\\
+&= \lim_{t\to\infty} \ln t\\
+&= \infty
+\end{align*}
+
+**Conclusion:** Divergent (infinite area).
+:::
+
+
+---
+
+### The \(p\)-Test for Infinite Intervals
+
+For
+\[
+\int_1^{\infty} \frac{1}{x^p}\,dx
+\]
+
+- **Converges if** \(p > 1\)  
+- **Diverges if** \(p \le 1\)  
+
+---
+
+### Type 2 Improper Integrals — Infinite Discontinuities
+
+These occur when the function becomes unbounded on a finite interval  (e.g. vertical asymptotes).
+
+
+<div class="definition">
+Discontinuity at right endpoint
+\[
+\int_a^b f(x)\,dx
+= \lim_{t\to b^-} \int_a^t f(x)\,dx
+\]
+
+**Discontinuity at left endpoint**
+\[
+\int_a^b f(x)\,dx
+= \lim_{t\to a^+} \int_t^b f(x)\,dx
+\]
+
+**Discontinuity inside the interval at \(c\)**
+\[
+\int_a^b f(x)\,dx
+= \int_a^c f(x)\,dx + \int_c^b f(x)\,dx
+\]
+(each part must converge)
+</div>
+
+
+
+::: {.example}
+Endpoint Asymptote
+
+Evaluate:
+\[
+\int_0^1 \ln x \, dx
+\]
+
+**Solution:**
+
+\[
+\int_0^1 \ln x\,dx
+= \lim_{t\to 0^+} \int_t^1 \ln x\,dx
+\]
+
+Integration by parts:
+- \(u=\ln x\), \(dv=dx\)
+
+\begin{align*}
+\int_0^1 \ln x\,dx &= \lim_{t\to 0^+} \left[x\ln x - x\right]_t^1\\
+&= \lim_{t\to 0^+} \left[(1\cdot 0 - 1) - (t\ln t - t)\right]\\
+&= -1.
+\end{align*}
+
+**Conclusion:** Convergent.
+:::
+
+
+
+::: {.example}
+Interior Asymptote
+
+Evaluate:
+\[
+\int_0^3 \frac{1}{x-1}\,dx
+\]
+
+**Solution:**
+
+Split at the asymptote \(x=1\):
+\[
+\int_0^3 \frac{1}{x-1}\,dx
+= \int_0^1 \frac{1}{x-1}\,dx + \int_1^3 \frac{1}{x-1}\,dx
+\]
+
+The first integral diverges ⇒ **entire integral diverges**.
+:::
+
+
+---
+
+### Comparison Test for Improper Integrals
+
+<div class="theorem">
+If \(0 \le g(x) \le f(x)\) for \(x \ge a\):
+
+- If \(\int_a^{\infty} f(x)\,dx\) **converges**, then  \(\int_a^{\infty} g(x)\,dx\) also **converges**.  
+- If \(\int_a^{\infty} g(x)\,dx\) **diverges**, then  \(\int_a^{\infty} f(x)\,dx\) also **diverges**.
+</div>
+
+
+
+
+::: {.example}
+Using Comparison
+\[
+\int_0^{\infty} e^{-x^2}\,dx
+\]
+
+For large \(x\), \(e^{-x^2} < e^{-x}\) and
+\[
+\int_1^{\infty} e^{-x}\,dx
+\]
+converges ⇒ by comparison,  
+\[
+\int_0^{\infty} e^{-x^2}\,dx
+\]
+**converges**.
+:::
+
+
+---
+
+### Putting It All Together
+
+Improper integrals show that infinity does not automatically imply divergence.  Mathematics formalizes infinite processes using limits, allowing us to meaningfully measure:
+
+- Infinite regions  
+- Infinite time intervals  
+- Infinite probability spaces  
+- Infinite distributions  
+
+This idea becomes foundational later in probability theory, physics, and machine learning, where infinite domains and continuous distributions are standard.
+
+#### Conceptual Takeaways
+
+- Improper integrals are **defined using limits**, not direct evaluation.  
+- Infinite width or infinite height **does not automatically mean infinite area**.  
+- Convergence depends on **how fast the function decays**.  
+- Visual similarity of graphs does **not** imply similar integral behavior.  
+- Always check:  
+  - Infinite interval?  
+  - Vertical asymptote?  
+  - Interior discontinuity?  
+
+---
+
+#### Skills You Should Be Able to Do
+
+After this section, you should be able to:
+
+- Identify when an integral is **improper**  
+- Convert improper integrals into **limit expressions**  
+- Evaluate Type 1 and Type 2 improper integrals  
+- Classify integrals as **convergent or divergent**  
+- Apply the **\(p\)-test**  
+- Use the **comparison test** for convergence  
+- Correctly split integrals at **discontinuities**  
+- Interpret convergence in terms of **finite area**  
+- Avoid treating improper integrals as ordinary definite integrals  
+
+---
+
+####  Problems
+
+
+
+
+
+
+

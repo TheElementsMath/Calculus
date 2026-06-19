@@ -1,0 +1,26 @@
+---
+title: "MATH 112/ 122: Differential and Integral Calculus"
+subtitle: "A Bookdown Companion to Stewart Calculus"
+author: "The Elements Math"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+description: "A companion to *Calculus* by James Stewart"
+unnumbered: true
+---
+
+
+# Welcome {-}
+
+This online book expands on the concepts introduced in *Calculus* by James Stewart.
+
+You’ll find:
+
+- Step-by-step theory walkthroughs  
+- Worked examples and visualizations  
+- Embedded video explanations  
+- Subsection-level problem sets
+
+The aim here is not to replace the textbook; but rather, we wish to provide additional supports for a more novice reader.  The ideas contained in the textbook, in our opinion, are accessible to a very wide audience - specifically one that lacks a strong mathematical foundation.  By providing additional examples and exercises and by breaking down the notation, we hope to expand the audience to a wider audience.  To read this book, the audience should begin with a very basic understanding of precalculus or late high-school mathematics. 
+
+
